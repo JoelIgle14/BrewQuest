@@ -1,51 +1,62 @@
-# --- Unity ---
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Uu]ser[Ss]ettings/
-[Ll]ogs/
+# --- Unity ---  
+[Ll]ibrary/  
+[Tt]emp/  
+[Oo]bj/  
+[Bb]uild/  
+[Bb]uilds/  
+[Ll]ogs/  
+[Uu]ser[Ss]ettings/  
+[Mm]emoryCaptures/  
 
-# Ignorar todo en Packages excepto manifest.json y packages-lock.json
-Packages/
-!Packages/manifest.json
-!Packages/packages-lock.json
+# --- Unity Package Manager (UPM) ---  
+Packages/  
+!Packages/manifest.json  
+!Packages/packages-lock.json  
 
-# Archivos de compilación y dependencias de Unity
-[Bb]uilds/
-[Bb]uild/
-[Bb]undle/
-MemoryCaptures/
+# --- Configuración de versiones de Unity ---  
+ProjectSettings/EditorBuildSettings.asset  
+ProjectSettings/ProjectVersion.txt  
 
-# Archivos de Visual Studio y Rider
-.vs/
-*.csproj
-*.sln*
-*.suo
-*.user
-*.userosscache
-*.pidb
-*.svclog
-*.pdb
-*.ilk
-*.obj
-*.idb
-*.tlog
-*.log
-*.VC.db
-*.opendb
-*.ipch
+# --- Archivos de dependencias de Unity ---  
+*.csproj  
+*.sln  
+*.suo  
+*.pidb  
+*.svclog  
+*.pdb  
+*.ilk  
+*.obj  
+*.idb  
+*.tlog  
+*.log  
+*.VC.db  
+*.opendb  
+*.ipch  
 
-# Ignorar archivos de JetBrains Rider
-.idea/
-*.iml
+# --- Rider, JetBrains y Visual Studio ---  
+.idea/  
+.vs/  
+*.iml  
 
-# Archivos de TextMesh Pro generados
-[Tt]extMesh Pro/
+# --- Archivos de TextMesh Pro (generados automáticamente) ---  
+[Tt]extMesh Pro/  
 
-# Archivos de sistema innecesarios
-.DS_Store
-Thumbs.db
+# --- Archivos de sistema innecesarios ---  
+.DS_Store  
+Thumbs.db  
 
-# Configuración de Unity específica del usuario
-*.swp
-*.code-workspace
+# --- Archivos de Unity Collaborate y Plastic SCM ---  
+/Assets/StreamingAssets/UnityCollaborate/  
+
+# --- Ignorar archivos de compilación de Android y iOS ---  
+*.apk  
+*.aab  
+*.ipa  
+
+# --- Excluir configuraciones específicas del usuario ---  
+/Logs/  
+/Library/  
+/Temp/  
+/Obj/  
+/MemoryCaptures/  
+/*.local/  
