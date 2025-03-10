@@ -38,8 +38,6 @@ ProjectSettings/ProjectVersion.txt
 .vs/  
 *.iml  
 
-# --- Archivos de TextMesh Pro (generados automáticamente) ---  
-[Tt]extMesh Pro/  
 
 # --- Archivos de sistema innecesarios ---  
 .DS_Store  
