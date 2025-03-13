@@ -231,7 +231,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 10
   isGrounded: 0
-  rayCastDistance: 0.5
+  rayCastDistance: 0.1
 --- !u!212 &362395507
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -311,9 +311,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae83648ed2762142bad3762a7386e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controladorGolpe: {fileID: 362395508}
-  radioGolpe: 1
-  danoGolpe: 1
+  attackRange: 0.7
+  attackDamage: 0
+  attacCooldown: 0
+  positionAttack: {x: 0, y: 0, z: 0}
 --- !u!1 &468638561
 GameObject:
   m_ObjectHideFlags: 0
