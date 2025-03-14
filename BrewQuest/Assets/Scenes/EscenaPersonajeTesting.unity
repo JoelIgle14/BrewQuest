@@ -323,7 +323,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 7
   isGrounded: 0
-  rayCastDistance: 0
+  rayCastDistance: 2
 --- !u!95 &776772072
 Animator:
   serializedVersion: 5
