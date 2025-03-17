@@ -17,21 +17,12 @@ public class PlayerMovement : MonoBehaviour
         body.freezeRotation = true; // Evita que el personaje rote
     }
 
-
     private void Update()
     {
         // Movimiento horizontal
+
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
-
-        // Solo puede saltar si su velocidad en Y es casi 0 (está en el suelo)
-        /*
-        if (Input.GetKeyDown(KeyCode.Space) && Mathf.Abs(body.velocity.y) < 0.01f)
-        {
-            body.velocity = new Vector2(body.velocity.x, jumpForce);
-        }*/
-
-        //Pa saber si tocamos el suelo
-
+       
         //aqui es donde empieza el raycast
         Vector2 raycastorigin = transform.position - new Vector3(0f, 0.51f);  
 
@@ -47,8 +38,18 @@ public class PlayerMovement : MonoBehaviour
                 body.velocity = new Vector2(body.velocity.x, jumpForce);
             }
         }
-        
+    }
 
+    //esto no va
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("COLLISION");
+        if (collision.gameObject.tag == "enemy")
+        {
+            Debug.Log("Colisión con enemigo detectada");
+            body.velocity = new Vector2(body.velocity.x, body.velocity.x);
+            body.AddForce(new Vector2(-1.0f, 40.0f), ForceMode2D.Impulse);
+        }
     }
 
     //Pintar RayCast
