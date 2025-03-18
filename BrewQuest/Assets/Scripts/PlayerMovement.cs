@@ -8,8 +8,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 7f;
     private Rigidbody2D body;
 
-    public bool isGrounded = false;
-    public float rayCastDistance;
+    // Salto
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+
+    // Doble salto
+    private bool canDoubleJump;
+    private bool isGrounded;
+    int saltosrestantes = 0;
 
     private void Awake()
     {
@@ -19,29 +25,46 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        // Verificar si el personaje está en el suelo
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+
         // Movimiento horizontal
-
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
-       
-        //aqui es donde empieza el raycast
-        Vector2 raycastorigin = transform.position - new Vector3(0f, 0.51f);  
 
-        isGrounded = false;
-
-        //Creacion del RayCast
-        RaycastHit2D raycastHit2D = Physics2D.Raycast(raycastorigin, Vector2.down, rayCastDistance); 
-        if (raycastHit2D.collider != null && raycastHit2D.collider.gameObject.tag == "Floor")  
+        // Restablecer doble salto cuando el jugador toca el suelo
+        if (isGrounded)
         {
-            isGrounded = true;
-            if (Input.GetKeyDown(KeyCode.Space))
+            canDoubleJump = true;
+            saltosrestantes = 0;
+        }
+
+        // Salto
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (isGrounded && saltosrestantes <=2)
             {
-                body.velocity = new Vector2(body.velocity.x, jumpForce);
+                Jump();
+                saltosrestantes++;
+            }
+            else if (canDoubleJump && saltosrestantes < 2) // Si no está en el suelo, permite doble salto
+            {
+                Jump();
+                saltosrestantes++; 
+                canDoubleJump = false; // Evita más saltos en el aire
+
             }
         }
     }
 
-    //esto no va
-    void OnCollisionEnter2D(Collision2D collision)
+    void Jump()
+    {
+        body.velocity = new Vector2(body.velocity.x, jumpForce);
+    }
+
+
+
+//esto no va
+void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("COLLISION");
         if (collision.gameObject.tag == "enemy")
@@ -52,16 +75,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    //Pintar RayCast
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Vector2 origin = transform.position - new Vector3(0f, 0.51f);
-        Vector2 direction = Vector2.down;
+    ////Pintar RayCast
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Vector2 origin = transform.position - new Vector3(0f, 0.51f);
+    //    Vector2 direction = Vector2.down;
 
-        Gizmos.DrawLine(origin, origin + direction * rayCastDistance);
-    }
+    //    Gizmos.DrawLine(origin, origin + direction * rayCastDistance);
+    //}
 }
+
+
 
 
 
