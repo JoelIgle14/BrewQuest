@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isGrounded = false;
     public float rayCastDistance;
+    public bool canmove = true;
 
     private void Awake()
     {
@@ -20,9 +21,10 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // Movimiento horizontal
-
-        body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
-       
+       if (canmove == true)
+        {
+            Move();
+        }
         //aqui es donde empieza el raycast
         Vector2 raycastorigin = transform.position - new Vector3(0f, 0.51f);  
 
@@ -40,6 +42,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void Move()
+    {
+        body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y); 
+    }
+
     //esto no va
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -47,9 +54,22 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "enemy")
         {
             Debug.Log("Colisión con enemigo detectada");
+
+            StartCoroutine(DisableMovementForTime(0.56f)); // Llamar a la corrutina para desactivar movimiento
+
             body.velocity = new Vector2(body.velocity.x, body.velocity.x);
-            body.AddForce(new Vector2(-1.0f, 40.0f), ForceMode2D.Impulse);
+            body.AddForce(new Vector2(-4.0f, 6.0f), ForceMode2D.Impulse);
         }
+    }
+
+    // Corrutina para desactivar el movimiento por cierto tiempo
+    IEnumerator DisableMovementForTime(float time) 
+    {
+        canmove = false; // Desactivar movimiento
+        Debug.Log("Movimiento desactivado");
+        yield return new WaitForSeconds(time); // Esperar el tiempo indicado
+        canmove = true; // Reactivar movimiento
+        Debug.Log("Movimiento activado");
     }
 
     //Pintar RayCast
