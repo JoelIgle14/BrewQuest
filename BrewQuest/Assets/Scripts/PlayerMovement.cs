@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isGrounded = false;
     public float rayCastDistance;
+    public bool canmove = true;
+
+    private int remainingJumps;
+    private const int maxJumps = 1;
 
     private void Awake()
     {
@@ -23,10 +27,13 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         // Movimiento horizontal
-        float moveInput = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(moveInput * speed, body.velocity.y);
+        if (canmove)
+        {
+            Move();
+        }
 
-        // Girar el personaje según la dirección del movimiento
+        // Volteo del personaje según la dirección del movimiento
+        float moveInput = Input.GetAxis("Horizontal");
         if (moveInput > 0)
         {
             transform.localScale = new Vector3(1, 1, 1); // Orientación normal (derecha)
@@ -36,23 +43,77 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1); // Se voltea a la izquierda
         }
 
-
         // Actualizar el parámetro "Speed" en el Animator
-        anim.SetFloat("Speed", Mathf.Abs(moveInput));
+        //anim.SetFloat("Speed", Mathf.Abs(moveInput));
 
         // Detección de suelo con Raycast
-        Vector2 raycastorigin = transform.position - new Vector3(0f, 0.51f);  
+        Vector2 raycastorigin = transform.position - new Vector3(0f, 0.51f);
         isGrounded = false;
 
-        RaycastHit2D raycastHit2D = Physics2D.Raycast(raycastorigin, Vector2.down, rayCastDistance); 
-        if (raycastHit2D.collider != null && raycastHit2D.collider.gameObject.tag == "Floor")  
+        RaycastHit2D raycastHit2D = Physics2D.Raycast(raycastorigin, Vector2.down, rayCastDistance);
+        if (raycastHit2D.collider != null && raycastHit2D.collider.gameObject.tag == "Floor")
         {
             isGrounded = true;
-            if (Input.GetKeyDown(KeyCode.Space))
+            Jump();
+            remainingJumps = maxJumps; // Restablecer los saltos cuando el personaje toque el suelo
+        }
+
+        // Doble salto
+        if (Input.GetKeyDown(KeyCode.Space) && remainingJumps > 0)
+        {
+            body.velocity = new Vector2(body.velocity.x, jumpForce);
+            remainingJumps--;
+        }
+    }
+
+    private void Jump()
+    {
+        isGrounded = true;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            body.velocity = new Vector2(body.velocity.x, jumpForce);
+        }
+    }
+
+    // Función de movimiento
+    private void Move()
+    {
+        body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
+    }
+
+    // Colisión con enemigos
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "enemy")
+        {
+            Debug.Log("Colisión con enemigo detectada");
+
+            float enemyPositionX = collision.transform.position.x;
+            float playerPositionX = transform.position.x;
+
+            if (enemyPositionX > playerPositionX)
             {
-                body.velocity = new Vector2(body.velocity.x, jumpForce);
+                StartCoroutine(DisableMovementForTime(0.56f)); // Desactivar movimiento
+                body.velocity = new Vector2(body.velocity.x, body.velocity.y);
+                body.AddForce(new Vector2(-4.0f, 6.0f), ForceMode2D.Impulse);
+            }
+            else if (enemyPositionX < playerPositionX)
+            {
+                StartCoroutine(DisableMovementForTime(0.56f)); // Desactivar movimiento
+                body.velocity = new Vector2(body.velocity.x, body.velocity.y);
+                body.AddForce(new Vector2(4.0f, 6.0f), ForceMode2D.Impulse);
             }
         }
+    }
+
+    // Corrutina para desactivar el movimiento por cierto tiempo
+    IEnumerator DisableMovementForTime(float time)
+    {
+        canmove = false; // Desactivar movimiento
+        Debug.Log("Movimiento desactivado");
+        yield return new WaitForSeconds(time); // Esperar el tiempo indicado
+        canmove = true; // Reactivar movimiento
+        Debug.Log("Movimiento activado");
     }
 
     // Pintar RayCast
