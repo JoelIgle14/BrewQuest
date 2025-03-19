@@ -71,10 +71,23 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Colisión con enemigo detectada");
 
-            StartCoroutine(DisableMovementForTime(0.56f)); // Llamar a la corrutina para desactivar movimiento
+            float enemyPositionX = collision.transform.position.x;
+            float playerPositionX = transform.position.x;
 
-            body.velocity = new Vector2(body.velocity.x, body.velocity.x);
-            body.AddForce(new Vector2(-4.0f, 6.0f), ForceMode2D.Impulse);
+            if (enemyPositionX > playerPositionX)
+            {
+                StartCoroutine(DisableMovementForTime(0.56f)); // Llamar a la corrutina para desactivar movimiento
+
+                body.velocity = new Vector2(body.velocity.x, body.velocity.x);
+                body.AddForce(new Vector2(-4.0f, 6.0f), ForceMode2D.Impulse);
+            }
+            else if (enemyPositionX < playerPositionX)
+            {
+                StartCoroutine(DisableMovementForTime(0.56f)); // Llamar a la corrutina para desactivar movimiento
+
+                body.velocity = new Vector2(body.velocity.x, body.velocity.x);
+                body.AddForce(new Vector2(4.0f, 6.0f), ForceMode2D.Impulse);
+            }
         }
     }
 
