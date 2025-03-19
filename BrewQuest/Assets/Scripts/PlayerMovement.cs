@@ -10,6 +10,10 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isGrounded = false;
     public float rayCastDistance;
+    public bool canmove = true;
+
+    private int remainingJumps;
+    private const int maxJumps = 1;
 
     private void Awake()
     {
@@ -17,21 +21,13 @@ public class PlayerMovement : MonoBehaviour
         body.freezeRotation = true; // Evita que el personaje rote
     }
 
-
     private void Update()
     {
         // Movimiento horizontal
-        body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
-
-        // Solo puede saltar si su velocidad en Y es casi 0 (está en el suelo)
-        /*
-        if (Input.GetKeyDown(KeyCode.Space) && Mathf.Abs(body.velocity.y) < 0.01f)
+       if (canmove == true)
         {
-            body.velocity = new Vector2(body.velocity.x, jumpForce);
-        }*/
-
-        //Pa saber si tocamos el suelo
-
+            Move();
+        }
         //aqui es donde empieza el raycast
         Vector2 raycastorigin = transform.position - new Vector3(0f, 0.51f);  
 
@@ -41,14 +37,68 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D raycastHit2D = Physics2D.Raycast(raycastorigin, Vector2.down, rayCastDistance); 
         if (raycastHit2D.collider != null && raycastHit2D.collider.gameObject.tag == "Floor")  
         {
-            isGrounded = true;
-            if (Input.GetKeyDown(KeyCode.Space))
+            Jump();
+            remainingJumps = maxJumps;
+        }
+
+        // Salto
+        if (Input.GetKeyDown(KeyCode.Space) && remainingJumps > 0)
+        {
+            body.velocity = new Vector2(body.velocity.x, jumpForce);
+            remainingJumps--;
+        }
+    }
+
+    private void Jump()
+    { 
+        isGrounded = true; 
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            body.velocity = new Vector2(body.velocity.x, jumpForce); 
+        }
+    }
+
+    private void Move()
+    {
+        body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y); 
+    }
+
+    //esto no va
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("COLLISION");
+        if (collision.gameObject.tag == "enemy")
+        {
+            Debug.Log("Colisión con enemigo detectada");
+
+            float enemyPositionX = collision.transform.position.x;
+            float playerPositionX = transform.position.x;
+
+            if (enemyPositionX > playerPositionX)
             {
-                body.velocity = new Vector2(body.velocity.x, jumpForce);
+                StartCoroutine(DisableMovementForTime(0.56f)); // Llamar a la corrutina para desactivar movimiento
+
+                body.velocity = new Vector2(body.velocity.x, body.velocity.x);
+                body.AddForce(new Vector2(-4.0f, 6.0f), ForceMode2D.Impulse);
+            }
+            else if (enemyPositionX < playerPositionX)
+            {
+                StartCoroutine(DisableMovementForTime(0.56f)); // Llamar a la corrutina para desactivar movimiento
+
+                body.velocity = new Vector2(body.velocity.x, body.velocity.x);
+                body.AddForce(new Vector2(4.0f, 6.0f), ForceMode2D.Impulse);
             }
         }
-        
+    }
 
+    // Corrutina para desactivar el movimiento por cierto tiempo
+    IEnumerator DisableMovementForTime(float time) 
+    {
+        canmove = false; // Desactivar movimiento
+        Debug.Log("Movimiento desactivado");
+        yield return new WaitForSeconds(time); // Esperar el tiempo indicado
+        canmove = true; // Reactivar movimiento
+        Debug.Log("Movimiento activado");
     }
 
     //Pintar RayCast
