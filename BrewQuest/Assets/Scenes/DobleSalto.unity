@@ -174,10 +174,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 10
-  groundCheck: {fileID: 1859736536}
-  groundLayer:
+  FloorCheck: {fileID: 1859736536}
+  FloorLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1
+  saltosRestantes: 2
+  groundCheckSize: {x: 6, y: 1}
 --- !u!50 &493858879
 Rigidbody2D:
   serializedVersion: 4
@@ -420,6 +422,10 @@ PrefabInstance:
     - target: {fileID: 7130924108671467549, guid: 9804c41884f09ed409f339ae44d43acf, type: 3}
       propertyPath: m_Name
       value: Size_Ref_256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130924108671467549, guid: 9804c41884f09ed409f339ae44d43acf, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7173742179594315184, guid: 9804c41884f09ed409f339ae44d43acf, type: 3}
       propertyPath: m_RootOrder
