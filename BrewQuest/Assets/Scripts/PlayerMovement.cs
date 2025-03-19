@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public float rayCastDistance;
     public bool canmove = true;
 
+    private int remainingJumps;
+    private const int maxJumps = 1;
+
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
@@ -34,11 +37,24 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D raycastHit2D = Physics2D.Raycast(raycastorigin, Vector2.down, rayCastDistance); 
         if (raycastHit2D.collider != null && raycastHit2D.collider.gameObject.tag == "Floor")  
         {
-            isGrounded = true;
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                body.velocity = new Vector2(body.velocity.x, jumpForce);
-            }
+            Jump();
+            remainingJumps = maxJumps;
+        }
+
+        // Salto
+        if (Input.GetKeyDown(KeyCode.Space) && remainingJumps > 0)
+        {
+            body.velocity = new Vector2(body.velocity.x, jumpForce);
+            remainingJumps--;
+        }
+    }
+
+    private void Jump()
+    { 
+        isGrounded = true; 
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            body.velocity = new Vector2(body.velocity.x, jumpForce); 
         }
     }
 
