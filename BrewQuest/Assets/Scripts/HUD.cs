@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class HUD : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameManager gameManager;
+    public GameObject[] vidas;
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+
+    }
+
+    //Gestion para activar vidas
+    public void DesactivarVida(int i) 
+    {
+        vidas[i].SetActive(false);
+    }
+
+    public void ActivarVida(int i) 
+    {
+        vidas[i].SetActive(true);
     }
 }

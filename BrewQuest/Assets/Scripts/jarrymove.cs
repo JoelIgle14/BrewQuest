@@ -88,6 +88,11 @@ public class jarrymove : MonoBehaviour
         {
             Debug.Log("Colisión con enemigo detectada");
 
+            //perder vida como tal
+            GameManager.Instance.PerderVida(); 
+
+
+            //determinar hacia donde nos giramos
             float enemyPositionX = collision.transform.position.x;
             float playerPositionX = transform.position.x;
 
