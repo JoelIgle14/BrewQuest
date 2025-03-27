@@ -4,15 +4,45 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //public static GameManager Instance { get; private set; }
+    //private int vidas = 3;
+    //public HUD hud;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    //private void Awake()
+    //{
+    //    if (Instance == null)
+    //    {
+    //        Instance = this;
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("Cuidado! Mas de un GameManager en escena.");
+    //    }
+    //}
+
+    //public void PerderVida()
+    //{
+    //    vidas -= 1;
+
+    //    if (vidas == 0)
+    //    {
+    //        // Reiniciamos el nivel.
+    //        SceneManager.LoadScene(0);
+    //    }
+
+    //    hud.DesactivarVida(vidas);
+    //}
+
+    //public bool RecuperarVida()
+    //{
+    //    if (vidas == 3)
+    //    {
+    //        return false;
+    //    }
+
+    //    hud.ActivarVida(vidas);
+    //    vidas += 1;
+    //    return true;
+    //}
 }
