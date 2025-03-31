@@ -16,12 +16,29 @@ public class PlayerMovement : MonoBehaviour
     private int remainingJumps;
     private const int maxJumps = 1;
 
+    //DASH
+
+    //private Rigidbody2D body;
+    private Vector2 moveInput;
+
+    private float activeMoveSpeed;
+    public float dashSpeed;
+
+    public float dashLength = 5f;
+    public float dashCooldown = 1f;
+
+    private float dashCounter;
+    private float dashCoolCounter;
+
+
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         body.freezeRotation = true; // Evita que el personaje rote
 
         anim = GetComponent<Animator>(); // Asigna el Animator del personaje
+
+        activeMoveSpeed = speed;
     }
 
     private void Update()
@@ -32,19 +49,17 @@ public class PlayerMovement : MonoBehaviour
             Move();
         }
 
-        // Volteo del personaje según la dirección del movimiento
-        float moveInput = Input.GetAxis("Horizontal");
-        if (moveInput > 0)
+        // Obtener entrada horizontal
+        float horizontalInput = Input.GetAxis("Horizontal"); // Se cambia de nombre a horizontalInput
+
+        if (horizontalInput > 0)
         {
             transform.localScale = new Vector3(1, 1, 1); // Orientación normal (derecha)
         }
-        else if (moveInput < 0)
+        else if (horizontalInput < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1); // Se voltea a la izquierda
         }
-
-        // Actualizar el parámetro "Speed" en el Animator
-        //anim.SetFloat("Speed", Mathf.Abs(moveInput));
 
         // Detección de suelo con Raycast
         Vector2 raycastorigin = transform.position - new Vector3(0f, 0.51f);
@@ -64,7 +79,42 @@ public class PlayerMovement : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x, jumpForce);
             remainingJumps--;
         }
+
+        // DASH - Corrección de errores
+        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), 0f); // Se asegura de que sea un Vector2
+        moveInput.Normalize();
+
+        // Aplicar la velocidad normal o del dash al movimiento
+        if (dashCounter > 0)
+        {
+            body.velocity = new Vector2(transform.localScale.x * dashSpeed, body.velocity.y);
+            dashCounter -= Time.deltaTime;
+            if (dashCounter <= 0)
+            {
+                activeMoveSpeed = speed;
+                dashCoolCounter = dashCooldown; // Inicia cooldown
+            }
+        }
+        else
+        {
+            body.velocity = new Vector2(moveInput.x * activeMoveSpeed, body.velocity.y);
+        }
+
+        // Iniciar dash
+        if (Input.GetKeyDown(KeyCode.E) && dashCoolCounter <= 0 && dashCounter <= 0)
+        {
+            dashCounter = dashLength;
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
     }
+
+
+
+
 
     private void Jump()
     {
