@@ -14,62 +14,50 @@ public class PlayerMovement : MonoBehaviour
     public bool canmove = true;
 
     private int remainingJumps;
-    private const int maxJumps = 1;
+    private const int maxJumps = 2; // Ahora permite doble salto
 
-    //DASH
-
-    //private Rigidbody2D body;
+    // DASH
     private Vector2 moveInput;
-
     private float activeMoveSpeed;
     public float dashSpeed;
-
     public float dashLength = 5f;
     public float dashCooldown = 1f;
-
     private float dashCounter;
     private float dashCoolCounter;
-
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         body.freezeRotation = true; // Evita que el personaje rote
-
         anim = GetComponent<Animator>(); // Asigna el Animator del personaje
-
         activeMoveSpeed = speed;
     }
 
     private void Update()
     {
-        // Movimiento horizontal
         if (canmove)
         {
             Move();
         }
 
-        // Obtener entrada horizontal
-        float horizontalInput = Input.GetAxis("Horizontal"); // Se cambia de nombre a horizontalInput
-
+        float horizontalInput = Input.GetAxis("Horizontal");
         if (horizontalInput > 0)
         {
-            transform.localScale = new Vector3(1, 1, 1); // Orientación normal (derecha)
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else if (horizontalInput < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1); // Se voltea a la izquierda
+            transform.localScale = new Vector3(-1, 1, 1);
         }
 
         // Detección de suelo con Raycast
-        Vector2 raycastorigin = transform.position - new Vector3(0f, 0.51f);
+        Vector2 raycastorigin = transform.position - new Vector3(0f, 0.86f);
         isGrounded = false;
 
         RaycastHit2D raycastHit2D = Physics2D.Raycast(raycastorigin, Vector2.down, rayCastDistance);
         if (raycastHit2D.collider != null && raycastHit2D.collider.gameObject.tag == "Floor")
         {
             isGrounded = true;
-            Jump();
             remainingJumps = maxJumps; // Restablecer los saltos cuando el personaje toque el suelo
         }
 
@@ -80,11 +68,12 @@ public class PlayerMovement : MonoBehaviour
             remainingJumps--;
         }
 
-        // DASH - Corrección de errores
-        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), 0f); // Se asegura de que sea un Vector2
+
+
+        // DASH
+        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
         moveInput.Normalize();
 
-        // Aplicar la velocidad normal o del dash al movimiento
         if (dashCounter > 0)
         {
             body.velocity = new Vector2(transform.localScale.x * dashSpeed, body.velocity.y);
@@ -92,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
             if (dashCounter <= 0)
             {
                 activeMoveSpeed = speed;
-                dashCoolCounter = dashCooldown; // Inicia cooldown
+                dashCoolCounter = dashCooldown;
             }
         }
         else
@@ -100,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
             body.velocity = new Vector2(moveInput.x * activeMoveSpeed, body.velocity.y);
         }
 
-        // Iniciar dash
         if (Input.GetKeyDown(KeyCode.E) && dashCoolCounter <= 0 && dashCounter <= 0)
         {
             dashCounter = dashLength;
@@ -112,26 +100,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-
-
-
-    private void Jump()
-    {
-        isGrounded = true;
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            body.velocity = new Vector2(body.velocity.x, jumpForce);
-        }
-    }
-
-    // Función de movimiento
     private void Move()
     {
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
     }
 
-    // Colisión con enemigos
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "enemy")
@@ -143,36 +116,31 @@ public class PlayerMovement : MonoBehaviour
 
             if (enemyPositionX > playerPositionX)
             {
-                StartCoroutine(DisableMovementForTime(0.56f)); // Desactivar movimiento
-                body.velocity = new Vector2(body.velocity.x, body.velocity.y);
+                StartCoroutine(DisableMovementForTime(0.56f));
                 body.AddForce(new Vector2(-4.0f, 6.0f), ForceMode2D.Impulse);
             }
             else if (enemyPositionX < playerPositionX)
             {
-                StartCoroutine(DisableMovementForTime(0.56f)); // Desactivar movimiento
-                body.velocity = new Vector2(body.velocity.x, body.velocity.y);
+                StartCoroutine(DisableMovementForTime(0.56f));
                 body.AddForce(new Vector2(4.0f, 6.0f), ForceMode2D.Impulse);
             }
         }
     }
 
-    // Corrutina para desactivar el movimiento por cierto tiempo
     IEnumerator DisableMovementForTime(float time)
     {
-        canmove = false; // Desactivar movimiento
+        canmove = false;
         Debug.Log("Movimiento desactivado");
-        yield return new WaitForSeconds(time); // Esperar el tiempo indicado
-        canmove = true; // Reactivar movimiento
+        yield return new WaitForSeconds(time);
+        canmove = true;
         Debug.Log("Movimiento activado");
     }
 
-    // Pintar RayCast
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Vector2 origin = transform.position - new Vector3(0f, 0.51f);
+        Vector2 origin = transform.position - new Vector3(0f, 0.86f);
         Vector2 direction = Vector2.down;
-
         Gizmos.DrawLine(origin, origin + direction * rayCastDistance);
     }
 }

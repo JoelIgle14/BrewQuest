@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MapaTesting.unity
     guid: e42670a39322f2548b588ffd010f578c
+  - enabled: 0
+    path: Assets/Scenes/persAtaque.unity
+    guid: 9bb8ba3ed99e2c34fbbe2925b8fdbf1c
   m_configObjects: {}

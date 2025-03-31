@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         if (vidas == 0)
         {
             // reiniciamos el nivel. 
-            SceneManager.LoadScene(2); 
+            SceneManager.LoadScene(1); 
         }
     }
 
