@@ -5,6 +5,6 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene"); // Reemplaza con el nombre de la escena del juego
+        SceneManager.LoadScene("MapaTesting"); // Reemplaza con el nombre de la escena del juego
     }
 }
