@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
             Move();
         }
 
+        //Esto es para girarlo
         float horizontalInput = Input.GetAxis("Horizontal");
         if (horizontalInput > 0)
         {
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
+
 
         // Detección de suelo con Raycast
         Vector2 raycastorigin = transform.position - new Vector3(0f, 0.88f);
@@ -60,7 +62,6 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             remainingJumps = maxJumps; // Restablecer los saltos cuando el personaje toque el suelo
         }
-
         // Doble salto
         if (Input.GetKeyDown(KeyCode.Space) && remainingJumps > 0)
         {
@@ -102,6 +103,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
+        //codigo pa moverse
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
     }
 
@@ -116,13 +118,13 @@ public class PlayerMovement : MonoBehaviour
 
             if (enemyPositionX > playerPositionX)
             {
-                StartCoroutine(DisableMovementForTime(0.56f));
-                body.AddForce(new Vector2(-4.0f, 6.0f), ForceMode2D.Impulse);
+                StartCoroutine(DisableMovementForTime(1.0f));
+                body.AddForce(new Vector2(-40.0f, 6.0f), ForceMode2D.Impulse);
             }
             else if (enemyPositionX < playerPositionX)
             {
                 StartCoroutine(DisableMovementForTime(0.56f));
-                body.AddForce(new Vector2(4.0f, 6.0f), ForceMode2D.Impulse);
+                body.AddForce(new Vector2(40.0f, 6.0f), ForceMode2D.Impulse);
             }
         }
     }
