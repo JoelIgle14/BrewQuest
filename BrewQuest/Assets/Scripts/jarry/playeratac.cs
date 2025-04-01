@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class playeratac : MonoBehaviour
 {
-
     public float attackRange;
     public float attackDamage;
     public float attacCooldown;
