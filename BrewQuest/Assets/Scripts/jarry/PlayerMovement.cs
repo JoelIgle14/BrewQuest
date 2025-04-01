@@ -38,8 +38,39 @@ public class PlayerMovement : MonoBehaviour
         if (canmove)
         {
             Move();
+
+            // DASH
+            moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
+            moveInput.Normalize();
+
+            if (dashCounter > 0)
+            {
+                body.velocity = new Vector2(transform.localScale.x * dashSpeed, 0f);
+                dashCounter -= Time.deltaTime;
+                if (dashCounter <= 0)
+                {
+                    activeMoveSpeed = speed;
+                    dashCoolCounter = dashCooldown;
+                }
+            }
+            else
+            {
+                body.velocity = new Vector2(moveInput.x * activeMoveSpeed, body.velocity.y);
+
+            }
         }
 
+        if (Input.GetKeyDown(KeyCode.E) && dashCoolCounter <= 0 && dashCounter <= 0)
+        {
+            dashCounter = dashLength;
+        }
+
+        if (dashCoolCounter > 0)
+        {
+            dashCoolCounter -= Time.deltaTime;
+        }
+
+        //Esto es para girarlo
         float horizontalInput = Input.GetAxis("Horizontal");
         if (horizontalInput > 0)
         {
@@ -60,48 +91,17 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             remainingJumps = maxJumps; // Restablecer los saltos cuando el personaje toque el suelo
         }
-
         // Doble salto
         if (Input.GetKeyDown(KeyCode.Space) && remainingJumps > 0)
         {
             body.velocity = new Vector2(body.velocity.x, jumpForce);
             remainingJumps--;
-        }
-
-
-
-        // DASH
-        moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
-        moveInput.Normalize();
-
-        if (dashCounter > 0)
-        {
-            body.velocity = new Vector2(transform.localScale.x * dashSpeed, body.velocity.y);
-            dashCounter -= Time.deltaTime;
-            if (dashCounter <= 0)
-            {
-                activeMoveSpeed = speed;
-                dashCoolCounter = dashCooldown;
-            }
-        }
-        else
-        {
-            body.velocity = new Vector2(moveInput.x * activeMoveSpeed, body.velocity.y);
-        }
-
-        if (Input.GetKeyDown(KeyCode.E) && dashCoolCounter <= 0 && dashCounter <= 0)
-        {
-            dashCounter = dashLength;
-        }
-
-        if (dashCoolCounter > 0)
-        {
-            dashCoolCounter -= Time.deltaTime;
-        }
+        } 
     }
 
     private void Move()
     {
+        //codigo pa moverse
         body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
     }
 
@@ -109,6 +109,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "enemy")
         {
+            GameManager.Instance.PerderVida();
+
             Debug.Log("Colisión con enemigo detectada");
 
             float enemyPositionX = collision.transform.position.x;
@@ -117,12 +119,12 @@ public class PlayerMovement : MonoBehaviour
             if (enemyPositionX > playerPositionX)
             {
                 StartCoroutine(DisableMovementForTime(0.56f));
-                body.AddForce(new Vector2(-4.0f, 6.0f), ForceMode2D.Impulse);
+                body.AddForce(new Vector2(-5.0f, 7.0f), ForceMode2D.Impulse);
             }
             else if (enemyPositionX < playerPositionX)
             {
                 StartCoroutine(DisableMovementForTime(0.56f));
-                body.AddForce(new Vector2(4.0f, 6.0f), ForceMode2D.Impulse);
+                body.AddForce(new Vector2(5.0f, 7.0f), ForceMode2D.Impulse);
             }
         }
     }
@@ -143,4 +145,5 @@ public class PlayerMovement : MonoBehaviour
         Vector2 direction = Vector2.down;
         Gizmos.DrawLine(origin, origin + direction * rayCastDistance);
     }
+    
 }
