@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
             Move();
         }
 
+        anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
+
         // Volteo del personaje según la dirección del movimiento
         float moveInput = Input.GetAxis("Horizontal");
         if (moveInput > 0)
@@ -47,14 +49,13 @@ public class PlayerMovement : MonoBehaviour
         //anim.SetFloat("Speed", Mathf.Abs(moveInput));
 
         // Detección de suelo con Raycast
-        Vector2 raycastorigin = transform.position - new Vector3(0f, 0.51f);
+        Vector2 raycastorigin = (Vector2)transform.position + new Vector2(0f, -GetComponent<Collider2D>().bounds.extents.y - 0.1f);
         isGrounded = false;
 
         RaycastHit2D raycastHit2D = Physics2D.Raycast(raycastorigin, Vector2.down, rayCastDistance);
         if (raycastHit2D.collider != null && raycastHit2D.collider.gameObject.tag == "Floor")
         {
             isGrounded = true;
-            Jump();
             remainingJumps = maxJumps; // Restablecer los saltos cuando el personaje toque el suelo
         }
 
