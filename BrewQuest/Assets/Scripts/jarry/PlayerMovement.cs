@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Detección de suelo con Raycast
-        Vector2 raycastorigin = transform.position - new Vector3(0f, 0.86f);
+        Vector2 raycastorigin = transform.position - new Vector3(0f, 0.88f);
         isGrounded = false;
 
         RaycastHit2D raycastHit2D = Physics2D.Raycast(raycastorigin, Vector2.down, rayCastDistance);
@@ -139,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Vector2 origin = transform.position - new Vector3(0f, 0.86f);
+        Vector2 origin = transform.position - new Vector3(0f, 0.88f);
         Vector2 direction = Vector2.down;
         Gizmos.DrawLine(origin, origin + direction * rayCastDistance);
     }

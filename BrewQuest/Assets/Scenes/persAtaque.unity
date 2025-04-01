@@ -136,7 +136,6 @@ GameObject:
   - component: {fileID: 40786963}
   - component: {fileID: 40786962}
   - component: {fileID: 40786961}
-  - component: {fileID: 40786966}
   - component: {fileID: 40786967}
   m_Layer: 0
   m_Name: jarry
@@ -288,25 +287,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &40786966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40786959}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 768b3756f73a2fa47b4a1d16b916d475, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 11.5
-  isGrounded: 0
-  rayCastDistance: 0.1
-  canmove: 1
 --- !u!114 &40786967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,7 +428,7 @@ Transform:
   m_Children:
   - {fileID: 1996463616}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &589080401
 GameObject:
@@ -1144,7 +1126,7 @@ Transform:
   m_Children:
   - {fileID: 1724363361}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1906978682
 GameObject:
@@ -8348,7 +8330,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 683318812830579120, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 683318812830579120, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
       propertyPath: m_LocalPosition.x
