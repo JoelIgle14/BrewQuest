@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 7f;
     private Rigidbody2D body;
-    private Animator anim; // Referencia al Animator
+    private Animator anim;
 
     public bool isGrounded = false;
     public float rayCastDistance;
@@ -16,12 +16,15 @@ public class PlayerMovement : MonoBehaviour
     private int remainingJumps;
     private const int maxJumps = 1;
 
+    // Nuevas variables para manejar la plataforma
+    private Transform currentPlatform = null;
+    private Vector2 platformOffset;
+
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         body.freezeRotation = true; // Evita que el personaje rote
-
-        anim = GetComponent<Animator>(); // Asigna el Animator del personaje
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -44,9 +47,6 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(-1, 1, 1); // Se voltea a la izquierda
         }
-
-        // Actualizar el parámetro "Speed" en el Animator
-        //anim.SetFloat("Speed", Mathf.Abs(moveInput));
 
         // Detección de suelo con Raycast
         Vector2 raycastorigin = (Vector2)transform.position + new Vector2(0f, -GetComponent<Collider2D>().bounds.extents.y - 0.1f);
@@ -79,12 +79,31 @@ public class PlayerMovement : MonoBehaviour
     // Función de movimiento
     private void Move()
     {
-        body.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, body.velocity.y);
+        // Movimiento horizontal
+        float moveInput = Input.GetAxis("Horizontal");
+        float horizontalMove = moveInput * speed;
+
+        // Si el jugador está sobre la plataforma, lo movemos con ella
+        if (currentPlatform != null)
+        {
+            // Desplazamos al jugador en el eje X con la plataforma
+            horizontalMove += currentPlatform.GetComponent<Rigidbody2D>().velocity.x;
+        }
+
+        // Asignamos la velocidad al jugador
+        body.velocity = new Vector2(horizontalMove, body.velocity.y);
     }
 
-    // Colisión con enemigos
+    // Colisión con plataformas
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("PlataformaMovil"))
+        {
+            // Al entrar en contacto con la plataforma, ajustamos su posición relativa
+            currentPlatform = collision.transform;
+            platformOffset = currentPlatform.position - transform.position;
+        }
+
         if (collision.gameObject.tag == "enemy")
         {
             Debug.Log("Colisión con enemigo detectada");
@@ -104,6 +123,15 @@ public class PlayerMovement : MonoBehaviour
                 body.velocity = new Vector2(body.velocity.x, body.velocity.y);
                 body.AddForce(new Vector2(4.0f, 6.0f), ForceMode2D.Impulse);
             }
+        }
+    }
+
+    // Colisión con plataformas (cuando el jugador sale de la plataforma)
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlataformaMovil"))
+        {
+            currentPlatform = null; // El jugador ya no está sobre la plataforma
         }
     }
 
