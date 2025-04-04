@@ -10,6 +10,8 @@ public class playeratac : MonoBehaviour
     //hacer un layer de enemigos pa saber si les pegamos
     private float timeToNextAttack = 1.0f;
     public Vector3 positionAttack;
+
+    private bool lookingup;
     // Start is called before the first frame update
     
     //public LayerMask enemyLayer;  // Agregar el LayerMask
@@ -24,7 +26,25 @@ public class playeratac : MonoBehaviour
     void Update()
     {
         // Actualizamos la posición del ataque
-        positionAttack = transform.position + new Vector3(0.6f, 0f, 0f);
+        //positionAttack = transform.position + new Vector3(0.6f, 0f, 0f);
+
+        LookingUp();
+
+
+        // Calculamos la posición de ataque según dirección
+        if (lookingup)
+        {
+            // Si mira arriba, atacamos encima del personaje
+            positionAttack = transform.position + new Vector3(0f, 0.7f, 0f);
+        }
+        else
+        {
+            // Si no, atacamos a los lados dependiendo de hacia dónde mira
+            positionAttack = transform.position + new Vector3(0.6f * Mathf.Sign(transform.localScale.x), 0f, 0f);
+        }
+
+
+        //positionAttack = transform.position + new Vector3(0.6f * Mathf.Sign(transform.localScale.x), 0f, 0f);
 
         // Comprobamos si ya pasó el tiempo de espera para el siguiente ataque
         if (Time.time >= timeToNextAttack)
@@ -63,6 +83,13 @@ public class playeratac : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(positionAttack, attackRange);
+    }
+
+    void LookingUp()
+    {
+        // Detecta si la tecla vertical está siendo presionada hacia arriba
+        float verticalInput = Input.GetAxisRaw("Vertical");
+        lookingup = verticalInput > 0.5f;
     }
 }
 
