@@ -11,6 +11,9 @@ public class playeratac : MonoBehaviour
     private float timeToNextAttack = 0f;
     public Vector3 positionAttack;
     // Start is called before the first frame update
+    
+    //public LayerMask enemyLayer;  // Agregar el LayerMask
+
     void Start()
     {
         //aqui va el link del animador
@@ -28,24 +31,33 @@ public class playeratac : MonoBehaviour
             {
                 Attack();
                 //nextAttackTime = Time.time + attackCooldown;
+                
             }
         }
     }
 
     void Attack()
     {
-        
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(positionAttack, attackRange);  
+        Debug.Log("rustico");
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(positionAttack, attackRange);
 
         foreach (Collider2D enemy in hitEnemies)
         {
             //codigo para restar vida al enemigo
+            if (enemy.CompareTag("enemy"))
+            {
+                Enemyvida enemyvid = enemy.GetComponent<Enemyvida>();
+                if (enemyvid != null)
+                {
+                    enemyvid.TakeDamage(attackDamage);
+                    Debug.Log("golpe a enemigo");
+                }
+            }
         }
     }
 
     void OnDrawGizmosSelected()
     {
-        
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(positionAttack, attackRange); 
     }

@@ -7,6 +7,12 @@ public class EnemyPatrol : MonoBehaviour
     public float patrolDistance = 5f;
     public float speed = 2f;
 
+    //public int jevida;
+    //public bool jevivo;
+    
+    private Rigidbody2D rb;
+    
+
     private Vector3 startPosition;
     private int direction = 1;
 
@@ -26,6 +32,11 @@ public class EnemyPatrol : MonoBehaviour
             //esta línea flipea al colega
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z); 
         }
+    }
+
+    void RecibirDaño()
+    {
+  
     }
 }
 
