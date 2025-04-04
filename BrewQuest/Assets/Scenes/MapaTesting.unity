@@ -240,7 +240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301622534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 150.1, y: -4.34, z: -10}
+  m_LocalPosition: {x: 151.5, y: -4.6400003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4006,7 +4006,7 @@ GameObject:
   m_Component:
   - component: {fileID: 624183805}
   m_Layer: 0
-  m_Name: Plataforma Movil (1)
+  m_Name: Plataforma Movil 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28275,7 +28275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  jumpForce: 9
+  jumpForce: 11.5
   isGrounded: 0
   rayCastDistance: 0
   canmove: 1
@@ -28360,7 +28360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467752253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 147.1, y: -6.5, z: 0}
+  m_LocalPosition: {x: 148.5, y: -6.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28460,9 +28460,7 @@ EdgeCollider2D:
   - {x: 0.050284397, y: 0.6501428}
   - {x: 0.1276024, y: 0.6306777}
   - {x: 0.16755943, y: 0.63917065}
-  - {x: 0.27479294, y: 0.6323768}
-  - {x: 0.273427, y: 1.0814235}
-  - {x: 0.27607977, y: 1.0472472}
+  - {x: 0.5231811, y: 0.7088421}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -29638,7 +29636,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141740759}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 150.1, y: -4.34, z: -10}
+  m_LocalPosition: {x: 151.5, y: -4.6400003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

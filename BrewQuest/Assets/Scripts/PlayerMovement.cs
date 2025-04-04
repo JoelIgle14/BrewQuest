@@ -97,12 +97,12 @@ public class PlayerMovement : MonoBehaviour
     // Colisión con plataformas
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("PlataformaMovil"))
+        if (collision.gameObject != null && collision.gameObject.tag == "PlataformaMovil")
         {
-            // Al entrar en contacto con la plataforma, ajustamos su posición relativa
             currentPlatform = collision.transform;
             platformOffset = currentPlatform.position - transform.position;
         }
+
 
         if (collision.gameObject.tag == "enemy")
         {
@@ -129,10 +129,12 @@ public class PlayerMovement : MonoBehaviour
     // Colisión con plataformas (cuando el jugador sale de la plataforma)
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("PlataformaMovil"))
+        if (collision.gameObject != null && collision.gameObject.tag == "PlataformaMovil")
         {
-            currentPlatform = null; // El jugador ya no está sobre la plataforma
+            currentPlatform = collision.transform;
+            platformOffset = currentPlatform.position - transform.position;
         }
+
     }
 
     // Corrutina para desactivar el movimiento por cierto tiempo
