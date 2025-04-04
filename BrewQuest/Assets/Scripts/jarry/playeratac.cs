@@ -8,7 +8,7 @@ public class playeratac : MonoBehaviour
     public float attackDamage;
     public float attacCooldown;
     //hacer un layer de enemigos pa saber si les pegamos
-    private float timeToNextAttack = 0f;
+    private float timeToNextAttack = 1.0f;
     public Vector3 positionAttack;
     // Start is called before the first frame update
     
@@ -23,15 +23,18 @@ public class playeratac : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        positionAttack = transform.position + new Vector3(0.6f, 0f, 0f);  
-        
+        // Actualizamos la posición del ataque
+        positionAttack = transform.position + new Vector3(0.6f, 0f, 0f);
+
+        // Comprobamos si ya pasó el tiempo de espera para el siguiente ataque
         if (Time.time >= timeToNextAttack)
         {
+            // Si presionamos la tecla de ataque (en este caso X)
             if (Input.GetKeyDown(KeyCode.X))
             {
                 Attack();
-                //nextAttackTime = Time.time + attackCooldown;
-                
+                // Después de atacar, establecer el tiempo para el próximo ataque
+                timeToNextAttack = Time.time + attacCooldown;  // El próximo ataque puede ser después de "attackCooldown" segundos
             }
         }
     }
@@ -59,6 +62,9 @@ public class playeratac : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(positionAttack, attackRange); 
+        Gizmos.DrawWireSphere(positionAttack, attackRange);
     }
 }
+
+    
+

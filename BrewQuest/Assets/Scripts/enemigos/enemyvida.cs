@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemyvida : MonoBehaviour
 {
-    public float health = 3.0f;
+    public float health;
     private bool golpeado;
 
     public void TakeDamage(float amount)
