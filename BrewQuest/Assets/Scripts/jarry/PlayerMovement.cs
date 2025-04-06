@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public bool canmove = true;
 
     private int remainingJumps;
-    private const int maxJumps = 2; // Ahora permite doble salto
+    private const int maxJumps = 1; // Ahora permite doble salto
 
     // DASH
     private Vector2 moveInput;
