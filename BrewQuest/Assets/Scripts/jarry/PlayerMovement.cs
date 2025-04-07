@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleGroundCheck()
     {
-        Vector2 rayOrigin = transform.position - new Vector3(0f, 0.88f);
+        Vector2 rayOrigin = transform.position - new Vector3(0.0f, 1.15f);
         isGrounded = false;
 
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayCastDistance);
@@ -168,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Vector2 origin = transform.position - new Vector3(0f, 0.88f);
+        Vector2 origin = transform.position - new Vector3(0f, 1.15f);
         Vector2 direction = Vector2.down;
         Gizmos.DrawLine(origin, origin + direction * rayCastDistance);
     }

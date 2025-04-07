@@ -20,5 +20,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/persAtaque.unity
     guid: 9bb8ba3ed99e2c34fbbe2925b8fdbf1c
-  m_Scenes: []
   m_configObjects: {}

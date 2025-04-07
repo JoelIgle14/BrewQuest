@@ -219,8 +219,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023783207, y: -0.07134873}
-  m_Size: {x: 1.143815, y: 1.5719076}
+  m_Offset: {x: -0.049964905, y: -0.050403}
+  m_Size: {x: 1.4265823, y: 2.1583874}
   m_Direction: 0
 --- !u!212 &40786964
 SpriteRenderer:
@@ -304,7 +304,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 11.5
   canMove: 1
-  rayCastDistance: 0
+  rayCastDistance: 0.05
   dashSpeed: 20
   dashLength: 0.09
   dashCooldown: 0.5
@@ -644,7 +644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1099.86, y: 658}
+  m_AnchoredPosition: {x: 378.86005, y: 219.99997}
   m_SizeDelta: {x: 57.28, y: 58.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &604515083
@@ -922,7 +922,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1217, y: 658}
+  m_AnchoredPosition: {x: 496, y: 220}
   m_SizeDelta: {x: 58.4, y: 58.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1571380108
@@ -1042,7 +1042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1158.15, y: 658}
+  m_AnchoredPosition: {x: 437.1501, y: 219.99997}
   m_SizeDelta: {x: 59.3, y: 58.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1666987722
