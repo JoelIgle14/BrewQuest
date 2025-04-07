@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 7f;
     private Rigidbody2D body;
-    private Animator anim;
+    
 
     public bool canMove = true;
     private bool isGrounded = false;
@@ -16,13 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private int remainingJumps;
     private const int maxJumps = 1;
 
-    [Header("Dash")]
-    public float dashSpeed = 15f;
-    public float dashLength = 0.3f;
-    public float dashCooldown = 1f;
-    private float dashCounter;
-    private float dashCooldownCounter;
-    private bool isDashing = false;
+    private dash dash; 
 
     [Header("Plataformas Móviles")]
     private Transform currentPlatform = null;
@@ -30,8 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         body.freezeRotation = true;
+        dash = GetComponent<dash>();
     }
 
     void Update()
@@ -39,13 +33,11 @@ public class PlayerMovement : MonoBehaviour
         HandleFlip();
         HandleGroundCheck();
         HandleJump();
-        HandleDash();
-        UpdateAnimator();
     }
 
     void FixedUpdate()
     {
-        if (canMove && !isDashing)
+        if (canMove && !dash.isDashing)
         {
             Move();
         }
@@ -94,39 +86,6 @@ public class PlayerMovement : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, jumpForce);
             remainingJumps--;
-        }
-    }
-
-    private void HandleDash()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && dashCooldownCounter <= 0 && !isDashing && canMove)
-        {
-            StartCoroutine(DoDash());
-        }
-
-        if (dashCooldownCounter > 0)
-        {
-            dashCooldownCounter -= Time.deltaTime;
-        }
-    }
-
-    private IEnumerator DoDash()
-    {
-        isDashing = true;
-        float originalGravity = body.gravityScale;
-        body.gravityScale = 0f;
-        body.velocity = new Vector2(transform.localScale.x * dashSpeed, 0f);
-        yield return new WaitForSeconds(dashLength);
-        body.gravityScale = originalGravity;
-        isDashing = false;
-        dashCooldownCounter = dashCooldown;
-    }
-
-    private void UpdateAnimator()
-    {
-        if (anim != null)
-        {
-            anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
         }
     }
 

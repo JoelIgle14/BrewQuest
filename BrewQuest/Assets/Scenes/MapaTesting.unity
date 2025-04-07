@@ -349,7 +349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301622534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 148.59763, y: -4.1139226, z: -10}
+  m_LocalPosition: {x: 5.980113, y: 2.2647867, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33859,8 +33859,10 @@ GameObject:
   - component: {fileID: 1467752258}
   - component: {fileID: 1467752255}
   - component: {fileID: 1467752262}
-  - component: {fileID: 1467752256}
   - component: {fileID: 1467752261}
+  - component: {fileID: 1467752256}
+  - component: {fileID: 1467752264}
+  - component: {fileID: 1467752263}
   m_Layer: 0
   m_Name: Jarry
   m_TagString: Player
@@ -33911,9 +33913,6 @@ MonoBehaviour:
   jumpForce: 11.5
   canMove: 1
   rayCastDistance: 0.15
-  dashSpeed: 15
-  dashLength: 0.3
-  dashCooldown: 1
 --- !u!95 &1467752258
 Animator:
   serializedVersion: 5
@@ -33995,7 +33994,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467752253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 145.6, y: -5.9, z: 0}
+  m_LocalPosition: {x: 0.6, y: 1.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34051,6 +34050,34 @@ CapsuleCollider2D:
   m_Offset: {x: -0.041596174, y: -0.03307402}
   m_Size: {x: 1.7723451, y: 2.1504653}
   m_Direction: 0
+--- !u!114 &1467752263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467752253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b139f046cc5dd48a96e1a4b5d3429b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSpeed: 15
+  dashLength: 0.3
+  dashCooldown: 1
+  isDashing: 0
+--- !u!114 &1467752264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467752253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4a2c7bd4726604388323bc07eeccdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1704268806
 GameObject:
   m_ObjectHideFlags: 0
@@ -35343,7 +35370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141740759}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 148.6, y: -3.74, z: -10}
+  m_LocalPosition: {x: 3.6, y: 3.6000001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
