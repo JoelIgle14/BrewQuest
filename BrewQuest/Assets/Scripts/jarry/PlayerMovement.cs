@@ -80,11 +80,12 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = false;
 
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayCastDistance);
-        if (hit.collider != null && hit.collider.CompareTag("Floor"))
+        if (hit.collider != null && (hit.collider.CompareTag("Floor") || hit.collider.CompareTag("PlataformaMovil")))
         {
             isGrounded = true;
             remainingJumps = maxJumps;
         }
+
     }
 
     private void HandleJump()

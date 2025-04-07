@@ -2,29 +2,35 @@ using UnityEngine;
 
 public class PlataformaMovil : MonoBehaviour
 {
-    public Transform puntoA;      // El primer punto de la plataforma
-    public Transform puntoB;      // El segundo punto de la plataforma
-    public float velocidad = 2f;  // Velocidad de movimiento de la plataforma
+    public Transform puntoA;
+    public Transform puntoB;
+    public float velocidad = 2f;
 
-    private bool moviendoseHaciaA = true; // ¿La plataforma se mueve hacia el puntoA o hacia el puntoB?
-    private Transform jugador;   // Referencia al jugador
-    private Vector2 offset;      // Desplazamiento relativo del jugador con la plataforma
+    private bool moviendoseHaciaA = true;
+    private Transform jugador;
+    private Vector3 ultimaPosicion;
+
+    private void Start()
+    {
+        ultimaPosicion = transform.position;
+    }
 
     private void Update()
     {
-        MoverPlataforma();  // Mueve la plataforma
+        MoverPlataforma();
 
-        // Si el jugador está encima de la plataforma, se moverá con ella
         if (jugador != null)
         {
-            // Mueve al jugador con la plataforma en el eje X
-            jugador.position = new Vector2(transform.position.x + offset.x, jugador.position.y);
+            // Mover al jugador según el desplazamiento de la plataforma
+            Vector3 desplazamiento = transform.position - ultimaPosicion;
+            jugador.position += desplazamiento;
         }
+
+        ultimaPosicion = transform.position;
     }
 
     private void MoverPlataforma()
     {
-        // Movimiento de la plataforma entre puntoA y puntoB
         if (moviendoseHaciaA)
         {
             transform.position = Vector2.MoveTowards(transform.position, puntoA.position, velocidad * Time.deltaTime);
@@ -39,24 +45,19 @@ public class PlataformaMovil : MonoBehaviour
         }
     }
 
-    // Cuando el jugador entra en contacto con la plataforma
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) // Verificamos si el objeto es el jugador
+        if (collision.gameObject.CompareTag("Player"))
         {
-            jugador = collision.transform;  // Asignamos al jugador
-
-            // Guardamos el desplazamiento relativo del jugador respecto a la plataforma
-            offset = jugador.position - transform.position;
+            jugador = collision.transform;
         }
     }
 
-    // Cuando el jugador sale de la plataforma
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            jugador = null;  // El jugador ya no está encima de la plataforma
+            jugador = null;
         }
     }
 }
