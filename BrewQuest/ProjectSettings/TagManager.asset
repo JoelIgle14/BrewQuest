@@ -49,6 +49,9 @@ TagManager:
   - name: Fondo
     uniqueID: 2497557499
     locked: 0
+  - name: Enemigos
+    uniqueID: 555410427
+    locked: 0
   - name: ParetDentro
     uniqueID: 2910143023
     locked: 0
@@ -58,6 +61,9 @@ TagManager:
   - name: Mapa
     uniqueID: 3894467705
     locked: 0
+  - name: Objetos
+    uniqueID: 3728292955
+    locked: 0
   - name: Cueva
     uniqueID: 1758475113
     locked: 0
@@ -66,4 +72,7 @@ TagManager:
     locked: 0
   - name: 'PlataformaMovil '
     uniqueID: 3300119295
+    locked: 0
+  - name: HUD
+    uniqueID: 3067993235
     locked: 0
