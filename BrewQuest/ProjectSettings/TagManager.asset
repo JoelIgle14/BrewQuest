@@ -49,11 +49,11 @@ TagManager:
   - name: Fondo
     uniqueID: 2497557499
     locked: 0
-  - name: Enemigos
-    uniqueID: 555410427
-    locked: 0
   - name: ParetDentro
     uniqueID: 2910143023
+    locked: 0
+  - name: Enemigos
+    uniqueID: 555410427
     locked: 0
   - name: Square
     uniqueID: 2819127001
