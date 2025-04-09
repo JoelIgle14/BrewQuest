@@ -12,4 +12,4 @@ Oscar Duque Granero: oscarduquek<br>
 Joel Iglesias Sancho: Joellgle14<br>
 Carlos Blasco Pomarol: carlinchos<br>
 Enrique Giner del Olmo: enric-1003<br>
-Gabriel Jansa Ballabriga: (no té git encara)<br>
+Gabriel Jansa Ballabriga: (gabrieljansa)<br>
