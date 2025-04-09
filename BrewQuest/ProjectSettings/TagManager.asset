@@ -52,6 +52,9 @@ TagManager:
   - name: ParetDentro
     uniqueID: 2910143023
     locked: 0
+  - name: Bar
+    uniqueID: 4292912135
+    locked: 0
   - name: Square
     uniqueID: 2819127001
     locked: 0
