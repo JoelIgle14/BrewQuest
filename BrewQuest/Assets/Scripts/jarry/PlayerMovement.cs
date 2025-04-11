@@ -125,6 +125,13 @@ public class PlayerMovement : MonoBehaviour
         canMove = true;
     }
 
+    public void ApplyKnockback(float direction, Vector2 force, float disableTime)
+    {
+        body.velocity = Vector2.zero;
+        body.AddForce(force * direction, ForceMode2D.Impulse);
+        StartCoroutine(DisableMovementForTime(disableTime));
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
