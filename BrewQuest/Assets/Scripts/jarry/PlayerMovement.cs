@@ -21,18 +21,28 @@ public class PlayerMovement : MonoBehaviour
     [Header("Plataformas Móviles")]
     private Transform currentPlatform = null;
 
+    //Habilidades
+    private NewBehaviourScript hab;
+
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         body.freezeRotation = true;
         dash = GetComponent<dash>();
+        hab = GetComponent<NewBehaviourScript>();
     }
 
     void Update()
     {
         HandleFlip();
         HandleGroundCheck();
-        HandleJump();
+
+        HandleJump(); // Primer salto siempre posible
+
+        if (hab.canDoubleJump)
+        {
+            HandleDoubleJump(); // Solo activa segundo salto si tienes la habilidad
+        }
     }
 
     void FixedUpdate()
@@ -82,10 +92,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && remainingJumps > 0 && canMove)
+        // Solo permitir el PRIMER salto cuando estás en el suelo
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && canMove)
         {
             body.velocity = new Vector2(body.velocity.x, jumpForce);
-            remainingJumps--;
+            remainingJumps = hab.canDoubleJump ? 1 : 0; // Si tiene doble salto, deja 1 para usar luego
+        }
+    }
+
+    private void HandleDoubleJump()
+    {
+        // Solo permitir el SEGUNDO salto si no estás en el suelo, tienes la habilidad, y tienes 1 salto restante
+        if (Input.GetKeyDown(KeyCode.Space) && !isGrounded && remainingJumps > 0 && canMove)
+        {
+            body.velocity = new Vector2(body.velocity.x, jumpForce);
+            remainingJumps = 0; // Ya no quedan más saltos
         }
     }
 
