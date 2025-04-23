@@ -146,6 +146,14 @@ public class PlayerMovement : MonoBehaviour
         canMove = true;
     }
 
+    public void ApplyKnockback(Vector2 force, float duration)
+    {
+        body.velocity = Vector2.zero;
+        body.AddForce(force, ForceMode2D.Impulse);
+        StartCoroutine(DisableMovementForTime(duration));
+    }
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
