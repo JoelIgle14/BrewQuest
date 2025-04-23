@@ -49,13 +49,19 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Puerta
+    uniqueID: 2211347283
+    locked: 0
   - name: Fondo
     uniqueID: 2497557499
     locked: 0
   - name: ParetDentro
     uniqueID: 2910143023
     locked: 0
-  - name: Square
+  - name: Textos
+    uniqueID: 523334527
+    locked: 0
+  - name: Jarry
     uniqueID: 2819127001
     locked: 0
   - name: Mapa
@@ -69,4 +75,7 @@ TagManager:
     locked: 0
   - name: 'PlataformaMovil '
     uniqueID: 3300119295
+    locked: 0
+  - name: Espada
+    uniqueID: 1786940103
     locked: 0
