@@ -58,14 +58,21 @@ TagManager:
   - name: ParetDentro
     uniqueID: 2910143023
     locked: 0
-  - name: Textos
-    uniqueID: 523334527
+  - name: Enemigos
+    uniqueID: 555410427
     locked: 0
+  - name: Square
+  - name: Textos
+    locked: 0
+    uniqueID: 523334527
   - name: Jarry
     uniqueID: 2819127001
     locked: 0
   - name: Mapa
     uniqueID: 3894467705
+    locked: 0
+  - name: Objetos
+    uniqueID: 3728292955
     locked: 0
   - name: Cueva
     uniqueID: 1758475113
@@ -75,7 +82,4 @@ TagManager:
     locked: 0
   - name: 'PlataformaMovil '
     uniqueID: 3300119295
-    locked: 0
-  - name: Espada
-    uniqueID: 1786940103
     locked: 0
