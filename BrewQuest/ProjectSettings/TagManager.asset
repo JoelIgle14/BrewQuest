@@ -9,6 +9,9 @@ TagManager:
   - Obstacle
   - FallZone
   - PlataformaMovil
+  - Habilidad
+  - Redonda
+  - cuadrao
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - Water
   - UI
   - InsideWall
-  - 
+  - BAckGround
   - 
   - 
   - 

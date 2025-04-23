@@ -14,6 +14,7 @@ public class dash : MonoBehaviour
 
     private Rigidbody2D body;
     private PlayerMovement move;
+    private NewBehaviourScript hab;
 
     //public bool canMove = true;
 
@@ -23,13 +24,17 @@ public class dash : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         move = GetComponent<PlayerMovement>();
-
+        hab = GetComponent<NewBehaviourScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        HandleDash();
+        if(hab.canDash)
+        {
+            HandleDash();
+        }
+        
         
     }
 
