@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: ff2d1f3772369c54e8cbf2d2771fb6cc
   - enabled: 1
-    path: Assets/Scenes/Nivel1.unity
+    path: Assets/Scenes/MapaTesting.unity
     guid: e42670a39322f2548b588ffd010f578c
   m_configObjects: {}
