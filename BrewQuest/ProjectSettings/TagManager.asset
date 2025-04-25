@@ -61,17 +61,20 @@ TagManager:
   - name: ParetDentro
     uniqueID: 2910143023
     locked: 0
+  - name: Jarry
+    uniqueID: 2819127001
+    locked: 0
   - name: Enemigos
     uniqueID: 555410427
+    locked: 0
+  - name: decoracion
+    uniqueID: 2365863411
     locked: 0
   - name: Square
     uniqueID: 1
     locked: 0
   - name: Textos
     uniqueID: 523334527
-    locked: 0
-  - name: Jarry
-    uniqueID: 2819127001
     locked: 0
   - name: Mapa
     uniqueID: 3894467705
