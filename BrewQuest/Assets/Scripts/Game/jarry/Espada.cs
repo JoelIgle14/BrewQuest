@@ -7,6 +7,7 @@ public class WeaponFollower : MonoBehaviour
     public Vector2 runOffset = Vector2.zero;
 
     private Animator animator;
+    
 
     void Start()
     {
@@ -15,6 +16,8 @@ public class WeaponFollower : MonoBehaviour
         {
             Debug.LogWarning("WeaponFollower: No se ha asignado el transform del arma.");
         }
+
+
     }
 
     void Update()
@@ -32,6 +35,11 @@ public class WeaponFollower : MonoBehaviour
         {
             weaponTransform.localPosition = runOffset;
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            animator.SetTrigger("espadazo");
+        }
     }
 
     string GetCurrentAnimationName()
@@ -46,3 +54,4 @@ public class WeaponFollower : MonoBehaviour
         return "";
     }
 }
+

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class HUD : MonoBehaviour
 {
-    public GameManager gameManager;
+  
     public GameObject[] vidas;
-
+    public GameManager gameManager;
 
     void Update()
     {

@@ -777,9 +777,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 10
-  isGrounded: 0
+  canMove: 1
   rayCastDistance: 0.5
-  canmove: 1
 --- !u!212 &242139632
 SpriteRenderer:
   m_ObjectHideFlags: 0
