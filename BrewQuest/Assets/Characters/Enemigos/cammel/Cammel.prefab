@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 7013246287607590356}
   - component: {fileID: 1547161071376278477}
   - component: {fileID: 8430465384338677444}
-  - component: {fileID: 7918657875009622875}
+  - component: {fileID: 2083405243267460390}
+  - component: {fileID: 615449521569008490}
+  - component: {fileID: 4572232921462082133}
   m_Layer: 0
   m_Name: Cammel
   m_TagString: enemy
@@ -74,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 555410427
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -1262494839, guid: a3942443eb0c6bb4195163c3a0606d2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -181,7 +183,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7918657875009622875
+--- !u!114 &2083405243267460390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,8 +192,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 656601011811384830}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 389c539fb5def9f48ac1cea5fbd8071a, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b35671727e156e43a641a342020d534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  golpeado: 0
+--- !u!114 &615449521569008490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656601011811384830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6eda221f956b841a840385dfc70ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   patrolDistance: 5
   speed: 2
+  isBeingHit: 0
+--- !u!114 &4572232921462082133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656601011811384830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13d58aceded34745a58fa7e05cf7443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  golpeForceX: 3
+  golpeForceY: 3
+  golpeDuration: 0.5

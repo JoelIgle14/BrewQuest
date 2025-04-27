@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private int remainingJumps;
     private const int maxJumps = 1;
 
-    private dash dash; 
+    private dash dash;
+    public Transform position;
 
     [Header("Plataformas Móviles")]
     private Transform currentPlatform = null;
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         body.freezeRotation = true;
         dash = GetComponent<dash>();
         hab = GetComponent<NewBehaviourScript>();
+        position = GetComponent<Transform>();
     }
 
     void Update()

@@ -12,14 +12,13 @@ public class playeratac : MonoBehaviour
     public Vector3 positionAttack;
 
     private bool lookingup;
-    // Start is called before the first frame update
-    
-    //public LayerMask enemyLayer;  // Agregar el LayerMask
+    private Enemyvida ev;
 
     void Start()
     {
-        //aqui va el link del animador
-        
+        ev = GetComponent<Enemyvida>();
+
+
     }
 
     // Update is called once per frame

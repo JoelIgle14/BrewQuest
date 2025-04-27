@@ -49,11 +49,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Puerta
-    uniqueID: 2211347283
-    locked: 0
   - name: Fondo
     uniqueID: 2497557499
+    locked: 0
+  - name: Puerta
+    uniqueID: 2211347283
     locked: 0
   - name: Vidas
     uniqueID: 2585809107
