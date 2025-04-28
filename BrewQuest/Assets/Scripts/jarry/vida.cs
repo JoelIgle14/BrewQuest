@@ -14,6 +14,7 @@ public class vida : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
+
                
         }
     }

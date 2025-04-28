@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class HUD : MonoBehaviour
 {
-    public GameManager gameManager;
+  
     public GameObject[] vidas;
-
+    public GameManager gameManager;
 
     void Update()
     {
@@ -14,10 +14,14 @@ public class HUD : MonoBehaviour
     }
 
     //Gestion para activar vidas
-    public void DesactivarVida(int i) 
+    public void DesactivarVida(int i)
     {
-        vidas[i].SetActive(false);
+        if (i >= 0 && i < vidas.Length)
+        {
+            vidas[i].SetActive(false);
+        }
     }
+
 
     public void ActivarVida(int i) 
     {
