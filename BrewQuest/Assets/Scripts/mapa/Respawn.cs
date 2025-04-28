@@ -2,45 +2,49 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Transform respawnPoint; // El punto de respawn donde el jugador aparecerá
+    public Transform respawnPoint; // El punto actual de respawn
     public float respawnDelay = 2f; // Tiempo de retraso antes del respawn
 
     private void Start()
     {
-        // Verifica si no se ha asignado el respawnPoint
         if (respawnPoint == null)
         {
             Debug.LogWarning("Respawn point no asignado. Asigna un punto de respawn en el Inspector.");
         }
     }
 
-    // Método para detectar la colisión con el vacío
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("FallZone"))  // Asegúrate de asignar el tag "FallZone" a tu objeto de caída
+        if (collision.CompareTag("FallZone"))
         {
-            Die(); // Llama a la función para "matar" al jugador
+            Die();
+        }
+        else if (collision.CompareTag("Checkpoint"))
+        {
+            UpdateRespawnPoint(collision.transform);
         }
     }
 
-    // Método para "matar" al jugador
     public void Die()
     {
-        // Llama a la función Respawn después de un retraso
         Invoke("Respawn", respawnDelay);
     }
 
-    // Lógica para respawn
     void Respawn()
     {
         if (respawnPoint != null)
         {
-            transform.position = respawnPoint.position; // Coloca al jugador en el punto de respawn
+            transform.position = respawnPoint.position;
         }
         else
         {
             Debug.LogError("No se ha asignado un punto de respawn.");
         }
     }
+
+    void UpdateRespawnPoint(Transform newRespawnPoint)
+    {
+        respawnPoint = newRespawnPoint;
+        Debug.Log("Checkpoint actualizado: " + newRespawnPoint.position);
+    }
 }
- 
