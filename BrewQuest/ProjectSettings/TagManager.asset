@@ -55,14 +55,14 @@ TagManager:
   - name: Puerta
     uniqueID: 2211347283
     locked: 0
-  - name: Vidas
-    uniqueID: 2585809107
-    locked: 0
   - name: ParetDentro
     uniqueID: 2910143023
     locked: 0
   - name: Jarry
     uniqueID: 2819127001
+    locked: 0
+  - name: Espada
+    uniqueID: 4106446889
     locked: 0
   - name: Enemigos
     uniqueID: 555410427
@@ -91,6 +91,6 @@ TagManager:
   - name: 'PlataformaMovil '
     uniqueID: 3300119295
     locked: 0
-  - name: Espada
-    uniqueID: 4106446889
+  - name: Vidas
+    uniqueID: 2585809107
     locked: 0
