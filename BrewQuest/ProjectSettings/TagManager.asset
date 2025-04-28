@@ -12,6 +12,7 @@ TagManager:
   - Habilidad
   - Redonda
   - cuadrao
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -60,6 +61,9 @@ TagManager:
     locked: 0
   - name: ParetDentro
     uniqueID: 2910143023
+    locked: 0
+  - name: Checkpoints
+    uniqueID: 3231829795
     locked: 0
   - name: Jarry
     uniqueID: 2819127001
