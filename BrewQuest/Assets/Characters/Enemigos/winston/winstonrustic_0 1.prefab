@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 6219617183733496937}
   - component: {fileID: 2914915124000732957}
   - component: {fileID: -3563882901327745698}
-  - component: {fileID: -6663861347191861984}
+  - component: {fileID: -693489422912482001}
+  - component: {fileID: 1577398201322352228}
   m_Layer: 0
   m_Name: winstonrustic_0 1
   m_TagString: enemy
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 555410427
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1968467285, guid: 4d9db5739386aa048b36b8265e64e5f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -212,7 +213,7 @@ MonoBehaviour:
   patrolDistance: 5
   speed: 2
   isBeingHit: 0
---- !u!114 &-6663861347191861984
+--- !u!114 &-693489422912482001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,6 +225,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d13d58aceded34745a58fa7e05cf7443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  golpeForceX: 3
-  golpeForceY: 3
-  golpeDuration: 0.5
+  golpeForceX: 0
+  golpeForceY: 0
+  golpeDuration: 0
+--- !u!114 &1577398201322352228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5319337894667030622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13d58aceded34745a58fa7e05cf7443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  golpeForceX: 0
+  golpeForceY: 0
+  golpeDuration: 0

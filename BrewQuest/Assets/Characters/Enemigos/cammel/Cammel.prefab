@@ -14,8 +14,7 @@ GameObject:
   - component: {fileID: 1547161071376278477}
   - component: {fileID: 8430465384338677444}
   - component: {fileID: 2083405243267460390}
-  - component: {fileID: 615449521569008490}
-  - component: {fileID: 4572232921462082133}
+  - component: {fileID: -6683705708225579250}
   m_Layer: 0
   m_Name: Cammel
   m_TagString: enemy
@@ -36,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2284516786738432958
 SpriteRenderer:
@@ -77,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 555410427
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1262494839, guid: a3942443eb0c6bb4195163c3a0606d2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -197,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   golpeado: 0
---- !u!114 &615449521569008490
+--- !u!114 &-6683705708225579250
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,24 +205,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 656601011811384830}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b6eda221f956b841a840385dfc70ec4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c895b9ebd318cb4c86768f33d5f4bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolDistance: 5
-  speed: 2
+  chaseDistance: 0
+  speedwalk: 1
+  speedrun: 1.8
+  contadorT: 0
+  tiempocambio: 0
+  esDerecha: 0
   isBeingHit: 0
---- !u!114 &4572232921462082133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656601011811384830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d13d58aceded34745a58fa7e05cf7443, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  golpeForceX: 3
-  golpeForceY: 3
-  golpeDuration: 0.5

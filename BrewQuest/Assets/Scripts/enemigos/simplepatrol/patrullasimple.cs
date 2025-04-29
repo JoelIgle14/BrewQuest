@@ -27,7 +27,6 @@ public class patrullasimple : MonoBehaviour
         if (ev.golpeado && !isBeingHit)
         {
             isBeingHit = true; // Activamos que está siendo golpeado
-
             recback.EmpujeEnemigo();
         }
 
