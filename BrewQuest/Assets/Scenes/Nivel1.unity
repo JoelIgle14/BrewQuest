@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 193136218}
   m_Layer: 0
   m_Name: FallingPlatform (12)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1112,7 +1112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301622534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 308.2, y: -13.04, z: -10}
+  m_LocalPosition: {x: 7.9718165, y: 2.2582338, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1790,7 +1790,7 @@ GameObject:
   - component: {fileID: 479357820}
   m_Layer: 0
   m_Name: FallingPlatform (18)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2113,7 +2113,7 @@ GameObject:
   - component: {fileID: 577454336}
   m_Layer: 0
   m_Name: FallingPlatform (16)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74696,7 +74696,7 @@ GameObject:
   - component: {fileID: 934326597}
   m_Layer: 0
   m_Name: FallingPlatform (10)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76069,7 +76069,7 @@ GameObject:
   - component: {fileID: 1193101222}
   m_Layer: 0
   m_Name: FallingPlatform (11)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77209,7 +77209,7 @@ GameObject:
   - component: {fileID: 1300630113}
   m_Layer: 0
   m_Name: FallingPlatform (19)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77467,7 +77467,7 @@ GameObject:
   - component: {fileID: 1342446377}
   m_Layer: 0
   m_Name: FallingPlatform (14)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78323,7 +78323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484670655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 305.2, y: -15.2, z: 0}
+  m_LocalPosition: {x: 1, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -78516,7 +78516,7 @@ GameObject:
   - component: {fileID: 1606574624}
   m_Layer: 0
   m_Name: FallingPlatform (15)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79600,7 +79600,7 @@ GameObject:
   - component: {fileID: 1838794040}
   m_Layer: 0
   m_Name: FallingPlatform (17)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80788,7 +80788,7 @@ GameObject:
   - component: {fileID: 1939330150}
   m_Layer: 0
   m_Name: FallingPlatform (13)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80963,7 +80963,7 @@ GameObject:
   - component: {fileID: 2051634983}
   m_Layer: 0
   m_Name: FallingPlatform (9)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81467,7 +81467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141740759}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 308.2, y: -13.04, z: -10}
+  m_LocalPosition: {x: 4, y: 3.16, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
