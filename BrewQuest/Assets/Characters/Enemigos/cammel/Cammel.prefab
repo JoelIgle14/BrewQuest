@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7013246287607590356}
   - component: {fileID: 1547161071376278477}
   - component: {fileID: 8430465384338677444}
-  - component: {fileID: 2083405243267460390}
-  - component: {fileID: -6683705708225579250}
+  - component: {fileID: -2760547235319956558}
+  - component: {fileID: 4507210042007300736}
+  - component: {fileID: 1890105484990247770}
   m_Layer: 0
   m_Name: Cammel
   m_TagString: enemy
@@ -182,7 +183,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2083405243267460390
+--- !u!114 &-2760547235319956558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656601011811384830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c895b9ebd318cb4c86768f33d5f4bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 7
+  speedwalk: 1
+  speedrun: 2
+  contadorT: 0
+  tiempocambio: 0
+  esDerecha: 0
+  isBeingHit: 0
+--- !u!114 &4507210042007300736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656601011811384830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50cc2fc4446d94459a87ab8d5774eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  golpeForceX: 3
+  golpeForceY: 3
+  golpeDuration: 0.5
+--- !u!114 &1890105484990247770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -196,22 +231,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   golpeado: 0
---- !u!114 &-6683705708225579250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656601011811384830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c895b9ebd318cb4c86768f33d5f4bc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chaseDistance: 0
-  speedwalk: 1
-  speedrun: 1.8
-  contadorT: 0
-  tiempocambio: 0
-  esDerecha: 0
-  isBeingHit: 0

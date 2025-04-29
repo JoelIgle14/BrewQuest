@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3248946191624317706}
   - component: {fileID: 1805189274929423602}
   - component: {fileID: 8713634025424979939}
-  - component: {fileID: 6525297406429217275}
-  - component: {fileID: 8621687931043788955}
-  - component: {fileID: 220688996228182188}
+  - component: {fileID: -107956383772591734}
+  - component: {fileID: -94144263098416261}
+  - component: {fileID: 3771114917169605780}
   m_Layer: 0
   m_Name: mackelele_0 (1)
   m_TagString: enemy
@@ -183,7 +183,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6525297406429217275
+--- !u!114 &-107956383772591734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,7 +198,22 @@ MonoBehaviour:
   patrolDistance: 5
   speed: 2
   isBeingHit: 0
---- !u!114 &8621687931043788955
+--- !u!114 &-94144263098416261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783422414323828381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13d58aceded34745a58fa7e05cf7443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  golpeForceX: 3
+  golpeForceY: 3
+  golpeDuration: 0.5
+--- !u!114 &3771114917169605780
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,18 +227,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   golpeado: 0
---- !u!114 &220688996228182188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4783422414323828381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d13d58aceded34745a58fa7e05cf7443, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  golpeForceX: 0
-  golpeForceY: 0
-  golpeDuration: 0

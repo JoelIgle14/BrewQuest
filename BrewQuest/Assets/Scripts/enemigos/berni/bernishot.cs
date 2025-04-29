@@ -1,18 +1,56 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bernishot : MonoBehaviour
+public class BerniShot : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject bernishot;
+    private GameObject target;
+    private bernidirection berniDir; // ← referencia al script de dirección
+
+    public float rangeDistance;
+    public float fireCooldown = 3f;
+    private float fireTimer = 0f;
+
+    public float shootOffsetX = 0.5f; // separación lateral del disparo
+
     void Start()
     {
-        
+        target = GameObject.Find("jarry");
+        berniDir = GetComponent<bernidirection>(); // ← asumimos que está en el mismo GameObject
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        fireTimer -= Time.deltaTime;
+
+        float distanceToPlayer = Vector2.Distance(transform.position, target.transform.position);
+
+        if (distanceToPlayer > rangeDistance && fireTimer <= 0f)
+        {
+            Shoot();
+            fireTimer = fireCooldown;
+        }
+    }
+
+    private void Shoot()
+    {
+        Vector3 direction = (target.transform.position - transform.position).normalized;
+
+        // Usa la dirección almacenada por el script de giro
+        int dir = berniDir.lookDirection;
+
+        for (int i = 1; i <= 3; i++)
+        {
+            Vector3 spawnPos = transform.position + new Vector3(shootOffsetX * dir * i, 0f, 0f);
+
+            // Instanciar la bala
+            GameObject bullet = Instantiate(bernishot, spawnPos, Quaternion.identity);
+
+            // Determinar el factor de lanzamiento para cada bala
+            int launchMultiplier = i; // O cualquier otra lógica que prefieras para la distancia
+            bullet.GetComponent<berniBullet>().setDirection(direction);
+            bullet.GetComponent<berniBullet>().SetLaunchForce(launchMultiplier);
+        }
     }
 }
