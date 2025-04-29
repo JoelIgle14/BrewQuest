@@ -5,16 +5,24 @@ using UnityEngine;
 public class DisparoWinston : MonoBehaviour
 {
     public float Speed;
-
-    private Rigidbody2D Rigidbody2D;
+    private Rigidbody2D rb;
+    private Vector2 direction;
+    private bool directionSet = false;
 
     void Start()
     {
-        Rigidbody2D = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-   private void FixedUpdate()
+    void FixedUpdate()
     {
-        Rigidbody2D.velocity = Vector2.right * Speed;
+        if (directionSet)
+            rb.velocity = direction * Speed;
+    }
+
+    public void SetDirection(Vector2 dir)
+    {
+        direction = dir.normalized;
+        directionSet = true;
     }
 }
