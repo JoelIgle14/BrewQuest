@@ -15,11 +15,8 @@ public class dash : MonoBehaviour
     private Rigidbody2D body;
     private PlayerMovement move;
     private NewBehaviourScript hab;
+    public Animator dashBarAnimator;
 
-    //public bool canMove = true;
-
-
-    // Start is called before the first frame update
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
@@ -27,22 +24,24 @@ public class dash : MonoBehaviour
         hab = GetComponent<NewBehaviourScript>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(hab.canDash)
+        if (hab.canDash)
         {
             HandleDash();
         }
-        
-        
+
+        if (dashCooldownCounter <= 0 && !isDashing)
+        {
+            dashBarAnimator.SetTrigger("Ready");
+        }
     }
 
     private void HandleDash()
     {
         if (Input.GetKeyDown(KeyCode.E) && dashCooldownCounter <= 0 && !isDashing && move.canMove)
         {
-            StartCoroutine(DoDash()); 
+            StartCoroutine(DoDash());
         }
 
         if (dashCooldownCounter > 0)
@@ -54,6 +53,8 @@ public class dash : MonoBehaviour
     private IEnumerator DoDash()
     {
         isDashing = true;
+        dashBarAnimator.SetTrigger("StartCooldown");
+
         float originalGravity = body.gravityScale;
         body.gravityScale = 0f;
         body.velocity = new Vector2(transform.localScale.x * dashSpeed, 0f);
@@ -62,4 +63,7 @@ public class dash : MonoBehaviour
         isDashing = false;
         dashCooldownCounter = dashCooldown;
     }
+
+    
+
 }
