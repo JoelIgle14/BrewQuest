@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d1d13277a54bdf94380825903280d02b
+guid: d4c0b30202c47ec43944d1828ad931c3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sprite_5_0
+      name: Bernihit_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 200
-        width: 100
-        height: 100
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98a01cacd37b68e49b874f6c88a49da8
-      internalID: -817453867
+      spriteID: 287728f37b051ee4a9a03a3f46ca5162
+      internalID: 677149651
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_5_1
+      name: Bernihit_1
       rect:
         serializedVersion: 2
-        x: 100
-        y: 200
-        width: 100
-        height: 100
+        x: 64
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bca5b08a251c93b41b4585ec9f4029a2
-      internalID: 965335761
+      spriteID: 0c51582d806a18f4cb8e0f1a83f55f4f
+      internalID: 1143994556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_5_2
+      name: Bernihit_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 100
-        width: 100
-        height: 100
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1b39b50540b71f4893dad3f61d5bf05
-      internalID: 1381720338
+      spriteID: 380edfd22a40e51418564ce7bcc13f35
+      internalID: 1768354059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_5_3
+      name: Bernihit_3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 100
-        width: 100
-        height: 100
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2d165d29a3ade341814d9eecbd280ae
-      internalID: -4606228
+      spriteID: 958283f81fae6ef4181523fdf779e0ff
+      internalID: -591766178
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sprite_5_4
+      name: Bernihit_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 100
-        height: 100
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,8 +234,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af81d9ff6d09ea246bf9cdc52917408f
-      internalID: -952943192
+      spriteID: 363689c557f0bb946ae2c93029cf66d7
+      internalID: 993701230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bernihit_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1597a29c144c4544f91398a35c9cd259
+      internalID: 1763071570
       vertices: []
       indices: 
       edges: []
@@ -251,11 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sprite_5_0: -817453867
-      sprite_5_1: 965335761
-      sprite_5_2: 1381720338
-      sprite_5_3: -4606228
-      sprite_5_4: -952943192
+      Bernihit_0: 677149651
+      Bernihit_1: 1143994556
+      Bernihit_2: 1768354059
+      Bernihit_3: -591766178
+      Bernihit_4: 993701230
+      Bernihit_5: 1763071570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

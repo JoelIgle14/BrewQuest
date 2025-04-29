@@ -8,7 +8,7 @@ public class espada1 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) 
+        if (Input.GetKeyDown(KeyCode.X)) 
         {
             animator.SetTrigger("espadazo");
         }

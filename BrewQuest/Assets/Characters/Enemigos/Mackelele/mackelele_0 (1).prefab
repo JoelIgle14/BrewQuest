@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3248946191624317706}
   - component: {fileID: 1805189274929423602}
   - component: {fileID: 8713634025424979939}
-  - component: {fileID: -2783013291853191222}
   - component: {fileID: -6847891638490113371}
   - component: {fileID: 6525297406429217275}
+  - component: {fileID: 8621687931043788955}
   m_Layer: 0
   m_Name: mackelele_0 (1)
   m_TagString: enemy
@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7260864348240057414
 SpriteRenderer:
@@ -183,20 +183,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-2783013291853191222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4783422414323828381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b35671727e156e43a641a342020d534, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  golpeado: 0
 --- !u!114 &-6847891638490113371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,3 +213,17 @@ MonoBehaviour:
   patrolDistance: 5
   speed: 2
   isBeingHit: 0
+--- !u!114 &8621687931043788955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783422414323828381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b35671727e156e43a641a342020d534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  golpeado: 0

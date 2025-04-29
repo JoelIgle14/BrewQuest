@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3686995990578492396}
   - component: {fileID: 7711444861097599980}
   - component: {fileID: 2006787969761856313}
-  - component: {fileID: -5845707644855890029}
   - component: {fileID: -1044878321990891876}
   - component: {fileID: 5838731735435990632}
+  - component: {fileID: 6360311263157106445}
   m_Layer: 0
   m_Name: Jack_0
   m_TagString: enemy
@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8123287132006244468
 SpriteRenderer:
@@ -173,20 +173,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-5845707644855890029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4073789046525546386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b35671727e156e43a641a342020d534, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  golpeado: 0
 --- !u!114 &-1044878321990891876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,3 +203,17 @@ MonoBehaviour:
   patrolDistance: 5
   speed: 2
   isBeingHit: 0
+--- !u!114 &6360311263157106445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4073789046525546386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b35671727e156e43a641a342020d534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  golpeado: 0
