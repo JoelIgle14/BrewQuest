@@ -9,7 +9,7 @@ public class BerniShot : MonoBehaviour
     private bernidirection berniDir; // ← referencia al script de dirección
 
     public float rangeDistance;
-    public float fireCooldown = 3f;
+    public float fireCooldown = 1f;
     private float fireTimer = 0f;
 
     public float shootOffsetX = 0.5f; // separación lateral del disparo
@@ -39,18 +39,9 @@ public class BerniShot : MonoBehaviour
 
         // Usa la dirección almacenada por el script de giro
         int dir = berniDir.lookDirection;
+        Vector3 spawnPos = transform.position + new Vector3(shootOffsetX * dir, 0f, 0f);
 
-        for (int i = 1; i <= 3; i++)
-        {
-            Vector3 spawnPos = transform.position + new Vector3(shootOffsetX * dir * i, 0f, 0f);
-
-            // Instanciar la bala
-            GameObject bullet = Instantiate(bernishot, spawnPos, Quaternion.identity);
-
-            // Determinar el factor de lanzamiento para cada bala
-            int launchMultiplier = i; // O cualquier otra lógica que prefieras para la distancia
-            bullet.GetComponent<berniBullet>().setDirection(direction);
-            bullet.GetComponent<berniBullet>().SetLaunchForce(launchMultiplier);
-        }
+        GameObject bullet = Instantiate(bernishot, spawnPos, Quaternion.identity);
+        bullet.GetComponent<berniBullet>().setDirection(direction);
     }
 }

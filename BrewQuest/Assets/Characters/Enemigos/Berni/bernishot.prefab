@@ -183,5 +183,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70dd5aa0c6485294583acd181cd2dabd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchForce: 10
-  launchAngle: 70
+  launchForce: 9
+  launchAngle: 40
