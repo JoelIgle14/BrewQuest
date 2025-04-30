@@ -25,7 +25,13 @@ public class DisparoWinston : MonoBehaviour
     {
         direction = new Vector2(Mathf.Sign(dir.x), 0f);
         directionSet = true;
+
+        // Voltea el sprite dependiendo de la dirección
+        Vector3 newScale = transform.localScale;
+        newScale.x = Mathf.Abs(newScale.x) * Mathf.Sign(dir.x);
+        transform.localScale = newScale;
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

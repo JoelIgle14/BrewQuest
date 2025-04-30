@@ -203,7 +203,9 @@ PrefabInstance:
       propertyPath: golpeForceY
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7690308012751045839, guid: bb80ff8b79e4e2244bc11ae9b0e91958, type: 3}
+    - {fileID: -1415057882481959886, guid: bb80ff8b79e4e2244bc11ae9b0e91958, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4284654350555520520, guid: bb80ff8b79e4e2244bc11ae9b0e91958, type: 3}
@@ -426,7 +428,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896457765}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78b139f046cc5dd48a96e1a4b5d3429b, type: 3}
   m_Name: 
@@ -435,6 +437,7 @@ MonoBehaviour:
   dashLength: 0.3
   dashCooldown: 1
   isDashing: 0
+  dashBarAnimator: {fileID: 0}
 --- !u!114 &896457770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -878,7 +881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolDistance: 5
-  speed: 2
+  speed: 4
   isBeingHit: 0
 --- !u!4 &1633650289 stripped
 Transform:
@@ -900,13 +903,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6882586770764354616, guid: e36da130c4b2c134f9301e6f11ce08a3, type: 3}
   player: {fileID: 896457777}
   firePoint: {fileID: 1425418998}
-  detectionRange: 7.5
+  detectionRange: 8
   fireRate: 1
-  patrolDistance: 5
-  speed: 2
-  golpeForceX: 3
-  golpeForceY: 3
-  golpeDuration: 0.5
 --- !u!1 &1975841914
 GameObject:
   m_ObjectHideFlags: 0
