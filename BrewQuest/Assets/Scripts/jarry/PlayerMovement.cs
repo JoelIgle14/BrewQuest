@@ -112,6 +112,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.PerderVida();
+            }
+
+            float direction = (collision.transform.position.x > transform.position.x) ? -1 : 1;
+            body.velocity = new Vector2(0, 0);
+            body.AddForce(new Vector2(5f * direction, 7f), ForceMode2D.Impulse);
+            StartCoroutine(DisableMovementForTime(0.56f));
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("PlataformaMovil"))
