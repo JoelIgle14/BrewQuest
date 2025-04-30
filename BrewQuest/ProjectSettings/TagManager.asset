@@ -12,6 +12,7 @@ TagManager:
   - Habilidad
   - Redonda
   - cuadrao
+  - Manguera
   layers:
   - Default
   - TransparentFX
