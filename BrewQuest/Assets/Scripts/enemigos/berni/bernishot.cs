@@ -16,7 +16,7 @@ public class BerniShot : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.Find("jarry");
+        target = GameObject.Find("Jarry");
         berniDir = GetComponent<bernidirection>(); // ← asumimos que está en el mismo GameObject
     }
 

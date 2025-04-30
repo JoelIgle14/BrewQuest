@@ -22,7 +22,7 @@ public class perseguirmc : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.Find("jarry");
+        target = GameObject.Find("Jarry");
         initialScale = transform.localScale;
 
         // Obtener referencias

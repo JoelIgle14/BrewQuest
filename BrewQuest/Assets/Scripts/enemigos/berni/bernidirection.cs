@@ -11,7 +11,7 @@ public class bernidirection : MonoBehaviour
 
         void Start()
         {
-            target = GameObject.Find("jarry");
+            target = GameObject.Find("Jarry");
         }
 
         void Update()
