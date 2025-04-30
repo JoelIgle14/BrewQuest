@@ -49,7 +49,7 @@ public class playeratac : MonoBehaviour
         if (Time.time >= timeToNextAttack)
         {
             // Si presionamos la tecla de ataque (en este caso X)
-            if (Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 Attack();
                 // Después de atacar, establecer el tiempo para el próximo ataque
