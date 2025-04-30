@@ -50,7 +50,7 @@ public class TutorialManager : MonoBehaviour
         switch (accion)
         {
             case "Movimiento":
-                return Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D);
+                return Input.GetAxisRaw("Horizontal") != 0;
             case "Salto":
                 return Input.GetKeyDown(KeyCode.Space);
             case "Dash":

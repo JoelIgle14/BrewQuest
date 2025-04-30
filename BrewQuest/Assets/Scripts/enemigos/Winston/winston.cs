@@ -8,7 +8,7 @@ public class winston : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform player;              // Referencia al jugador
     public Transform firePoint;           // Punto desde donde dispara
-    public float detectionRange = 5f;     // Rango de visión
+    public float detectionRange = 5f;     // Rango de visiï¿½n
     public float fireRate = 1f;           // Tiempo entre disparos
 
     private float fireCooldown = 0f;
@@ -32,7 +32,6 @@ public class winston : MonoBehaviour
 
     void Update()
     { 
-
         //Disparo
 
         float distance = Vector2.Distance(transform.position, player.position);
@@ -61,13 +60,13 @@ public class winston : MonoBehaviour
 
     void Shoot()
     {
-        // Dirección hacia el jugador
+        // Direcciï¿½n hacia el jugador
         Vector2 direction = (player.position - firePoint.position).normalized;
 
         // Crear la bala
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
 
-        // Enviarle la dirección
+        // Enviarle la direcciï¿½n
         bullet.GetComponent<DisparoWinston>().SetDirection(direction);
     }
 
