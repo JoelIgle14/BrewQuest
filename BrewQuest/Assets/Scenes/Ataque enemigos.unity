@@ -435,6 +435,7 @@ MonoBehaviour:
   dashLength: 0.3
   dashCooldown: 1
   isDashing: 0
+  dashBarAnimator: {fileID: 0}
 --- !u!114 &896457770
 MonoBehaviour:
   m_ObjectHideFlags: 0
