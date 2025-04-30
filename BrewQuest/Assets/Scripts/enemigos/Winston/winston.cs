@@ -13,7 +13,7 @@ public class winston : MonoBehaviour
 
     private float fireCooldown = 0f;
 
-
+    //Patrullar
     public float patrolDistance = 5f;
     public float speed = 2f;
 
@@ -104,7 +104,7 @@ public class winston : MonoBehaviour
             if (fireCooldown <= 0f)
             {
                 Shoot();
-                fireCooldown = 1f / fireRate;
+                fireCooldown = 2f / fireRate;
             }
         }
 

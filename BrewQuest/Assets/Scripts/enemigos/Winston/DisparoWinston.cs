@@ -8,6 +8,7 @@ public class DisparoWinston : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 direction;
     private bool directionSet = false;
+    public bool isExploding;
 
     void Start()
     {
@@ -22,7 +23,27 @@ public class DisparoWinston : MonoBehaviour
 
     public void SetDirection(Vector2 dir)
     {
-        direction = dir.normalized;
+        direction = new Vector2(Mathf.Sign(dir.x), 0f);
         directionSet = true;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") || collision.CompareTag("Floor"))
+        {
+            Explode();
+        }
+    }
+
+    private void Explode()
+    {
+        if (isExploding) return;
+
+        isExploding = true;
+        rb.velocity = Vector2.zero;
+
+        Destroy(gameObject);
+    }
+
+
 }

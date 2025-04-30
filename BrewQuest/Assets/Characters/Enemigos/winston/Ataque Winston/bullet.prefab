@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2373513849589106339}
   m_Layer: 0
   m_Name: bullet
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfd0d99ae4dbab4db00b9cb91c83f65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
+  Speed: 5
+  isExploding: 0
 --- !u!50 &3064516887014847010
 Rigidbody2D:
   serializedVersion: 4
@@ -178,7 +179,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.39667797, y: 0.053484917}
