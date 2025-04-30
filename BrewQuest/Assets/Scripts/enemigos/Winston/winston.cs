@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class winston : MonoBehaviour
 {
+    //Ataque
+    public GameObject bulletPrefab;
+    public Transform player;              // Referencia al jugador
+    public Transform firePoint;           // Punto desde donde dispara
+    public float detectionRange = 5f;     // Rango de visión
+    public float fireRate = 1f;           // Tiempo entre disparos
+
+    private float fireCooldown = 0f;
+
+    //Patrullar
     public float patrolDistance = 5f;
     public float speed = 2f;
 
@@ -75,5 +85,44 @@ public class winston : MonoBehaviour
             isBeingHit = false;
             ev.golpeado = false;
         }
+
+        //Disparo
+
+        float distance = Vector2.Distance(transform.position, player.position);
+
+        if (distance <= detectionRange)
+        {
+            if (player.position.x < transform.position.x && transform.localScale.x > 0)
+            {
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            }
+            else if (player.position.x > transform.position.x && transform.localScale.x < 0)
+            {
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            }
+
+            if (fireCooldown <= 0f)
+            {
+                Shoot();
+                fireCooldown = 2f / fireRate;
+            }
+        }
+
+        fireCooldown -= Time.deltaTime;
+
     }
+
+    void Shoot()
+    {
+        // Dirección hacia el jugador
+        Vector2 direction = (player.position - firePoint.position).normalized;
+
+        // Crear la bala
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+
+        // Enviarle la dirección
+        bullet.GetComponent<DisparoWinston>().SetDirection(direction);
+    }
+
+
 }
