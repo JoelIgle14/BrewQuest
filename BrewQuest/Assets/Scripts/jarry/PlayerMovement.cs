@@ -80,11 +80,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleGroundCheck()
     {
-        Vector2 rayOrigin = transform.position - new Vector3(0.0f, 1.15f);
+        float halfWidth = 0.65f; // Ajustar esto según el ancho del personaje
+        Vector2 leftOrigin = transform.position + Vector3.left * halfWidth + Vector3.down * 1.15f;
+        Vector2 rightOrigin = transform.position + Vector3.right * halfWidth + Vector3.down * 1.15f;
+
         isGrounded = false;
 
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, rayCastDistance);
-        if (hit.collider != null && (hit.collider.CompareTag("Floor") || hit.collider.CompareTag("PlataformaMovil")))
+        RaycastHit2D hitLeft = Physics2D.Raycast(leftOrigin, Vector2.down, rayCastDistance);
+        RaycastHit2D hitRight = Physics2D.Raycast(rightOrigin, Vector2.down, rayCastDistance);
+
+        if ((hitLeft.collider != null && (hitLeft.collider.CompareTag("Floor") || hitLeft.collider.CompareTag("PlataformaMovil"))) ||
+            (hitRight.collider != null && (hitRight.collider.CompareTag("Floor") || hitRight.collider.CompareTag("PlataformaMovil"))))
         {
             isGrounded = true;
             remainingJumps = maxJumps;
@@ -177,8 +183,11 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Vector2 origin = transform.position - new Vector3(0f, 1.15f);
-        Vector2 direction = Vector2.down;
-        Gizmos.DrawLine(origin, origin + direction * rayCastDistance);
+        float halfWidth = 0.65f; // Igual que en el método de detección
+        Vector2 leftOrigin = transform.position + Vector3.left * halfWidth + Vector3.down * 1.15f;
+        Vector2 rightOrigin = transform.position + Vector3.right * halfWidth + Vector3.down * 1.15f;
+
+        Gizmos.DrawLine(leftOrigin, leftOrigin + Vector2.down * rayCastDistance);
+        Gizmos.DrawLine(rightOrigin, rightOrigin + Vector2.down * rayCastDistance);
     }
 }
