@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     [Header("Movimiento")]
     [SerializeField] private float speed = 5f;
+
     [SerializeField] private float jumpForce = 7f;
     private Rigidbody2D body;
-    
 
     public bool canMove = true;
     private bool isGrounded = false;
     public float rayCastDistance = 0.2f;
     private int remainingJumps;
     private const int maxJumps = 1;
-
-    private dash dash;
-    public Transform position;
-
     [Header("Plataformas Móviles")]
     private Transform currentPlatform = null;
 
-    //Habilidades
+    //scripts
     private NewBehaviourScript hab;
+    private dash dash;
+    public Transform position;
+    private MovementManager manager;
 
     private void Awake()
     {
@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
         dash = GetComponent<dash>();
         hab = GetComponent<NewBehaviourScript>();
         position = GetComponent<Transform>();
+        manager = GetComponent<MovementManager>();
     }
 
     void Update()
@@ -39,16 +40,21 @@ public class PlayerMovement : MonoBehaviour
         HandleFlip();
         HandleGroundCheck();
 
-        HandleJump(); // Primer salto siempre posible
-
-        if (hab.canDoubleJump)
+        // Solicitamos el salto al Manager
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space) && canMove && !dash.isDashing)
         {
-            HandleDoubleJump(); // Solo activa segundo salto si tienes la habilidad
+            manager.SolicitarSalto(jumpForce);
+        }
+
+        if (hab.canDoubleJump && !isGrounded)
+        {
+            HandleDoubleJump(); // Permite segundo salto si no estás en el suelo
         }
     }
 
     void FixedUpdate()
     {
+        // Solo puede moverse si no está dashando
         if (canMove && !dash.isDashing)
         {
             Move();
@@ -57,7 +63,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        float moveInput = Input.GetAxis("Horizontal");
+        //Recoger el input
+        float moveInput = 0f;
+        if (Input.GetKey(KeyCode.LeftArrow)) moveInput = -1f;
+        else if (Input.GetKey(KeyCode.RightArrow)) moveInput = 1f;
+
         float moveSpeed = moveInput * speed;
 
         // Si estamos sobre plataforma móvil, agregar su velocidad
@@ -73,9 +83,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleFlip()
     {
-        float moveInput = Input.GetAxis("Horizontal");
-        if (moveInput > 0) transform.localScale = new Vector3(1, 1, 1);
-        else if (moveInput < 0) transform.localScale = new Vector3(-1, 1, 1);
+        if (Input.GetKey(KeyCode.RightArrow))
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (Input.GetKey(KeyCode.LeftArrow))
+            transform.localScale = new Vector3(-1, 1, 1);
     }
 
     private void HandleGroundCheck()
@@ -95,25 +106,14 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             remainingJumps = maxJumps;
         }
-
-    }
-
-    private void HandleJump()
-    {
-        // Solo permitir el PRIMER salto cuando estás en el suelo
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && canMove)
-        {
-            body.velocity = new Vector2(body.velocity.x, jumpForce);
-            remainingJumps = hab.canDoubleJump ? 1 : 0; // Si tiene doble salto, deja 1 para usar luego
-        }
     }
 
     private void HandleDoubleJump()
     {
         // Solo permitir el SEGUNDO salto si no estás en el suelo, tienes la habilidad, y tienes 1 salto restante
-        if (Input.GetKeyDown(KeyCode.Space) && !isGrounded && remainingJumps > 0 && canMove)
+        if (Input.GetKeyDown(KeyCode.Space) && remainingJumps > 0 && canMove && !dash.isDashing)
         {
-            body.velocity = new Vector2(body.velocity.x, jumpForce);
+            manager.SolicitarSalto(jumpForce); // Solicitar salto al Manager
             remainingJumps = 0; // Ya no quedan más saltos
         }
     }
@@ -155,8 +155,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("PlataformaMovil"))
@@ -177,17 +175,5 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = Vector2.zero;
         body.AddForce(force, ForceMode2D.Impulse);
         StartCoroutine(DisableMovementForTime(duration));
-    }
-
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        float halfWidth = 0.65f; // Igual que en el método de detección
-        Vector2 leftOrigin = transform.position + Vector3.left * halfWidth + Vector3.down * 1.15f;
-        Vector2 rightOrigin = transform.position + Vector3.right * halfWidth + Vector3.down * 1.15f;
-
-        Gizmos.DrawLine(leftOrigin, leftOrigin + Vector2.down * rayCastDistance);
-        Gizmos.DrawLine(rightOrigin, rightOrigin + Vector2.down * rayCastDistance);
     }
 }

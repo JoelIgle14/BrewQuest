@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class patrullasimple : MonoBehaviour
 {
-    public float patrolDistance = 5f;
-    public float speed = 2f;
-    private Vector3 startPosition;
-    private int direction = 1;
-    private recibirknockBack recback;
-
+    public float speedwalk = 1f;
+    public float contadorT;
+    public float tiempocambio;
+    public bool esDerecha;
     public bool isBeingHit = false; // Para controlar si está siendo golpeado
 
     //otros scripts o componentes
     private Enemyvida ev;
+    private recibirknockBack recback;
+    private Vector3 initialScale;
 
     void Start()
     {
-        startPosition = transform.position;
         ev = GetComponent<Enemyvida>();
         recback = GetComponent<recibirknockBack>();
+        initialScale = transform.localScale;
     }
 
     void Update()
@@ -32,19 +32,33 @@ public class patrullasimple : MonoBehaviour
 
         if (!ev.golpeado && !isBeingHit)
         {
+            Vector3 newScale = initialScale;
+
+            if (esDerecha)
             {
-                transform.position += Vector3.right * direction * speed * Time.deltaTime;
+                transform.position += Vector3.right * speedwalk * Time.deltaTime;
+                newScale.x = -Mathf.Abs(initialScale.x);
+            }
+            else
+            {
+                transform.position += Vector3.left * speedwalk * Time.deltaTime;
+                newScale.x = Mathf.Abs(initialScale.x);
             }
 
+            transform.localScale = newScale;
 
-            //flipear
-            if (Mathf.Abs(transform.position.x - startPosition.x) >= patrolDistance)
+            contadorT -= Time.deltaTime;
+
+            if (contadorT <= 0)
             {
-                direction *= -1; // Cambia la dirección
-
-                //esta línea flipea al colega
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                contadorT = tiempocambio;
+                esDerecha = !esDerecha;
             }
         }
     }
 }
+
+/*
+ * 
+ // Patrullaje
+                */

@@ -22,7 +22,11 @@ public class jarryanim : MonoBehaviour
     {
         if (anim != null)
         {
-            anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
+            float speed = 0f;
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+                speed = 1f;
+
+            anim.SetFloat("Speed", speed);
         }
     }
 }

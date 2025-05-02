@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 47217888, guid: e0ebd7051475cee4795ada2bcd3ec2ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.32, y: 0.32}
@@ -173,8 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6eda221f956b841a840385dfc70ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolDistance: 5
-  speed: 2
+  speedwalk: 1
+  contadorT: 0
+  tiempocambio: 0
+  esDerecha: 0
   isBeingHit: 0
 --- !u!114 &-5927159193707549970
 MonoBehaviour:
