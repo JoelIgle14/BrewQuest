@@ -96,6 +96,6 @@ TagManager:
   - name: 'PlataformaMovil '
     uniqueID: 3300119295
     locked: 0
-  - name: Vidas
-    uniqueID: 2585809107
+  - name: HUD
+    uniqueID: 3380734391
     locked: 0

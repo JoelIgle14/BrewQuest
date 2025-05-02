@@ -33,17 +33,18 @@ public class PlataformaMovil : MonoBehaviour
     {
         if (moviendoseHaciaA)
         {
-            transform.position = Vector2.MoveTowards(transform.position, puntoA.position, velocidad * Time.deltaTime);
-            if (transform.position == puntoA.position)
+            transform.position = Vector3.MoveTowards(transform.position, puntoA.position, velocidad * Time.deltaTime);
+            if (Vector3.Distance(transform.position, puntoA.position) < 0.01f)
                 moviendoseHaciaA = false;
         }
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, puntoB.position, velocidad * Time.deltaTime);
-            if (transform.position == puntoB.position)
+            transform.position = Vector3.MoveTowards(transform.position, puntoB.position, velocidad * Time.deltaTime);
+            if (Vector3.Distance(transform.position, puntoB.position) < 0.01f)
                 moviendoseHaciaA = true;
         }
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
