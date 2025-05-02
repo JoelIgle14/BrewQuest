@@ -14,7 +14,7 @@ public class winston : MonoBehaviour
     private float fireCooldown = 0f;
 
     private Vector3 startPosition;
-    private int direction = 1;
+    //private int direction = 1;
 
     //otros scripts o componentes
     private Enemyvida ev;

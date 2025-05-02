@@ -5,13 +5,10 @@ using UnityEngine;
 public class espada1 : MonoBehaviour
 {
     public Animator animator;
-
-    void Update()
+    
+    public void TriggerAtaque()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) 
-        {
-            animator.SetTrigger("espadazo");
-        }
+        animator.SetTrigger("espadazo");
     }
 
 }

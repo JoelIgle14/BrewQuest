@@ -35,11 +35,11 @@ public class WeaponFollower : MonoBehaviour
         {
             weaponTransform.localPosition = runOffset;
         }
-
+        /*
         if (Input.GetKeyDown(KeyCode.Q))
         {
             animator.SetTrigger("espadazo");
-        }
+        }*/
     }
 
     string GetCurrentAnimationName()
