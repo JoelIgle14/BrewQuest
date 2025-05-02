@@ -1159,7 +1159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301622534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 355.74594, y: 5.2223616, z: -10}
+  m_LocalPosition: {x: 4.4993563, y: 2.2698872, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -79761,8 +79761,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973230996}
   m_LocalRotation: {x: -0, y: 0.02033171, z: -0, w: 0.9997933}
-  m_LocalPosition: {x: 0.0017, y: -0.0081, z: 9.9996}
-  m_LocalScale: {x: 3.8375015, y: 2.707069, z: 1}
+  m_LocalPosition: {x: -0.1633, y: -0.0493, z: 10.0063}
+  m_LocalScale: {x: 2.743796, y: 2.68839, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 301622537}
@@ -87106,7 +87106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141740759}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 355.2, y: 9.46, z: -10}
+  m_LocalPosition: {x: 4.5, y: 2.66, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -87161,11 +87161,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8482560059795030316, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 352.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8482560059795030316, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8482560059795030316, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_LocalPosition.z
@@ -87381,6 +87381,14 @@ PrefabInstance:
     - target: {fileID: 4860433221944664403, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037543149018074733, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: contadorT
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5037543149018074733, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: tiempocambio
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7843231422049205324, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
       propertyPath: player
