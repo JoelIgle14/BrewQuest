@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class destroyhab : MonoBehaviour
 {
+    public GameObject barraUI;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject, 0.5f);
-            Debug.Log("Negrata");
+            StartCoroutine(ActivarBarraYDestruir(0.5f));
         }
+    }
+
+    private IEnumerator ActivarBarraYDestruir(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (barraUI != null)
+        {
+            barraUI.SetActive(true);
+        }
+
+        Destroy(gameObject);
+        Debug.Log("Barra activada y objeto destruido después de retraso.");
     }
 }
