@@ -7,9 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public HUD hud;
-    private int vidas = 3;
-    
-
+    private int Vidas = 3;
 
     private void Awake()
     {
@@ -25,25 +23,25 @@ public class GameManager : MonoBehaviour
 
     public void PerderVida()
     {
-        vidas -= 1;  
-        hud.DesactivarVida(vidas);
+        Vidas -= 1;  
+        hud.DesactivarVida(Vidas);
 
-        if (vidas == 0)
+        if (Vidas == 0)
         {
             // reiniciamos el nivel. 
-            SceneManager.LoadScene(1); 
+            SceneManager.LoadScene(2); 
         }
     }
 
     public bool RecuperarVida()
     {
-        if (vidas == 3)
+        if (Vidas == 3)
         {
             return false;
         }
 
-        hud.ActivarVida(vidas);
-        vidas += 1;
+        hud.ActivarVida(Vidas);
+        Vidas += 1;
 
         return true;
 

@@ -84231,23 +84231,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8482560059795030316, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
   m_PrefabInstance: {fileID: 1606972023394071899}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1484670681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085714094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1612117ecb650c144aaa6bc2bd5484e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jarraLlena: {fileID: 21300000, guid: bf7e0b411ee14534e83ea0bfbcc16a4b, type: 3}
-  jarraMedia: {fileID: 21300000, guid: 59ea6515878038e41a79627f26ae6eb2, type: 3}
-  jarraCasiVacia: {fileID: 21300000, guid: 07b7fb30e78fa504eaee5a7a5b4ed511, type: 3}
-  jarraVacia: {fileID: 21300000, guid: b65628a564f00234885054d3b07218fc, type: 3}
-  vidas: 3
 --- !u!1 &1490705470
 GameObject:
   m_ObjectHideFlags: 0
@@ -88642,6 +88625,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6081008827506243108, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
+      propertyPath: vidas
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6081008827506243108, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -88712,10 +88699,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7373614160263437181, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1484670681}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
 --- !u!1001 &2230876870795007128
 PrefabInstance:

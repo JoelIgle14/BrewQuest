@@ -7,14 +7,20 @@ public class jarryanim : MonoBehaviour
     private Animator anim;
     private Rigidbody2D body;
 
-    // Start is called before the first frame update
+    // Número de vidas (puedes enlazarlo desde otro script si lo manejas en otro lado)
+    public int vidas = 3;
+
     void Awake()
     {
         anim = GetComponent<Animator>();
-        body = GetComponent<Rigidbody2D>();  // Añadido para obtener la velocidad del Rigidbody
+        body = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        anim.SetInteger("Vidas", vidas);  // Inicializa el parámetro en el Animator
+    }
+
     void Update()
     {
         UpdateAnimator();
@@ -24,17 +30,23 @@ public class jarryanim : MonoBehaviour
     {
         if (anim != null)
         {
-            // Usamos la velocidad real del Rigidbody para determinar si está corriendo
-            float speed = Mathf.Abs(body.velocity.x);  // Usamos la velocidad absoluta en X
-
-            // Actualizamos el parámetro de la animación de correr
+            // Control de movimiento
+            float speed = Mathf.Abs(body.velocity.x);
             anim.SetFloat("Speed", speed);
 
-            // Si no se está moviendo, ajustamos la animación a parado
-            if (speed < 0.1f)
-            {
-                anim.SetFloat("Speed", 0f);
-            }
+            // Actualiza también el parámetro "Vidas" en caso de que haya cambiado
+            anim.SetInteger("Vidas", vidas);
+        }
+    }
+
+    // Este método se puede llamar desde otro script cuando pierdas una vida
+    public void PerderVida()
+    {
+        if (vidas > 0)
+        {
+            vidas--;
+            anim.SetInteger("Vidas", vidas);
+            anim.SetTrigger("Dañado");  // Este trigger activa la animación de daño si la configuras
         }
     }
 }
