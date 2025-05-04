@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class MovementManager : MonoBehaviour
 {
@@ -8,10 +9,41 @@ public class MovementManager : MonoBehaviour
 
     private float fuerzaSalto;
     private float fuerzaDash;
+    private PlayerMovement pm;
+
+    // Input buffer
+    private Queue<KeyCode> inputBuffer;
+    private float bufferTiempo = 0.2f;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        inputBuffer = new Queue<KeyCode>();
+        pm = GetComponent<PlayerMovement>();
+    }
+
+    void Update()
+    {
+        // Guardar salto en el buffer si se presiona espacio
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            inputBuffer.Enqueue(KeyCode.Space);
+            Invoke(nameof(QuitarAccion), bufferTiempo);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (saltoSolicitado)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
+            saltoSolicitado = false;
+        }
+        else if (dashSolicitado)
+        {
+            rb.velocity = new Vector2(transform.localScale.x * fuerzaDash, 0f);
+            dashSolicitado = false;
+        }
     }
 
     public void SolicitarSalto(float fuerza)
@@ -30,20 +62,21 @@ public class MovementManager : MonoBehaviour
         fuerzaDash = fuerza;
     }
 
-    void FixedUpdate()
+    // Llamar a esta función desde otro script justo cuando el jugador pueda saltar
+    public void ProcesarInputBufferParaSalto()
     {
-        if (saltoSolicitado)
+        if (inputBuffer.Count > 0 && inputBuffer.Peek() == KeyCode.Space)
         {
-            rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
-            saltoSolicitado = false;
-        }
-        else if (dashSolicitado)
-        {
-            rb.velocity = new Vector2(transform.localScale.x * fuerzaDash, 0f);
-            dashSolicitado = false;
+            SolicitarSalto(fuerzaSalto);
+            inputBuffer.Dequeue();
         }
     }
 
-    // Opcional: para chequear desde otros scripts si se puede dashear
+    private void QuitarAccion()
+    {
+        if (inputBuffer.Count > 0)
+            inputBuffer.Dequeue();
+    }
+
     public bool puedeDashear => !saltoSolicitado && !dashSolicitado;
 }
