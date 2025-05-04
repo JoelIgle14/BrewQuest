@@ -18,7 +18,7 @@ public class Disparo : MonoBehaviour
     void Update()
     {
         // Verifica si puede disparar y si ha pasado el tiempo de delay
-        if (habilidades != null && habilidades.canShoot && Input.GetKeyDown(KeyCode.F))
+        if (habilidades != null && habilidades.canShoot && Input.GetKeyDown(KeyCode.W))
         {
             if (Time.time > tiempoUltimoDisparo + delayEntreDisparos)
             {

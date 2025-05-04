@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movimiento")]
     [SerializeField] private float speed = 5f;
 
-    [SerializeField] private float jumpForce = 7f;
+    [SerializeField] public float jumpForce = 7f;
     private Rigidbody2D body;
 
     public bool canMove = true;
@@ -66,7 +66,8 @@ public class PlayerMovement : MonoBehaviour
         //Recoger el input
         float moveInput = 0f;
         if (Input.GetKey(KeyCode.LeftArrow)) moveInput = -1f;
-        else if (Input.GetKey(KeyCode.RightArrow)) moveInput = 1f;
+        if (Input.GetKey(KeyCode.RightArrow)) moveInput = 1f;
+        if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.LeftArrow)) moveInput = 0f;
 
         float moveSpeed = moveInput * speed;
 
@@ -113,7 +114,9 @@ public class PlayerMovement : MonoBehaviour
         // Solo permitir el SEGUNDO salto si no estás en el suelo, tienes la habilidad, y tienes 1 salto restante
         if (Input.GetKeyDown(KeyCode.Space) && remainingJumps > 0 && canMove && !dash.isDashing)
         {
-            manager.SolicitarSalto(jumpForce); // Solicitar salto al Manager
+            //manager.SolicitarSalto(jumpForce); // Solicitar salto al Manager
+            manager.ProcesarInputBufferParaSalto();
+
             remainingJumps = 0; // Ya no quedan más saltos
         }
     }
