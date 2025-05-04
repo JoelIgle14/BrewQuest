@@ -66,7 +66,8 @@ public class PlayerMovement : MonoBehaviour
         //Recoger el input
         float moveInput = 0f;
         if (Input.GetKey(KeyCode.LeftArrow)) moveInput = -1f;
-        else if (Input.GetKey(KeyCode.RightArrow)) moveInput = 1f;
+        if (Input.GetKey(KeyCode.RightArrow)) moveInput = 1f;
+        if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.LeftArrow)) moveInput = 0f;
 
         float moveSpeed = moveInput * speed;
 
