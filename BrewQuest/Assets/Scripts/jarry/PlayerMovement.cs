@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movimiento")]
     [SerializeField] private float speed = 5f;
 
-    [SerializeField] private float jumpForce = 7f;
+    [SerializeField] public float jumpForce = 7f;
     private Rigidbody2D body;
 
     public bool canMove = true;
