@@ -25,7 +25,15 @@ public class SalirBar : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Puerta"))
+        {
+            jugadorEnZona = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Puerta"))
         {
             jugadorEnZona = true;
         }

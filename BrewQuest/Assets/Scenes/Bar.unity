@@ -427,11 +427,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 212674945}
-  - component: {fileID: 212674947}
   - component: {fileID: 212674946}
   m_Layer: 0
   m_Name: Puerta
-  m_TagString: Untagged
+  m_TagString: Puerta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -496,18 +495,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7532564, y: 1.0899208}
   m_EdgeRadius: 0
---- !u!114 &212674947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 212674943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429c6e6b7bcbb4546b3132a5fff548f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &236896107
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +931,23 @@ RectTransform:
   m_AnchoredPosition: {x: -5.144971, y: -3.1148336}
   m_SizeDelta: {x: 189.8, y: 104.73}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &640467278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7373614160263437181, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
+  m_PrefabInstance: {fileID: 1680601161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &640467279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640467278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429c6e6b7bcbb4546b3132a5fff548f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &656669621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2636,7 +2640,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7373614160263437181, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 640467279}
   m_SourcePrefab: {fileID: 100100000, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
 --- !u!1 &1797629258
 GameObject:
