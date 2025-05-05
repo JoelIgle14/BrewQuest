@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemyvida : MonoBehaviour
@@ -13,32 +12,37 @@ public class Enemyvida : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, GameObject Player, bool esAtaqueCuerpoACuerpo)
     {
-        if (!golpeado) // Solo hace algo si no está siendo golpeado ya
+        if (!golpeado)
         {
             golpeado = true;
-            Debug.Log("pene");
             health -= amount;
 
             if (health <= 0)
             {
-                Destroy(gameObject); // o tu lógica de muerte
-                // añadir animación de muerte aquí si es necesario
+                Destroy(gameObject);
             }
 
             animator.SetTrigger("hit");
-            Debug.Log("dick");
 
-            // Opcional: Hacer que el golpe dure un tiempo limitado y después resetear golpeado
+            // Solo recargar si el daño vino de un ataque cuerpo a cuerpo
+            if (esAtaqueCuerpoACuerpo)
+            {
+                Disparo disparo = Player.GetComponent<Disparo>();
+                if (disparo != null)
+                {
+                    disparo.RecargarTiro();
+                }
+            }
+
             StartCoroutine(ResetGolpeado());
         }
     }
 
-    // Coroutine que restablece el estado de golpeado después de un tiempo
     private IEnumerator ResetGolpeado()
     {
-        yield return new WaitForSeconds(1f); // Este tiempo debe coincidir con la duración de tu golpe
-        golpeado = false; // Restablece el estado de golpeado
+        yield return new WaitForSeconds(1f);
+        golpeado = false;
     }
 }

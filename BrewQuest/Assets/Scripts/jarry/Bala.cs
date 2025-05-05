@@ -1,30 +1,18 @@
+
 using UnityEngine;
 
 public class Bala : MonoBehaviour
 {
-    public float daño = 1f;
-
-    void Start()
-    {
-        Destroy(gameObject, 4f);
-    }
+    public float damage = 1f;
+    public GameObject dueño; //  El jugador que disparó
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Colisión con: " + other.name);
-
-        if (other.CompareTag("enemy"))
+        Enemyvida enemigo = other.GetComponent<Enemyvida>();
+        if (enemigo != null)
         {
-            Debug.Log("¡Golpeó al enemigo!");
-
-            Enemyvida enemigo = other.GetComponent<Enemyvida>();
-            if (enemigo != null)
-            {
-                enemigo.TakeDamage(daño);
-            }
-
+            enemigo.TakeDamage(damage, dueño,false); //  Aquí pasas el jugador
             Destroy(gameObject);
         }
     }
-
 }

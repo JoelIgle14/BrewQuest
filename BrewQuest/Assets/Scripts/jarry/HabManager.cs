@@ -38,6 +38,7 @@ public class NewBehaviourScript : MonoBehaviour
             //conseguir tal habilidad
             Debug.Log("Panchoscar");
             canShoot = true;
+            GetComponent<Disparo>().ActivarPowerUp();
         }
     }
 }

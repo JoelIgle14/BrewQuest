@@ -57,7 +57,8 @@ public class playeratac : MonoBehaviour
                 Enemyvida enemyvid = enemy.GetComponent<Enemyvida>();
                 if (enemyvid != null)
                 {
-                    enemyvid.TakeDamage(attackDamage);
+                    enemyvid.TakeDamage(attackDamage, gameObject,true);
+                    
                     Debug.Log("golpe a enemigo");
                 }
             }
