@@ -95788,6 +95788,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3488583378589146617, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
+      propertyPath: rayCastDistance
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 3533820716784850498, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: canDash
       value: 0

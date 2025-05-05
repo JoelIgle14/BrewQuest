@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
     public static GameManager Instance { get; private set; }
     public HUD hud;
     private int Vidas = 3;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     public void PerderVida()
     {
+
         Vidas -= 1;  
         hud.DesactivarVida(Vidas);
 
