@@ -35,7 +35,7 @@ public class SalirBar : MonoBehaviour
     {
         if (collision.CompareTag("Puerta"))
         {
-            jugadorEnZona = true;
+            jugadorEnZona = false;
         }
     }
 }
