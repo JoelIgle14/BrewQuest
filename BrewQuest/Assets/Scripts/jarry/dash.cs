@@ -27,19 +27,24 @@ public class dash : MonoBehaviour
         hab = GetComponent<NewBehaviourScript>();
         manager = GetComponent<MovementManager>(); // Referencia al manager
     }
-
     void Update()
     {
+        if (hab.canDash && !dashBarAnimator.gameObject.activeSelf)
+        {
+            dashBarAnimator.gameObject.SetActive(true); // Activamos la barra al obtener el dash
+        }
+
         if (hab.canDash)
         {
             HandleDash();
         }
 
-        if (dashCooldownCounter <= 0 && !isDashing)
+        if (dashCooldownCounter <= 0 && !isDashing && dashBarAnimator.gameObject.activeSelf)
         {
             dashBarAnimator.SetTrigger("Ready");
         }
     }
+
 
     private void HandleDash()
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PasarNivel : MonoBehaviour
+public class EntarBar : MonoBehaviour
 {
     private bool jugadorEnZona = false;
 
@@ -11,7 +11,7 @@ public class PasarNivel : MonoBehaviour
     {
         if (jugadorEnZona && Input.GetKeyDown(KeyCode.W))
         {
-            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex - 1;
             if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
             {
                 SceneManager.LoadScene(nextSceneIndex);
@@ -28,14 +28,6 @@ public class PasarNivel : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             jugadorEnZona = true;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            jugadorEnZona = false;
         }
     }
 }
