@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8007866321043414184}
   - component: {fileID: 9072054060903903691}
   - component: {fileID: 3705125369774290883}
+  - component: {fileID: 7543953165159145308}
   m_Layer: 0
   m_Name: lopatoidle_0
   m_TagString: enemy
@@ -116,7 +117,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &5648779724533718738
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -251,3 +252,18 @@ MonoBehaviour:
   tiempocambio: 3
   esDerecha: 0
   isBeingHit: 0
+--- !u!114 &7543953165159145308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8643559989685151683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50cc2fc4446d94459a87ab8d5774eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  golpeForceX: 3
+  golpeForceY: 3
+  golpeDuration: 0.5
