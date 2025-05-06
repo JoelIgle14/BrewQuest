@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Transform respawnPoint; // El punto actual de respawn
-    public float respawnDelay = 2f; // Tiempo de retraso antes del respawn
+    public Transform respawnPoint;
+    public float respawnDelay = 2f;
+
+    private Animator anim;
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
+
         if (respawnPoint == null)
         {
             Debug.LogWarning("Respawn point no asignado. Asigna un punto de respawn en el Inspector.");

@@ -92,9 +92,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleGroundCheck()
     {
-        float halfWidth = 0.65f; // Ajustar esto según el ancho del personaje
-        Vector2 leftOrigin = transform.position + Vector3.left * halfWidth + Vector3.down * 1.15f;
-        Vector2 rightOrigin = transform.position + Vector3.right * halfWidth + Vector3.down * 1.15f;
+        float halfWidth = 0.625f; // Ajustar esto según el ancho del personaje
+        Vector2 leftOrigin = transform.position + Vector3.left * halfWidth + Vector3.down * 1.1f;
+        Vector2 rightOrigin = transform.position + Vector3.right * halfWidth + Vector3.down * 1.1f;
 
         isGrounded = false;
 
@@ -108,6 +108,22 @@ public class PlayerMovement : MonoBehaviour
             remainingJumps = maxJumps;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        float halfWidth = 0.625f;
+        float rayLength = rayCastDistance;
+
+        Vector2 leftOrigin = transform.position + Vector3.left * halfWidth + Vector3.down * 1.1f;
+        Vector2 rightOrigin = transform.position + Vector3.right * halfWidth + Vector3.down * 1.1f;
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawLine(leftOrigin, leftOrigin + Vector2.down * rayLength);
+
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawLine(rightOrigin, rightOrigin + Vector2.down * rayLength);
+    }
+
 
     private void HandleDoubleJump()
     {
