@@ -95,14 +95,17 @@ public class PlayerMovement : MonoBehaviour
         float halfWidth = 0.625f; // Ajustar esto según el ancho del personaje
         Vector2 leftOrigin = transform.position + Vector3.left * halfWidth + Vector3.down * 1.1f;
         Vector2 rightOrigin = transform.position + Vector3.right * halfWidth + Vector3.down * 1.1f;
+        Vector2 centerOrigin = transform.position + Vector3.down * 1.1f;
 
         isGrounded = false;
 
         RaycastHit2D hitLeft = Physics2D.Raycast(leftOrigin, Vector2.down, rayCastDistance);
         RaycastHit2D hitRight = Physics2D.Raycast(rightOrigin, Vector2.down, rayCastDistance);
+        RaycastHit2D hitCenter = Physics2D.Raycast(centerOrigin, Vector2.down, rayCastDistance);
 
         if ((hitLeft.collider != null && (hitLeft.collider.CompareTag("Floor") || hitLeft.collider.CompareTag("PlataformaMovil"))) ||
-            (hitRight.collider != null && (hitRight.collider.CompareTag("Floor") || hitRight.collider.CompareTag("PlataformaMovil"))))
+            (hitRight.collider != null && (hitRight.collider.CompareTag("Floor") || hitRight.collider.CompareTag("PlataformaMovil"))) ||
+            (hitCenter.collider != null && (hitCenter.collider.CompareTag("Floor") || hitCenter.collider.CompareTag("PlataformaMovil"))))
         {
             isGrounded = true;
             remainingJumps = maxJumps;
@@ -116,13 +119,14 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 leftOrigin = transform.position + Vector3.left * halfWidth + Vector3.down * 1.1f;
         Vector2 rightOrigin = transform.position + Vector3.right * halfWidth + Vector3.down * 1.1f;
+        Vector2 centerOrigin = transform.position + Vector3.down * 1.1f;
 
         Gizmos.color = Color.cyan;
         Gizmos.DrawLine(leftOrigin, leftOrigin + Vector2.down * rayLength);
-
-        Gizmos.color = Color.cyan;
         Gizmos.DrawLine(rightOrigin, rightOrigin + Vector2.down * rayLength);
+        Gizmos.DrawLine(centerOrigin, centerOrigin + Vector2.down * rayLength);
     }
+
 
 
     private void HandleDoubleJump()
