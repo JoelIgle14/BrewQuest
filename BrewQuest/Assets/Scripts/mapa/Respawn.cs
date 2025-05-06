@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        GameManager.Instance.PerderVida();
         Invoke("Respawn", respawnDelay);
     }
 
