@@ -10,6 +10,7 @@ public class NewBehaviourScript : MonoBehaviour
     //Destas de si puede usar tal habilidad
     public bool canDash = false;
     public bool canDoubleJump = false;
+    public bool canShoot = false;
 
     void Awake()
     {
@@ -30,6 +31,14 @@ public class NewBehaviourScript : MonoBehaviour
             //conseguir tal habilidad
             Debug.Log("Rabo de Tora");
             canDoubleJump = true;
+        }
+
+        if (other.gameObject.CompareTag("Manguera"))
+        {
+            //conseguir tal habilidad
+            Debug.Log("Panchoscar");
+            canShoot = true;
+            GetComponent<Disparo>().ActivarPowerUp();
         }
     }
 }

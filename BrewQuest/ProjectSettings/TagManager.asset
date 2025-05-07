@@ -12,6 +12,9 @@ TagManager:
   - Habilidad
   - Redonda
   - cuadrao
+  - Checkpoint
+  - Manguera
+  - Puerta
   layers:
   - Default
   - TransparentFX
@@ -52,17 +55,23 @@ TagManager:
   - name: Fondo
     uniqueID: 2497557499
     locked: 0
+  - name: Mapa
+    uniqueID: 3894467705
+    locked: 0
   - name: Puerta
     uniqueID: 2211347283
-    locked: 0
-  - name: Vidas
-    uniqueID: 2585809107
     locked: 0
   - name: ParetDentro
     uniqueID: 2910143023
     locked: 0
+  - name: Checkpoints
+    uniqueID: 3231829795
+    locked: 0
   - name: Jarry
     uniqueID: 2819127001
+    locked: 0
+  - name: Espada
+    uniqueID: 4106446889
     locked: 0
   - name: Enemigos
     uniqueID: 555410427
@@ -76,9 +85,6 @@ TagManager:
   - name: Textos
     uniqueID: 523334527
     locked: 0
-  - name: Mapa
-    uniqueID: 3894467705
-    locked: 0
   - name: Objetos
     uniqueID: 3728292955
     locked: 0
@@ -91,6 +97,6 @@ TagManager:
   - name: 'PlataformaMovil '
     uniqueID: 3300119295
     locked: 0
-  - name: Espada
-    uniqueID: 4106446889
+  - name: HUD
+    uniqueID: 3380734391
     locked: 0

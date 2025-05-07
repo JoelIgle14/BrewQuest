@@ -7,53 +7,40 @@ public class playeratac : MonoBehaviour
     public float attackRange;
     public float attackDamage;
     public float attacCooldown;
-    //hacer un layer de enemigos pa saber si les pegamos
+
     private float timeToNextAttack = 1.0f;
     public Vector3 positionAttack;
 
-    private bool lookingup;
+    public espada1 espada; // Referencia al otro script
+
+    private bool lookingup;  // Esto es suficiente como un bool, ya que estamos determinando si está mirando hacia arriba
     private Enemyvida ev;
 
     void Start()
     {
         ev = GetComponent<Enemyvida>();
-
-
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Actualizamos la posición del ataque
-        //positionAttack = transform.position + new Vector3(0.6f, 0f, 0f);
-
         LookingUp();
 
-
-        // Calculamos la posición de ataque según dirección
         if (lookingup)
         {
-            // Si mira arriba, atacamos encima del personaje
             positionAttack = transform.position + new Vector3(0f, 0.7f, 0f);
         }
         else
         {
-            // Si no, atacamos a los lados dependiendo de hacia dónde mira
             positionAttack = transform.position + new Vector3(0.6f * Mathf.Sign(transform.localScale.x), 0f, 0f);
         }
 
-
-        //positionAttack = transform.position + new Vector3(0.6f * Mathf.Sign(transform.localScale.x), 0f, 0f);
-
-        // Comprobamos si ya pasó el tiempo de espera para el siguiente ataque
         if (Time.time >= timeToNextAttack)
         {
-            // Si presionamos la tecla de ataque (en este caso X)
-            if (Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
+                timeToNextAttack = Time.time + attacCooldown;
                 Attack();
-                // Después de atacar, establecer el tiempo para el próximo ataque
-                timeToNextAttack = Time.time + attacCooldown;  // El próximo ataque puede ser después de "attackCooldown" segundos
+                espada.TriggerAtaque();
             }
         }
     }
@@ -65,13 +52,13 @@ public class playeratac : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            //codigo para restar vida al enemigo
             if (enemy.CompareTag("enemy"))
             {
                 Enemyvida enemyvid = enemy.GetComponent<Enemyvida>();
                 if (enemyvid != null)
                 {
-                    enemyvid.TakeDamage(attackDamage);
+                    enemyvid.TakeDamage(attackDamage, gameObject,true);
+                    
                     Debug.Log("golpe a enemigo");
                 }
             }
@@ -86,11 +73,6 @@ public class playeratac : MonoBehaviour
 
     void LookingUp()
     {
-        // Detecta si la tecla vertical está siendo presionada hacia arriba
-        float verticalInput = Input.GetAxisRaw("Vertical");
-        lookingup = verticalInput > 0.5f;
+        lookingup = Input.GetKey(KeyCode.UpArrow);
     }
 }
-
-    
-

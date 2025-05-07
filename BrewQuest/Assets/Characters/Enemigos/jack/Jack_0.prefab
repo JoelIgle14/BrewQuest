@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3686995990578492396}
   - component: {fileID: 7711444861097599980}
   - component: {fileID: 2006787969761856313}
-  - component: {fileID: -5845707644855890029}
-  - component: {fileID: -1044878321990891876}
-  - component: {fileID: 5838731735435990632}
+  - component: {fileID: 7536173134987131368}
+  - component: {fileID: 442374487176302463}
+  - component: {fileID: 1784087719014211030}
   m_Layer: 0
   m_Name: Jack_0
   m_TagString: enemy
@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8123287132006244468
 SpriteRenderer:
@@ -77,11 +77,11 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 555410427
-  m_SortingLayer: 6
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1827171008, guid: d5ac5ac413e18bc4cbb12fd00f3c4568, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -122,8 +122,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017315736, y: 0.041644715}
-  m_Size: {x: 0.33334288, y: 0.39751974}
+  m_Offset: {x: 0.017424956, y: 0.041644715}
+  m_Size: {x: 0.40282425, y: 0.39751974}
   m_Direction: 0
 --- !u!50 &7711444861097599980
 Rigidbody2D:
@@ -173,7 +173,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-5845707644855890029
+--- !u!114 &7536173134987131368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,9 +185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b35671727e156e43a641a342020d534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 3
   golpeado: 0
---- !u!114 &-1044878321990891876
+--- !u!114 &442374487176302463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,7 +202,7 @@ MonoBehaviour:
   golpeForceX: 3
   golpeForceY: 3
   golpeDuration: 0.5
---- !u!114 &5838731735435990632
+--- !u!114 &1784087719014211030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,6 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6eda221f956b841a840385dfc70ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolDistance: 5
-  speed: 2
+  speedwalk: 2
+  contadorT: 3
+  tiempocambio: 3
+  esDerecha: 0
   isBeingHit: 0

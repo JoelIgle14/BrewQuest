@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class dash : MonoBehaviour
 {
+    //Variables
     [Header("Dash")]
     public float dashSpeed = 15f;
     public float dashLength = 0.3f;
@@ -12,37 +13,44 @@ public class dash : MonoBehaviour
     private float dashCooldownCounter;
     public bool isDashing = false;
 
+    //scripts
     private Rigidbody2D body;
     private PlayerMovement move;
     private NewBehaviourScript hab;
+    public Animator dashBarAnimator;
+    private MovementManager manager;
 
-    //public bool canMove = true;
-
-
-    // Start is called before the first frame update
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         move = GetComponent<PlayerMovement>();
         hab = GetComponent<NewBehaviourScript>();
+        manager = GetComponent<MovementManager>(); // Referencia al manager
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if(hab.canDash)
+        if (hab.canDash && !dashBarAnimator.gameObject.activeSelf)
+        {
+            dashBarAnimator.gameObject.SetActive(true); // Activamos la barra al obtener el dash
+        }
+
+        if (hab.canDash)
         {
             HandleDash();
         }
-        
-        
+
+        if (dashCooldownCounter <= 0 && !isDashing && dashBarAnimator.gameObject.activeSelf)
+        {
+            dashBarAnimator.SetTrigger("Ready");
+        }
     }
+
 
     private void HandleDash()
     {
         if (Input.GetKeyDown(KeyCode.E) && dashCooldownCounter <= 0 && !isDashing && move.canMove)
         {
-            StartCoroutine(DoDash()); 
+            StartCoroutine(DoDash());
         }
 
         if (dashCooldownCounter > 0)
@@ -53,13 +61,22 @@ public class dash : MonoBehaviour
 
     private IEnumerator DoDash()
     {
-        isDashing = true;
-        float originalGravity = body.gravityScale;
-        body.gravityScale = 0f;
-        body.velocity = new Vector2(transform.localScale.x * dashSpeed, 0f);
-        yield return new WaitForSeconds(dashLength);
-        body.gravityScale = originalGravity;
-        isDashing = false;
-        dashCooldownCounter = dashCooldown;
+        // Evitar que el dash se ejecute si el salto ya está en proceso
+        if (manager.puedeDashear && !isDashing)
+        {
+            isDashing = true;
+            dashBarAnimator.SetTrigger("StartCooldown");
+
+            float originalGravity = body.gravityScale;
+            body.gravityScale = 0f;
+
+            // Usamos el Manager para manejar la fuerza del dash
+            manager.SolicitarDash(dashSpeed);
+
+            yield return new WaitForSeconds(dashLength);
+            body.gravityScale = originalGravity;
+            isDashing = false;
+            dashCooldownCounter = dashCooldown;
+        }
     }
 }

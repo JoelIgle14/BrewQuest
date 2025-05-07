@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2729481035563947566}
   m_Layer: 0
   m_Name: Fuente
-  m_TagString: Untagged
+  m_TagString: Checkpoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8319219224368760895
 SpriteRenderer:
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.032512903, y: -0.03097856}
+  m_Offset: {x: -0.032512903, y: 0.3923679}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.9533567, y: 1.9383245}
+  m_Size: {x: 1.1144159, y: 0.5991565}
   m_EdgeRadius: 0
 --- !u!82 &8928284979527188967
 AudioSource:
@@ -143,9 +143,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5811837803766008185, guid: 0a4f0e0e53ae94a4a8f7e817919c40b8, type: 2}
-  m_audioClip: {fileID: 8300000, guid: c5ad882dba24f0c4ea4c288fe0391ef3, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 459d9384bbe0ef44e83e43d87d35b6c2, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.574
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -154,9 +154,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 50
+  MaxDistance: 30
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 1
