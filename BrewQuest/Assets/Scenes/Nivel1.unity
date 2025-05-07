@@ -108898,7 +108898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7495963071312247013, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: attackRange
-      value: 1.85
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7495963071312247013, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: attacCooldown
@@ -108906,7 +108906,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7495963071312247013, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: positionAttack.x
-      value: 0
+      value: 0.26000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495963071312247013, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
+      propertyPath: positionAttack.y
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 8361036398364690850, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_Enabled
