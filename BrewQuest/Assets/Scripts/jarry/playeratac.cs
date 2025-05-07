@@ -11,14 +11,17 @@ public class playeratac : MonoBehaviour
     private float timeToNextAttack = 1.0f;
     public Vector3 positionAttack;
 
-    public espada1 espada; // Referencia al otro script
 
-    private bool lookingup;  // Esto es suficiente como un bool, ya que estamos determinando si está mirando hacia arriba
+    private bool lookingup;  // Esto es suficiente como un bool, ya que estamos determinando si estï¿½ mirando hacia arriba
     private Enemyvida ev;
+    Animator animator;
 
     void Start()
     {
         ev = GetComponent<Enemyvida>();
+        animator = GetComponent<Animator>();
+        Debug.Log(animator);
+
     }
 
     void Update()
@@ -40,14 +43,13 @@ public class playeratac : MonoBehaviour
             {
                 timeToNextAttack = Time.time + attacCooldown;
                 Attack();
-                espada.TriggerAtaque();
+            animator.SetTrigger("ataque"); 
             }
         }
     }
 
     void Attack()
     {
-        Debug.Log("rustico");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(positionAttack, attackRange);
 
         foreach (Collider2D enemy in hitEnemies)
