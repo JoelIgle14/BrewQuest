@@ -108897,8 +108897,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7495963071312247013, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
+      propertyPath: attackRange
+      value: 1.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495963071312247013, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: attacCooldown
-      value: 0.5
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 7495963071312247013, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: positionAttack.x

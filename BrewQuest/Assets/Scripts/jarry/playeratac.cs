@@ -27,6 +27,7 @@ public class playeratac : MonoBehaviour
     void Update()
     {
         LookingUp();
+        CalculateAttackPosition();
 
         if (lookingup)
         {
@@ -42,13 +43,13 @@ public class playeratac : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 timeToNextAttack = Time.time + attacCooldown;
-                Attack();
-            animator.SetTrigger("ataque"); 
+                animator.SetTrigger("ataque");
             }
         }
+
     }
 
-    void Attack()
+    public void DealDamage()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(positionAttack, attackRange);
 
@@ -59,22 +60,46 @@ public class playeratac : MonoBehaviour
                 Enemyvida enemyvid = enemy.GetComponent<Enemyvida>();
                 if (enemyvid != null)
                 {
-                    enemyvid.TakeDamage(attackDamage, gameObject,true);
-                    
+                    enemyvid.TakeDamage(attackDamage, gameObject, true);
                     Debug.Log("golpe a enemigo");
                 }
             }
         }
     }
 
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(positionAttack, attackRange);
+            CalculateAttackPosition();
+
     }
 
     void LookingUp()
     {
         lookingup = Input.GetKey(KeyCode.UpArrow);
     }
+
+    void CalculateAttackPosition()
+    {
+        if (Application.isPlaying)
+        {
+            if (lookingup)
+            {
+                positionAttack = transform.position + new Vector3(0f, 0.7f, 0f);
+            }
+            else
+            {
+                positionAttack = transform.position + new Vector3(0.6f * Mathf.Sign(transform.localScale.x), 0f, 0f);
+            }
+        }
+        else
+        {
+            // Asume mirando hacia la derecha y no hacia arriba cuando estás en modo editor
+            positionAttack = transform.position + new Vector3(0.6f, 0f, 0f);
+        }
+    }
+
 }
+
