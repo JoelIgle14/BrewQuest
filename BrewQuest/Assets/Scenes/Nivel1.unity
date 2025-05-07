@@ -104300,7 +104300,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.6666667, y: 2.6666667}
-    newSize: {x: 0.64, y: 0.64}
+    newSize: {x: 1.28, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -108868,6 +108868,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5232666956696669907, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
+      propertyPath: m_Size.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5232666956696669907, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
+      propertyPath: m_Size.y
+      value: 1.28
+      objectReference: {fileID: 0}
     - target: {fileID: 5611904565068452597, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -108887,6 +108895,10 @@ PrefabInstance:
     - target: {fileID: 7495963071312247013, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495963071312247013, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
+      propertyPath: attacCooldown
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7495963071312247013, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: positionAttack.x
@@ -108946,6 +108958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4966627733031400102, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
+    - {fileID: 5611904565068452597, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
