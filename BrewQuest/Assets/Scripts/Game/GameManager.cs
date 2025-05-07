@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         {
             // reiniciamos el nivel. 
             SceneManager.LoadScene(2); 
+            //Instance.
         }
     }
 
