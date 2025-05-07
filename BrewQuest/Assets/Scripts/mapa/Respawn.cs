@@ -8,21 +8,14 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
     private void Start()
-{
-    anim = GetComponent<Animator>();
-
-    if (CheckpointData.ultimaPosicionCheckpoint.HasValue)
     {
-        transform.position = CheckpointData.ultimaPosicionCheckpoint.Value;
-        CheckpointData.ultimaPosicionCheckpoint = null; // solo una vez
-    }
+        anim = GetComponent<Animator>();
 
-    if (respawnPoint == null)
-    {
-        Debug.LogWarning("Respawn point no asignado. Asigna un punto de respawn en el Inspector.");
+        if (respawnPoint == null)
+        {
+            Debug.LogWarning("Respawn point no asignado. Asigna un punto de respawn en el Inspector.");
+        }
     }
-}
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
