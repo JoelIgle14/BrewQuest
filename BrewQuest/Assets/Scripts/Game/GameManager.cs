@@ -30,8 +30,15 @@ public class GameManager : MonoBehaviour
 
         if (Vidas == 0)
         {
+            PlayerController player = FindObjectOfType<PlayerController>();
+            if (player.respawnPoint != null)
+            {
+                CheckpointData.ultimaPosicionCheckpoint = player.respawnPoint.position;
             }
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
 
     }
 
