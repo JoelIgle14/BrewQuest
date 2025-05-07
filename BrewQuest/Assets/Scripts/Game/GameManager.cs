@@ -30,10 +30,9 @@ public class GameManager : MonoBehaviour
 
         if (Vidas == 0)
         {
-            // reiniciamos el nivel. 
-            SceneManager.LoadScene(2); 
-            //Instance.
+            }
         }
+
     }
 
     public bool RecuperarVida()
