@@ -11,19 +11,23 @@ public class playeratac : MonoBehaviour
     private float timeToNextAttack = 1.0f;
     public Vector3 positionAttack;
 
-    public espada1 espada; // Referencia al otro script
 
-    private bool lookingup;  // Esto es suficiente como un bool, ya que estamos determinando si está mirando hacia arriba
+    private bool lookingup;  // Esto es suficiente como un bool, ya que estamos determinando si estï¿½ mirando hacia arriba
     private Enemyvida ev;
+    Animator animator;
 
     void Start()
     {
         ev = GetComponent<Enemyvida>();
+        animator = GetComponent<Animator>();
+        Debug.Log(animator);
+
     }
 
     void Update()
     {
         LookingUp();
+        CalculateAttackPosition();
 
         if (lookingup)
         {
@@ -39,15 +43,14 @@ public class playeratac : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 timeToNextAttack = Time.time + attacCooldown;
-                Attack();
-                espada.TriggerAtaque();
+                animator.SetTrigger("ataque");
             }
         }
+
     }
 
-    void Attack()
+    public void DealDamage()
     {
-        Debug.Log("rustico");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(positionAttack, attackRange);
 
         foreach (Collider2D enemy in hitEnemies)
@@ -57,22 +60,46 @@ public class playeratac : MonoBehaviour
                 Enemyvida enemyvid = enemy.GetComponent<Enemyvida>();
                 if (enemyvid != null)
                 {
-                    enemyvid.TakeDamage(attackDamage, gameObject,true);
-                    
+                    enemyvid.TakeDamage(attackDamage, gameObject, true);
                     Debug.Log("golpe a enemigo");
                 }
             }
         }
     }
 
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(positionAttack, attackRange);
+            CalculateAttackPosition();
+
     }
 
     void LookingUp()
     {
         lookingup = Input.GetKey(KeyCode.UpArrow);
     }
+
+    void CalculateAttackPosition()
+    {
+        if (Application.isPlaying)
+        {
+            if (lookingup)
+            {
+                positionAttack = transform.position + new Vector3(0f, 0.7f, 0f);
+            }
+            else
+            {
+                positionAttack = transform.position + new Vector3(0.6f * Mathf.Sign(transform.localScale.x), 0f, 0f);
+            }
+        }
+        else
+        {
+            // Asume mirando hacia la derecha y no hacia arriba cuando estÃ¡s en modo editor
+            positionAttack = transform.position + new Vector3(0.6f, 0f, 0f);
+        }
+    }
+
 }
+
