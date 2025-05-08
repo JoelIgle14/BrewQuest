@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class playeratac : MonoBehaviour
 {
+    public Vector2 attackBoxSize = new Vector2(1f, 1f);  // Tamaño del área de ataque
+
+
     public float attackRange;
     public float attackDamage;
     public float attacCooldown;
@@ -51,7 +54,7 @@ public class playeratac : MonoBehaviour
 
     public void DealDamage()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(positionAttack, attackRange);
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(positionAttack, attackBoxSize, 0f);
 
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -68,13 +71,14 @@ public class playeratac : MonoBehaviour
     }
 
 
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(positionAttack, attackRange);
-            CalculateAttackPosition();
-
+        Gizmos.DrawWireCube(positionAttack, attackBoxSize);
+        CalculateAttackPosition();
     }
+
 
     void LookingUp()
     {
