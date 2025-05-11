@@ -30,10 +30,16 @@ public class GameManager : MonoBehaviour
 
         if (Vidas == 0)
         {
-            // reiniciamos el nivel. 
-            SceneManager.LoadScene(2); 
-            //Instance.
+            PlayerController player = FindObjectOfType<PlayerController>();
+            if (player.respawnPoint != null)
+            {
+                CheckpointData.ultimaPosicionCheckpoint = player.respawnPoint.position;
+            }
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
+
     }
 
     public bool RecuperarVida()
