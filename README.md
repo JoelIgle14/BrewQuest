@@ -12,4 +12,4 @@ Joel Iglesias - Joellgle14<br>
 Oscar Duque - oscarduquek<br>
 Enrique Giner - enric-1003<br>
 Carlos Blasco - carlinchos<br>
-Gabriel Jansà - (no té git encara, però es del nostre grup).
+Gabriel Jansà - gabrieljansa
