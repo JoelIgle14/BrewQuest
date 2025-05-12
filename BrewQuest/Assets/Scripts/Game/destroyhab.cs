@@ -5,12 +5,13 @@ using UnityEngine;
 public class destroyhab : MonoBehaviour
 {
     public GameObject barraUI;
+    public GameObject mensajeDashPanel;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(ActivarBarraYDestruir(0.5f));
+            StartCoroutine(ActivarBarraYDestruir(0.1f));
         }
     }
 
@@ -23,7 +24,14 @@ public class destroyhab : MonoBehaviour
             barraUI.SetActive(true);
         }
 
+        if (mensajeDashPanel != null)
+        {
+            mensajeDashPanel.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            mensajeDashPanel.SetActive(false);
+        }
+
         Destroy(gameObject);
-        Debug.Log("Barra activada y objeto destruido después de retraso.");
+        Debug.Log("Barra activada, mensaje mostrado, y objeto destruido.");
     }
 }
