@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 9208329007611104895}
   - component: {fileID: 1529800845549400754}
   - component: {fileID: 745164416871800135}
+  - component: {fileID: 8483242721358893971}
+  - component: {fileID: -1012129890195219421}
   m_Layer: 0
   m_Name: nomehadado1_0
   m_TagString: enemy
@@ -34,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7355328396837526651
 SpriteRenderer:
@@ -74,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 555410427
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 208158180, guid: a56528c03f39b8642998de19a58bcf4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -195,3 +197,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   golpeado: 0
+--- !u!114 &8483242721358893971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771531619298032513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c895b9ebd318cb4c86768f33d5f4bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 5
+  speedwalk: 1
+  speedrun: 2
+  contadorT: 3
+  tiempocambio: 3
+  esDerecha: 0
+  isBeingHit: 0
+--- !u!114 &-1012129890195219421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771531619298032513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50cc2fc4446d94459a87ab8d5774eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  golpeForceX: 3
+  golpeForceY: 3
+  golpeDuration: 0.5

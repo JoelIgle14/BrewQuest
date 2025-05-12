@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2406474169518198314}
   - component: {fileID: 6506470883451918622}
   - component: {fileID: 4598159643773982894}
+  - component: {fileID: 8727585327321740312}
+  - component: {fileID: 2120461486531420166}
   m_Layer: 0
   m_Name: nomehadado3_0
   m_TagString: enemy
@@ -34,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &291694876561749366
 SpriteRenderer:
@@ -74,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 555410427
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1476789037, guid: 1307af271801c8a44ab5e51706a0d1c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -193,5 +195,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b35671727e156e43a641a342020d534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 3
   golpeado: 0
+--- !u!114 &8727585327321740312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633053167336722517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50cc2fc4446d94459a87ab8d5774eb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  golpeForceX: 3
+  golpeForceY: 3
+  golpeDuration: 0.5
+--- !u!114 &2120461486531420166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633053167336722517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c895b9ebd318cb4c86768f33d5f4bc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseDistance: 6
+  speedwalk: 1
+  speedrun: 2.2
+  contadorT: 3
+  tiempocambio: 3
+  esDerecha: 0
+  isBeingHit: 0
