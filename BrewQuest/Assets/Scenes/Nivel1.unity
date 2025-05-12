@@ -63907,11 +63907,21 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 359, y: -9, z: 0}
+  - first: {x: 358, y: -9, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 23
       m_TileSpriteIndex: 12
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 359, y: -9, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 22
+      m_TileSpriteIndex: 13
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -104283,7 +104293,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: d186b79284735114a9f9537a40de8991, type: 2}
   - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: d56210e5339bdeb4e8f02f2e30a6bf89, type: 2}
-  - m_RefCount: 15
+  - m_RefCount: 16
     m_Data: {fileID: 11400000, guid: 5a1871e0e1f84bb43a4845b38dd25d98, type: 2}
   - m_RefCount: 6
     m_Data: {fileID: 11400000, guid: 3f1f22154d4d33146baca9bfddd4efc8, type: 2}
@@ -104336,7 +104346,7 @@ Tilemap:
     m_Data: {fileID: 1742070999, guid: 59bbac8e2ab67064c885b666e8147c80, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: -1915846419, guid: 59bbac8e2ab67064c885b666e8147c80, type: 3}
-  - m_RefCount: 15
+  - m_RefCount: 16
     m_Data: {fileID: -1319982933, guid: 59bbac8e2ab67064c885b666e8147c80, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 1108799523, guid: 59bbac8e2ab67064c885b666e8147c80, type: 3}
@@ -104357,7 +104367,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -1080956371, guid: 59bbac8e2ab67064c885b666e8147c80, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 10062
+  - m_RefCount: 10063
     m_Data:
       e00: 1
       e01: 0
@@ -104376,7 +104386,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 10062
+  - m_RefCount: 10063
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -114383,6 +114393,10 @@ PrefabInstance:
     - target: {fileID: 8361036398364690850, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361036398364690850, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
+      propertyPath: dashCooldown
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 8361036398364690850, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: dashBarAnimator
