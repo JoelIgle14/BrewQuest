@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class berniBullet : MonoBehaviour
 {
-    public float launchForce = 5f;        // Magnitud de la velocidad inicial
-    public float launchAngle = 45f;       // Ángulo del disparo en grados
+    public float launchForce = 15f;        // Magnitud de la velocidad inicial
+    public float launchAngle = 60f;       // Ángulo del disparo en grados
     private Animator anim;
 
     private Rigidbody2D rb;

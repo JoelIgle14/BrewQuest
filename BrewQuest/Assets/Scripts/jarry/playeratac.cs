@@ -79,7 +79,7 @@ public class playeratac : MonoBehaviour
         }
         else
         {
-            positionAttack = transform.position + new Vector3(0.6f * Mathf.Sign(transform.localScale.x), 0f, 0f);
+            positionAttack = transform.position + new Vector3(1.4f * Mathf.Sign(transform.localScale.x), 0f, 0f);
         }
     }
 }

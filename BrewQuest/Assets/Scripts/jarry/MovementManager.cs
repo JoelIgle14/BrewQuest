@@ -11,30 +11,43 @@ public class MovementManager : MonoBehaviour
 
     private float fuerzaSalto;
     private float fuerzaDash;
+
+    //scripts
     private PlayerMovement pm;
+    private dash dish;
 
     private Queue<KeyCode> inputBuffer;
-    private float bufferTiempo = 0.2f;
+    public float bufferTiempo = 0.2f;
+    private float bufferTimer;
 
     [Header("Salto Variable")]
     [SerializeField] private float multiplicadorCutJump = 0.5f; // cuánto se recorta si suelta pronto
+
+    [Header("Coyote Time")]
+    [SerializeField] private float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
+
+    
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         inputBuffer = new Queue<KeyCode>();
         pm = GetComponent<PlayerMovement>();
+        dish = GetComponent<dash>();
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            inputBuffer.Enqueue(KeyCode.Space);
-            Invoke(nameof(QuitarAccion), bufferTiempo);
+            if (inputBuffer.Count == 0)
+            {
+                inputBuffer.Enqueue(KeyCode.Space);
+                bufferTimer = bufferTiempo;
+            }
         }
 
-        // Detectar si suelta el botón para cortar el salto
         if (saltoEnProgreso && Input.GetKeyUp(KeyCode.Space))
         {
             if (rb.velocity.y > 0f)
@@ -42,6 +55,30 @@ public class MovementManager : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * multiplicadorCutJump);
             }
             saltoEnProgreso = false;
+        }
+
+        if (inputBuffer.Count > 0)
+        {
+            bufferTimer -= Time.deltaTime;
+            if (bufferTimer <= 0f)
+            {
+                inputBuffer.Dequeue();
+            }
+        }
+
+        if (pm.isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        // Solo procesar salto si no estamos dasheando
+        if ((pm.isGrounded || coyoteTimeCounter > 0f) && inputBuffer.Count > 0 && !dish.isDashing)
+        {
+            ProcesarInputBufferParaSalto();
         }
     }
 
@@ -78,18 +115,12 @@ public class MovementManager : MonoBehaviour
 
     public void ProcesarInputBufferParaSalto()
     {
-        if (inputBuffer.Count > 0 && inputBuffer.Peek() == KeyCode.Space)
+        if (inputBuffer.Count > 0 && inputBuffer.Peek() == KeyCode.Space && !dish.isDashing)
         {
             SolicitarSalto(pm.jumpForce);
             inputBuffer.Dequeue();
         }
     }
 
-    private void QuitarAccion()
-    {
-        if (inputBuffer.Count > 0)
-            inputBuffer.Dequeue();
-    }
-
-    public bool puedeDashear => !saltoSolicitado && !dashSolicitado;
+    public bool puedeDashear => !saltoSolicitado && !dish.isDashing;
 }

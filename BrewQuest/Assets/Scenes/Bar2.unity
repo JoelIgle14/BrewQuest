@@ -2210,7 +2210,7 @@ Animator:
   m_GameObject: {fileID: 1672251238}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f5c99a32fc0c5f94498c8fdbee25ee0d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4949487c790cc81408d5307478211aae, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2221,6 +2221,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1672251242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672251238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f94650666704f34f9846f0fd1d88367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookDirection: 1
 --- !u!1 &1767425339
 GameObject:
   m_ObjectHideFlags: 0
@@ -2608,6 +2621,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7619326118254788208, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 129311139, guid: b3019af1953b8a34ea393b78a26e3932, type: 3}
+    - target: {fileID: 7619326118254788208, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
       propertyPath: m_SortingLayer
       value: 2
       objectReference: {fileID: 0}
@@ -2635,6 +2652,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8483567911446817524, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1672251239}
+    - targetCorrespondingSourceObject: {fileID: 8483567911446817524, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1672251242}
   m_SourcePrefab: {fileID: 100100000, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
 --- !u!1 &2033915357
 GameObject:
