@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b35671727e156e43a641a342020d534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 3
   golpeado: 0
 --- !u!114 &1057811007214715689
 MonoBehaviour:
