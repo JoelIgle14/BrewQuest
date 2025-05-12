@@ -13,16 +13,18 @@ public class PinchoDamage : MonoBehaviour
             PlayerMovement player = other.gameObject.GetComponent<PlayerMovement>();
             if (player == null) return;
 
+            // Verificar si el jugador es invulnerable
+            if (player.isInvulnerable) return;
+
             // Determinar dirección desde el pincho al jugador
             Vector2 direction = (player.transform.position - transform.position).normalized;
 
-            // Crear fuerza en esa dirección con intensidad configurada
             Vector2 force = new Vector2(
                 Mathf.Sign(direction.x) * knockbackForce.x,
-                knockbackForce.y // siempre hacia arriba
+                knockbackForce.y
             );
 
-            // Aplicar daño (si tenés GameManager)
+            // Aplicar daño
             GameManager.Instance?.PerderVida();
 
             // Aplicar knockback

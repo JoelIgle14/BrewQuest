@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     [Header("Movimiento")]
     [SerializeField] private float speed = 5f;
-
     [SerializeField] public float jumpForce = 7f;
     private Rigidbody2D body;
 
@@ -16,10 +14,18 @@ public class PlayerMovement : MonoBehaviour
     public float rayCastDistance = 0.2f;
     private int remainingJumps;
     private const int maxJumps = 1;
+
+    [Header("Invulnerabilidad")]
+    [SerializeField] private float invulnerabilityDuration = 0.5f;
+    
+    [HideInInspector] public bool isInvulnerable = false;
+
+    //public bool isInvulnerable = false;
+
     [Header("Plataformas Móviles")]
     private Transform currentPlatform = null;
 
-    //scripts
+    // Scripts
     private NewBehaviourScript hab;
     private dash dash;
     public Transform position;
@@ -40,7 +46,6 @@ public class PlayerMovement : MonoBehaviour
         HandleFlip();
         HandleGroundCheck();
 
-        // Solicitamos el salto al Manager
         if (isGrounded && Input.GetKeyDown(KeyCode.Space) && canMove && !dash.isDashing)
         {
             manager.SolicitarSalto(jumpForce);
@@ -48,13 +53,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (hab.canDoubleJump && !isGrounded)
         {
-            HandleDoubleJump(); // Permite segundo salto si no estás en el suelo
+            HandleDoubleJump();
         }
     }
 
     void FixedUpdate()
     {
-        // Solo puede moverse si no está dashando
         if (canMove && !dash.isDashing)
         {
             Move();
@@ -63,7 +67,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        //Recoger el input
         float moveInput = 0f;
         if (Input.GetKey(KeyCode.LeftArrow)) moveInput = -1f;
         if (Input.GetKey(KeyCode.RightArrow)) moveInput = 1f;
@@ -71,7 +74,6 @@ public class PlayerMovement : MonoBehaviour
 
         float moveSpeed = moveInput * speed;
 
-        // Si estamos sobre plataforma móvil, agregar su velocidad
         if (currentPlatform != null)
         {
             Rigidbody2D platformRb = currentPlatform.GetComponent<Rigidbody2D>();
@@ -92,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleGroundCheck()
     {
-        float halfWidth = 0.625f; // Ajustar esto según el ancho del personaje
+        float halfWidth = 0.625f;
         Vector2 leftOrigin = transform.position + Vector3.left * halfWidth + Vector3.down * 1.1f;
         Vector2 rightOrigin = transform.position + Vector3.right * halfWidth + Vector3.down * 1.1f;
         Vector2 centerOrigin = transform.position + Vector3.down * 1.1f;
@@ -112,70 +114,67 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        float halfWidth = 0.625f;
-        float rayLength = rayCastDistance;
-
-        Vector2 leftOrigin = transform.position + Vector3.left * halfWidth + Vector3.down * 1.1f;
-        Vector2 rightOrigin = transform.position + Vector3.right * halfWidth + Vector3.down * 1.1f;
-        Vector2 centerOrigin = transform.position + Vector3.down * 1.1f;
-
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawLine(leftOrigin, leftOrigin + Vector2.down * rayLength);
-        Gizmos.DrawLine(rightOrigin, rightOrigin + Vector2.down * rayLength);
-        Gizmos.DrawLine(centerOrigin, centerOrigin + Vector2.down * rayLength);
-    }
-
-
-
     private void HandleDoubleJump()
     {
-        // Solo permitir el SEGUNDO salto si no estás en el suelo, tienes la habilidad, y tienes 1 salto restante
         if (Input.GetKeyDown(KeyCode.Space) && remainingJumps > 0 && canMove && !dash.isDashing)
         {
-            //manager.SolicitarSalto(jumpForce); // Solicitar salto al Manager
             manager.ProcesarInputBufferParaSalto();
-
-            remainingJumps = 0; // Ya no quedan más saltos
+            remainingJumps = 0;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("enemy"))
+        if (collision.gameObject.CompareTag("enemy") && !isInvulnerable)
         {
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.PerderVida();
-            }
-
-            float direction = (collision.transform.position.x > transform.position.x) ? -1 : 1;
-            body.velocity = new Vector2(0, 0);
-            body.AddForce(new Vector2(5f * direction, 7f), ForceMode2D.Impulse);
-            StartCoroutine(DisableMovementForTime(0.56f));
+            ApplyDamage(collision.transform);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("PlataformaMovil"))
+        if (collision.gameObject.CompareTag("enemy") && !isInvulnerable)
         {
-            currentPlatform = collision.transform;
+            ApplyDamage(collision.transform);
+        }
+    }
+
+    private void ApplyDamage(Transform enemyTransform)
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.PerderVida();
         }
 
-        if (collision.gameObject.CompareTag("enemy"))
-        {
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.PerderVida();
-            }
+        float direction = (enemyTransform.position.x > transform.position.x) ? -1 : 1;
+        Vector2 knockbackForce = new Vector2(5f * direction, 7f);
+        ApplyKnockback(knockbackForce, 0.56f);
 
-            float direction = (collision.transform.position.x > transform.position.x) ? -1 : 1;
-            body.velocity = new Vector2(0, 0);
-            body.AddForce(new Vector2(5f * direction, 7f), ForceMode2D.Impulse);
-            StartCoroutine(DisableMovementForTime(0.56f));
+        StartCoroutine(ActivateInvulnerability());
+    }
+
+    public void ApplyKnockback(Vector2 force, float duration)
+    {
+        if (!isInvulnerable)
+        {
+            body.velocity = Vector2.zero;
+            body.AddForce(force, ForceMode2D.Impulse);
+            StartCoroutine(DisableMovementForTime(duration));
         }
+    }
+
+    private IEnumerator ActivateInvulnerability()
+    {
+        isInvulnerable = true;
+        yield return new WaitForSeconds(invulnerabilityDuration);
+        isInvulnerable = false;
+    }
+
+    private IEnumerator DisableMovementForTime(float time)
+    {
+        canMove = false;
+        yield return new WaitForSeconds(time);
+        canMove = true;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -184,19 +183,5 @@ public class PlayerMovement : MonoBehaviour
         {
             currentPlatform = null;
         }
-    }
-
-    IEnumerator DisableMovementForTime(float time)
-    {
-        canMove = false;
-        yield return new WaitForSeconds(time);
-        canMove = true;
-    }
-
-    public void ApplyKnockback(Vector2 force, float duration)
-    {
-        body.velocity = Vector2.zero;
-        body.AddForce(force, ForceMode2D.Impulse);
-        StartCoroutine(DisableMovementForTime(duration));
     }
 }
