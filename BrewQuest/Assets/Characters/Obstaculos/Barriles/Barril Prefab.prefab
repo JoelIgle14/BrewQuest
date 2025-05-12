@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3296448384600507522}
   - component: {fileID: 8127269132002503704}
   - component: {fileID: -1071036639799864652}
+  - component: {fileID: -9190107465146673658}
   m_Layer: 0
   m_Name: Barril Prefab
   m_TagString: enemy
@@ -148,3 +149,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-9190107465146673658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590169948971853361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556d922a87a9e274ab7eb6d7c0717ec6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
