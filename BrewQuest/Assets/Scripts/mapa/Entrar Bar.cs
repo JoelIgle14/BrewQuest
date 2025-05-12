@@ -11,7 +11,7 @@ public class EntarBar : MonoBehaviour
     {
         if (jugadorEnZona && Input.GetKeyDown(KeyCode.W))
         {
-            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex - 1;
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
             if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
             {
                 SceneManager.LoadScene(nextSceneIndex);
