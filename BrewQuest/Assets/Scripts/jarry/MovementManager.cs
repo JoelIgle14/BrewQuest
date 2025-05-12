@@ -14,10 +14,15 @@ public class MovementManager : MonoBehaviour
     private PlayerMovement pm;
 
     private Queue<KeyCode> inputBuffer;
-    private float bufferTiempo = 0.2f;
+    public float bufferTiempo = 0.2f;
+    private float bufferTimer;
 
     [Header("Salto Variable")]
     [SerializeField] private float multiplicadorCutJump = 0.5f; // cuánto se recorta si suelta pronto
+
+    [Header("Coyote Time")]
+    [SerializeField] private float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
 
     void Awake()
     {
@@ -30,11 +35,13 @@ public class MovementManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            inputBuffer.Enqueue(KeyCode.Space);
-            Invoke(nameof(QuitarAccion), bufferTiempo);
+            if (inputBuffer.Count == 0)
+            {
+                inputBuffer.Enqueue(KeyCode.Space);
+                bufferTimer = bufferTiempo;
+            }
         }
 
-        // Detectar si suelta el botón para cortar el salto
         if (saltoEnProgreso && Input.GetKeyUp(KeyCode.Space))
         {
             if (rb.velocity.y > 0f)
@@ -42,6 +49,29 @@ public class MovementManager : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * multiplicadorCutJump);
             }
             saltoEnProgreso = false;
+        }
+
+        if (inputBuffer.Count > 0)
+        {
+            bufferTimer -= Time.deltaTime;
+            if (bufferTimer <= 0f)
+            {
+                inputBuffer.Dequeue();
+            }
+        }
+
+        if (pm.isGrounded)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if ((pm.isGrounded || coyoteTimeCounter > 0f) && inputBuffer.Count > 0)
+        {
+            ProcesarInputBufferParaSalto();
         }
     }
 
@@ -83,12 +113,6 @@ public class MovementManager : MonoBehaviour
             SolicitarSalto(pm.jumpForce);
             inputBuffer.Dequeue();
         }
-    }
-
-    private void QuitarAccion()
-    {
-        if (inputBuffer.Count > 0)
-            inputBuffer.Dequeue();
     }
 
     public bool puedeDashear => !saltoSolicitado && !dashSolicitado;

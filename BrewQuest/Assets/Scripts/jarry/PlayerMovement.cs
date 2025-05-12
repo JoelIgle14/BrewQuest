@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D body;
 
     public bool canMove = true;
-    private bool isGrounded = false;
+    public bool isGrounded = false;
     public float rayCastDistance = 0.2f;
     private int remainingJumps;
     private const int maxJumps = 1;

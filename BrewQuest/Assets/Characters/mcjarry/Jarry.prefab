@@ -208,7 +208,10 @@ MonoBehaviour:
   speed: 5
   jumpForce: 12.9
   canMove: 1
+  isGrounded: 0
   rayCastDistance: 0.15
+  invulnerabilityDuration: 0.5
+  isInvulnerable: 0
   position: {fileID: 0}
 --- !u!114 &6081008827506243108
 MonoBehaviour:
@@ -247,7 +250,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7373614160263437181}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5da6b90e98d257e4c9d6c0bf2db9e54d, type: 3}
   m_Name: 
@@ -267,8 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfb9e8d5dd96db54ea6f8b96b5d6f50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canDash: 1
-  canDoubleJump: 1
+  canDash: 0
+  canDoubleJump: 0
   canShoot: 0
 --- !u!114 &7495963071312247013
 MonoBehaviour:
@@ -282,11 +285,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae83648ed2762142bad3762a7386e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 1.7
+  attackRange: 1.5
   attackDamage: 1
   attacCooldown: 0.7
   positionAttack: {x: 0, y: 0, z: 0}
-  espada: {fileID: 0}
 --- !u!114 &1040825783026216614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,4 +318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060552e7eaca0a845a73b8e7be0d85d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bufferTiempo: 0.25
   multiplicadorCutJump: 0.5
+  coyoteTime: 0.15
