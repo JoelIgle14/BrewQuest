@@ -11,7 +11,10 @@ public class MovementManager : MonoBehaviour
 
     private float fuerzaSalto;
     private float fuerzaDash;
+
+    //scripts
     private PlayerMovement pm;
+    private dash dish;
 
     private Queue<KeyCode> inputBuffer;
     public float bufferTiempo = 0.2f;
@@ -24,11 +27,14 @@ public class MovementManager : MonoBehaviour
     [SerializeField] private float coyoteTime = 0.2f;
     private float coyoteTimeCounter;
 
+    
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         inputBuffer = new Queue<KeyCode>();
         pm = GetComponent<PlayerMovement>();
+        dish = GetComponent<dash>();
     }
 
     void Update()
@@ -69,7 +75,8 @@ public class MovementManager : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        if ((pm.isGrounded || coyoteTimeCounter > 0f) && inputBuffer.Count > 0)
+        // Solo procesar salto si no estamos dasheando
+        if ((pm.isGrounded || coyoteTimeCounter > 0f) && inputBuffer.Count > 0 && !dish.isDashing)
         {
             ProcesarInputBufferParaSalto();
         }
@@ -108,12 +115,12 @@ public class MovementManager : MonoBehaviour
 
     public void ProcesarInputBufferParaSalto()
     {
-        if (inputBuffer.Count > 0 && inputBuffer.Peek() == KeyCode.Space)
+        if (inputBuffer.Count > 0 && inputBuffer.Peek() == KeyCode.Space && !dish.isDashing)
         {
             SolicitarSalto(pm.jumpForce);
             inputBuffer.Dequeue();
         }
     }
 
-    public bool puedeDashear => !saltoSolicitado && !dashSolicitado;
+    public bool puedeDashear => !saltoSolicitado && !dish.isDashing;
 }
