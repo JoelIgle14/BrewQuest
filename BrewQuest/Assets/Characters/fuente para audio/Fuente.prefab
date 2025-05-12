@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8928284979527188967}
   - component: {fileID: 4392661265265382976}
   - component: {fileID: 2729481035563947566}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fuente
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8319219224368760895
 SpriteRenderer:
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.032512903, y: 0.3923679}
+  m_Offset: {x: 0.10699797, y: 0.14360881}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1144159, y: 0.5991565}
+  m_Size: {x: 2.9878469, y: 1.0966747}
   m_EdgeRadius: 0
 --- !u!82 &8928284979527188967
 AudioSource:

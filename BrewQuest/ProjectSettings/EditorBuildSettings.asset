@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel1.unity
     guid: f38f319c42284e040abd0efd7771bc78
+  - enabled: 1
+    path: Assets/Scenes/Bar2.unity
+    guid: d10b86892841df14092b79441f787d8b
+  - enabled: 1
+    path: Assets/Scenes/Nivel2.unity
+    guid: 29078012cf4d37f439bdfa6b885ac61c
   - enabled: 0
     path: Assets/Scenes/MapaTesting.unity
     guid: e42670a39322f2548b588ffd010f578c
