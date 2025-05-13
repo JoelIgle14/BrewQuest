@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class playeratac : MonoBehaviour
 {
+
+    public TutorialManager tutorialManager;
+
+
     public float attackRange;
     public float attackDamage;
     public float attacCooldown;
@@ -23,6 +27,9 @@ public class playeratac : MonoBehaviour
 
     void Update()
     {
+        if (tutorialManager != null && tutorialManager.DialogoActivo())
+            return;
+
         LookingUp();
         CalculateAttackPosition();
 
