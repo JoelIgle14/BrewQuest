@@ -3,20 +3,38 @@ using UnityEngine;
 public class ActivarAliado : MonoBehaviour
 {
     public GameObject aliado;
-    public GameObject panelDialogo;
+    public GameObject Dialogo;
+    public MonoBehaviour scriptdialogos; // Aquí se asigna un script como DialogoAliado
 
     private void Start()
     {
-        aliado.SetActive(false);
-        panelDialogo.SetActive(false);
+        if (aliado != null)
+            aliado.SetActive(false);
+
+        if (Dialogo != null)
+            Dialogo.SetActive(false);
+
+        if (scriptdialogos != null)
+            scriptdialogos.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            aliado.SetActive(true);
-            panelDialogo.SetActive(true);
+            if (aliado != null)
+                aliado.SetActive(true);
+
+            if (Dialogo != null)
+                Dialogo.SetActive(true);
+
+            if (scriptdialogos != null)
+                scriptdialogos.enabled = true;
+
+            // Si el script de diálogos tiene un método para iniciar diálogo, puedes llamarlo así:
+            // ((DialogoAliado)scriptdialogos).IniciarDialogo();
+
+            //Destroy(gameObject); // Evita que se vuelva a activar
         }
     }
 }
