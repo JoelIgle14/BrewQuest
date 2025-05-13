@@ -25,21 +25,27 @@ public class CamaraConfig : MonoBehaviour
     {
         if (mc != null && borde != null)
         {
-            Vector3 targetPosition = mc.transform.position + followOffset;
+            Vector3 currentCamPos = transform.position;
 
-            
+            // Deseado X según el personaje
+            float targetX = mc.transform.position.x + followOffset.x;
+
+            // Calculamos el Y actual y el Y del personaje + offset
+            float targetY = mc.transform.position.y + followOffset.y;
+
+            // Solo actualizamos Y si el jugador está por debajo de la cámara
+            float newY = (targetY < currentCamPos.y) ? targetY : currentCamPos.y;
+
+            // Construimos nueva posición deseada
+            Vector3 targetPosition = new Vector3(targetX, newY, followOffset.z);
+
+            // Aseguramos que está dentro del borde
             Vector2 targetPos2D = new Vector2(targetPosition.x, targetPosition.y);
-
-            
             if (borde.OverlapPoint(targetPos2D))
             {
-                
                 transform.position = targetPosition;
-            }
-            else
-            {
-               
             }
         }
     }
+
 }
