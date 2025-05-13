@@ -8,7 +8,7 @@ public class runfuente : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInParent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
