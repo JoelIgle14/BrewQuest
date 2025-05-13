@@ -5,6 +5,7 @@ using UnityEngine;
 public class runfuente : MonoBehaviour
 {
     private Animator animator;
+    public bool canSound = false;
 
     void Start()
     {
@@ -13,9 +14,10 @@ public class runfuente : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) 
+        if (collision.gameObject.CompareTag("Player"))
         {
             animator.SetTrigger("activa");
+            canSound = true;
         }
     }
 }

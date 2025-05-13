@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3ef5596f9709746bd198ebe34133bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canSound: 0
 --- !u!1 &6296659221932643915
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,7 +301,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004443407, y: 0.015812129}
+  m_Offset: {x: 0.06640825, y: -0.03318888}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -311,7 +312,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1019545, y: 1.0316243}
+  m_Size: {x: 1.9780247, y: 0.9336221}
   m_EdgeRadius: 0
 --- !u!82 &228992051118946406
 AudioSource:
@@ -324,7 +325,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 459d9384bbe0ef44e83e43d87d35b6c2, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -334,7 +335,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20.086052
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
