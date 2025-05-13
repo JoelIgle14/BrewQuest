@@ -41,7 +41,7 @@ public class hitalopato : MonoBehaviour
 
     IEnumerator GolpeCoroutine()
     {
-        // ⚪ Activar material blanco
+        // Activar material blanco
         foreach (var sr in sprites)
         {
             sr.material = flashMaterial;
@@ -58,7 +58,7 @@ public class hitalopato : MonoBehaviour
 
         yield return new WaitForSeconds(flashTime);
 
-        // 🔁 Restaurar material original
+        //Restaurar material original
         foreach (var sr in sprites)
         {
             sr.material = defaultMaterial;

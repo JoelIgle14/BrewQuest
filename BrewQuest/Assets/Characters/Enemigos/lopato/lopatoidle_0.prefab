@@ -117,7 +117,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &5648779724533718738
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   golpeForceX: 3
   golpeForceY: 3
   golpeDuration: 0.5
-  flashMaterial: {fileID: 0}
+  flashMaterial: {fileID: 2100000, guid: d03d595a62bd2c7448f0d9f4d23ef141, type: 2}
   flashTime: 0.1
 --- !u!1 &8870279014535780277
 GameObject:
