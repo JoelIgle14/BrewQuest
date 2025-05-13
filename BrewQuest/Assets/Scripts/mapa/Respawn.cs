@@ -30,7 +30,8 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
-        else if (collision.CompareTag("Checkpoint"))
+
+        if (collision.CompareTag("Checkpoint"))
         {
             UpdateRespawnPoint(collision.transform);
         }

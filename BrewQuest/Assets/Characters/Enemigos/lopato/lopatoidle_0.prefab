@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 9072054060903903691}
   - component: {fileID: 3705125369774290883}
   - component: {fileID: 7543953165159145308}
+  - component: {fileID: 8189334148745057018}
+  - component: {fileID: 81123720907839349}
   m_Layer: 0
   m_Name: lopatoidle_0
   m_TagString: enemy
@@ -37,7 +39,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1348574372488059882
 SpriteRenderer:
@@ -240,7 +242,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8643559989685151683}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c895b9ebd318cb4c86768f33d5f4bc3, type: 3}
   m_Name: 
@@ -259,7 +261,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8643559989685151683}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e50cc2fc4446d94459a87ab8d5774eb8, type: 3}
   m_Name: 
@@ -267,3 +269,27 @@ MonoBehaviour:
   golpeForceX: 3
   golpeForceY: 3
   golpeDuration: 0.5
+--- !u!114 &8189334148745057018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8643559989685151683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e54969aba962f524daec4773a44dacd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &81123720907839349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8643559989685151683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99e0663f1c35f3b4ba6010f97e506b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

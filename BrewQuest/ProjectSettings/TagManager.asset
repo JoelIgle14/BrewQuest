@@ -67,9 +67,6 @@ TagManager:
   - name: Checkpoints
     uniqueID: 3231829795
     locked: 0
-  - name: Jarry
-    uniqueID: 2819127001
-    locked: 0
   - name: Espada
     uniqueID: 4106446889
     locked: 0
@@ -96,6 +93,9 @@ TagManager:
     locked: 0
   - name: 'PlataformaMovil '
     uniqueID: 3300119295
+    locked: 0
+  - name: Jarry
+    uniqueID: 2819127001
     locked: 0
   - name: HUD
     uniqueID: 3380734391
