@@ -27,7 +27,9 @@ public class MovementManager : MonoBehaviour
     [SerializeField] private float coyoteTime = 0.2f;
     private float coyoteTimeCounter;
 
-    
+
+
+    private NewBehaviourScript hab;
 
     void Awake()
     {
@@ -35,7 +37,9 @@ public class MovementManager : MonoBehaviour
         inputBuffer = new Queue<KeyCode>();
         pm = GetComponent<PlayerMovement>();
         dish = GetComponent<dash>();
+        hab = GetComponent<NewBehaviourScript>();
     }
+
 
     void Update()
     {
@@ -117,10 +121,26 @@ public class MovementManager : MonoBehaviour
     {
         if (inputBuffer.Count > 0 && inputBuffer.Peek() == KeyCode.Space && !dish.isDashing)
         {
-            SolicitarSalto(pm.jumpForce);
-            inputBuffer.Dequeue();
+            // Salto desde el suelo
+            if (pm.isGrounded)
+            {
+                if (hab != null && !hab.canJump)
+                    return;
+
+                SolicitarSalto(pm.jumpForce);
+                inputBuffer.Dequeue();
+            }
+            // Doble salto en el aire
+            else if (!pm.isGrounded && hab != null && hab.canDoubleJump)
+            {
+                SolicitarSalto(pm.jumpForce);
+                inputBuffer.Dequeue();
+            }
         }
     }
+
+
+
 
     public bool puedeDashear => !saltoSolicitado && !dish.isDashing;
 }

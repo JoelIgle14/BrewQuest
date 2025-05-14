@@ -8,6 +8,9 @@ public class NewBehaviourScript : MonoBehaviour
     private PlayerMovement move;
 
     //Destas de si puede usar tal habilidad
+    public bool canJump = true;
+    public bool canAttack = true;
+    public bool canMove = true;
     public bool canDash = false;
     public bool canDoubleJump = false;
     public bool canShoot = false;
@@ -22,6 +25,9 @@ public class NewBehaviourScript : MonoBehaviour
         // Al reaparecer, consultar GameManager
         if (GameManager.Instance != null)
         {
+            canJump = GameManager.Instance.canJump;
+            canAttack = GameManager.Instance.canAttack;
+            canMove = GameManager.Instance.canMove;
             canDash = GameManager.Instance.hasDash;
             canDoubleJump = GameManager.Instance.hasDoubleJump;
             canShoot = GameManager.Instance.hasShoot;
