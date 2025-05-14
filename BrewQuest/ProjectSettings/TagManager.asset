@@ -16,6 +16,7 @@ TagManager:
   - Manguera
   - Puerta
   - EnemyHitBox
+  - hitJarry
   layers:
   - Default
   - TransparentFX
