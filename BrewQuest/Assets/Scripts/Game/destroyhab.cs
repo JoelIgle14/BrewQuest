@@ -5,7 +5,6 @@ using UnityEngine;
 public class destroyhab : MonoBehaviour
 {
     public GameObject barraUI;
-    public GameObject mensajeDashPanel;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,13 +21,6 @@ public class destroyhab : MonoBehaviour
         if (barraUI != null)
         {
             barraUI.SetActive(true);
-        }
-
-        if (mensajeDashPanel != null)
-        {
-            mensajeDashPanel.SetActive(true);
-            yield return new WaitForSeconds(3f);
-            mensajeDashPanel.SetActive(false);
         }
 
         Destroy(gameObject);

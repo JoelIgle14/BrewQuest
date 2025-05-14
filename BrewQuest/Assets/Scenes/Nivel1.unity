@@ -777,7 +777,6 @@ Transform:
   m_Children:
   - {fileID: 375403551}
   - {fileID: 1330280151}
-  - {fileID: 374480506}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1918,17 +1917,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374480505}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.63603693}
+  m_LocalPosition: {x: 0, y: 0, z: 4.2224965}
   m_LocalScale: {x: 0.4870081, y: 0.4870081, z: 0.4870081}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 704075204}
-  m_Father: {fileID: 237518984}
+  m_Father: {fileID: 375403551}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -110.366455, y: 254.10562}
+  m_AnchoredPosition: {x: 159.10355, y: 278.47}
   m_SizeDelta: {x: 1919.886, y: 1080.0642}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &374480507
@@ -2068,7 +2067,8 @@ Transform:
   m_LocalPosition: {x: -269.47, y: -24.364382, z: -4.8585334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 374480506}
   m_Father: {fileID: 237518984}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2086,7 +2086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aliado: {fileID: 1330280152}
   Dialogo: {fileID: 704075203}
-  scriptdialogos: {fileID: 1484670693}
+  jugador: {fileID: 1085714094}
 --- !u!1001 &421958659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105217,7 +105217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &704075204
 RectTransform:
   m_ObjectHideFlags: 0
@@ -105539,7 +105539,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barraUI: {fileID: 1490705470}
-  mensajeDashPanel: {fileID: 1755726146}
 --- !u!60 &778724751
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -110263,40 +110262,6 @@ PolygonCollider2D:
       - {x: -0.43414924, y: -1.0951753}
       - {x: -0.064813904, y: -1.0841135}
   m_UseDelaunayMesh: 0
---- !u!114 &1484670693 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3593349039293037445, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
-  m_PrefabInstance: {fileID: 1606972023394071899}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085714094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8d70d264ecda27458c0f1620eb8fdb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1484670697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085714094}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55c92e51448266946879d2ebe6813f58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogoTexto: {fileID: 2100843602}
-  panelDialogo: {fileID: 704075203}
-  scriptMovimientoJugador: {fileID: 0}
-  dialogosIniciales:
-  - por
-  - dioos
-  - no puede ser
-  - increible
-  pasos:
-  - cartel: {fileID: 0}
-    accion: 
 --- !u!114 &1484670699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110315,6 +110280,29 @@ MonoBehaviour:
   canDash: 0
   canDoubleJump: 0
   canShoot: 0
+--- !u!114 &1484670709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085714094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251f2355027809844bbeed07a74ce6c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogoTexto: {fileID: 2100843602}
+  panelDialogo: {fileID: 704075203}
+  scriptMovimientoJugador: {fileID: 0}
+  dialogosIniciales:
+  - Hey Espumoso
+  - "No tan r\xE1pido"
+  - "Esa botella de ahi es m\xE1gica"
+  - "Solo con tocarla obtendr\xE1s una habilidad \xFAnica"
+  - La roja es la del DASH
+  - Lo podras utilizar con la E
+  pasos: []
 --- !u!1 &1490705470
 GameObject:
   m_ObjectHideFlags: 0
@@ -114808,7 +114796,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Capullo La cosaaa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -115170,6 +115158,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6785612890159028349, guid: 411222aa23db9a14b869824bd62e198f, type: 3}
     - target: {fileID: 3488583378589146617, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3488583378589146617, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: canMove
       value: 1
       objectReference: {fileID: 0}
@@ -115299,11 +115291,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8482560059795030316, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4
+      value: 297
       objectReference: {fileID: 0}
     - target: {fileID: 8482560059795030316, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 8482560059795030316, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_LocalPosition.z
@@ -115355,7 +115347,7 @@ PrefabInstance:
       addedObject: {fileID: 1484670668}
     - targetCorrespondingSourceObject: {fileID: 7373614160263437181, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1484670697}
+      addedObject: {fileID: 1484670709}
   m_SourcePrefab: {fileID: 100100000, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
 --- !u!1001 &2230876870795007128
 PrefabInstance:
