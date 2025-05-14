@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playeratac : MonoBehaviour
+public class PlayerAttack : MonoBehaviour
 {
-
     public TutorialManager tutorialManager;
     public NewBehaviourScript habilidades;
-
 
     public float attackRange;
     public float attackDamage;
@@ -17,16 +15,13 @@ public class playeratac : MonoBehaviour
     public Vector3 positionAttack;
 
     private bool lookingup;
-    private Enemyvida ev;
     private Animator animator;
 
     void Start()
     {
-        ev = GetComponent<Enemyvida>();
         animator = GetComponent<Animator>();
         habilidades = GetComponent<NewBehaviourScript>();
     }
-
 
     void Update()
     {
@@ -34,7 +29,7 @@ public class playeratac : MonoBehaviour
             return;
 
         if (habilidades != null && !habilidades.canAttack)
-            return; // si no puede atacar, salir
+            return;
 
         LookingUp();
         CalculateAttackPosition();
@@ -45,34 +40,21 @@ public class playeratac : MonoBehaviour
             {
                 timeToNextAttack = Time.time + attacCooldown;
                 animator.SetTrigger("ataque");
-                DealDamage();
             }
         }
     }
 
-
-    private void DealDamage()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(positionAttack, attackRange);
-
-        foreach (Collider2D enemy in hitEnemies)
+        if (collision.CompareTag("EnemyHitBox"))
         {
-            if (enemy.CompareTag("enemy"))
+            Enemyvida enemyvid = collision.GetComponentInParent<Enemyvida>();
+            if (enemyvid != null)
             {
-                Enemyvida enemyvid = enemy.GetComponent<Enemyvida>();
-                if (enemyvid != null)
-                {
-                    enemyvid.TakeDamage(attackDamage, gameObject, true);
-                    Debug.Log("Enemigo golpeado inmediatamente");
-                }
+                enemyvid.TakeDamage(attackDamage, gameObject, true);
+                Debug.Log("Enemigo golpeado a través del Trigger");
             }
         }
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(positionAttack, attackRange);
     }
 
     private void LookingUp()
@@ -90,5 +72,11 @@ public class playeratac : MonoBehaviour
         {
             positionAttack = transform.position + new Vector3(1.4f * Mathf.Sign(transform.localScale.x), 0f, 0f);
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(positionAttack, attackRange);
     }
 }
