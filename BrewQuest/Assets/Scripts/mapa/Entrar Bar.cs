@@ -9,7 +9,7 @@ public class EntarBar : MonoBehaviour
 
     private void Update()
     {
-        if (jugadorEnZona && Input.GetKeyDown(KeyCode.W))
+        if (jugadorEnZona && Input.GetKeyDown(KeyCode.UpArrow))
         {
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
             if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)

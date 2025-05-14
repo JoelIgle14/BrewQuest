@@ -6,6 +6,7 @@ public class playeratac : MonoBehaviour
 {
 
     public TutorialManager tutorialManager;
+    public NewBehaviourScript habilidades;
 
 
     public float attackRange;
@@ -23,12 +24,17 @@ public class playeratac : MonoBehaviour
     {
         ev = GetComponent<Enemyvida>();
         animator = GetComponent<Animator>();
+        habilidades = GetComponent<NewBehaviourScript>();
     }
+
 
     void Update()
     {
         if (tutorialManager != null && tutorialManager.DialogoActivo())
             return;
+
+        if (habilidades != null && !habilidades.canAttack)
+            return; // si no puede atacar, salir
 
         LookingUp();
         CalculateAttackPosition();
@@ -37,17 +43,13 @@ public class playeratac : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                // Registrar el tiempo para el siguiente ataque
                 timeToNextAttack = Time.time + attacCooldown;
-
-                // Lanzar animación
                 animator.SetTrigger("ataque");
-
-                // Aplicar el daño inmediatamente
                 DealDamage();
             }
         }
     }
+
 
     private void DealDamage()
     {

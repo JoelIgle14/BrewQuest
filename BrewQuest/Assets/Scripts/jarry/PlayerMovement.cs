@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         HandleFlip();
         HandleGroundCheck();
 
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space) && canMove && !dash.isDashing)
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space) && hab.canJump && hab.canMove && !dash.isDashing)
         {
             manager.SolicitarSalto(jumpForce);
         }
@@ -59,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (canMove && !dash.isDashing)
+        if (hab.canMove && !dash.isDashing)
         {
             Move();
         }

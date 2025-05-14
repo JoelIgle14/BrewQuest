@@ -10,9 +10,13 @@ public class GameManager : MonoBehaviour
     private int Vidas = 3;
 
     //recordatorio habilidades
+    public bool canJump = true;
+    public bool canAttack = true;
+    public bool canMove = true;
     public bool hasDash = false;
     public bool hasDoubleJump = false;
     public bool hasShoot = false;
+
 
     public HUD hud;
     [SerializeField] private NewBehaviourScript habManager;
