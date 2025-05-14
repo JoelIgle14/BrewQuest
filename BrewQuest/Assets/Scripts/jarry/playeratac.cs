@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour
+public class playeratac : MonoBehaviour
 {
     public TutorialManager tutorialManager;
     public NewBehaviourScript habilidades;
@@ -40,6 +40,26 @@ public class PlayerAttack : MonoBehaviour
             {
                 timeToNextAttack = Time.time + attacCooldown;
                 animator.SetTrigger("ataque");
+            }
+        }
+    }
+
+    private void DealDamage()
+    {
+        Debug.Log("Evento de animación DealDamage() llamado");
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(positionAttack, attackRange);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            if (enemy.CompareTag("EnemyHitBox"))
+            {
+                Enemyvida enemyvid = enemy.GetComponentInParent<Enemyvida>();
+                if (enemyvid != null)
+                {
+                    enemyvid.TakeDamage(attackDamage, gameObject, true);
+                    Debug.Log("Enemigo golpeado a través del evento de animación");
+                }
             }
         }
     }

@@ -885,11 +885,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8482560059795030316, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.8
+      value: -40.78
       objectReference: {fileID: 0}
     - target: {fileID: 8482560059795030316, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.9
+      value: -2.89
       objectReference: {fileID: 0}
     - target: {fileID: 8482560059795030316, guid: bfb5c93a725c94449a82850ea6dc5556, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1383,7 +1383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669679913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38.8, y: -25.9, z: -10}
+  m_LocalPosition: {x: -40.78, y: -2.89, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1482,7 +1482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2667450304106102245, guid: 408060f960a74854c8c1327d04e2452b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1762,7 +1762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906978682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38.8, y: -25.9, z: -10}
+  m_LocalPosition: {x: -40.78, y: -2.89, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11491,7 +11491,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5932784fdb787a24b81e9c5bdec9a92d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canJump: 1
+  canAttack: 1
+  canMove: 1
+  hasDash: 0
+  hasDoubleJump: 0
+  hasShoot: 0
   hud: {fileID: 589080406}
+  habManager: {fileID: 0}
 --- !u!4 &2026939452
 Transform:
   m_ObjectHideFlags: 0

@@ -15,13 +15,6 @@ public class PlayerMovement : MonoBehaviour
     private int remainingJumps;
     private const int maxJumps = 1;
 
-    [Header("Invulnerabilidad")]
-    [SerializeField] private float invulnerabilityDuration = 0.5f;
-    
-    [HideInInspector] public bool isInvulnerable = false;
-
-    //public bool isInvulnerable = false;
-
     [Header("Plataformas Móviles")]
     private Transform currentPlatform = null;
 
@@ -123,17 +116,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("enemy") && !isInvulnerable)
-        {
-            ApplyDamage(collision.transform);
-        }
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("enemy") && !isInvulnerable)
+        if (collision.gameObject.CompareTag("enemy"))
         {
             ApplyDamage(collision.transform);
         }
@@ -150,25 +135,20 @@ public class PlayerMovement : MonoBehaviour
         Vector2 knockbackForce = new Vector2(5f * direction, 7f);
         ApplyKnockback(knockbackForce, 0.56f);
 
-        StartCoroutine(ActivateInvulnerability());
+        //StartCoroutine(ActivateInvulnerability());
     }
 
     public void ApplyKnockback(Vector2 force, float duration)
     {
-        if (!isInvulnerable)
-        {
             body.velocity = Vector2.zero;
             body.AddForce(force, ForceMode2D.Impulse);
             StartCoroutine(DisableMovementForTime(duration));
-        }
     }
 
-    private IEnumerator ActivateInvulnerability()
-    {
-        isInvulnerable = true;
-        yield return new WaitForSeconds(invulnerabilityDuration);
-        isInvulnerable = false;
-    }
+    //private IEnumerator ActivateInvulnerability()
+    //{
+    //    //lacosa
+    //}
 
     private IEnumerator DisableMovementForTime(float time)
     {
