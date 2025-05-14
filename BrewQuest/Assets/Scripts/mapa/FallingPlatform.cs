@@ -1,21 +1,24 @@
 using UnityEngine;
 
-public class FallingPlatform : MonoBehaviour
+public class FallingPlatform : MonoBehaviour, IReiniciable
 {
     private Rigidbody2D rb;
     private Vector3 originalPosition;
+    private Quaternion originalRotation;
     private bool isShaking = false;
 
     public float fallDelay = 0.5f;
     public float shakeDuration = 0.5f;
     public float shakeMagnitude = 0.1f;
-    public float shakeSpeed = 50f; // Velocidad del movimiento de temblor
+    public float shakeSpeed = 50f;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.isKinematic = true;
         originalPosition = transform.position;
+        originalRotation = transform.rotation;
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -41,10 +44,21 @@ public class FallingPlatform : MonoBehaviour
             yield return null;
         }
 
-        transform.position = originalPosition; // Volver a la posición original antes de caer
+        transform.position = originalPosition;
 
         yield return new WaitForSeconds(fallDelay);
 
         rb.isKinematic = false;
+    }
+
+    public void Reiniciar()
+    {
+        StopAllCoroutines();
+        isShaking = false;
+        transform.position = originalPosition;
+        transform.rotation = originalRotation; // << NUEVO
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        rb.isKinematic = true;
     }
 }

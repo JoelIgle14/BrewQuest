@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Linq;
 
 public class PlayerController : MonoBehaviour
 {
@@ -40,8 +41,11 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         GameManager.Instance.PerderVida();
+
         Invoke("Respawn", respawnDelay);
     }
+
+    // PlayerController.cs
 
     void Respawn()
     {
@@ -53,11 +57,25 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogError("No se ha asignado un punto de respawn.");
         }
+
+        ReiniciarElementosDelMapa(); // << Mover aquí
     }
+
 
     void UpdateRespawnPoint(Transform newRespawnPoint)
     {
         respawnPoint = newRespawnPoint;
         Debug.Log("Checkpoint actualizado: " + newRespawnPoint.position);
     }
+
+    
+
+    void ReiniciarElementosDelMapa()
+    {
+        foreach (IReiniciable reiniciable in FindObjectsOfType<MonoBehaviour>().OfType<IReiniciable>())
+        {
+            reiniciable.Reiniciar();
+        }
+    }
+
 }
