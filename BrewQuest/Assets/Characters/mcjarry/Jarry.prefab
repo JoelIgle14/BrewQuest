@@ -99,9 +99,9 @@ GameObject:
   - component: {fileID: 586419111123493091}
   - component: {fileID: 363989830995691407}
   - component: {fileID: 2350634851553189659}
-  - component: {fileID: 1523903703111207882}
+  - component: {fileID: 1397125138569094663}
   m_Layer: 0
-  m_Name: Jarry 1
+  m_Name: Jarry
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,13 +115,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9036987573618746757}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.78, y: 1.3, z: 0}
+  m_LocalPosition: {x: 305.78, y: -15.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4369727330751792224}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1230246849265011017
 SpriteRenderer:
@@ -430,26 +430,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a34cf423bfcfa40a89f5ff869bfe2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1523903703111207882
+--- !u!114 &1397125138569094663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9036987573618746757}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55c92e51448266946879d2ebe6813f58, type: 3}
+  m_Script: {fileID: 11500000, guid: 251f2355027809844bbeed07a74ce6c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogoTexto: {fileID: 0}
   panelDialogo: {fileID: 0}
-  scriptMovimientoJugador: {fileID: 0}
   dialogosIniciales:
-  - por
-  - dioos
-  - no puede ser
-  - increible
-  pasos:
-  - cartel: {fileID: 0}
-    accion: 
+  - Hey Espumoso
+  - "No tan r\xE1pido"
+  - "Esa botella de ahi es m\xE1gica"
+  - "Solo con tocarla obtendr\xE1s una habilidad \xFAnica"
+  - La roja es la del DASH
+  - Lo podras utilizar con la E

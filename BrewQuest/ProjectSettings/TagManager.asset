@@ -17,6 +17,7 @@ TagManager:
   - Puerta
   - EnemyHitBox
   - hitJarry
+  - Activar Dialogos
   layers:
   - Default
   - TransparentFX

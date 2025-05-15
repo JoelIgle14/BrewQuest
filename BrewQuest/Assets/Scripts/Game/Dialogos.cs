@@ -14,16 +14,9 @@ public class Dialogos : MonoBehaviour
     public List<string> dialogosIniciales;
 
     private int dialogoIndex = 0;
-    private bool mostrandoDialogo = true;
+    private bool mostrandoDialogo = false;
     private bool escribiendo = false;
     private Coroutine escrituraActual;
-
-    private void Start()
-    {
-        // Activa panel y muestra primer diálogo
-        panelDialogo.SetActive(true);
-        MostrarDialogo(dialogosIniciales[dialogoIndex]);
-    }
 
     private void Update()
     {
@@ -44,10 +37,8 @@ public class Dialogos : MonoBehaviour
                 }
                 else
                 {
-                    // Fin del diálogo
                     mostrandoDialogo = false;
                     panelDialogo.SetActive(false);
-
                 }
             }
         }
@@ -87,15 +78,25 @@ public class Dialogos : MonoBehaviour
         return mostrandoDialogo;
     }
 
-    public void IniciarDialogoConRetraso()
+    public void IniciarDialogo()
     {
-        StartCoroutine(IniciarDialogoConRetrasoCoroutine());
-    }
+        if (dialogosIniciales == null || dialogosIniciales.Count == 0)
+        {
+            Debug.LogWarning("No hay diálogos asignados.");
+            return;
+        }
 
-    private IEnumerator IniciarDialogoConRetrasoCoroutine()
-    {
-        yield return new WaitForSeconds(0.5f);
+        dialogoIndex = 0;
+        mostrandoDialogo = true;
         panelDialogo.SetActive(true);
         MostrarDialogo(dialogosIniciales[dialogoIndex]);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Activar Dialogos"))
+        {
+            IniciarDialogo();
+        }
     }
 }
