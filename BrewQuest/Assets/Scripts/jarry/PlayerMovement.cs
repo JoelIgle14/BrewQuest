@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float rayCastDistance = 0.2f;
     private int remainingJumps;
     private const int maxJumps = 1;
+    public bool isKnockedBack;
 
     [Header("Plataformas Móviles")]
     private Transform currentPlatform = null;
@@ -140,22 +141,22 @@ public class PlayerMovement : MonoBehaviour
 
     public void ApplyKnockback(Vector2 force, float duration)
     {
-            body.velocity = Vector2.zero;
-            body.AddForce(force, ForceMode2D.Impulse);
-            StartCoroutine(DisableMovementForTime(duration));
-    }
+        if (isKnockedBack) return;
 
-    //private IEnumerator ActivateInvulnerability()
-    //{
-    //    //lacosa
-    //}
+        isKnockedBack = true;
+        body.velocity = Vector2.zero;
+        body.AddForce(force, ForceMode2D.Impulse);
+        StartCoroutine(DisableMovementForTime(duration));
+    }
 
     public IEnumerator DisableMovementForTime(float time)
     {
         canMove = false;
         yield return new WaitForSeconds(time);
+        isKnockedBack = false;
         canMove = true;
     }
+
 
     private void OnCollisionExit2D(Collision2D collision)
     {

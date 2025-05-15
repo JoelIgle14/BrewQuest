@@ -86,8 +86,25 @@ public class MovementManager : MonoBehaviour
         }
     }
 
+    //void FixedUpdate()
+    //{
+    //    if (saltoSolicitado)
+    //    {
+    //        rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
+    //        saltoSolicitado = false;
+    //        saltoEnProgreso = true;
+    //    }
+    //    else if (dashSolicitado)
+    //    {
+    //        rb.velocity = new Vector2(transform.localScale.x * fuerzaDash, 0f);
+    //        dashSolicitado = false;
+    //    }
+    //}
+
     void FixedUpdate()
     {
+        if (pm.isKnockedBack) return;
+
         if (saltoSolicitado)
         {
             rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
@@ -100,6 +117,7 @@ public class MovementManager : MonoBehaviour
             dashSolicitado = false;
         }
     }
+
 
     public void SolicitarSalto(float fuerza)
     {
