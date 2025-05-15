@@ -64,18 +64,18 @@ public class playeratac : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("EnemyHitBox"))
-        {
-            Enemyvida enemyvid = collision.GetComponentInParent<Enemyvida>();
-            if (enemyvid != null)
-            {
-                enemyvid.TakeDamage(attackDamage, gameObject, true);
-                Debug.Log("Enemigo golpeado a través del Trigger");
-            }
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("EnemyHitBox"))
+    //    {
+    //        Enemyvida enemyvid = collision.GetComponentInParent<Enemyvida>();
+    //        if (enemyvid != null)
+    //        {
+    //            enemyvid.TakeDamage(attackDamage, gameObject, true);
+    //            Debug.Log("Enemigo golpeado a través del Trigger");
+    //        }
+    //    }
+    //}
 
     private void LookingUp()
     {

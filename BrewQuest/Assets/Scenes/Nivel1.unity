@@ -106075,7 +106075,7 @@ MonoBehaviour:
   canJump: 1
   canAttack: 1
   canMove: 1
-  hasDash: 1
+  hasDash: 0
   hasDoubleJump: 0
   hasShoot: 0
   hud: {fileID: 1619698925}
@@ -106882,6 +106882,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 895120491354690903, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogoTexto
       value: 
@@ -106894,17 +106898,25 @@ PrefabInstance:
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 698911562}
+    - target: {fileID: 5788834043212525204, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5788834043212525204, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 305.78
+      value: 429.9
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.37
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -106942,6 +106954,10 @@ PrefabInstance:
       propertyPath: dashBarAnimator
       value: 
       objectReference: {fileID: 1490705472}
+    - target: {fileID: 8729202147526316273, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: canMove
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9036987573618746757, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_Name
       value: Jarry
