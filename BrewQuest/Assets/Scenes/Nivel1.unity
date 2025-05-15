@@ -106077,7 +106077,7 @@ MonoBehaviour:
   canMove: 1
   hasDash: 1
   hasDoubleJump: 0
-  hasShoot: 0
+  hasShoot: 1
   hud: {fileID: 1619698925}
   habManager: {fileID: 0}
 --- !u!4 &921488969
@@ -106898,6 +106898,14 @@ PrefabInstance:
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 698911562}
+    - target: {fileID: 4910036029012203672, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910036029012203672, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5788834043212525204, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_Enabled
       value: 0
