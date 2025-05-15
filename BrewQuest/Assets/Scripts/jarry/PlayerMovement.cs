@@ -150,7 +150,7 @@ public class PlayerMovement : MonoBehaviour
     //    //lacosa
     //}
 
-    private IEnumerator DisableMovementForTime(float time)
+    public IEnumerator DisableMovementForTime(float time)
     {
         canMove = false;
         yield return new WaitForSeconds(time);
