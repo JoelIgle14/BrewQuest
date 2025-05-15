@@ -106912,11 +106912,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 69.69
+      value: 297
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.46
+      value: -14.999999
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -114289,6 +114289,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9115415653082184074, guid: cd840550af9f69543acea9dea240d223, type: 3}
       propertyPath: patrolDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129227773756359547, guid: cd840550af9f69543acea9dea240d223, type: 3}
+      propertyPath: golpeForceX
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129227773756359547, guid: cd840550af9f69543acea9dea240d223, type: 3}
+      propertyPath: golpeForceY
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []

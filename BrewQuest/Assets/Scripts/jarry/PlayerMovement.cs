@@ -50,13 +50,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
-        if (hab.canMove && !dash.isDashing)
-        {
-            Move();
-        }
-    }
+   void FixedUpdate()
+{
+    if (hab.canMove && canMove && !dash.isDashing)
+        Move();
+}
+
 
     private void Move()
     {
