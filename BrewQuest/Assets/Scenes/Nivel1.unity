@@ -106075,7 +106075,7 @@ MonoBehaviour:
   canJump: 1
   canAttack: 1
   canMove: 1
-  hasDash: 0
+  hasDash: 1
   hasDoubleJump: 0
   hasShoot: 0
   hud: {fileID: 1619698925}
