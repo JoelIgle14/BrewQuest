@@ -106920,11 +106920,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 297
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14.999999
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -107513,8 +107513,8 @@ PolygonCollider2D:
       - {x: 113.413155, y: -7.182072}
       - {x: 108.23342, y: 1.1176081}
       - {x: 91.243706, y: 6.9353533}
-      - {x: -13.410511, y: 5.3904643}
-      - {x: -12.5587435, y: -10.3772545}
+      - {x: -16.546549, y: 5.461739}
+      - {x: -16.835155, y: -11.731452}
   m_UseDelaunayMesh: 0
 --- !u!4 &1175673543
 Transform:
@@ -114997,7 +114997,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: maricomn
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
