@@ -73,6 +73,8 @@ public class BossController : MonoBehaviour
         Instantiate(hordaPrefabs[hordeIndex], transform.position, Quaternion.identity);
     }
 
+
+
     public void ReceiveDamage(int amount)
     {
         if (!canTakeDamage) return;

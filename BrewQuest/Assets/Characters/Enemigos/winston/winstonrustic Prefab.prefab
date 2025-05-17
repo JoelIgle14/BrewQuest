@@ -290,8 +290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedwalk: 1
-  contadorT: 0
-  tiempocambio: 0
+  contadorT: 3
+  tiempocambio: 3
   esDerecha: 0
   isBeingHit: 0
 --- !u!114 &2036229063236097966

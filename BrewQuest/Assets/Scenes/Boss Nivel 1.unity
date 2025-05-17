@@ -1760,8 +1760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ff99f4c47c795479fe4a82538db3db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombre: 
-  animacion: {fileID: 0}
+  nombre: Cosa
+  animacion: {fileID: 7400000, guid: ddaaae967b7fe9f4887ce0c03742e123, type: 2}
 --- !u!114 &1802432120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1777,17 +1777,16 @@ MonoBehaviour:
   maxAttacksBeforeRest: 5
   restDuration: 5
   attacks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1802432119}
+  - {fileID: 1802432119}
+  - {fileID: 1802432119}
+  - {fileID: 1802432119}
+  - {fileID: 1802432119}
   hordaPrefabs:
   - {fileID: 4783422414323828381, guid: cd840550af9f69543acea9dea240d223, type: 3}
   - {fileID: 656601011811384830, guid: 11ec26707edb3e140a2a1526576b312f, type: 3}
   - {fileID: 2667450304106102245, guid: 408060f960a74854c8c1327d04e2452b, type: 3}
   - {fileID: 3591490462597410565, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
-  - {fileID: 4783422414323828381, guid: cd840550af9f69543acea9dea240d223, type: 3}
 --- !u!212 &1802432121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1826,8 +1825,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 555410427
-  m_SortingLayer: 7
+  m_SortingLayerID: -188520407
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
