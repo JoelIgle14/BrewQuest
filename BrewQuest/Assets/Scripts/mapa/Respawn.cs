@@ -1,29 +1,34 @@
 using UnityEngine;
 using System.Linq;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
     public Transform respawnPoint;
     public float respawnDelay = 2f;
 
+    public float parpadeoTiempo = 2f;
+    public float parpadeoIntervalo = 0.2f;
+
     private Animator anim;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
-{
-    anim = GetComponent<Animator>();
-
-    if (CheckpointData.ultimaPosicionCheckpoint.HasValue)
     {
-        transform.position = CheckpointData.ultimaPosicionCheckpoint.Value;
-        CheckpointData.ultimaPosicionCheckpoint = null; // solo una vez
-    }
+        anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
-    if (respawnPoint == null)
-    {
-        Debug.LogWarning("Respawn point no asignado. Asigna un punto de respawn en el Inspector.");
-    }
-}
+        if (CheckpointData.ultimaPosicionCheckpoint.HasValue)
+        {
+            transform.position = CheckpointData.ultimaPosicionCheckpoint.Value;
+            CheckpointData.ultimaPosicionCheckpoint = null; // solo una vez
+        }
 
+        if (respawnPoint == null)
+        {
+            Debug.LogWarning("Respawn point no asignado. Asigna un punto de respawn en el Inspector.");
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -45,8 +50,6 @@ public class PlayerController : MonoBehaviour
         Invoke("Respawn", respawnDelay);
     }
 
-    // PlayerController.cs
-
     void Respawn()
     {
         if (respawnPoint != null)
@@ -58,17 +61,15 @@ public class PlayerController : MonoBehaviour
             Debug.LogError("No se ha asignado un punto de respawn.");
         }
 
-        ReiniciarElementosDelMapa(); // << Mover aquí
+        ReiniciarElementosDelMapa();
+        StartCoroutine(ParpadeoTemporal(parpadeoTiempo));
     }
-
 
     void UpdateRespawnPoint(Transform newRespawnPoint)
     {
         respawnPoint = newRespawnPoint;
         Debug.Log("Checkpoint actualizado: " + newRespawnPoint.position);
     }
-
-    
 
     void ReiniciarElementosDelMapa()
     {
@@ -78,4 +79,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator ParpadeoTemporal(float duracion)
+    {
+        GameManager.Instance.canMove = false;
+
+        float tiempoTranscurrido = 0f;
+
+        while (tiempoTranscurrido < duracion)
+        {
+            spriteRenderer.enabled = !spriteRenderer.enabled;
+            yield return new WaitForSeconds(parpadeoIntervalo);
+            tiempoTranscurrido += parpadeoIntervalo;
+        }
+
+        spriteRenderer.enabled = true;
+        GameManager.Instance.canMove = true;
+    }
 }

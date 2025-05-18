@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         HandleFlip();
         HandleGroundCheck();
 
+
         if (isGrounded && Input.GetKeyDown(KeyCode.Space) && hab.canJump && hab.canMove && !dash.isDashing)
         {
             manager.SolicitarSalto(jumpForce);

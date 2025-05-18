@@ -106045,9 +106045,9 @@ MonoBehaviour:
   canJump: 1
   canAttack: 1
   canMove: 1
-  hasDash: 1
+  hasDash: 0
   hasDoubleJump: 0
-  hasShoot: 1
+  hasShoot: 0
   hud: {fileID: 1619698925}
   habManager: {fileID: 0}
 --- !u!4 &921488969
@@ -106935,6 +106935,10 @@ PrefabInstance:
     - target: {fileID: 8729202147526316273, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: canMove
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729202147526316273, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9036987573618746757, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_Name
