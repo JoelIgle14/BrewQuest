@@ -17,15 +17,16 @@ public class MovementManager : MonoBehaviour
     private dash dish;
 
     private Queue<KeyCode> inputBuffer;
-    public float bufferTiempo = 0.2f;
+    public float bufferTiempo = 0.1f;
     private float bufferTimer;
 
     [Header("Salto Variable")]
     [SerializeField] private float multiplicadorCutJump = 0.5f; // cuánto se recorta si suelta pronto
 
     [Header("Coyote Time")]
-    [SerializeField] private float coyoteTime = 0.2f;
+    [SerializeField] private float coyoteTime;
     private float coyoteTimeCounter;
+
 
 
 
@@ -80,7 +81,7 @@ public class MovementManager : MonoBehaviour
         }
 
         // Solo procesar salto si no estamos dasheando
-        if ((pm.isGrounded || coyoteTimeCounter > 0f) && inputBuffer.Count > 0 && !dish.isDashing)
+        if ((coyoteTimeCounter > 0f) && inputBuffer.Count > 0 && !dish.isDashing)
         {
             ProcesarInputBufferParaSalto();
         }
@@ -139,8 +140,7 @@ public class MovementManager : MonoBehaviour
     {
         if (inputBuffer.Count > 0 && inputBuffer.Peek() == KeyCode.Space && !dish.isDashing)
         {
-            // Salto desde el suelo
-            if (pm.isGrounded)
+            if (coyoteTimeCounter > 0f)
             {
                 if (hab != null && !hab.canJump)
                     return;
@@ -148,8 +148,7 @@ public class MovementManager : MonoBehaviour
                 SolicitarSalto(pm.jumpForce);
                 inputBuffer.Dequeue();
             }
-            // Doble salto en el aire
-            else if (!pm.isGrounded && hab != null && hab.canDoubleJump)
+            else if (hab != null && hab.canDoubleJump)
             {
                 SolicitarSalto(pm.jumpForce);
                 inputBuffer.Dequeue();

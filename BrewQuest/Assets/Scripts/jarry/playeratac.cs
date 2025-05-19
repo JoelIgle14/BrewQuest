@@ -10,6 +10,7 @@ public class playeratac : MonoBehaviour
     public float attackRange;
     public float attackDamage;
     public float attacCooldown;
+    public float attackDelay;
 
     private float timeToNextAttack = 0f;
     public Vector3 positionAttack;
@@ -40,9 +41,15 @@ public class playeratac : MonoBehaviour
             {
                 timeToNextAttack = Time.time + attacCooldown;
                 animator.SetTrigger("ataque");
-                DealDamage();  // Daño inmediato al pulsar la tecla
+                StartCoroutine(DelayedAttack()); //daño tras un delay muy pequeño
             }
         }
+    }
+
+    private IEnumerator DelayedAttack()
+    {
+        yield return new WaitForSeconds(attackDelay); // <-- Espera antes de aplicar el daño
+        DealDamage();
     }
 
     private void DealDamage()
