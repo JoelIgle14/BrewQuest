@@ -40,6 +40,7 @@ public class playeratac : MonoBehaviour
             {
                 timeToNextAttack = Time.time + attacCooldown;
                 animator.SetTrigger("ataque");
+                DealDamage();  // Daño inmediato al pulsar la tecla
             }
         }
     }
@@ -63,19 +64,6 @@ public class playeratac : MonoBehaviour
             }
         }
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("EnemyHitBox"))
-    //    {
-    //        Enemyvida enemyvid = collision.GetComponentInParent<Enemyvida>();
-    //        if (enemyvid != null)
-    //        {
-    //            enemyvid.TakeDamage(attackDamage, gameObject, true);
-    //            Debug.Log("Enemigo golpeado a través del Trigger");
-    //        }
-    //    }
-    //}
 
     private void LookingUp()
     {
