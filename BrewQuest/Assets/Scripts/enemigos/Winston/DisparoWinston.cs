@@ -33,9 +33,10 @@ public class DisparoWinston : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Player") || collision.CompareTag("Floor"))
+
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Floor"))
         {
             Explode();
         }

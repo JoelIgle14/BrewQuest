@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private SpriteRenderer spriteRenderer;
 
+    public bool esInvulnerable = false;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -21,7 +23,7 @@ public class PlayerController : MonoBehaviour
         if (CheckpointData.ultimaPosicionCheckpoint.HasValue)
         {
             transform.position = CheckpointData.ultimaPosicionCheckpoint.Value;
-            CheckpointData.ultimaPosicionCheckpoint = null; // solo una vez
+            CheckpointData.ultimaPosicionCheckpoint = null;
         }
 
         if (respawnPoint == null)
@@ -43,10 +45,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void TakeDamage(Transform enemyTransform)
+    {
+        if (esInvulnerable) return;
+
+        GameManager.Instance.PerderVida();
+
+        // Aplica knockback a través del PlayerMovement
+        PlayerMovement movement = GetComponent<PlayerMovement>();
+        if (movement != null)
+        {
+            float direction = (enemyTransform.position.x > transform.position.x) ? -1 : 1;
+            Vector2 knockbackForce = new Vector2(5f * direction, 7f);
+            movement.ApplyKnockback(knockbackForce, 0.56f);
+        }
+
+        StartCoroutine(ParpadeoTemporal(parpadeoTiempo));
+    }
+
     public void Die()
     {
         GameManager.Instance.PerderVida();
-
         Invoke("Respawn", respawnDelay);
     }
 
@@ -81,7 +100,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator ParpadeoTemporal(float duracion)
     {
-        GameManager.Instance.canMove = false;
+        esInvulnerable = true;
 
         float tiempoTranscurrido = 0f;
 
@@ -93,6 +112,6 @@ public class PlayerController : MonoBehaviour
         }
 
         spriteRenderer.enabled = true;
-        GameManager.Instance.canMove = true;
+        esInvulnerable = false;
     }
 }
