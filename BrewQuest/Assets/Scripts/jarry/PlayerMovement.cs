@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -51,12 +50,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-   void FixedUpdate()
-{
-    if (hab.canMove && canMove && !dash.isDashing)
-        Move();
-}
-
+    void FixedUpdate()
+    {
+        if (hab.canMove && canMove && !dash.isDashing)
+            Move();
+    }
 
     private void Move()
     {
@@ -120,22 +118,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("enemy"))
         {
-            ApplyDamage(collision.transform);
+            PlayerController pc = GetComponent<PlayerController>();
+            if (pc != null)
+            {
+                pc.TakeDamage(collision.transform);
+            }
         }
-    }
-
-    private void ApplyDamage(Transform enemyTransform)
-    {
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.PerderVida();
-        }
-
-        float direction = (enemyTransform.position.x > transform.position.x) ? -1 : 1;
-        Vector2 knockbackForce = new Vector2(5f * direction, 7f);
-        ApplyKnockback(knockbackForce, 0.56f);
-
-        //StartCoroutine(ActivateInvulnerability());
     }
 
     public void ApplyKnockback(Vector2 force, float duration)
@@ -155,7 +143,6 @@ public class PlayerMovement : MonoBehaviour
         isKnockedBack = false;
         canMove = true;
     }
-
 
     private void OnCollisionExit2D(Collision2D collision)
     {
