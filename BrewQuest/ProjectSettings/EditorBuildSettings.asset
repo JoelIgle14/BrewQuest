@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Boss Nivel 1.unity
     guid: 95e6c9c7c0985474c997b79dc39cc9a9
   - enabled: 1
+    path: Assets/Scenes/Bar3.unity
+    guid: 1dd51096ac2caaf4d8c5d7d99889c789
+  - enabled: 1
     path: Assets/Scenes/Nivel2.unity
     guid: 29078012cf4d37f439bdfa6b885ac61c
   - enabled: 0
