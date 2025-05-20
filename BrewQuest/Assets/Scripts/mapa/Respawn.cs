@@ -41,9 +41,23 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("Checkpoint"))
         {
+            // Sumamos puntos si el checkpoint no ha sido activado antes
+            Checkpoint checkpoint = collision.GetComponent<Checkpoint>();
+            if (checkpoint != null && !checkpoint.yaActivado)
+            {
+                checkpoint.yaActivado = true;
+
+                if (ScoreManager.Instance != null)
+                {
+                    ScoreManager.Instance.AddPoints(checkpoint.puntosPorCheckpoint);
+                }
+            }
+
+            // Siempre actualizamos el respawn, se hayan dado puntos o no
             UpdateRespawnPoint(collision.transform);
         }
     }
+
 
     public void TakeDamage(Transform enemyTransform)
     {

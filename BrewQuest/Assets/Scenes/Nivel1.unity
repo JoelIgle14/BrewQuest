@@ -714,6 +714,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fuente
       objectReference: {fileID: 0}
+    - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1063137501
+      objectReference: {fileID: 0}
     - target: {fileID: 9012718225387312287, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -916,6 +924,14 @@ PrefabInstance:
     - target: {fileID: 3787725845484311463, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1063137501
       objectReference: {fileID: 0}
     - target: {fileID: 6134159503175750147, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_Name
@@ -2562,6 +2578,10 @@ PrefabInstance:
     - target: {fileID: 2201301768889800192, guid: 3b36374e0b8d42a48b8128c01acbc707, type: 3}
       propertyPath: m_Name
       value: JarraPrefab (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351684379535502302, guid: 3b36374e0b8d42a48b8128c01acbc707, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6220598790959539030, guid: 3b36374e0b8d42a48b8128c01acbc707, type: 3}
       propertyPath: m_RootOrder
@@ -4387,6 +4407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97f1f27f6152694e8c9f894bdfc2f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntosPorVidaExtra: 20
 --- !u!61 &643794884
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -105557,6 +105578,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 311190310}
     m_Modifications:
+    - target: {fileID: 1674316686132744553, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: yaActivado
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3787725845484311463, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -105608,6 +105633,14 @@ PrefabInstance:
     - target: {fileID: 3787725845484311463, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1063137501
       objectReference: {fileID: 0}
     - target: {fileID: 6134159503175750147, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_Name
@@ -107868,6 +107901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97f1f27f6152694e8c9f894bdfc2f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntosPorVidaExtra: 20
 --- !u!61 &1016419272
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -111951,6 +111985,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1063137501
+      objectReference: {fileID: 0}
     - target: {fileID: 6134159503175750147, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_Name
       value: Fuente (1)
@@ -112632,6 +112674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97f1f27f6152694e8c9f894bdfc2f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntosPorVidaExtra: 20
 --- !u!61 &1499246906
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -112737,6 +112780,14 @@ PrefabInstance:
     - target: {fileID: 3787725845484311463, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1063137501
       objectReference: {fileID: 0}
     - target: {fileID: 6134159503175750147, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_Name
@@ -114952,6 +115003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97f1f27f6152694e8c9f894bdfc2f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntosPorVidaExtra: 20
 --- !u!61 &1867299112
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -116621,6 +116673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97f1f27f6152694e8c9f894bdfc2f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puntosPorVidaExtra: 20
 --- !u!61 &1948918044
 BoxCollider2D:
   m_ObjectHideFlags: 0

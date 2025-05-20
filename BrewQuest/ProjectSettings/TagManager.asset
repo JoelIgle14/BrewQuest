@@ -73,11 +73,11 @@ TagManager:
   - name: Boss
     uniqueID: 4106446889
     locked: 0
-  - name: Enemigos
-    uniqueID: 555410427
-    locked: 0
   - name: decoracion
     uniqueID: 2365863411
+    locked: 0
+  - name: Enemigos
+    uniqueID: 555410427
     locked: 0
   - name: Square
     uniqueID: 1

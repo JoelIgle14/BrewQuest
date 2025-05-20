@@ -97,4 +97,5 @@ public class GameManager : MonoBehaviour
         // Desuscribirse del evento cuando el GameManager se destruya
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+
 }
