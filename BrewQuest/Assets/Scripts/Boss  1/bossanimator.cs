@@ -17,24 +17,11 @@ public class bossanimator : MonoBehaviour
     
     void Update()
     {
-        switch (bc.currentAttackCount)
+        anim.SetInteger("bn", bc.currentAttackCount);
+
+        if (bc.currentAttackCount < 4)
         {
-            case 0:
-                anim.SetTrigger("b1");
-                break;
-            case 1:
-                anim.SetTrigger("b2");
-                break;
-            case 2:
-                anim.SetTrigger("b3");
-                break;
-            case 3:
-                anim.SetTrigger("b4");
-                break;
-            case 4:
-                anim.SetTrigger("b5");
-                StartCoroutine(Change(3));
-                break;
+            StartCoroutine(Change(3f));
         }
     }
 
@@ -42,9 +29,6 @@ public class bossanimator : MonoBehaviour
     {
         yield return new WaitForSeconds(wait);
         anim.SetTrigger("charge");
-        yield return new WaitForSeconds(wait);
-        anim.SetTrigger("return");
-
     }
 
 
