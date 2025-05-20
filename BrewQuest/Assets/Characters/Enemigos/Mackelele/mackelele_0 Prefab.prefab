@@ -37,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 5262891691148086546}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7260864348240057414
 SpriteRenderer:
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b35671727e156e43a641a342020d534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  health: 2
   golpeado: 0
 --- !u!60 &5927254742239477838
 PolygonCollider2D:

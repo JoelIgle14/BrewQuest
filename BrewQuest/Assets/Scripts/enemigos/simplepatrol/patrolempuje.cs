@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class recibirknockBack : MonoBehaviour
 {
-    //logica de golpe
     public float golpeForceX = 3f;
     public float golpeForceY = 3f;
     public float golpeDuration = 0.5f;
 
-    //otros scripts o componentes
     private Enemyvida ev;
     private Rigidbody2D rb;
     private PlayerMovement jarry;
@@ -28,17 +26,12 @@ public class recibirknockBack : MonoBehaviour
         StartCoroutine(GolpeCoroutine());
     }
 
-
     IEnumerator GolpeCoroutine()
     {
-        //KnockBack aplicado desde el rigidbody
-
         float direction = (jarry.transform.position.x > transform.position.x) ? -1f : 1f;
+        Vector2 baseDirection = new Vector2(direction, 1f).normalized;
+        Vector2 golpeVector = new Vector2(baseDirection.x * golpeForceX, baseDirection.y * golpeForceY);
 
-        Vector2 baseDirection = new Vector2(direction, 1f).normalized; // con esta linea va igual de fuerte a los dos lados
-        Vector2 golpeVector = new Vector2(baseDirection.x * golpeForceX, baseDirection.y * golpeForceY); //esta es la del empuje
-
-        //reseteo y aplicacion de fuerza
         rb.velocity = Vector2.zero;
         rb.AddForce(golpeVector, ForceMode2D.Impulse);
 

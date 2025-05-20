@@ -27,6 +27,8 @@ public class ConfinedCameraWithOffset : MonoBehaviour
 
     void LateUpdate()
     {
+
+
         if (target == null || confiner == null) return;
 
         // 1. Calculamos la posición deseada de la cámara con offset
@@ -68,6 +70,7 @@ public class ConfinedCameraWithOffset : MonoBehaviour
             finalPosition = FindValidCameraPosition(horzExtent, vertExtent);
         }
 
+        finalPosition = desiredPosition;
         // Aplicamos suavizado
         transform.position = Vector3.Lerp(transform.position, finalPosition, smoothSpeed * Time.deltaTime);
     }
