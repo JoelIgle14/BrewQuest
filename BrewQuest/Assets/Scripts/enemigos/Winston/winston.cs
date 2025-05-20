@@ -4,71 +4,77 @@ using UnityEngine;
 
 public class winston : MonoBehaviour
 {
-    //Ataque
+    [Header("Ataque")]
     public GameObject bulletPrefab;
-    public Transform player;              // Referencia al jugador
-    public Transform firePoint;           // Punto desde donde dispara
-    public float detectionRange = 5f;     // Rango de visi�n
-    public float fireRate = 1f;           // Tiempo entre disparos
+    public Transform player;
+    public Transform firePoint;
 
-    private float fireCooldown = 0f;
+    public float bulletInterval = 1f;
+    public float detectionRange = 5f;
 
-    private Vector3 startPosition;
-    //private int direction = 1;
+    private bool haVistoJugador = false;
+    private Coroutine dispararCoroutine = null;
 
-    //otros scripts o componentes
     private Enemyvida ev;
-    private Rigidbody2D rb;
-    private PlayerMovement jarry;
 
     void Start()
     {
-        startPosition = transform.position;
-        rb = GetComponent<Rigidbody2D>();
         ev = GetComponent<Enemyvida>();
-        jarry = FindObjectOfType<PlayerMovement>();
-
     }
 
     void Update()
-    { 
-        //Disparo
-
+    {
         float distance = Vector2.Distance(transform.position, player.position);
 
         if (distance <= detectionRange)
         {
-            if (player.position.x < transform.position.x && transform.localScale.x > 0)
-            {
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            }
-            else if (player.position.x > transform.position.x && transform.localScale.x < 0)
-            {
-                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
-            }
-
-            if (fireCooldown <= 0f)
-            {
-                Shoot();
-                fireCooldown = 2f / fireRate;
-            }
+            haVistoJugador = true;
         }
 
-        fireCooldown -= Time.deltaTime;
+        if (haVistoJugador && !ev.golpeado && dispararCoroutine == null)
+        {
+            MirarAlJugador();
+            dispararCoroutine = StartCoroutine(DispararCadaIntervalo());
+        }
 
+        if (ev.golpeado && dispararCoroutine != null)
+        {
+            StopCoroutine(dispararCoroutine);
+            dispararCoroutine = null;
+        }
+    }
+
+    void MirarAlJugador()
+    {
+        if (player.position.x < transform.position.x && transform.localScale.x > 0)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+        else if (player.position.x > transform.position.x && transform.localScale.x < 0)
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
     }
 
     void Shoot()
     {
-        // Direcci�n hacia el jugador
-        Vector2 direction = (player.position - firePoint.position).normalized;
-
-        // Crear la bala
+        Vector2 dir = (player.position - firePoint.position).normalized;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-
-        // Enviarle la direcci�n
-        bullet.GetComponent<DisparoWinston>().SetDirection(direction);
+        bullet.GetComponent<DisparoWinston>()?.SetDirection(dir);
     }
 
+    IEnumerator DispararCadaIntervalo()
+    {
+        while (true)
+        {
+            MirarAlJugador();
+            Shoot();
+            yield return new WaitForSeconds(bulletInterval);
+        }
+    }
 
+    public bool HaVistoJugador()
+    {
+        return haVistoJugador;
+    }
 }

@@ -8,17 +8,18 @@ public class patrullasimple : MonoBehaviour
     public float contadorT;
     public float tiempocambio;
     public bool esDerecha;
-    public bool isBeingHit = false; // Para controlar si está siendo golpeado
+    public bool isBeingHit = false;
 
-    //otros scripts o componentes
     private Enemyvida ev;
     private recibirknockBack recback;
     private Vector3 initialScale;
+    private winston winstonScript;
 
     void Start()
     {
         ev = GetComponent<Enemyvida>();
         recback = GetComponent<recibirknockBack>();
+        winstonScript = GetComponent<winston>();
         initialScale = transform.localScale;
     }
 
@@ -26,30 +27,34 @@ public class patrullasimple : MonoBehaviour
     {
         if (ev.golpeado && !isBeingHit)
         {
-            isBeingHit = true; // Activamos que está siendo golpeado
+            isBeingHit = true;
             recback.EmpujeEnemigo();
         }
 
         if (!ev.golpeado && !isBeingHit)
         {
-            Vector3 newScale = initialScale;
+            Vector3 newScale = transform.localScale;
 
             if (esDerecha)
             {
                 transform.position += Vector3.right * speedwalk * Time.deltaTime;
-                newScale.x = -Mathf.Abs(initialScale.x);
+
+                if (winstonScript == null || !winstonScript.HaVistoJugador())
+                    newScale.x = -Mathf.Abs(initialScale.x);
             }
             else
             {
                 transform.position += Vector3.left * speedwalk * Time.deltaTime;
-                newScale.x = Mathf.Abs(initialScale.x);
+
+                if (winstonScript == null || !winstonScript.HaVistoJugador())
+                    newScale.x = Mathf.Abs(initialScale.x);
             }
 
             transform.localScale = newScale;
 
             contadorT -= Time.deltaTime;
 
-            if (contadorT <= 0)
+            if (contadorT <= 0 && (winstonScript == null || !winstonScript.HaVistoJugador()))
             {
                 contadorT = tiempocambio;
                 esDerecha = !esDerecha;
@@ -57,8 +62,3 @@ public class patrullasimple : MonoBehaviour
         }
     }
 }
-
-/*
- * 
- // Patrullaje
-                */

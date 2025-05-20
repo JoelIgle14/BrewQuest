@@ -115506,7 +115506,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2087548674710090935, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
       propertyPath: m_FlipX
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3591490462597410565, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
       propertyPath: m_Name

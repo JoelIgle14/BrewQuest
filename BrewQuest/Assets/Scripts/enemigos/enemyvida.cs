@@ -26,7 +26,6 @@ public class Enemyvida : MonoBehaviour
 
             animator.SetTrigger("hit");
 
-            // Solo recargar si el daño vino de un ataque cuerpo a cuerpo
             if (esAtaqueCuerpoACuerpo)
             {
                 Disparo disparo = Player.GetComponent<Disparo>();
