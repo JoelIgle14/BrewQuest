@@ -232,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   golpeado: 0
+  puntos: 15
 --- !u!1 &5809861000305988966
 GameObject:
   m_ObjectHideFlags: 0

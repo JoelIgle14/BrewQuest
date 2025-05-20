@@ -5,6 +5,8 @@ public class Enemyvida : MonoBehaviour
 {
     public float health;
     public bool golpeado;
+    public int puntos = 10; // ← Añade puntos por este enemigo
+
     Animator animator;
 
     void Awake()
@@ -21,12 +23,18 @@ public class Enemyvida : MonoBehaviour
 
             if (health <= 0)
             {
+                // Sumar puntos antes de destruir
+                if (ScoreManager.Instance != null)
+                {
+                    ScoreManager.Instance.AddPoints(puntos);
+                }
+
                 Destroy(gameObject);
+                return;
             }
 
             animator.SetTrigger("hit");
 
-            // Solo recargar si el da�o vino de un ataque cuerpo a cuerpo
             if (esAtaqueCuerpoACuerpo)
             {
                 Disparo disparo = Player.GetComponent<Disparo>();
