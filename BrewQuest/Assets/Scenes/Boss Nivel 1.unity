@@ -1632,9 +1632,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 425687747}
     m_Modifications:
+    - target: {fileID: 900615969850938483, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[23].x
+      value: -0.16585405
+      objectReference: {fileID: 0}
+    - target: {fileID: 900615969850938483, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[23].y
+      value: 0.002858906
+      objectReference: {fileID: 0}
+    - target: {fileID: 900615969850938483, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[24].x
+      value: -0.13654518
+      objectReference: {fileID: 0}
+    - target: {fileID: 900615969850938483, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[24].y
+      value: -0.030150026
+      objectReference: {fileID: 0}
+    - target: {fileID: 900615969850938483, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[25].x
+      value: -0.1369811
+      objectReference: {fileID: 0}
+    - target: {fileID: 900615969850938483, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[34].x
+      value: 0.18836564
+      objectReference: {fileID: 0}
+    - target: {fileID: 900615969850938483, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[34].y
+      value: -0.076397166
+      objectReference: {fileID: 0}
+    - target: {fileID: 900615969850938483, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[35].x
+      value: 0.22657956
+      objectReference: {fileID: 0}
+    - target: {fileID: 900615969850938483, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[35].y
+      value: -0.09385366
+      objectReference: {fileID: 0}
+    - target: {fileID: 900615969850938483, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[40].x
+      value: 0.1690854
+      objectReference: {fileID: 0}
+    - target: {fileID: 900615969850938483, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[41].x
+      value: 0.24109073
+      objectReference: {fileID: 0}
+    - target: {fileID: 900615969850938483, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[41].y
+      value: -0.015140798
+      objectReference: {fileID: 0}
     - target: {fileID: 2087548674710090935, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
       propertyPath: m_FlipX
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2570207509623693474, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
       propertyPath: health
@@ -2409,7 +2457,7 @@ GameObject:
   - component: {fileID: 1802432125}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
