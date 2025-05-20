@@ -10,12 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5993499495684090497}
   - component: {fileID: 4146984729916045187}
-  - component: {fileID: 4885495081321526396}
   - component: {fileID: 7367901941413238336}
-  - component: {fileID: 7537997745679999719}
   m_Layer: 0
   m_Name: Pincho
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -566674341
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d97ae03d1b16c6643bd69cb1eaf7815a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -87,44 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1839735485 &4885495081321526396
-Tilemap:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11192754700554386}
-  m_Enabled: 1
-  m_Tiles: {}
-  m_AnimatedTiles: {}
-  m_TileAssetArray: []
-  m_TileSpriteArray: []
-  m_TileMatrixArray: []
-  m_TileColorArray: []
-  m_TileObjectToInstantiateArray: []
-  m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 0, y: 0, z: 1}
-  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
-  m_TileOrientation: 0
-  m_TileOrientationMatrix:
-    e00: 1
-    e01: 0
-    e02: 0
-    e03: 0
-    e10: 0
-    e11: 1
-    e12: 0
-    e13: 0
-    e20: 0
-    e21: 0
-    e22: 1
-    e23: 0
-    e30: 0
-    e31: 0
-    e32: 0
-    e33: 1
 --- !u!61 &7367901941413238336
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -170,17 +130,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.1221743, y: 3.0658484}
   m_EdgeRadius: 0
---- !u!114 &7537997745679999719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 11192754700554386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3026af8537b9dde4cad12461f31cb19f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackForce: {x: 5, y: 10}
-  knockbackDuration: 0.56
