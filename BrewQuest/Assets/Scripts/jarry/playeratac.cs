@@ -10,6 +10,7 @@ public class playeratac : MonoBehaviour
     public float attackRange;
     public float attackDamage;
     public float attacCooldown;
+    public float attackDelay;
 
     private float timeToNextAttack = 0f;
     public Vector3 positionAttack;
@@ -40,8 +41,15 @@ public class playeratac : MonoBehaviour
             {
                 timeToNextAttack = Time.time + attacCooldown;
                 animator.SetTrigger("ataque");
+                StartCoroutine(DelayedAttack()); //daño tras un delay muy pequeño
             }
         }
+    }
+
+    private IEnumerator DelayedAttack()
+    {
+        yield return new WaitForSeconds(attackDelay); // <-- Espera antes de aplicar el daño
+        DealDamage();
     }
 
     private void DealDamage()
@@ -63,19 +71,6 @@ public class playeratac : MonoBehaviour
             }
         }
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.CompareTag("EnemyHitBox"))
-    //    {
-    //        Enemyvida enemyvid = collision.GetComponentInParent<Enemyvida>();
-    //        if (enemyvid != null)
-    //        {
-    //            enemyvid.TakeDamage(attackDamage, gameObject, true);
-    //            Debug.Log("Enemigo golpeado a través del Trigger");
-    //        }
-    //    }
-    //}
 
     private void LookingUp()
     {

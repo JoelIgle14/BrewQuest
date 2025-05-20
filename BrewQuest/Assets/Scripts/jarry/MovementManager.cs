@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,24 +12,21 @@ public class MovementManager : MonoBehaviour
     private float fuerzaSalto;
     private float fuerzaDash;
 
-    //scripts
     private PlayerMovement pm;
     private dash dish;
+    private NewBehaviourScript hab;
 
     private Queue<KeyCode> inputBuffer;
-    public float bufferTiempo = 0.2f;
+    public float bufferTiempo = 0.1f;
     private float bufferTimer;
 
     [Header("Salto Variable")]
-    [SerializeField] private float multiplicadorCutJump = 0.5f; // cu�nto se recorta si suelta pronto
+    [SerializeField] private float multiplicadorCutJump = 0.5f;
 
     [Header("Coyote Time")]
-    [SerializeField] private float coyoteTime = 0.2f;
+    [SerializeField] private float coyoteTime = 0.15f;
     private float coyoteTimeCounter;
-
-
-
-    private NewBehaviourScript hab;
+    private bool coyoteBloqueado = false;
 
     void Awake()
     {
@@ -40,18 +37,16 @@ public class MovementManager : MonoBehaviour
         hab = GetComponent<NewBehaviourScript>();
     }
 
-
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        // Input salto
+        if (Input.GetKeyDown(KeyCode.Space) && inputBuffer.Count == 0)
         {
-            if (inputBuffer.Count == 0)
-            {
-                inputBuffer.Enqueue(KeyCode.Space);
-                bufferTimer = bufferTiempo;
-            }
+            inputBuffer.Enqueue(KeyCode.Space);
+            bufferTimer = bufferTiempo;
         }
 
+        // Salto variable (cut jump)
         if (saltoEnProgreso && Input.GetKeyUp(KeyCode.Space))
         {
             if (rb.velocity.y > 0f)
@@ -61,6 +56,7 @@ public class MovementManager : MonoBehaviour
             saltoEnProgreso = false;
         }
 
+        // Tiempo del input buffer
         if (inputBuffer.Count > 0)
         {
             bufferTimer -= Time.deltaTime;
@@ -70,36 +66,26 @@ public class MovementManager : MonoBehaviour
             }
         }
 
+        // Coyote time logic
         if (pm.isGrounded)
         {
-            coyoteTimeCounter = coyoteTime;
+            if (!coyoteBloqueado)
+            {
+                coyoteTimeCounter = coyoteTime;
+            }
         }
         else
         {
             coyoteTimeCounter -= Time.deltaTime;
+            coyoteBloqueado = false; // desbloquear cuando ya no toca el suelo
         }
 
-        // Solo procesar salto si no estamos dasheando
-        if ((pm.isGrounded || coyoteTimeCounter > 0f) && inputBuffer.Count > 0 && !dish.isDashing)
+        // Procesar salto si se puede
+        if (coyoteTimeCounter > 0f && inputBuffer.Count > 0 && !dish.isDashing)
         {
             ProcesarInputBufferParaSalto();
         }
     }
-
-    //void FixedUpdate()
-    //{
-    //    if (saltoSolicitado)
-    //    {
-    //        rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
-    //        saltoSolicitado = false;
-    //        saltoEnProgreso = true;
-    //    }
-    //    else if (dashSolicitado)
-    //    {
-    //        rb.velocity = new Vector2(transform.localScale.x * fuerzaDash, 0f);
-    //        dashSolicitado = false;
-    //    }
-    //}
 
     void FixedUpdate()
     {
@@ -117,7 +103,6 @@ public class MovementManager : MonoBehaviour
             dashSolicitado = false;
         }
     }
-
 
     public void SolicitarSalto(float fuerza)
     {
@@ -137,28 +122,23 @@ public class MovementManager : MonoBehaviour
 
     public void ProcesarInputBufferParaSalto()
     {
-        if (inputBuffer.Count > 0 && inputBuffer.Peek() == KeyCode.Space && !dish.isDashing)
-        {
-            // Salto desde el suelo
-            if (pm.isGrounded)
-            {
-                if (hab != null && !hab.canJump)
-                    return;
+        if (inputBuffer.Count == 0 || inputBuffer.Peek() != KeyCode.Space) return;
 
-                SolicitarSalto(pm.jumpForce);
-                inputBuffer.Dequeue();
-            }
-            // Doble salto en el aire
-            else if (!pm.isGrounded && hab != null && hab.canDoubleJump)
-            {
-                SolicitarSalto(pm.jumpForce);
-                inputBuffer.Dequeue();
-            }
+        // Si está en el suelo o en coyote y puede saltar
+        if ((coyoteTimeCounter > 0f) && (hab == null || hab.canJump))
+        {
+            SolicitarSalto(pm.jumpForce);
+            inputBuffer.Dequeue();
+
+            coyoteTimeCounter = 0f;      // Cancelamos el coyote para evitar doble salto
+            coyoteBloqueado = true;     // No se vuelve a activar hasta que esté en el aire
+        }
+        else if (hab != null && hab.canDoubleJump)
+        {
+            SolicitarSalto(pm.jumpForce);
+            inputBuffer.Dequeue();
         }
     }
-
-
-
 
     public bool puedeDashear => !saltoSolicitado && !dish.isDashing;
 }

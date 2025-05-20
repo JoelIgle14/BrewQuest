@@ -39,10 +39,10 @@ public class PlayerMovement : MonoBehaviour
         HandleFlip();
         HandleGroundCheck();
 
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space) && hab.canJump && hab.canMove && !dash.isDashing)
-        {
-            manager.SolicitarSalto(jumpForce);
-        }
+        //if (isGrounded && Input.GetKeyDown(KeyCode.Space) && hab.canJump && hab.canMove && !dash.isDashing)
+        //{
+        //    manager.SolicitarSalto(jumpForce);
+        //}
 
         if (hab.canDoubleJump && !isGrounded)
         {
@@ -86,9 +86,10 @@ public class PlayerMovement : MonoBehaviour
     private void HandleGroundCheck()
     {
         float halfWidth = 0.625f;
-        Vector2 leftOrigin = transform.position + Vector3.left * halfWidth + Vector3.down * 1.1f;
-        Vector2 rightOrigin = transform.position + Vector3.right * halfWidth + Vector3.down * 1.1f;
-        Vector2 centerOrigin = transform.position + Vector3.down * 1.1f;
+        float checkHeight = 1.2f;
+        Vector2 leftOrigin = transform.position + Vector3.left * halfWidth + Vector3.down * checkHeight;
+        Vector2 rightOrigin = transform.position + Vector3.right * halfWidth + Vector3.down * checkHeight;
+        Vector2 centerOrigin = transform.position + Vector3.down * checkHeight;
 
         isGrounded = false;
 
@@ -103,6 +104,12 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             remainingJumps = maxJumps;
         }
+
+        //Luineas temporales para ver el raycast:
+
+        Debug.DrawRay(leftOrigin, Vector2.down * rayCastDistance, Color.red);
+        Debug.DrawRay(centerOrigin, Vector2.down * rayCastDistance, Color.green);
+        Debug.DrawRay(rightOrigin, Vector2.down * rayCastDistance, Color.blue);
     }
 
     private void HandleDoubleJump()

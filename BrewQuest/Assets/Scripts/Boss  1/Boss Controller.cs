@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public int maxAttacksBeforeRest = 5;
-    private int currentAttackCount = 0;
+    public int maxAttacksBeforeRest = 4;
+    public int currentAttackCount = 0;
     private bool isResting = false;
     private bool canTakeDamage = false;
 
-    public float restDuration = 5f;
+    public float restDuration = 7f;
 
     // Ataques del boss
     public List<BossAttack> attacks;
@@ -72,8 +72,6 @@ public class BossController : MonoBehaviour
         int hordeIndex = Random.Range(0, hordaPrefabs.Count);
         Instantiate(hordaPrefabs[hordeIndex], transform.position, Quaternion.identity);
     }
-
-
 
     public void ReceiveDamage(int amount)
     {
