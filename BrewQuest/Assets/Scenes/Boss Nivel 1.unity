@@ -676,9 +676,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 16062343}
     m_Modifications:
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 555410427
+      objectReference: {fileID: 0}
     - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_Name
       value: cloud (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7025462270063194776, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_RootOrder
@@ -1096,6 +1116,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd840550af9f69543acea9dea240d223, type: 3}
+--- !u!1 &680654087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2667450304106102245, guid: 408060f960a74854c8c1327d04e2452b, type: 3}
+  m_PrefabInstance: {fileID: 634456843}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &831774856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,9 +1259,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 16062343}
     m_Modifications:
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 555410427
+      objectReference: {fileID: 0}
     - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_Name
       value: cloud (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7025462270063194776, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_RootOrder
@@ -1603,9 +1648,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 16062343}
     m_Modifications:
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 555410427
+      objectReference: {fileID: 0}
     - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_Name
       value: cloud (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7025462270063194776, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_RootOrder
@@ -2217,6 +2282,11 @@ MonoBehaviour:
   pauseBeforeFall: 1
   fallSpeed: 15
   recoveryTime: 1
+--- !u!1 &1395324831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 656601011811384830, guid: 11ec26707edb3e140a2a1526576b312f, type: 3}
+  m_PrefabInstance: {fileID: 1550812746}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1463785304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2225,9 +2295,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 16062343}
     m_Modifications:
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 555410427
+      objectReference: {fileID: 0}
     - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_Name
       value: cloud (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7025462270063194776, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_RootOrder
@@ -2294,6 +2384,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9d07f2730df034a8e47b77874371b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1534102308 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4783422414323828381, guid: cd840550af9f69543acea9dea240d223, type: 3}
+  m_PrefabInstance: {fileID: 637861940}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1550812746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2703,7 +2798,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690282430}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2743,6 +2838,7 @@ MonoBehaviour:
   - {fileID: 2042773567}
   - {fileID: 2041926852}
   - {fileID: 16062344}
+  manualControl: 1
 --- !u!114 &1690282438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3264,9 +3360,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 16062343}
     m_Modifications:
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 555410427
+      objectReference: {fileID: 0}
     - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_Name
       value: cloud (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7025462270063194776, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_RootOrder
@@ -3338,6 +3454,11 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
   m_PrefabInstance: {fileID: 1797067162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1902989314 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3591490462597410565, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
+  m_PrefabInstance: {fileID: 1333397658}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1921743937 stripped
 Transform:
@@ -3457,7 +3578,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e40644369cfd0408b33296edda1677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hordaPrefabs: []
+  hordaPrefabs:
+  - {fileID: 1902989314}
+  - {fileID: 680654087}
+  - {fileID: 1534102308}
+  - {fileID: 1395324831}
   spawnPoint: {fileID: 1286542312}
   delayBeforeSummon: 0.5
 --- !u!1001 &2065612354
@@ -3468,9 +3593,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 16062343}
     m_Modifications:
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 555410427
+      objectReference: {fileID: 0}
     - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_Name
       value: cloud (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7025462270063194776, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_RootOrder
@@ -3613,9 +3758,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 16062343}
     m_Modifications:
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 528365690249491579, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 555410427
+      objectReference: {fileID: 0}
     - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_Name
       value: cloud
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6680360682628712878, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7025462270063194776, guid: 2277f5790960d4e40bb8da163b59f57c, type: 3}
       propertyPath: m_RootOrder

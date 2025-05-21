@@ -16,6 +16,9 @@ public class BossController : MonoBehaviour
     public List<MonoBehaviour> attackScriptsRaw; // Scripts que implementan IBossAttack
     private List<IBossAttack> attacks = new List<IBossAttack>();
 
+    [Header("Testing")]
+    public bool manualControl = false; // Si es true, solo ataques manuales con teclado
+
     void Start()
     {
         // Convertimos y validamos los scripts referenciados
@@ -36,7 +39,31 @@ public class BossController : MonoBehaviour
             Debug.LogError("No hay ataques válidos referenciados en BossController.");
         }
 
-        StartCoroutine(BossLoop());
+        if (!manualControl)
+        {
+            StartCoroutine(BossLoop());
+        }
+    }
+
+    void Update()
+    {
+        if (!manualControl) return;
+
+        for (int i = 1; i <= 5; i++)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha0 + i))
+            {
+                if (attacks.Count >= i)
+                {
+                    Debug.Log($"Ejecutando ataque manual #{i}");
+                    StartCoroutine(attacks[i - 1].Execute());
+                }
+                else
+                {
+                    Debug.LogWarning($"No hay ataque asignado para la tecla {i}");
+                }
+            }
+        }
     }
 
     IEnumerator BossLoop()

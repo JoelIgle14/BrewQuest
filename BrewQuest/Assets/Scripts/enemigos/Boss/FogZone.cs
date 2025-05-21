@@ -8,6 +8,7 @@ public class FogZone : MonoBehaviour
     public void ShowFog()
     {
         Debug.Log("Niebla puesta");
+        gameObject.SetActive(true);
         fogVisual.enabled = true;
         fogCollider.enabled = false;
     }

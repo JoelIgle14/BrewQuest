@@ -10,6 +10,8 @@ public class Fog : MonoBehaviour, IBossAttack
 
     public IEnumerator Execute()
     {
+        Debug.Log("Ejecutando ataque de niebla");
+
         if (fogZones.Count < 5)
         {
             Debug.LogWarning("FogAttack necesita al menos 5 zonas.");
@@ -41,6 +43,8 @@ public class Fog : MonoBehaviour, IBossAttack
         {
             zone.Deactivate();
         }
+
+        Debug.Log("Ataque acabado");
     }
 
     void Shuffle<T>(List<T> list)
