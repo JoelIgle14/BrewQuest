@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Barrida : MonoBehaviour, IBossAttack
+public class barrida1 : MonoBehaviour, IBossAttack
 {
     public Transform spawnPointLeft;
     public Transform spawnPointRight;

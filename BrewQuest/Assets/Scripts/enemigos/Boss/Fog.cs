@@ -4,37 +4,43 @@ using UnityEngine;
 
 public class Fog : MonoBehaviour, IBossAttack
 {
-    public List<FogZone> fogZones; // Las 3 zonas posibles
-    public float warningDuration = 2f; // Tiempo antes de que haga daño
-    public float activeDuration = 4f;  // Tiempo que permanece activa con daño
+    public List<FogZone> fogZones;
+    public float warningDuration = 2f; 
+    public float activeDuration = 4f;  
 
     public IEnumerator Execute()
     {
-        if (fogZones.Count < 3)
+        if (fogZones.Count < 5)
         {
-            Debug.LogWarning("FogAttack necesita al menos 3 zonas.");
+            Debug.LogWarning("FogAttack necesita al menos 5 zonas.");
             yield break;
         }
 
-        // 1. Elegir 2 zonas aleatorias
+        
         List<FogZone> selectedZones = new List<FogZone>(fogZones);
         Shuffle(selectedZones);
-        FogZone zone1 = selectedZones[0];
-        FogZone zone2 = selectedZones[1];
+        List<FogZone> activeZones = selectedZones.GetRange(0, 5); 
 
-        // 2. Mostrar niebla sin daño
-        zone1.ShowFog();
-        zone2.ShowFog();
+        
+        foreach (var zone in activeZones)
+        {
+            zone.ShowFog();
+        }
+
         yield return new WaitForSeconds(warningDuration);
 
-        // 3. Activar daño
-        zone1.ActivateDamage();
-        zone2.ActivateDamage();
+      
+        foreach (var zone in activeZones)
+        {
+            zone.ActivateDamage();
+        }
+
         yield return new WaitForSeconds(activeDuration);
 
-        // 4. Desactivar
-        zone1.Deactivate();
-        zone2.Deactivate();
+        foreach (var zone in activeZones)
+        {
+            zone.Deactivate();
+        }
     }
 
     void Shuffle<T>(List<T> list)
