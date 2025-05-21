@@ -181,7 +181,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1929103885
-  m_SortingLayer: 8
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -558489866, guid: b7f50f77afa184b429f67d6ed1f34d18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -364,6 +364,58 @@ RectTransform:
   m_AnchoredPosition: {x: -219.54993, y: -57.179993}
   m_SizeDelta: {x: 108.86, y: 97.08}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &132728540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 132728541}
+  - component: {fileID: 132728542}
+  m_Layer: 0
+  m_Name: Hordas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &132728541
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132728540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1657619700}
+  m_Father: {fileID: 1802432122}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &132728542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132728540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ad21f9525024248b02eb939dee00d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hordaPrefabs:
+  - {fileID: 1136185463}
+  - {fileID: 598432849}
+  - {fileID: 2028432769}
+  - {fileID: 925385173}
+  spawnPoint: {fileID: 1657619700}
+  delayBeforeSummon: 0.5
 --- !u!1 &218950620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,6 +1991,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594051340}
   m_CullTransparentMesh: 1
+--- !u!1 &1657619699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657619700}
+  m_Layer: 0
+  m_Name: SpawnPointHordas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1657619700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657619699}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.481, y: -0.109, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 132728541}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1702020629
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,8 +2533,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1802432122}
   - component: {fileID: 1802432121}
+  - component: {fileID: 1802432126}
   - component: {fileID: 1802432120}
-  - component: {fileID: 1802432119}
   - component: {fileID: 1802432124}
   - component: {fileID: 1802432123}
   - component: {fileID: 1802432125}
@@ -2462,20 +2545,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1802432119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802432118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76ff99f4c47c795479fe4a82538db3db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nombre: Cosa
-  animacion: {fileID: 7400000, guid: ddaaae967b7fe9f4887ce0c03742e123, type: 2}
 --- !u!114 &1802432120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2491,17 +2560,8 @@ MonoBehaviour:
   maxAttacksBeforeRest: 5
   currentAttackCount: 0
   restDuration: 5
-  attacks:
-  - {fileID: 1802432119}
-  - {fileID: 1802432119}
-  - {fileID: 1802432119}
-  - {fileID: 1802432119}
-  - {fileID: 1802432119}
-  hordaPrefabs:
-  - {fileID: 598432849}
-  - {fileID: 2028432769}
-  - {fileID: 925385173}
-  - {fileID: 1136185463}
+  attackScriptsRaw:
+  - {fileID: 0}
 --- !u!212 &1802432121
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2562,10 +2622,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802432118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.52, y: 2.27, z: 0}
+  m_LocalPosition: {x: 5.55, y: 2.56, z: 0}
   m_LocalScale: {x: 7.401866, y: 7.025197, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 132728541}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2647,6 +2708,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a3b3b8ff7fb2444b2dea4ba102a8ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1802432126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802432118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b35671727e156e43a641a342020d534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+  golpeado: 0
+  puntos: 333
 --- !u!1 &1869602834 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9036987573618746757, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
