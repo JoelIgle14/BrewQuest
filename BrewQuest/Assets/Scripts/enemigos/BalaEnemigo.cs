@@ -1,12 +1,17 @@
 using UnityEngine;
 
-public class BalaEnemigo : MonoBehaviour
+public class BalaEnemigo2 : MonoBehaviour
 {
-    public float velocidad = 5f;
+    public float velocidadMovimiento = 5f;
+
+    void Start()
+    {
+        Destroy(gameObject, 3f); // Destruye la bala a los 3 segundos
+    }
 
     void Update()
     {
-        transform.Translate(Vector2.left * velocidad * Time.deltaTime);
+        transform.Translate(Vector2.left * velocidadMovimiento * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -18,7 +23,7 @@ public class BalaEnemigo : MonoBehaviour
         }
         else if (!other.CompareTag("enemy") && !other.CompareTag("BalaEnemigo"))
         {
-            Destroy(gameObject); // Destruye al tocar otra cosa
+            Destroy(gameObject); // Destruye al chocar con otra cosa
         }
     }
 }
