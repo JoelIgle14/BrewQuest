@@ -108319,6 +108319,14 @@ PrefabInstance:
       propertyPath: attackDelay
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 1230246849265011017, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_Size.x
+      value: 2.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230246849265011017, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_Size.y
+      value: 2.6666667
+      objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogoTexto
       value: 
