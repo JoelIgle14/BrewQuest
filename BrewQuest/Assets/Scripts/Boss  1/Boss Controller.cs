@@ -11,14 +11,35 @@ public class BossController : MonoBehaviour
 
     public float restDuration = 7f;
 
-    // Ataques del boss
-    public List<BossAttack> attacks;
+    // Aquí arrastras tus scripts de ataque en el inspector
+    [Header("Ataques del boss")]
+    public List<MonoBehaviour> attackScriptsRaw; // deben implementar IBossAttack
+    private List<IBossAttack> attacks = new List<IBossAttack>();
 
     // Prefabs de hordas
+    [Header("Prefabs de hordas")]
     public List<GameObject> hordaPrefabs;
 
     void Start()
     {
+        // Verificamos que todos los scripts implementen la interfaz
+        foreach (var script in attackScriptsRaw)
+        {
+            if (script is IBossAttack attack)
+            {
+                attacks.Add(attack);
+            }
+            else
+            {
+                Debug.LogWarning($"{script.name} no implementa IBossAttack.");
+            }
+        }
+
+        if (attacks.Count == 0)
+        {
+            Debug.LogError("No hay ataques válidos referenciados en BossController.");
+        }
+
         StartCoroutine(BossLoop());
     }
 
@@ -69,6 +90,8 @@ public class BossController : MonoBehaviour
 
     void SpawnHorde()
     {
+        if (hordaPrefabs.Count == 0) return;
+
         int hordeIndex = Random.Range(0, hordaPrefabs.Count);
         Instantiate(hordaPrefabs[hordeIndex], transform.position, Quaternion.identity);
     }
