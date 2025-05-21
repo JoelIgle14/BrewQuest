@@ -41,6 +41,8 @@ public class Barrida : MonoBehaviour, IBossAttack
 
         // 6. Volver a la posición inicial
         bossTransform.position = originalPosition;
+
+        Debug.Log("Barridaaaaa");
     }
 
     private IEnumerator SweepAcross(Vector3 start, Vector3 end)
