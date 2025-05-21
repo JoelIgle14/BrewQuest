@@ -446,7 +446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145968838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.62011397, y: -0.3501681, z: 0}
+  m_LocalPosition: {x: -0.762, y: -0.596, z: 0}
   m_LocalScale: {x: 0.13510108, y: 0.14234476, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -491,8 +491,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 555410427
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 1604603404, guid: a67ca9ccdee87134b8957f04ea0995a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 514767861}
   m_Layer: 0
   m_Name: Martillo
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -892,6 +892,10 @@ PrefabInstance:
     - target: {fileID: 3076107660609643313, guid: 666829bfab7abef43a7a08c7e8059311, type: 3}
       propertyPath: m_Name
       value: area1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076107660609643313, guid: 666829bfab7abef43a7a08c7e8059311, type: 3}
+      propertyPath: m_TagString
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6263220991404672654, guid: 666829bfab7abef43a7a08c7e8059311, type: 3}
       propertyPath: m_Size.x
@@ -2351,7 +2355,7 @@ GameObject:
   - component: {fileID: 1655625858}
   m_Layer: 0
   m_Name: Barrida
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3085,7 +3089,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802432118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.59, y: 2.46, z: 0}
+  m_LocalPosition: {x: 46.6, y: -2.1, z: 0}
   m_LocalScale: {x: 7.401866, y: 7.025197, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3228,6 +3232,10 @@ PrefabInstance:
     - target: {fileID: 3076107660609643313, guid: 666829bfab7abef43a7a08c7e8059311, type: 3}
       propertyPath: m_Name
       value: area2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076107660609643313, guid: 666829bfab7abef43a7a08c7e8059311, type: 3}
+      propertyPath: m_TagString
+      value: enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6263220991404672654, guid: 666829bfab7abef43a7a08c7e8059311, type: 3}
       propertyPath: m_Size.x

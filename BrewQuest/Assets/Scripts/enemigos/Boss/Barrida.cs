@@ -15,7 +15,8 @@ public class Barrida : MonoBehaviour, IBossAttack
 
     private void Awake()
     {
-        bossTransform = transform;
+        //bossTransform = transform;
+        bossTransform = GetComponentInParent<BossController>().transform;
     }
 
     public IEnumerator Execute()

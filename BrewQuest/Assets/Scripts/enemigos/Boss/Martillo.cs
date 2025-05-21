@@ -16,7 +16,7 @@ public class Martillo : MonoBehaviour, IBossAttack
 
     private void Awake()
     {
-        bossTransform = transform;
+        bossTransform = GetComponentInParent<BossController>().transform;
     }
 
     public IEnumerator Execute()
