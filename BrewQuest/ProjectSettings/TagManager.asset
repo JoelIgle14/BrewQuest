@@ -58,6 +58,9 @@ TagManager:
   - name: Fondo
     uniqueID: 2497557499
     locked: 0
+  - name: decoracion
+    uniqueID: 2365863411
+    locked: 0
   - name: Mapa
     uniqueID: 3894467705
     locked: 0
@@ -72,9 +75,6 @@ TagManager:
     locked: 0
   - name: Boss
     uniqueID: 4106446889
-    locked: 0
-  - name: decoracion
-    uniqueID: 2365863411
     locked: 0
   - name: Enemigos
     uniqueID: 555410427
