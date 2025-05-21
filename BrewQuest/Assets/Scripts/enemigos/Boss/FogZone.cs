@@ -11,6 +11,7 @@ public class FogZone : MonoBehaviour
         gameObject.SetActive(true);
         fogVisual.enabled = true;
         fogCollider.enabled = false;
+
     }
 
     public void ActivateDamage()
@@ -18,9 +19,13 @@ public class FogZone : MonoBehaviour
         fogCollider.enabled = true;
     }
 
+
     public void Deactivate()
     {
         fogCollider.enabled = false;
         fogVisual.enabled = false;
+        gameObject.SetActive(false);
     }
 }
+
+ 

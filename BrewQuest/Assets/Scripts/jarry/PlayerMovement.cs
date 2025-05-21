@@ -133,6 +133,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            PlayerController pc = GetComponent<PlayerController>();
+            if (pc != null)
+            {
+                pc.TakeDamage(collision.transform);
+            }
+        }
+    }
+
     public void ApplyKnockback(Vector2 force, float duration)
     {
         if (isKnockedBack) return;
