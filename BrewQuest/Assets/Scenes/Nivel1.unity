@@ -1546,6 +1546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 633327714}
+  targetRigidbody: {fileID: 633327726}
   confiner: {fileID: 1175673542}
   offset: {x: 1, y: -0.3, z: -10}
   smoothSpeed: 5
@@ -4383,6 +4384,11 @@ GameObject:
 --- !u!4 &633327714 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+  m_PrefabInstance: {fileID: 1042973373}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &633327726 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4910036029012203672, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
   m_PrefabInstance: {fileID: 1042973373}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &643794881 stripped
@@ -108357,11 +108363,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.4
+      value: 79.9
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -108856,18 +108862,18 @@ PolygonCollider2D:
       - {x: 390.09177, y: -24.3247}
       - {x: 426.8149, y: -24.242197}
       - {x: 652.6736, y: -27.080673}
-      - {x: 652.6286, y: 16.59561}
-      - {x: 603.6792, y: 16.18898}
-      - {x: 547.7461, y: 9.914056}
-      - {x: 499.98, y: 10.738641}
-      - {x: 447.52686, y: 9.198805}
-      - {x: 422.57544, y: 13.909864}
-      - {x: 403.11804, y: 13.893351}
-      - {x: 366.02264, y: 13.20689}
-      - {x: 350.0052, y: 8.634247}
-      - {x: 339.19037, y: 7.488826}
-      - {x: 331.75366, y: 10.880106}
-      - {x: 315.33426, y: 9.858385}
+      - {x: 652.6286, y: 24.517681}
+      - {x: 604.0564, y: 26.940361}
+      - {x: 548.12335, y: 21.797161}
+      - {x: 501.30035, y: 15.265536}
+      - {x: 448.0927, y: 17.686735}
+      - {x: 422.95267, y: 18.43676}
+      - {x: 403.11804, y: 18.42025}
+      - {x: 366.5885, y: 16.0362}
+      - {x: 351.3858, y: 15.881451}
+      - {x: 339.1165, y: 15.099647}
+      - {x: 331.76727, y: 14.537773}
+      - {x: 313.25943, y: 14.573902}
       - {x: 299.82834, y: 9.837758}
       - {x: 275.8575, y: 9.782038}
       - {x: 195.93506, y: 8.227512}
