@@ -1103,11 +1103,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2964774722723599505, guid: 290e0de5b46d8dd48b87aec6da4721d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.33
+      value: 2.2830777
       objectReference: {fileID: 0}
     - target: {fileID: 2964774722723599505, guid: 290e0de5b46d8dd48b87aec6da4721d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -2.0835814
       objectReference: {fileID: 0}
     - target: {fileID: 2964774722723599505, guid: 290e0de5b46d8dd48b87aec6da4721d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1143,7 +1143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8872936630600744234, guid: 290e0de5b46d8dd48b87aec6da4721d0, type: 3}
       propertyPath: m_Name
-      value: points (1)
+      value: Derecha
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3881,11 +3881,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2964774722723599505, guid: 290e0de5b46d8dd48b87aec6da4721d0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.64
+      value: -11.682554
       objectReference: {fileID: 0}
     - target: {fileID: 2964774722723599505, guid: 290e0de5b46d8dd48b87aec6da4721d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4
+      value: -2.0835814
       objectReference: {fileID: 0}
     - target: {fileID: 2964774722723599505, guid: 290e0de5b46d8dd48b87aec6da4721d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3921,7 +3921,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8872936630600744234, guid: 290e0de5b46d8dd48b87aec6da4721d0, type: 3}
       propertyPath: m_Name
-      value: points
+      value: Izquierda
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
