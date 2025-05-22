@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7711444861097599980}
   - component: {fileID: 2006787969761856313}
   - component: {fileID: 7536173134987131368}
+  - component: {fileID: 4747623930579131237}
   - component: {fileID: 442374487176302463}
   - component: {fileID: 1784087719014211030}
   m_Layer: 0
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 555410427
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1827171008, guid: d5ac5ac413e18bc4cbb12fd00f3c4568, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -188,6 +189,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   golpeado: 0
+  puntos: 10
+--- !u!114 &4747623930579131237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4073789046525546386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e92436f84616324bbd9936f51e6aeaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balaPrefab: {fileID: 0}
+  puntoDisparo: {fileID: 0}
+  tiempoEntreDisparos: 2
 --- !u!114 &442374487176302463
 MonoBehaviour:
   m_ObjectHideFlags: 0

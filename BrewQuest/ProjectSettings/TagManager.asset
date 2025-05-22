@@ -18,6 +18,7 @@ TagManager:
   - EnemyHitBox
   - hitJarry
   - Activar Dialogos
+  - BalaEnemigo
   layers:
   - Default
   - TransparentFX
