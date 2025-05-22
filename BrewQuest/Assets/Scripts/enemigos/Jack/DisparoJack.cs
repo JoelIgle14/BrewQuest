@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class DisparoEnemigo : MonoBehaviour
+public class DisparoEnemigo2 : MonoBehaviour
 {
     public GameObject balaPrefab;
     public Transform puntoDisparo;
