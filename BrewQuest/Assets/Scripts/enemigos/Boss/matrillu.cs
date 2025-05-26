@@ -18,6 +18,11 @@ public class matrillu : MonoBehaviour, IBossAttack
     public float initialFallSpeed = 0f;
     public float fallAcceleration = 80f;
 
+    [Header("Cámara Shake")]
+    public float shakeDuration = 0.5f;
+    public float shakeMagnitude = 1.0f;
+
+
     private Vector3 originalPosition;
     private Transform bossTransform;
     //private GameObject shadowInstance;
@@ -60,9 +65,9 @@ public class matrillu : MonoBehaviour, IBossAttack
         // Impacto
         Debug.Log("¡Impacto del martillo!");
 
-        if (cameraShake != null)
-            cameraShake.Shake(0.3f, 0.4f); // intensidad y duración
-
+        if (cameraShake != null){
+            yield return cameraShake.Shake(shakeDuration, shakeMagnitude);
+        }
         //if (shadowInstance != null)
         //    Destroy(shadowInstance);
 
