@@ -20,28 +20,45 @@ public class matrillu : MonoBehaviour, IBossAttack
     }
 
     public IEnumerator Execute()
+{
+    originalPosition = bossTransform.position;
+
+    Debug.Log("¡Martillo al ataque!");
+
+    // Subida
+    Vector3 levitationTarget = new Vector3(bossTransform.position.x, target.position.y + levitationHeight, target.position.z);
+    yield return MoveToPosition(levitationTarget, levitationDuration);
+
+    // Desplazamiento horizontal lento mientras está arriba
+    float elapsed = 0f;
+    while (elapsed < pauseBeforeFall)
     {
-        originalPosition = bossTransform.position;
-
-        Debug.Log("MArtillooooo");
-
-
-        Vector3 targetPosAbove = new Vector3(target.position.x, target.position.y + levitationHeight, target.position.z);
-        yield return MoveToPosition(targetPosAbove, levitationDuration);
-
-
-        yield return new WaitForSeconds(pauseBeforeFall);
-
-
-        Vector3 fallTargetPos = new Vector3(target.position.x, target.position.y, target.position.z);
-        yield return FallToPosition(fallTargetPos, fallSpeed);
-
-
-        yield return new WaitForSeconds(recoveryTime);
-
-
-        yield return MoveToPosition(originalPosition, levitationDuration);
+        Vector3 horizontalTarget = new Vector3(target.position.x, bossTransform.position.y, target.position.z);
+        bossTransform.position = Vector3.Lerp(bossTransform.position, horizontalTarget, Time.deltaTime * 2f); // velocidad ajustable
+        elapsed += Time.deltaTime;
+        yield return null;
     }
+
+    // Caída
+    Vector3 fallTarget = new Vector3(bossTransform.position.x, target.position.y, target.position.z);
+    yield return FallToPosition(fallTarget, fallSpeed);
+
+    // Impacto - podrías agregar efectos aquí
+    Debug.Log("¡Impacto del martillo!");
+
+    // Espera tras caer
+    yield return new WaitForSeconds(recoveryTime);
+
+    // Regreso
+    yield return MoveToPosition(originalPosition, levitationDuration);
+
+    // Sacudir cámara
+CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, .2f);
+// Partículas
+Instantiate(impactParticles, bossTransform.position, Quaternion.identity);
+
+}
+
 
     private IEnumerator MoveToPosition(Vector3 targetPos, float duration)
     {
