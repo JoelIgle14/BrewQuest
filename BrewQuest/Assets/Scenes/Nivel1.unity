@@ -1788,9 +1788,9 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4eeefc952fcd64d4fbcc7cb18633be22, type: 3}
-  m_Name: 
+  m_Name: DELETEME
   m_EditorClassIdentifier: 
-  followPoint: {fileID: 407542282}
+  followPoint: {fileID: 633327714}
   playerRb: {fileID: 633327726}
   confiner: {fileID: 1175673542}
   offset: {x: 3, y: 0.3}
