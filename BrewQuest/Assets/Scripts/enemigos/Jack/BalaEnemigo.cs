@@ -27,10 +27,16 @@ public class BalaEnemigo2 : MonoBehaviour
         }
 
         // Destruye la bala si choca con algo que no sea enemigo o bala enemiga
-        if (!collision.gameObject.CompareTag("enemy") &&
-            !collision.gameObject.CompareTag("BalaEnemigo"))
+        //if (!collision.gameObject.CompareTag("enemy") &&
+        //    !collision.gameObject.CompareTag("BalaEnemigo"))
+        //{
+        //    Destroy(gameObject);
+        //}
+
+        if ((collision.gameObject.CompareTag("Player")) || (collision.gameObject.CompareTag("Floor")))
         {
             Destroy(gameObject);
         }
+
     }
 }

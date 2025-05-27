@@ -38,7 +38,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Redonda"))
         {
@@ -62,7 +62,7 @@ public class NewBehaviourScript : MonoBehaviour
             Debug.Log("Panchoscar");
             canShoot = true;
             GetComponent<Disparo>().ActivarPowerUp();
-            GameManager.Instance.hasShoot = false;
+            GameManager.Instance.hasShoot = true;
         }
     }
 }
