@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
     private void HandleGroundCheck()
     {
         float halfWidth = 0.625f;
-        float checkHeight = 1.2f;
+        float checkHeight = 1f;
         Vector2 leftOrigin = transform.position + Vector3.left * halfWidth + Vector3.down * checkHeight;
         Vector2 rightOrigin = transform.position + Vector3.right * halfWidth + Vector3.down * checkHeight;
         Vector2 centerOrigin = transform.position + Vector3.down * checkHeight;
