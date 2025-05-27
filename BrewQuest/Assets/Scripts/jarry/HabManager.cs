@@ -37,32 +37,4 @@ public class NewBehaviourScript : MonoBehaviour
                 GetComponent<Disparo>().ActivarPowerUp();
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Redonda"))
-        {
-            //conseguir tal habilidad
-            Debug.Log("Rabo de Toro");
-            canDash = true;
-            GameManager.Instance.hasDash = true;
-        }
-
-        else if (other.gameObject.CompareTag("cuadrao"))
-        {
-            //conseguir tal habilidad
-            Debug.Log("Rabo de Tora");
-            canDoubleJump = true;
-            GameManager.Instance.hasDoubleJump = true;       
-        }
-
-        if (other.gameObject.CompareTag("Manguera"))
-        {
-            //conseguir tal habilidad
-            Debug.Log("Panchoscar");
-            canShoot = true;
-            GetComponent<Disparo>().ActivarPowerUp();
-            GameManager.Instance.hasShoot = true;
-        }
-    }
 }

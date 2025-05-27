@@ -21,6 +21,7 @@ public class destroyhab : MonoBehaviour
         if (barraUI != null)
         {
             barraUI.SetActive(true);
+            GameManager.Instance.hasDash = true;
         }
 
         Destroy(gameObject);
