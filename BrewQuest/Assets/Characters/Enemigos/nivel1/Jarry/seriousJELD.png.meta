@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4d9db5739386aa048b36b8265e64e5f4
+guid: b3019af1953b8a34ea393b78a26e3932
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,17 +106,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: winstonrustic_0
+      name: seriousJELD_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 200
-        width: 100
-        height: 100
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bf14fe578a3cc24295d2aa9d56a27c7
-      internalID: -1968467285
+      spriteID: b2b2f011179eba94582a1670de3f6f4e
+      internalID: -1934537846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: winstonrustic_1
+      name: seriousJELD_1
       rect:
         serializedVersion: 2
-        x: 100
-        y: 200
-        width: 100
-        height: 100
+        x: 32
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d51a536c73cfe864da09576ad30dd48b
-      internalID: 2001839074
+      spriteID: 516660b7e6e97884393ca0c43c2700f4
+      internalID: 129311139
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: winstonrustic_2
+      name: seriousJELD_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 100
-        width: 100
-        height: 100
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d3e2655aa210eb4c9a8b6e2d9b79ecf
-      internalID: 870293279
+      spriteID: e7773d20377d7df4ba0389ac7f97d751
+      internalID: 1825133317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: winstonrustic_3
+      name: seriousJELD_3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 100
-        width: 100
-        height: 100
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54a3f7fd2808bd1478708472671a0e19
-      internalID: -888816042
+      spriteID: 66652ebe8f910424195252286080c8e7
+      internalID: -721967227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: winstonrustic_4
+      name: seriousJELD_4
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 100
-        height: 100
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c93dfcb1b05ed4479e1f4d281ac0ca6
-      internalID: 284589056
+      spriteID: 5b156bc3a0cf52b418891072279139b9
+      internalID: -1544740844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: winstonrustic_5
+      name: seriousJELD_5
       rect:
         serializedVersion: 2
-        x: 100
+        x: 32
         y: 0
-        width: 100
-        height: 100
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 384373e930c87f244a86bd22e45adeb0
-      internalID: -672682242
+      spriteID: 0444a3fb13d187b42bc3875b2efb2062
+      internalID: -1747683039
       vertices: []
       indices: 
       edges: []
@@ -246,12 +272,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      winstonrustic_0: -1968467285
-      winstonrustic_1: 2001839074
-      winstonrustic_2: 870293279
-      winstonrustic_3: -888816042
-      winstonrustic_4: 284589056
-      winstonrustic_5: -672682242
+      seriousJELD_0: -1934537846
+      seriousJELD_1: 129311139
+      seriousJELD_2: 1825133317
+      seriousJELD_3: -721967227
+      seriousJELD_4: -1544740844
+      seriousJELD_5: -1747683039
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -202,9 +202,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e92436f84616324bbd9936f51e6aeaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balaPrefab: {fileID: 0}
-  puntoDisparo: {fileID: 0}
-  tiempoEntreDisparos: 2
+  balaPrefab: {fileID: 601330512758816991, guid: 6ee97277d93865449a2a308e8538ff55, type: 3}
+  puntoDisparo: {fileID: 3393310468479189721}
+  tiempoEntreRafagas: 3
+  tiempoEntreBalas: 0.2
+  balasPorRafaga: 3
 --- !u!114 &442374487176302463
 MonoBehaviour:
   m_ObjectHideFlags: 0

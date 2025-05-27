@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b3019af1953b8a34ea393b78a26e3932
+guid: f9248c0d47f93614b8fcb625ad77e412
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,53 +106,37 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: seriousJELD_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2b2f011179eba94582a1670de3f6f4e
-      internalID: -1934537846
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seriousJELD_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 516660b7e6e97884393ca0c43c2700f4
-      internalID: 129311139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: seriousJELD_2
+      name: doblesalto_0
       rect:
         serializedVersion: 2
         x: 0
@@ -166,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7773d20377d7df4ba0389ac7f97d751
-      internalID: 1825133317
+      spriteID: fe790711839c213428e2c377b8cf7a17
+      internalID: 1320834098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seriousJELD_3
+      name: doblesalto_1
       rect:
         serializedVersion: 2
         x: 32
@@ -187,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66652ebe8f910424195252286080c8e7
-      internalID: -721967227
+      spriteID: fa73a4b141b5ab344a3a0066de3f0f2c
+      internalID: 1182795022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seriousJELD_4
+      name: doblesalto_2
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b156bc3a0cf52b418891072279139b9
-      internalID: -1544740844
+      spriteID: 8d47817755fc0e7459e2374b470bd0ec
+      internalID: 1640961112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: seriousJELD_5
+      name: doblesalto_3
       rect:
         serializedVersion: 2
         x: 32
@@ -229,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0444a3fb13d187b42bc3875b2efb2062
-      internalID: -1747683039
+      spriteID: d75c4b9ba36bb394e9a3f9779ee19383
+      internalID: 676384172
       vertices: []
       indices: 
       edges: []
@@ -246,12 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      seriousJELD_0: -1934537846
-      seriousJELD_1: 129311139
-      seriousJELD_2: 1825133317
-      seriousJELD_3: -721967227
-      seriousJELD_4: -1544740844
-      seriousJELD_5: -1747683039
+      doblesalto_0: 1320834098
+      doblesalto_1: 1182795022
+      doblesalto_2: 1640961112
+      doblesalto_3: 676384172
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
