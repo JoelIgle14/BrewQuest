@@ -3,16 +3,29 @@ using UnityEngine;
 
 public class matrillu : MonoBehaviour, IBossAttack
 {
+    [Header("Referencias")]
     public Transform target;
-    public float levitationHeight = 5f;
+    public GameObject shadowPrefab;
+    public CameraShake cameraShake;
+
+    [Header("Tiempos y alturas")]
+    public float levitationHeight = 7f; // Más alto para acentuar caída
     public float levitationDuration = 1f;
     public float pauseBeforeFall = 1f;
-    public float fallSpeed = 15f;
     public float recoveryTime = 1f;
 
-    private Vector3 originalPosition;
+    [Header("Caída")]
+    public float initialFallSpeed = 0f;
+    public float fallAcceleration = 80f;
 
+    [Header("Cámara Shake")]
+    public float shakeDuration = 0.5f;
+    public float shakeMagnitude = 1.0f;
+
+
+    private Vector3 originalPosition;
     private Transform bossTransform;
+    //private GameObject shadowInstance;
 
     private void Awake()
     {
@@ -22,24 +35,46 @@ public class matrillu : MonoBehaviour, IBossAttack
     public IEnumerator Execute()
     {
         originalPosition = bossTransform.position;
+        Debug.Log("¡Martillo al ataque!");
 
-        Debug.Log("MArtillooooo");
+        // Subir a la posición de levitación
+        Vector3 levitationTarget = new Vector3(
+            bossTransform.position.x,
+            target.position.y + levitationHeight,
+            target.position.z
+        );
+        yield return MoveToPosition(levitationTarget, levitationDuration);
 
+        // Crear sombra predictiva
+        //Vector3 shadowPos = new Vector3(target.position.x, target.position.y + 0.01f, target.position.z);
+        //shadowInstance = Instantiate(shadowPrefab, shadowPos, Quaternion.identity);
 
-        Vector3 targetPosAbove = new Vector3(target.position.x, target.position.y + levitationHeight, target.position.z);
-        yield return MoveToPosition(targetPosAbove, levitationDuration);
+        // Movimiento horizontal hacia el objetivo mientras espera
+        float elapsed = 0f;
+        while (elapsed < pauseBeforeFall)
+        {
+            Vector3 horizontalTarget = new Vector3(target.position.x, bossTransform.position.y, target.position.z);
+            bossTransform.position = Vector3.Lerp(bossTransform.position, horizontalTarget, Time.deltaTime * 2f);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
 
+        // Caída acelerada
+        yield return FallToPosition(target.position.y);
 
-        yield return new WaitForSeconds(pauseBeforeFall);
+        // Impacto
+        Debug.Log("¡Impacto del martillo!");
 
+        if (cameraShake != null){
+            yield return cameraShake.Shake(shakeDuration, shakeMagnitude);
+        }
+        //if (shadowInstance != null)
+        //    Destroy(shadowInstance);
 
-        Vector3 fallTargetPos = new Vector3(target.position.x, target.position.y, target.position.z);
-        yield return FallToPosition(fallTargetPos, fallSpeed);
-
-
+        // Espera tras el golpe
         yield return new WaitForSeconds(recoveryTime);
 
-
+        // Vuelve a la posición original
         yield return MoveToPosition(originalPosition, levitationDuration);
     }
 
@@ -58,14 +93,16 @@ public class matrillu : MonoBehaviour, IBossAttack
         bossTransform.position = targetPos;
     }
 
-    private IEnumerator FallToPosition(Vector3 targetPos, float speed)
+    private IEnumerator FallToPosition(float targetY)
     {
-        while (bossTransform.position.y > targetPos.y)
+        float velocity = initialFallSpeed;
+        while (bossTransform.position.y > targetY)
         {
-            bossTransform.position += Vector3.down * speed * Time.deltaTime;
+            velocity += fallAcceleration * Time.deltaTime;
+            bossTransform.position += Vector3.down * velocity * Time.deltaTime;
             yield return null;
         }
 
-        bossTransform.position = targetPos;
+        bossTransform.position = new Vector3(bossTransform.position.x, targetY, bossTransform.position.z);
     }
 }
