@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4747623930579131237}
   - component: {fileID: 442374487176302463}
   - component: {fileID: 1784087719014211030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Jack_0
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -249,7 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3393310468479189721}
   - component: {fileID: 8493047478933773665}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: EnemyHitBox
   m_Icon: {fileID: 0}

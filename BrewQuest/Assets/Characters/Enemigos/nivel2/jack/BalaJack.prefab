@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -9027846296145649824}
   - component: {fileID: 4969969386614517576}
   - component: {fileID: 4198487045284714548}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: BalaJack
   m_TagString: BalaEnemigo
   m_Icon: {fileID: 0}

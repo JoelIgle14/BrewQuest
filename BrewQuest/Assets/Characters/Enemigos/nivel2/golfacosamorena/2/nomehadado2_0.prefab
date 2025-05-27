@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3131988038310104047}
   - component: {fileID: 1057811007214715689}
   - component: {fileID: 8942563368443001883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: nomehadado2_0
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 555410427
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1165179304, guid: 9fd1c34aac44d6f4e8e4ce84378623c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -198,6 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   golpeado: 0
+  puntos: 10
 --- !u!114 &1057811007214715689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4315247856761896869}
   - component: {fileID: 7109797139405726300}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: EnemyHitBox
   m_Icon: {fileID: 0}
