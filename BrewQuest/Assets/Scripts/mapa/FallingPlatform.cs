@@ -27,6 +27,10 @@ public class FallingPlatform : MonoBehaviour, IReiniciable
         {
             StartCoroutine(ShakeThenFall());
         }
+        else if (collision.gameObject.CompareTag("Floor"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     private System.Collections.IEnumerator ShakeThenFall()

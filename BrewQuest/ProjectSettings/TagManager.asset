@@ -59,6 +59,9 @@ TagManager:
   - name: Fondo
     uniqueID: 2497557499
     locked: 0
+  - name: ParetDentro
+    uniqueID: 2910143023
+    locked: 0
   - name: decoracion
     uniqueID: 2365863411
     locked: 0
@@ -67,9 +70,6 @@ TagManager:
     locked: 0
   - name: Puerta
     uniqueID: 2211347283
-    locked: 0
-  - name: ParetDentro
-    uniqueID: 2910143023
     locked: 0
   - name: Checkpoints
     uniqueID: 3231829795
