@@ -1,39 +1,45 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Camera))]
-public class CameraFollowPoint : MonoBehaviour
+public class CameraFollow : MonoBehaviour
 {
-    [Header("Objetos de seguimiento")]
-    public Transform followPoint; // Punto debajo del personaje (por ejemplo, un hijo del jugador)
+    public Transform target; // El personaje a seguir
+    public Vector3 offset = new Vector3(0, 3, -10); // Posición relativa a CJ
+    public float smoothSpeed = 5f; // Suavizado general
+    public float verticalDelay = 0.3f; // Tiempo de retardo al seguir salto
 
-    [Header("Ajustes de cámara")]
-    public Vector2 offset = new Vector2(3f, 2f); // Offset relativo (adelante y arriba)
-    public float followSpeed = 5f;
-
-    private Camera cam;
-
-    void Start()
-    {
-        cam = GetComponent<Camera>();
-
-        if (!cam.orthographic)
-            Debug.LogWarning("Se recomienda que la cámara sea ortográfica para juegos 2D.");
-
-        if (followPoint == null)
-            Debug.LogError("Asigna el Transform del punto de seguimiento.");
-    }
+    private float currentVelocityY = 0f;
+    private float targetY;
+    private float timer = 0f;
 
     void LateUpdate()
     {
-        if (followPoint == null) return;
+        if (target == null) return;
 
-        // Dirección horizontal según la escala (flip del personaje)
-        float dir = Mathf.Sign(followPoint.localScale.x);
+        Vector3 desiredPosition = target.position + offset;
 
-        // Posición objetivo
-        Vector3 targetPosition = followPoint.position + new Vector3(offset.x * dir, offset.y, -10f);
+        // Solo actualizamos el eje Y con retardo
+        if (target.position.y > transform.position.y)
+        {
+            // El personaje está saltando: esperamos un poco
+            timer += Time.deltaTime;
+            if (timer > verticalDelay)
+                targetY = Mathf.SmoothDamp(transform.position.y, desiredPosition.y, ref currentVelocityY, 0.3f);
+            else
+                targetY = transform.position.y; // aún no seguimos el salto
+        }
+        else
+        {
+            // El personaje cae o se mantiene: seguimos inmediatamente
+            targetY = Mathf.SmoothDamp(transform.position.y, desiredPosition.y, ref currentVelocityY, 0.15f);
+            timer = 0f;
+        }
 
-        // Movimiento suavizado
-        transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
+        Vector3 finalPosition = new Vector3(
+            Mathf.Lerp(transform.position.x, desiredPosition.x, Time.deltaTime * smoothSpeed),
+            targetY,
+            Mathf.Lerp(transform.position.z, desiredPosition.z, Time.deltaTime * smoothSpeed)
+        );
+
+        transform.position = finalPosition;
     }
 }
