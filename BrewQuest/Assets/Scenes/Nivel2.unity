@@ -991,8 +991,8 @@ MonoBehaviour:
   canAttack: 1
   canMove: 1
   hasDash: 1
-  hasDoubleJump: 1
-  hasShoot: 1
+  hasDoubleJump: 0
+  hasShoot: 0
   hud: {fileID: 1648418570}
   habManager: {fileID: 0}
 --- !u!4 &219333442
@@ -2274,13 +2274,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Square
       objectReference: {fileID: 0}
+    - target: {fileID: 7658899779930316927, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
+      propertyPath: m_Size.x
+      value: 0.58604956
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658899779930316927, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8040857
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658899779930316927, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.024066865
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658899779930316927, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.009795696
+      objectReference: {fileID: 0}
     - target: {fileID: 8315037155128198085, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1320834098, guid: f9248c0d47f93614b8fcb625ad77e412, type: 3}
     - target: {fileID: 8315037155128198085, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8315037155128198085, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
       propertyPath: m_SortingLayerID
@@ -2295,7 +2311,7 @@ PrefabInstance:
       addedObject: {fileID: 1393986620}
     - targetCorrespondingSourceObject: {fileID: 4767924302976441228, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1393986621}
+      addedObject: {fileID: 1393986624}
   m_SourcePrefab: {fileID: 100100000, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
 --- !u!1 &760549592
 GameObject:
@@ -73390,7 +73406,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1393986621
+--- !u!114 &1393986624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73399,10 +73415,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1092335232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d180b0f14941f5468061a60cafacd9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fe6c13d6e528dd4180a4bce6274fe40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barraUI: {fileID: 0}
+  iconoDobleSaltoUI: {fileID: 0}
 --- !u!4 &1395035667 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5993499495684090497, guid: 1a30444c49bcee7479001d0dd3893eaa, type: 3}
@@ -74334,10 +74350,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1517004620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d180b0f14941f5468061a60cafacd9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 37025c09342ba7a42b60301cee1c9d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  barraUI: {fileID: 0}
+  iconoMangueraUI: {fileID: 0}
 --- !u!1 &1517804980
 GameObject:
   m_ObjectHideFlags: 0
@@ -75208,6 +75224,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 323341929011060826, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: rayCastDistance
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 3722889134174113284, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: hud
       value: 
@@ -75230,11 +75250,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 348.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -75272,6 +75292,18 @@ PrefabInstance:
       propertyPath: dashBarAnimator
       value: 
       objectReference: {fileID: 489350973}
+    - target: {fileID: 8729202147526316273, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: canDash
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729202147526316273, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: canShoot
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8729202147526316273, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: canDoubleJump
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9036987573618746757, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_Name
       value: Jarry

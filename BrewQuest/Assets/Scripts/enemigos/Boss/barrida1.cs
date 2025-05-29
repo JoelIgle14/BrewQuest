@@ -48,6 +48,12 @@ public class barrida1 : MonoBehaviour, IBossAttack
         goingRight = Random.Range(0, 2) == 0; // 50% igual, pero más explícito
                                               // goingRight = false; // <-- Fuerza barrida desde la derecha (para probar izquierda)
 
+        // Cambiar la escala para que mire en la dirección del movimiento
+        Vector3 scale = bossTransform.localScale;
+        scale.x = Mathf.Abs(scale.x) * (goingRight ? -1 : 1);
+        bossTransform.localScale = scale;
+
+
         // Calcular extremos de la cámara
         float zDistance = Mathf.Abs(Camera.main.transform.position.z - bossTransform.position.z);
         Vector3 leftWorld = Camera.main.ViewportToWorldPoint(new Vector3(0f, 0.5f, zDistance));
@@ -57,6 +63,7 @@ public class barrida1 : MonoBehaviour, IBossAttack
 
         if (goingRight)
         {
+
             spawnX = leftWorld.x - 2f;
             startX = leftWorld.x + 1f;
             endX = rightWorld.x - 1f;
