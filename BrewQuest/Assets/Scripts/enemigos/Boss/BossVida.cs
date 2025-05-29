@@ -5,31 +5,22 @@ public class BossVida : MonoBehaviour
 {
     public float health;
     public bool golpeado;
-    public int puntos = 1000; // ← Añade puntos por este enemigo
+    public int puntos = 1000; 
     private BossController bc;
-
-    Animator animator;
+    public GameObject player;
 
     void Awake()
     {
         bc = GetComponent<BossController>();
-        animator = GetComponent<Animator>();
-    }
-
-    private void Update()
-    {
-        if (bc.canTakeDamage)
-        {
-            TakeDamage();
-        }
     }
 
     public void TakeDamage(float amount, GameObject Player, bool esAtaqueCuerpoACuerpo)
     {
-        if (!golpeado)
+        if (!golpeado && bc != null && bc.canTakeDamage)
         {
             golpeado = true;
             health -= amount;
+            //a
 
             if (health <= 0)
             {
@@ -40,10 +31,10 @@ public class BossVida : MonoBehaviour
                 }
 
                 Destroy(gameObject);
-                return;
+                ActivateDoor();
             }
 
-            animator.SetTrigger("hit");
+            //animator.SetTrigger("hit");
 
             if (esAtaqueCuerpoACuerpo)
             {
@@ -57,6 +48,22 @@ public class BossVida : MonoBehaviour
             StartCoroutine(ResetGolpeado());
         }
     }
+
+    private void ActivateDoor()
+    {
+        GameObject puerta = GameObject.Find("Puerta2");
+        if (puerta != null)
+        {
+            //puerta.SetActive(true);
+            puerta.GetComponent<SpriteRenderer>().enabled = true;
+            puerta.GetComponent<Collider2D>().enabled = true;
+        }
+        else
+        {
+            Debug.LogWarning("No puerta jeje");
+        }
+    }
+
 
     private IEnumerator ResetGolpeado()
     {

@@ -23,6 +23,8 @@ public class BossController : MonoBehaviour
     private Vector3 originalPosition;
     private Quaternion originalRotation;
 
+    private bool isDead;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -122,14 +124,11 @@ public class BossController : MonoBehaviour
         Debug.Log("Boss está recargando... ¡es tu momento!");
         canTakeDamage = true;
 
-        // Cambiar Rigidbody2D a dinámico para caer con gravedad
         rb2d.bodyType = RigidbodyType2D.Dynamic;
-        rb2d.gravityScale = 1f;  // Aseguramos que la gravedad esté activada
+        rb2d.gravityScale = 1f;  
 
-        // Esperamos el tiempo de descanso para que caiga
         yield return new WaitForSeconds(restDuration);
 
-        // Volver a posición y rotación original
         rb2d.bodyType = RigidbodyType2D.Static;
         rb2d.gravityScale = 0f;
 
