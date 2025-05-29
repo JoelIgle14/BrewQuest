@@ -991,8 +991,8 @@ MonoBehaviour:
   canAttack: 1
   canMove: 1
   hasDash: 1
-  hasDoubleJump: 1
-  hasShoot: 1
+  hasDoubleJump: 0
+  hasShoot: 0
   hud: {fileID: 1648418570}
   habManager: {fileID: 0}
 --- !u!4 &219333442
@@ -75208,6 +75208,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 323341929011060826, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: rayCastDistance
+      value: 0.12
+      objectReference: {fileID: 0}
     - target: {fileID: 3722889134174113284, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: hud
       value: 
