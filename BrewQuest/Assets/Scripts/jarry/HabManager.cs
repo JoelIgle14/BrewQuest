@@ -37,4 +37,17 @@ public class NewBehaviourScript : MonoBehaviour
                 GetComponent<Disparo>().ActivarPowerUp();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("cuadrao"))
+        {
+            canDoubleJump = true;
+        }
+        else if (collision.gameObject.CompareTag("Manguera"))
+        {
+            canShoot = true;
+        }
+    }
+
 }
