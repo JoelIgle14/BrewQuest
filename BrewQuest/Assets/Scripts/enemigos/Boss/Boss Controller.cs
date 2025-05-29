@@ -8,7 +8,7 @@ public class BossController : MonoBehaviour
     public int maxAttacksBeforeRest = 4;
     public int currentAttackCount = 0;
     private bool isResting = false;
-    private bool canTakeDamage = false;
+    public bool canTakeDamage = false;
 
     public float restDuration = 7f;
 
@@ -19,8 +19,25 @@ public class BossController : MonoBehaviour
     [Header("Testing")]
     public bool manualControl = false; // Si es true, solo ataques manuales con teclado
 
+    private Rigidbody2D rb2d;
+    private Vector3 originalPosition;
+    private Quaternion originalRotation;
+
     void Start()
     {
+        rb2d = GetComponent<Rigidbody2D>();
+        if (rb2d == null)
+        {
+            Debug.LogError("No hay Rigidbody2D en el boss.");
+        }
+        else
+        {
+            rb2d.bodyType = RigidbodyType2D.Static; // Inicialmente está estático
+        }
+
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
+
         // Convertimos y validamos los scripts referenciados
         foreach (var script in attackScriptsRaw)
         {
@@ -105,18 +122,22 @@ public class BossController : MonoBehaviour
         Debug.Log("Boss está recargando... ¡es tu momento!");
         canTakeDamage = true;
 
+        // Cambiar Rigidbody2D a dinámico para caer con gravedad
+        rb2d.bodyType = RigidbodyType2D.Dynamic;
+        rb2d.gravityScale = 1f;  // Aseguramos que la gravedad esté activada
+
+        // Esperamos el tiempo de descanso para que caiga
         yield return new WaitForSeconds(restDuration);
+
+        // Volver a posición y rotación original
+        rb2d.bodyType = RigidbodyType2D.Static;
+        rb2d.gravityScale = 0f;
+
+        transform.position = originalPosition;
+        transform.rotation = originalRotation;
 
         canTakeDamage = false;
         currentAttackCount = 0;
         isResting = false;
-    }
-
-    public void ReceiveDamage(int amount)
-    {
-        if (!canTakeDamage) return;
-
-        Debug.Log("Boss recibió daño!");
-        // Aquí iría la lógica para reducir vida del jefe
     }
 }

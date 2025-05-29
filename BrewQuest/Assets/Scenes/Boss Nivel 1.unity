@@ -2659,9 +2659,9 @@ GameObject:
   - component: {fileID: 1690282436}
   - component: {fileID: 1690282435}
   - component: {fileID: 1690282434}
-  - component: {fileID: 1690282433}
   - component: {fileID: 1690282438}
   - component: {fileID: 1690282437}
+  - component: {fileID: 1690282439}
   m_Layer: 0
   m_Name: SimoBoss
   m_TagString: enemy
@@ -2741,21 +2741,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1690282433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1690282430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b35671727e156e43a641a342020d534, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 2
-  golpeado: 0
-  puntos: 300
 --- !u!61 &1690282434
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2870,7 +2855,7 @@ MonoBehaviour:
   - {fileID: 2042773567}
   - {fileID: 2041926852}
   - {fileID: 16062344}
-  manualControl: 1
+  manualControl: 0
 --- !u!114 &1690282438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2881,6 +2866,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47a3b3b8ff7fb2444b2dea4ba102a8ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1690282439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690282430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebdab41d1ab58e94ebf70f4f293d2cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1702020629
