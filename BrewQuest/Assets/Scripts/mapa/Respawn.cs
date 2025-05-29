@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private SpriteRenderer spriteRenderer;
 
+    private AudioController controller;
+
     public bool esInvulnerable = false;
 
     private void Start()
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         disp = GetComponent<Disparo>();
+        controller = FindObjectOfType<AudioController>();
 
         if (CheckpointData.ultimaPosicionCheckpoint.HasValue)
         {
@@ -33,6 +36,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogWarning("Respawn point no asignado. Asigna un punto de respawn en el Inspector.");
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("Checkpoint"))
         {
+            controller.SeleccionAudio(1, 0.5f);
             // Sumamos puntos si el checkpoint no ha sido activado antes
             Checkpoint checkpoint = collision.GetComponent<Checkpoint>();
             if (checkpoint != null && !checkpoint.yaActivado)
@@ -87,6 +92,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        controller.SeleccionAudio(0, 0.5f);
         GameManager.Instance.PerderVida();
         Invoke("Respawn", respawnDelay);
     }
