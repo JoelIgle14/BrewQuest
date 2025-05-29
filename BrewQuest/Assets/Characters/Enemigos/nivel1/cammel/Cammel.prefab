@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2760547235319956558}
   - component: {fileID: 4507210042007300736}
   - component: {fileID: 1890105484990247770}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cammel
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3186323174517572293}
   - component: {fileID: 2682909893037297874}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: EnemyHitBox
   m_Icon: {fileID: 0}

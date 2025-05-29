@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5271571187016409754}
   - component: {fileID: 743375472160686812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: hitbox
   m_TagString: EnemyHitBox
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 9072054060903903691}
   - component: {fileID: 8189334148745057018}
   - component: {fileID: 81123720907839349}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lopatoidle_0
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8965079840998521465}
   - component: {fileID: 2334293857193316440}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: patas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float parpadeoTiempo = 2f;
     public float parpadeoIntervalo = 0.2f;
 
+    private Disparo disp;
+
     private Animator anim;
     private SpriteRenderer spriteRenderer;
 
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        disp = GetComponent<Disparo>();
 
         if (CheckpointData.ultimaPosicionCheckpoint.HasValue)
         {
@@ -37,6 +40,11 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("FallZone"))
         {
             Die();
+
+            if (disp.tirosDisponibles < 3)
+            {
+                disp.tirosDisponibles = 3;
+            }
         }
 
         if (collision.CompareTag("Checkpoint"))

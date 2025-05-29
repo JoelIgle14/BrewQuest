@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7240799516064305824}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 5037543149018074733}
   - component: {fileID: 2036229063236097966}
   - component: {fileID: 7843231422049205324}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: winstonrustic Prefab
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 555410427
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1968467285, guid: 4d9db5739386aa048b36b8265e64e5f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -337,7 +337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5470508346168906536}
   - component: {fileID: 8293757950212787460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: EnemyHitBox
   m_Icon: {fileID: 0}

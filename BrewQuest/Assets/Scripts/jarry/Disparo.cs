@@ -12,7 +12,7 @@ public class Disparo : MonoBehaviour
     private float tiempoUltimoDisparo = 0f;
 
     private bool powerUpActivo = false;
-    private int tirosDisponibles = 0;
+    public int tirosDisponibles = 0;
 
     void Awake()
     {

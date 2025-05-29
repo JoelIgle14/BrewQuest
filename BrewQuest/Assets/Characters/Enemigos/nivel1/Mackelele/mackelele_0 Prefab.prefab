@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9129227773756359547}
   - component: {fileID: 3771114917169605780}
   - component: {fileID: 5927254742239477838}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mackelele_0 Prefab
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 555410427
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1362117889, guid: da81c3d50c87d574cbd036cd52656814, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   golpeado: 0
+  puntos: 10
 --- !u!60 &5927254742239477838
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -265,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5262891691148086546}
   - component: {fileID: 3103550961196840739}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameObject
   m_TagString: EnemyHitBox
   m_Icon: {fileID: 0}
