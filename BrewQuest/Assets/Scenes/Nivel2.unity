@@ -388,6 +388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlatform (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_TagString
+      value: PlataformaGravedad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1873,6 +1877,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlatform (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_TagString
+      value: PlataformaGravedad
+      objectReference: {fileID: 0}
     - target: {fileID: 1768817965241484622, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
       propertyPath: fallDelay
       value: 0.1
@@ -2840,6 +2848,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlatform (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_TagString
+      value: PlataformaGravedad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3284,6 +3296,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlatform (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_TagString
+      value: PlataformaGravedad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3344,6 +3360,10 @@ PrefabInstance:
     - target: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
       propertyPath: m_Name
       value: FallingPlatform (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_TagString
+      value: PlataformaGravedad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -73318,6 +73338,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlatform (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_TagString
+      value: PlataformaGravedad
+      objectReference: {fileID: 0}
     - target: {fileID: 1768817965241484622, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
       propertyPath: fallDelay
       value: 0.1
@@ -74811,6 +74835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlatform (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_TagString
+      value: PlataformaGravedad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -75072,6 +75100,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlatform (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_TagString
+      value: PlataformaGravedad
+      objectReference: {fileID: 0}
     - target: {fileID: 1768817965241484622, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
       propertyPath: fallDelay
       value: 0.1
@@ -75198,11 +75230,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 262.4
+      value: 348.4
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26.8
+      value: 26.7
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -75944,6 +75976,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlatform (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_TagString
+      value: PlataformaGravedad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -76575,6 +76611,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FallingPlatform (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_TagString
+      value: PlataformaGravedad
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -76635,6 +76675,10 @@ PrefabInstance:
     - target: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
       propertyPath: m_Name
       value: FallingPlatform (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_TagString
+      value: PlataformaGravedad
       objectReference: {fileID: 0}
     - target: {fileID: 1768817965241484622, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
       propertyPath: fallDelay

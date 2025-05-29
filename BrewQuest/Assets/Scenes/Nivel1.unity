@@ -772,7 +772,7 @@ GameObject:
   - component: {fileID: 193136221}
   - component: {fileID: 193136220}
   - component: {fileID: 193136219}
-  - component: {fileID: 193136218}
+  - component: {fileID: 193136222}
   m_Layer: 0
   m_Name: FallingPlatform (12)
   m_TagString: PlataformaGravedad
@@ -795,22 +795,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &193136218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193136216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &193136219
 Rigidbody2D:
   serializedVersion: 4
@@ -935,6 +919,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &193136222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193136216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1 &204798232
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,7 +1543,7 @@ GameObject:
   - component: {fileID: 270131020}
   - component: {fileID: 270131019}
   - component: {fileID: 270131018}
-  - component: {fileID: 270131017}
+  - component: {fileID: 270131021}
   m_Layer: 0
   m_Name: FallingPlatform (8)
   m_TagString: PlataformaGravedad
@@ -1566,22 +1566,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &270131017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 270131015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &270131018
 Rigidbody2D:
   serializedVersion: 4
@@ -1706,6 +1690,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &270131021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270131015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1001 &280061361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3459,7 +3459,7 @@ GameObject:
   - component: {fileID: 479357823}
   - component: {fileID: 479357822}
   - component: {fileID: 479357821}
-  - component: {fileID: 479357820}
+  - component: {fileID: 479357824}
   m_Layer: 0
   m_Name: FallingPlatform (18)
   m_TagString: PlataformaGravedad
@@ -3482,22 +3482,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &479357820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 479357818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &479357821
 Rigidbody2D:
   serializedVersion: 4
@@ -3622,6 +3606,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &479357824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479357818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1001 &482845724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4621,7 +4621,7 @@ GameObject:
   - component: {fileID: 577454339}
   - component: {fileID: 577454338}
   - component: {fileID: 577454337}
-  - component: {fileID: 577454336}
+  - component: {fileID: 577454340}
   m_Layer: 0
   m_Name: FallingPlatform (16)
   m_TagString: PlataformaGravedad
@@ -4644,22 +4644,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &577454336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 577454334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &577454337
 Rigidbody2D:
   serializedVersion: 4
@@ -4784,6 +4768,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &577454340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577454334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1 &583773614
 GameObject:
   m_ObjectHideFlags: 0
@@ -4899,7 +4899,7 @@ GameObject:
   - component: {fileID: 584404247}
   - component: {fileID: 584404246}
   - component: {fileID: 584404245}
-  - component: {fileID: 584404244}
+  - component: {fileID: 584404248}
   m_Layer: 0
   m_Name: FallingPlatform (4)
   m_TagString: PlataformaGravedad
@@ -4922,22 +4922,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &584404244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 584404242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &584404245
 Rigidbody2D:
   serializedVersion: 4
@@ -5062,6 +5046,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &584404248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 584404242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1 &591840870
 GameObject:
   m_ObjectHideFlags: 0
@@ -5155,6 +5155,27 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd840550af9f69543acea9dea240d223, type: 3}
+--- !u!1 &602098671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+  m_PrefabInstance: {fileID: 2230876870795007128}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &602098676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602098671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1 &604195592 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2653858124768228965, guid: 3baec761ed3b3ed4c80b3f8a0758a2cd, type: 3}
@@ -167871,7 +167892,7 @@ GameObject:
   - component: {fileID: 897927471}
   - component: {fileID: 897927470}
   - component: {fileID: 897927469}
-  - component: {fileID: 897927468}
+  - component: {fileID: 897927472}
   m_Layer: 0
   m_Name: FallingPlatform
   m_TagString: PlataformaGravedad
@@ -167894,22 +167915,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &897927468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897927466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &897927469
 Rigidbody2D:
   serializedVersion: 4
@@ -168034,6 +168039,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &897927472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897927466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1 &900359059
 GameObject:
   m_ObjectHideFlags: 0
@@ -168345,6 +168366,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &929729972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8358605012755912921, guid: 8d4feec191e9bb54e923efc93c326f32, type: 3}
+  m_PrefabInstance: {fileID: 2923843799345451859}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &932497629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168418,7 +168444,7 @@ GameObject:
   - component: {fileID: 934326600}
   - component: {fileID: 934326599}
   - component: {fileID: 934326598}
-  - component: {fileID: 934326597}
+  - component: {fileID: 934326601}
   m_Layer: 0
   m_Name: FallingPlatform (10)
   m_TagString: PlataformaGravedad
@@ -168441,22 +168467,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &934326597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934326595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &934326598
 Rigidbody2D:
   serializedVersion: 4
@@ -168581,6 +168591,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &934326601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934326595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1 &973748023
 GameObject:
   m_ObjectHideFlags: 0
@@ -169161,7 +169187,7 @@ GameObject:
   - component: {fileID: 1034960472}
   - component: {fileID: 1034960471}
   - component: {fileID: 1034960470}
-  - component: {fileID: 1034960469}
+  - component: {fileID: 1034960473}
   m_Layer: 0
   m_Name: FallingPlatform (1)
   m_TagString: PlataformaGravedad
@@ -169184,22 +169210,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1034960469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034960467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &1034960470
 Rigidbody2D:
   serializedVersion: 4
@@ -169324,6 +169334,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1034960473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034960467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1001 &1042973373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -169529,7 +169555,7 @@ GameObject:
   - component: {fileID: 1054412990}
   - component: {fileID: 1054412989}
   - component: {fileID: 1054412988}
-  - component: {fileID: 1054412987}
+  - component: {fileID: 1054412991}
   m_Layer: 0
   m_Name: FallingPlatform (7)
   m_TagString: PlataformaGravedad
@@ -169552,22 +169578,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1054412987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1054412985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &1054412988
 Rigidbody2D:
   serializedVersion: 4
@@ -169692,6 +169702,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1054412991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054412985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1001 &1058493628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -170916,7 +170942,7 @@ GameObject:
   - component: {fileID: 1193101225}
   - component: {fileID: 1193101224}
   - component: {fileID: 1193101223}
-  - component: {fileID: 1193101222}
+  - component: {fileID: 1193101226}
   m_Layer: 0
   m_Name: FallingPlatform (11)
   m_TagString: PlataformaGravedad
@@ -170939,22 +170965,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1193101222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1193101220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &1193101223
 Rigidbody2D:
   serializedVersion: 4
@@ -171079,6 +171089,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1193101226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193101220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1001 &1195683983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173172,7 +173198,7 @@ GameObject:
   - component: {fileID: 1300630116}
   - component: {fileID: 1300630115}
   - component: {fileID: 1300630114}
-  - component: {fileID: 1300630113}
+  - component: {fileID: 1300630117}
   m_Layer: 0
   m_Name: FallingPlatform (19)
   m_TagString: PlataformaGravedad
@@ -173195,22 +173221,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1300630113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300630111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.1
-  shakeDuration: 0.3
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &1300630114
 Rigidbody2D:
   serializedVersion: 4
@@ -173335,6 +173345,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1300630117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300630111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.1
+  shakeDuration: 0.3
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1001 &1303064868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173856,7 +173882,7 @@ GameObject:
   - component: {fileID: 1342446380}
   - component: {fileID: 1342446379}
   - component: {fileID: 1342446378}
-  - component: {fileID: 1342446377}
+  - component: {fileID: 1342446381}
   m_Layer: 0
   m_Name: FallingPlatform (14)
   m_TagString: PlataformaGravedad
@@ -173879,22 +173905,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1342446377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342446375}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &1342446378
 Rigidbody2D:
   serializedVersion: 4
@@ -174019,6 +174029,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1342446381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342446375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1 &1344942195
 GameObject:
   m_ObjectHideFlags: 0
@@ -174856,6 +174882,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1113123037721736592, guid: 8d4feec191e9bb54e923efc93c326f32, type: 3}
   m_PrefabInstance: {fileID: 2923843799345451859}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1404078597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929729972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.1
+  shakeDuration: 0.3
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!4 &1407970316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220598790959539030, guid: 3b36374e0b8d42a48b8128c01acbc707, type: 3}
@@ -175023,7 +175065,7 @@ GameObject:
   - component: {fileID: 1426050350}
   - component: {fileID: 1426050349}
   - component: {fileID: 1426050348}
-  - component: {fileID: 1426050347}
+  - component: {fileID: 1426050351}
   m_Layer: 0
   m_Name: FallingPlatform (3)
   m_TagString: PlataformaGravedad
@@ -175046,22 +175088,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1426050347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1426050345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &1426050348
 Rigidbody2D:
   serializedVersion: 4
@@ -175186,6 +175212,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1426050351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426050345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!4 &1459137679 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6220598790959539030, guid: 3b36374e0b8d42a48b8128c01acbc707, type: 3}
@@ -176550,7 +176592,7 @@ GameObject:
   - component: {fileID: 1606574627}
   - component: {fileID: 1606574626}
   - component: {fileID: 1606574625}
-  - component: {fileID: 1606574624}
+  - component: {fileID: 1606574628}
   m_Layer: 0
   m_Name: FallingPlatform (15)
   m_TagString: PlataformaGravedad
@@ -176573,22 +176615,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1606574624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1606574622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &1606574625
 Rigidbody2D:
   serializedVersion: 4
@@ -176713,6 +176739,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1606574628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606574622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1001 &1618987224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -178727,7 +178769,7 @@ GameObject:
   - component: {fileID: 1838794043}
   - component: {fileID: 1838794042}
   - component: {fileID: 1838794041}
-  - component: {fileID: 1838794040}
+  - component: {fileID: 1838794044}
   m_Layer: 0
   m_Name: FallingPlatform (17)
   m_TagString: PlataformaGravedad
@@ -178750,22 +178792,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1838794040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838794038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &1838794041
 Rigidbody2D:
   serializedVersion: 4
@@ -178890,6 +178916,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1838794044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838794038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1 &1840715196
 GameObject:
   m_ObjectHideFlags: 0
@@ -181148,7 +181190,7 @@ GameObject:
   - component: {fileID: 1939330153}
   - component: {fileID: 1939330152}
   - component: {fileID: 1939330151}
-  - component: {fileID: 1939330150}
+  - component: {fileID: 1939330154}
   m_Layer: 0
   m_Name: FallingPlatform (13)
   m_TagString: PlataformaGravedad
@@ -181171,22 +181213,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1939330150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939330148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &1939330151
 Rigidbody2D:
   serializedVersion: 4
@@ -181311,6 +181337,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1939330154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939330148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1001 &1946615913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -182006,7 +182048,7 @@ GameObject:
   - component: {fileID: 2051634986}
   - component: {fileID: 2051634985}
   - component: {fileID: 2051634984}
-  - component: {fileID: 2051634983}
+  - component: {fileID: 2051634987}
   m_Layer: 0
   m_Name: FallingPlatform (9)
   m_TagString: PlataformaGravedad
@@ -182029,22 +182071,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2051634983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051634981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &2051634984
 Rigidbody2D:
   serializedVersion: 4
@@ -182169,6 +182195,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2051634987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051634981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1 &2054361933
 GameObject:
   m_ObjectHideFlags: 0
@@ -182436,7 +182478,7 @@ GameObject:
   - component: {fileID: 2095601204}
   - component: {fileID: 2095601203}
   - component: {fileID: 2095601202}
-  - component: {fileID: 2095601201}
+  - component: {fileID: 2095601205}
   m_Layer: 0
   m_Name: FallingPlatform (5)
   m_TagString: PlataformaGravedad
@@ -182459,22 +182501,6 @@ Transform:
   m_Father: {fileID: 1777016819}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2095601201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2095601199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befd17e1f8ba4644582b2e53b5155fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallDelay: 0.4
-  shakeDuration: 0
-  shakeMagnitude: 0.1
-  shakeSpeed: 50
 --- !u!50 &2095601202
 Rigidbody2D:
   serializedVersion: 4
@@ -182599,6 +182625,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2095601205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095601199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17f9d1e2d8112ea4ea696b40b4b0725f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDelay: 0.4
+  shakeDuration: 0
+  shakeMagnitude: 0.1
+  shakeSpeed: 50
 --- !u!1 &2100843600
 GameObject:
   m_ObjectHideFlags: 0
@@ -183248,10 +183290,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PlataformaGravedad
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1768817965241484622, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1159763283045701718, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 602098676}
   m_SourcePrefab: {fileID: 100100000, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
 --- !u!1001 &2923843799345451859
 PrefabInstance:
@@ -183313,10 +183359,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PlataformaGravedad
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1485546201019191444, guid: 8d4feec191e9bb54e923efc93c326f32, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8358605012755912921, guid: 8d4feec191e9bb54e923efc93c326f32, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1404078597}
   m_SourcePrefab: {fileID: 100100000, guid: 8d4feec191e9bb54e923efc93c326f32, type: 3}
 --- !u!1001 &4101350688695299615
 PrefabInstance:
