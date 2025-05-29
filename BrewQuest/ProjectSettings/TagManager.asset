@@ -19,6 +19,7 @@ TagManager:
   - hitJarry
   - Activar Dialogos
   - BalaEnemigo
+  - PlataformaGravedad
   layers:
   - Default
   - TransparentFX
