@@ -9,11 +9,11 @@ public class destroyhab3 : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(ActivarMangueraYDestruir(0.1f));
+            StartCoroutine(ActivarMangueraYDestruir(0.1f, collision.gameObject));
         }
     }
 
-    private IEnumerator ActivarMangueraYDestruir(float delay)
+    private IEnumerator ActivarMangueraYDestruir(float delay, GameObject player)
     {
         yield return new WaitForSeconds(delay);
 
@@ -23,6 +23,14 @@ public class destroyhab3 : MonoBehaviour
         }
 
         GameManager.Instance.hasShoot = true;
+
+        // Activar el script de disparo si está presente
+        Disparo disparo = player.GetComponent<Disparo>();
+        if (disparo != null)
+        {
+            disparo.ActivarPowerUp();
+            Debug.Log("Disparo activado al recoger la manguera.");
+        }
 
         Destroy(gameObject);
     }
