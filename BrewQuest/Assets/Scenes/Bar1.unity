@@ -1987,6 +1987,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jarry
       objectReference: {fileID: 0}
+    - target: {fileID: 9036987573618746757, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2350634851553189659, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
     - {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
