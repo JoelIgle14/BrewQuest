@@ -683,6 +683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audios:
   - {fileID: 8300000, guid: b5ba5589c49d9b94cb73150e931b511d, type: 3}
+  - {fileID: 8300000, guid: 78a4aa98411ca764880831825ea0c36b, type: 3}
 --- !u!82 &101858056
 AudioSource:
   m_ObjectHideFlags: 0
@@ -695,7 +696,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1139,7 +1140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_SortingLayerID
@@ -1350,7 +1351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_SortingLayerID
@@ -1367,6 +1368,18 @@ PrefabInstance:
     - target: {fileID: 8319219224368760895, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_SortingLayerID
       value: -1063137501
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368435222574009853, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: MaxDistance
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368435222574009853, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: MinDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368435222574009853, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_audioClip
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8405287004170600207, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_Size.x
@@ -166494,7 +166507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_SortingLayerID
@@ -166515,6 +166528,22 @@ PrefabInstance:
     - target: {fileID: 8319219224368760895, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_SortingLayerID
       value: -1063137501
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368435222574009853, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368435222574009853, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: MaxDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368435222574009853, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8368435222574009853, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8405287004170600207, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_Size.x
@@ -174897,7 +174926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_SortingLayerID
@@ -175899,7 +175928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4247143081571716871, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_SortingLayerID

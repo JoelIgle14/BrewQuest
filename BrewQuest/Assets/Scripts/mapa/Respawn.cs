@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
         if (collision.CompareTag("Checkpoint"))
         {
+            controller.SeleccionAudio(1, 0.5f);
             // Sumamos puntos si el checkpoint no ha sido activado antes
             Checkpoint checkpoint = collision.GetComponent<Checkpoint>();
             if (checkpoint != null && !checkpoint.yaActivado)
@@ -91,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        controller.SeleccionAudio(0, 1f);
+        controller.SeleccionAudio(0, 0.5f);
         GameManager.Instance.PerderVida();
         Invoke("Respawn", respawnDelay);
     }
