@@ -97,9 +97,9 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D hitRight = Physics2D.Raycast(rightOrigin, Vector2.down, rayCastDistance);
         RaycastHit2D hitCenter = Physics2D.Raycast(centerOrigin, Vector2.down, rayCastDistance);
 
-        if ((hitLeft.collider != null && (hitLeft.collider.CompareTag("Floor") || hitLeft.collider.CompareTag("PlataformaMovil"))) ||
-            (hitRight.collider != null && (hitRight.collider.CompareTag("Floor") || hitRight.collider.CompareTag("PlataformaMovil"))) ||
-            (hitCenter.collider != null && (hitCenter.collider.CompareTag("Floor") || hitCenter.collider.CompareTag("PlataformaMovil"))))
+        if ((hitLeft.collider != null && (hitLeft.collider.CompareTag("Floor") || hitLeft.collider.CompareTag("PlataformaMovil") || hitLeft.collider.CompareTag("PlataformaGravedad"))) ||
+            (hitRight.collider != null && (hitRight.collider.CompareTag("Floor") || hitRight.collider.CompareTag("PlataformaMovil") || hitRight.collider.CompareTag("PlataformaGravedad"))) ||
+            (hitCenter.collider != null && (hitCenter.collider.CompareTag("Floor") || hitCenter.collider.CompareTag("PlataformaMovil") || hitCenter.collider.CompareTag("PlataformaGravedad"))))
         {
             isGrounded = true;
             remainingJumps = maxJumps;

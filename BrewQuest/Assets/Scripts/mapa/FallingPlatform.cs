@@ -27,7 +27,7 @@ public class FallingPlatform : MonoBehaviour, IReiniciable
         {
             StartCoroutine(ShakeThenFall());
         }
-        else if (collision.gameObject.CompareTag("Floor"))
+        else if (collision.gameObject.CompareTag("Floor") && !rb.isKinematic)
         {
             Destroy(gameObject);
         }
@@ -60,7 +60,7 @@ public class FallingPlatform : MonoBehaviour, IReiniciable
         StopAllCoroutines();
         isShaking = false;
         transform.position = originalPosition;
-        transform.rotation = originalRotation; // << NUEVO
+        transform.rotation = originalRotation;
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
         rb.isKinematic = true;
