@@ -3544,6 +3544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2041926851}
   - component: {fileID: 2041926852}
+  - component: {fileID: 2041926853}
   m_Layer: 0
   m_Name: OverHeat
   m_TagString: enemy
@@ -3579,13 +3580,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cargaDuration: 4
-  explosionRadius: 9
-  damage: 1
   recoveryDuration: 2
+  triggerActiveTime: 0.3
   explosionEffectPrefab: {fileID: 8193650450704279683, guid: ffa796298faccfd4bb306d4dee6640ee, type: 3}
-  playerLayer:
+--- !u!58 &2041926853
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041926850}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.084368214}
+  serializedVersion: 2
+  m_Radius: 5.429525
 --- !u!1 &2042773565
 GameObject:
   m_ObjectHideFlags: 0
