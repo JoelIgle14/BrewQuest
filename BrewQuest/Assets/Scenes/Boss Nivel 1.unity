@@ -2560,8 +2560,15 @@ MonoBehaviour:
   spawnPointLeft: {fileID: 3856603434867242837}
   spawnPointRight: {fileID: 664445827}
   chargeTime: 1
-  dashSpeed: 10
+  dashSpeed: 9
   recoveryTime: 1
+  sweepY: -4.5
+  gapWidth: 2.5
+  sweepStartSpeed: 2
+  sweepMaxSpeed: 18
+  sweepAccelerationTime: 0.5
+  gapPositionRight: 10
+  gapPositionLeft: -10
 --- !u!1 &1594051340
 GameObject:
   m_ObjectHideFlags: 0
@@ -3380,6 +3387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jarry
       objectReference: {fileID: 0}
+    - target: {fileID: 9036987573618746757, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2350634851553189659, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
     - {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
@@ -3790,7 +3801,7 @@ Transform:
   m_GameObject: {fileID: 2105403990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.07250019, y: 4.5375, z: 0}
-  m_LocalScale: {x: 1.8817344, y: 1.5737681, z: 1}
+  m_LocalScale: {x: 2, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 841219689}
