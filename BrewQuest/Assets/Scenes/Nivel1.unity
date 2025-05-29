@@ -1824,6 +1824,8 @@ GameObject:
   - component: {fileID: 301622536}
   - component: {fileID: 301622535}
   - component: {fileID: 301622540}
+  - component: {fileID: 301622538}
+  - component: {fileID: 301622539}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1968,10 +1970,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eeefc952fcd64d4fbcc7cb18633be22, type: 3}
   m_Name: DELETEME
   m_EditorClassIdentifier: 
-  followPoint: {fileID: 633327714}
-  playerRb: {fileID: 633327726}
-  confiner: {fileID: 1175673542}
-  offset: {x: 3, y: 0.3}
+  target: {fileID: 0}
+  offset: {x: 3, y: 0.3, z: -10}
   smoothSpeed: 5
   verticalDelay: 0.3
 --- !u!1 &311190309
@@ -108941,7 +108941,7 @@ MonoBehaviour:
   canJump: 1
   canAttack: 1
   canMove: 1
-  hasDash: 1
+  hasDash: 0
   hasDoubleJump: 0
   hasShoot: 0
   hud: {fileID: 1619698925}
@@ -110024,37 +110024,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1040709952
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1040709953}
-  m_Layer: 0
-  m_Name: a
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1040709953
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040709952}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 116, y: -10, z: 1.0406506}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1042973373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -110209,10 +110178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1923730895}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
 --- !u!1 &1049545789
@@ -111216,9 +111182,8 @@ PolygonCollider2D:
       - {x: 134.42368, y: -20.392946}
       - {x: 164.06447, y: -12.788985}
       - {x: 197.72343, y: -12.871044}
-      - {x: 202.8467, y: -10.519401}
-      - {x: 216.20938, y: -10.523897}
-      - {x: 278.40643, y: -11.254512}
+      - {x: 204.336, y: -9.030094}
+      - {x: 282.2698, y: -11.494927}
       - {x: 277.985, y: -20.880196}
       - {x: 292.93018, y: -20.842026}
       - {x: 304.3838, y: -20.815125}
@@ -111250,10 +111215,8 @@ PolygonCollider2D:
       - {x: 351.3858, y: 15.881451}
       - {x: 339.1165, y: 15.099647}
       - {x: 331.76727, y: 14.537773}
-      - {x: 313.25943, y: 14.573902}
-      - {x: 299.82834, y: 9.837758}
-      - {x: 276.31674, y: 6.797142}
-      - {x: 209.46101, y: 6.7875643}
+      - {x: 308.0286, y: 7.715667}
+      - {x: 210.71785, y: 4.273906}
       - {x: 195.93506, y: 8.227512}
       - {x: 169.00233, y: 6.789625}
       - {x: 163.00755, y: 2.2777925}
