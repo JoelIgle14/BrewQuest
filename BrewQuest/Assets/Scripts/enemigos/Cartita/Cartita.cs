@@ -13,7 +13,7 @@ public class Cartita : MonoBehaviour
     private int currentPatrolIndex = 0;
     private GameObject player;
     private Vector3 initialPosition;
-    private bool returningToPatrol = false;
+    //private bool returningToPatrol = false;
     private float cooldownTimer = 0f;
 
     private enum EstadoVolador

@@ -62,15 +62,26 @@ public class playeratac : MonoBehaviour
         {
             if (enemy.CompareTag("EnemyHitBox"))
             {
+                // Primero buscamos Enemyvida (enemigos normales)
                 Enemyvida enemyvid = enemy.GetComponentInParent<Enemyvida>();
                 if (enemyvid != null)
                 {
                     enemyvid.TakeDamage(attackDamage, gameObject, true);
-                    Debug.Log("Enemigo golpeado a través del evento de animación");
+                    Debug.Log("Enemigo normal golpeado");
+                    continue;
+                }
+
+                // Si no hay Enemyvida, buscamos BossVida
+                BossVida bossVid = enemy.GetComponentInParent<BossVida>();
+                if (bossVid != null)
+                {
+                    bossVid.TakeDamage(attackDamage, gameObject, true);
+                    Debug.Log("Boss golpeado");
                 }
             }
         }
     }
+
 
     private void LookingUp()
     {
