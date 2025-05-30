@@ -1132,7 +1132,7 @@ MonoBehaviour:
   canAttack: 1
   canMove: 1
   hasDash: 1
-  hasDoubleJump: 0
+  hasDoubleJump: 1
   hasShoot: 0
   hud: {fileID: 0}
   habManager: {fileID: 0}
@@ -73721,7 +73721,6 @@ GameObject:
   - component: {fileID: 1423792297}
   - component: {fileID: 1423792292}
   - component: {fileID: 1423792296}
-  - component: {fileID: 1423792295}
   - component: {fileID: 1423792294}
   - component: {fileID: 1423792293}
   m_Layer: 0
@@ -73789,13 +73788,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423792291}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 393d2f50822c67146a547148554f3fda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  offset: {x: 0, y: 0, z: -10}
+  target: {fileID: 1861378964}
+  offset: {x: 2, y: 0, z: -10}
   smoothSpeed: 5
   verticalDeadZone: 2.5
 --- !u!114 &1423792294
@@ -73805,50 +73804,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1423792291}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4eeefc952fcd64d4fbcc7cb18633be22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 54223466}
+  target: {fileID: 1861378964}
   offset: {x: 1, y: 1, z: -10}
   smoothSpeed: 5
   verticalDelay: 0.3
   borde: {fileID: 0}
---- !u!114 &1423792295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423792291}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!81 &1423792296
 AudioListener:
   m_ObjectHideFlags: 0
@@ -75317,7 +75282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8729202147526316273, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: canDoubleJump
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9036987573618746757, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_Name

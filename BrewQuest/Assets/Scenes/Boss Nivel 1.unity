@@ -3343,7 +3343,7 @@ MonoBehaviour:
   - {fileID: 2042773567}
   - {fileID: 2041926852}
   - {fileID: 16062344}
-  manualControl: 1
+  manualControl: 0
 --- !u!114 &1690282438
 MonoBehaviour:
   m_ObjectHideFlags: 0
