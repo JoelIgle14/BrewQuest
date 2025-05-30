@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         bool movingRight = Input.GetKey(KeyCode.RightArrow);
         bool isMoving = movingLeft ^ movingRight; // solo uno a la vez
 
-        if (isMoving && canMove && hab.canMove && !dash.isDashing)
+        if (isMoving && canMove && hab.canMove && !dash.isDashing && isGrounded)
         {
             controller.ReproducirLoop(2, 0.5f); // Sonido de pasos
         }
