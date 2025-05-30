@@ -612,7 +612,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 975, y: -694}
+  m_AnchoredPosition: {x: 975, y: -708}
   m_SizeDelta: {x: 287.95, y: 115.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &98943029
@@ -920,8 +920,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 160905719}
-  - component: {fileID: 160905721}
   - component: {fileID: 160905720}
+  - component: {fileID: 160905722}
   m_Layer: 0
   m_Name: Activar Jarry
   m_TagString: Activar Dialogos
@@ -962,8 +962,8 @@ MonoBehaviour:
   Dialogo: {fileID: 88829508}
   Canva: {fileID: 761220238}
   jugador: {fileID: 1179971942}
---- !u!61 &160905721
-BoxCollider2D:
+--- !u!60 &160905722
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -994,7 +994,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.3560028, y: 2.43534}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1004,9 +1004,15 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.905365, y: 5.687498}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 2.4797668, y: 5.3839245}
+      - {x: -0.012084961, y: 6.118868}
+      - {x: 0.030792236, y: 4.8802204}
+      - {x: 0.97198486, y: 4.937874}
+      - {x: 1.1699829, y: -0.30497742}
+      - {x: 2.449388, y: -0.32271552}
+  m_UseDelaunayMesh: 0
 --- !u!1 &162709957
 GameObject:
   m_ObjectHideFlags: 0
@@ -75712,7 +75718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[1]
-      value: Esta te concedera la habilidad de disparar
+      value: Te concedera la habilidad de disparar
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[2]
@@ -75764,11 +75770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 373.3
+      value: 524.5
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26.5
+      value: 24.8
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -76634,11 +76640,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 683318812830579120, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.39
+      value: 3.61
       objectReference: {fileID: 0}
     - target: {fileID: 683318812830579120, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.02
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 683318812830579120, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -76694,11 +76700,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7619326118254788208, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7619326118254788208, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
       propertyPath: m_SortingLayerID
-      value: -400499591
+      value: -1475840295
       objectReference: {fileID: 0}
     - target: {fileID: 8483567911446817524, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
       propertyPath: m_Name
@@ -76706,7 +76712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8483567911446817524, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8483567911446817524, guid: dbf6278c0bfdc1e4a8a44a94818a1c9d, type: 3}
       propertyPath: m_TagString
