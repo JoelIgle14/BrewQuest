@@ -13,6 +13,10 @@ public class Dialogos : MonoBehaviour
     [TextArea(2, 4)]
     public List<string> dialogosIniciales;
 
+    [Header("Objeto a activar durante el diálogo")]
+    public GameObject objetoParaActivarDuranteDialogo;
+    public int indiceEnElQueSeActiva = 5; // Se activa después del sexto párrafo (índice 5)
+
     private int dialogoIndex = 0;
     private bool mostrandoDialogo = false;
     private bool escribiendo = false;
@@ -31,6 +35,13 @@ public class Dialogos : MonoBehaviour
             else
             {
                 dialogoIndex++;
+
+                // 👉 Activar objeto en el momento indicado
+                if (dialogoIndex == indiceEnElQueSeActiva && objetoParaActivarDuranteDialogo != null)
+                {
+                    objetoParaActivarDuranteDialogo.SetActive(true);
+                }
+
                 if (dialogoIndex < dialogosIniciales.Count)
                 {
                     MostrarDialogo(dialogosIniciales[dialogoIndex]);

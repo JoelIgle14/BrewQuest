@@ -10,9 +10,6 @@ public class ActivarAliado : MonoBehaviour
     private NewBehaviourScript habilidadesJugador;
     private Collider2D zonaActivacion;  // Collider de la zona de activación
 
-    public GameObject objetoAActivarCuandoTerminaDialogo;
-
-
     private void Start()
     {
 
@@ -110,9 +107,6 @@ public class ActivarAliado : MonoBehaviour
         // Desactivar el aliado cuando el diálogo termine
         if (aliado != null)
             aliado.SetActive(false);
-
-        // Activar otro objeto cuando termine el diálogo
-            objetoAActivarCuandoTerminaDialogo.SetActive(true);
     }
 
 

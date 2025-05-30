@@ -1640,19 +1640,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1544391926}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2182470201947197707, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2182470201947197707, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.8052897
+      value: 1.8052896
       objectReference: {fileID: 0}
     - target: {fileID: 2182470201947197707, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.7741498
+      value: 1.7741497
       objectReference: {fileID: 0}
     - target: {fileID: 2182470201947197707, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
       propertyPath: m_LocalScale.z
@@ -1660,15 +1660,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2182470201947197707, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.42
+      value: 0.42000008
       objectReference: {fileID: 0}
     - target: {fileID: 2182470201947197707, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3399997
+      value: -0.6600003
       objectReference: {fileID: 0}
     - target: {fileID: 2182470201947197707, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.1957855
+      value: -0.02671814
       objectReference: {fileID: 0}
     - target: {fileID: 2182470201947197707, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1929,11 +1929,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!4 &1528910773 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2182470201947197707, guid: b3390b231fe8b624eb1a84d297ca2908, type: 3}
-  m_PrefabInstance: {fileID: 1400355712}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1528910774
 Rigidbody2D:
   serializedVersion: 4
@@ -2040,7 +2035,6 @@ MonoBehaviour:
   Dialogo: {fileID: 1900420959}
   Canva: {fileID: 1024137345}
   jugador: {fileID: 1813843288}
-  objetoAActivarCuandoTerminaDialogo: {fileID: 1528910768}
 --- !u!61 &1544391925
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2099,7 +2093,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1024137349}
-  - {fileID: 1528910773}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2338,6 +2331,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1900420959}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: indiceEnElQueSeActiva
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: dialogosIniciales.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[0]
       value: WOOOOOOOW
       objectReference: {fileID: 0}
@@ -2359,8 +2360,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[5]
-      value: Para el necesitaras el doble salto
+      value: Para el necesitaras esto
       objectReference: {fileID: 0}
+    - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: dialogosIniciales.Array.data[6]
+      value: La botella azul
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: dialogosIniciales.Array.data[7]
+      value: Esta es la del Doble Salto
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: dialogosIniciales.Array.data[8]
+      value: Suerte Jarry
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: objetoParaActivarDuranteDialogo
+      value: 
+      objectReference: {fileID: 1528910768}
     - target: {fileID: 3793710626635336236, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: respawnPoint
       value: 
