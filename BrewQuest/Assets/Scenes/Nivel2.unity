@@ -392,6 +392,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PlataformaGravedad
       objectReference: {fileID: 0}
+    - target: {fileID: 7154760387950676688, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 209341043, guid: 59bbac8e2ab67064c885b666e8147c80, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3184,6 +3188,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PlataformaGravedad
       objectReference: {fileID: 0}
+    - target: {fileID: 7154760387950676688, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 209341043, guid: 59bbac8e2ab67064c885b666e8147c80, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3697,6 +3705,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PlataformaGravedad
       objectReference: {fileID: 0}
+    - target: {fileID: 7154760387950676688, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 545990986, guid: 59bbac8e2ab67064c885b666e8147c80, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -73567,7 +73579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1218762818
 RectTransform:
   m_ObjectHideFlags: 0
@@ -75866,6 +75878,10 @@ PrefabInstance:
       propertyPath: dialogosIniciales.Array.data[8]
       value: Pulsa W para disparar
       objectReference: {fileID: 0}
+    - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: objetoParaActivarDuranteDialogo
+      value: 
+      objectReference: {fileID: 1218762817}
     - target: {fileID: 3722889134174113284, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: hud
       value: 
@@ -78114,6 +78130,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: PlataformaGravedad
       objectReference: {fileID: 0}
+    - target: {fileID: 7154760387950676688, guid: 008e12b2f4eacdc45b5543a463108d30, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 545990986, guid: 59bbac8e2ab67064c885b666e8147c80, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
