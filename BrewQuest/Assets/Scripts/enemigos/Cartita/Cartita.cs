@@ -15,6 +15,11 @@ public class Cartita : MonoBehaviour
     private Vector3 initialPosition;
     //private bool returningToPatrol = false;
     private float cooldownTimer = 0f;
+    public bool isBeingHit = false;
+
+
+
+    private Animator animator;
 
     private enum EstadoVolador
     {
@@ -24,6 +29,11 @@ public class Cartita : MonoBehaviour
     }
 
     private EstadoVolador estado = EstadoVolador.Patrullando;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Start()
     {
@@ -70,6 +80,7 @@ public class Cartita : MonoBehaviour
         if (distToPlayer <= detectionDistance && cooldownTimer <= 0f)
         {
             estado = EstadoVolador.Persiguiendo;
+            animator.SetTrigger("Rage");
         }
     }
 
@@ -84,6 +95,7 @@ public class Cartita : MonoBehaviour
         {
             cooldownTimer = attackCooldown;
             estado = EstadoVolador.Volviendo;
+            animator.SetTrigger("casual");
         }
     }
 
@@ -94,6 +106,7 @@ public class Cartita : MonoBehaviour
         if (Vector3.Distance(transform.position, patrolPoints[currentPatrolIndex].position) < 0.2f)
         {
             estado = EstadoVolador.Patrullando;
+            animator.SetTrigger("casual");
         }
     }
 }
