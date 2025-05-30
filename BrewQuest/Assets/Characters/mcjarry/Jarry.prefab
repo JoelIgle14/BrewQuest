@@ -169,10 +169,10 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 2.6666667, y: 2.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &3550327906894617840
@@ -260,7 +260,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.6666667, y: 2.6666667}
-    newSize: {x: 1.28, y: 1.28}
+    newSize: {x: 2.6666667, y: 2.6666667}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -320,6 +320,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 0}
   respawnDelay: 0.4
+  parpadeoTiempo: 2
+  parpadeoIntervalo: 0.2
+  esInvulnerable: 0
 --- !u!114 &323341929011060826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,6 +340,7 @@ MonoBehaviour:
   canMove: 1
   isGrounded: 0
   rayCastDistance: 0.15
+  isKnockedBack: 0
   position: {fileID: 0}
 --- !u!114 &3722889134174113284
 MonoBehaviour:
@@ -385,6 +389,7 @@ MonoBehaviour:
   attackRange: 0.7
   attackDamage: 1
   attacCooldown: 0.7
+  attackDelay: 0
   positionAttack: {x: -0.9, y: 0.6, z: 0}
 --- !u!114 &586419111123493091
 MonoBehaviour:
@@ -403,6 +408,7 @@ MonoBehaviour:
   fuerzaDisparo: 10
   delayEntreDisparos: 0.5
   maxTiros: 5
+  tirosDisponibles: 0
 --- !u!114 &363989830995691407
 MonoBehaviour:
   m_ObjectHideFlags: 0
