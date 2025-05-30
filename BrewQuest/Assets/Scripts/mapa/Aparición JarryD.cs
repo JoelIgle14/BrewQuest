@@ -10,6 +10,8 @@ public class ActivarAliado : MonoBehaviour
     private NewBehaviourScript habilidadesJugador;
     private Collider2D zonaActivacion;  // Collider de la zona de activación
 
+    public GameObject objetoAActivarCuandoTerminaDialogo;
+
 
     private void Start()
     {
@@ -101,14 +103,18 @@ public class ActivarAliado : MonoBehaviour
             var movimientoJugador = jugador.GetComponent<PlayerMovement>();
             if (movimientoJugador != null)
             {
-                movimientoJugador.enabled = true; // Reactivar el control de movimiento
+                movimientoJugador.enabled = true;
             }
         }
 
         // Desactivar el aliado cuando el diálogo termine
         if (aliado != null)
-            aliado.SetActive(false);  // Desactivamos el aliado
+            aliado.SetActive(false);
+
+        // Activar otro objeto cuando termine el diálogo
+            objetoAActivarCuandoTerminaDialogo.SetActive(true);
     }
+
 
     private void Update()
     {

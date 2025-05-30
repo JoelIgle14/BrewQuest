@@ -58,10 +58,12 @@ public class winston : MonoBehaviour
 
     void Shoot()
     {
+        Debug.Log("Disparo en: " + Time.time);
         Vector2 dir = (player.position - firePoint.position).normalized;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         bullet.GetComponent<DisparoWinston>()?.SetDirection(dir);
     }
+
 
     IEnumerator DispararCadaIntervalo()
     {
