@@ -169555,6 +169555,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 2.6666667
       objectReference: {fileID: 0}
+    - target: {fileID: 1230246849265011017, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -729181209, guid: 7156da4de0a4b54479d22c37705497dd, type: 3}
+    - target: {fileID: 1230246849265011017, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogoTexto
       value: 
