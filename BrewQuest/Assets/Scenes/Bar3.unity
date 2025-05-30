@@ -2340,7 +2340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[0]
-      value: WOOOOOOOW
+      value: "Incre\xEDble"
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[1]
@@ -2352,7 +2352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[3]
-      value: Pero aun no has acabado
+      value: "Pero a\xFAn no has acabado"
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[4]
@@ -2360,7 +2360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[5]
-      value: Para el necesitaras esto
+      value: "Para \xE9l necesitar\xE1s esto"
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[6]
@@ -2368,7 +2368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[7]
-      value: Esta es la del Doble Salto
+      value: Te otorga la habilidad del Doble Salto
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[8]

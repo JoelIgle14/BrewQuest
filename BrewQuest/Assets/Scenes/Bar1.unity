@@ -257,7 +257,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Por ultimo,  pulsa \u2191 para entrar, SUERTE"
+  m_text: "Por \xFAltimo,  pulsa \u2191 para entrar, SUERTE"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2388,9 +2388,9 @@ MonoBehaviour:
   scriptMovimientoJugador: {fileID: 1196796388}
   dialogosIniciales:
   - Bienvenido Jarry el espumoso
-  - Te ayudare a ser el mejor vicio
+  - "Te ayudar\xE9 a ser el mejor vicio"
   - Te voy a dar un par de consejos para tu aventura
-  - Creeme que los vas a necesitar
+  - "Cr\xE9eme que los vas a necesitar"
   pasos:
   - cartel: {fileID: 1186422587}
     accion: Movimiento

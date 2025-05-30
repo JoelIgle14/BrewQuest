@@ -169383,6 +169383,10 @@ PrefabInstance:
       propertyPath: panelDialogo
       value: 
       objectReference: {fileID: 704075203}
+    - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: dialogosIniciales.Array.data[2]
+      value: "Esa botella de ah\xED es m\xE1gica"
+      objectReference: {fileID: 0}
     - target: {fileID: 3793710626635336236, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: respawnPoint
       value: 

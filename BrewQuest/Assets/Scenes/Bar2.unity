@@ -903,11 +903,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[1]
-      value: 'Detras de esa puerta '
+      value: "Detr\xE1s de esa puerta "
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[2]
-      value: Hay una pedazo de COSA
+      value: "Est\xE1 el Boss del FUMETEO"
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogosIniciales.Array.data[3]
