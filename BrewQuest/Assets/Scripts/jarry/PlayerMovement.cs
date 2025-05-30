@@ -24,14 +24,18 @@ public class PlayerMovement : MonoBehaviour
     public Transform position;
     private MovementManager manager;
 
+    private AudioController controller;
+
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
-        body.freezeRotation = true;
+        body.freezeRotation = true; 
         dash = GetComponent<dash>();
         hab = GetComponent<NewBehaviourScript>();
         position = GetComponent<Transform>();
         manager = GetComponent<MovementManager>();
+        controller = FindObjectOfType<AudioController>();
+
     }
 
     void Update()
@@ -39,16 +43,27 @@ public class PlayerMovement : MonoBehaviour
         HandleFlip();
         HandleGroundCheck();
 
-        //if (isGrounded && Input.GetKeyDown(KeyCode.Space) && hab.canJump && hab.canMove && !dash.isDashing)
-        //{
-        //    manager.SolicitarSalto(jumpForce);
-        //}
-
         if (hab.canDoubleJump && !isGrounded)
         {
             HandleDoubleJump();
         }
+
+        // Movimiento
+        bool movingLeft = Input.GetKey(KeyCode.LeftArrow);
+        bool movingRight = Input.GetKey(KeyCode.RightArrow);
+        bool isMoving = movingLeft ^ movingRight; // solo uno a la vez
+
+        if (isMoving && canMove && hab.canMove && !dash.isDashing)
+        {
+            controller.ReproducirLoop(2, 0.5f); // Sonido de pasos
+        }
+        else
+        {
+            controller.PararSonidoLoop();
+            // Deja de caminar
+        }
     }
+
 
     void FixedUpdate()
     {
@@ -58,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
+        
         float moveInput = 0f;
         if (Input.GetKey(KeyCode.LeftArrow)) moveInput = -1f;
         if (Input.GetKey(KeyCode.RightArrow)) moveInput = 1f;

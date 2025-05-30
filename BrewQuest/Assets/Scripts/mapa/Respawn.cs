@@ -32,12 +32,16 @@ public class PlayerController : MonoBehaviour
             CheckpointData.ultimaPosicionCheckpoint = null;
         }
 
-        if (respawnPoint == null)
-        {
-            Debug.LogWarning("Respawn point no asignado. Asigna un punto de respawn en el Inspector.");
-        }
-
+        // Opcional: proteger durante un momento
+        esInvulnerable = true;
+        Invoke("DesactivarInvulnerabilidadInicial", 1f);
     }
+
+    private void DesactivarInvulnerabilidadInicial()
+    {
+        esInvulnerable = false;
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -92,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        controller.SeleccionAudio(0, 0.5f);
+       
         GameManager.Instance.PerderVida();
         Invoke("Respawn", respawnDelay);
     }
