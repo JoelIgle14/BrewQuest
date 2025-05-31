@@ -2134,6 +2134,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4860433221944664403, guid: 9e5901af5f6c38544936d96645450ca0, type: 3}
   m_PrefabInstance: {fileID: 1333397658}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1143415406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1143415407}
+  m_Layer: 0
+  m_Name: izquierda
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1143415407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143415406}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.26, y: 0, z: -0.0486095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1179926121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3220,7 +3251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690282430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.24, y: 2.5, z: 0}
+  m_LocalPosition: {x: -0.35, y: 2.72, z: 0}
   m_LocalScale: {x: 1.6469, y: 1.6798, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3337,7 +3368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5498593be0717854c87aed2388450e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAttacksBeforeRest: 4
+  maxAttacksBeforeRest: 5
   currentAttackCount: 0
   canTakeDamage: 0
   restDuration: 7
@@ -3637,6 +3668,37 @@ Transform:
   m_Father: {fileID: 841219689}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1777890131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1777890132}
+  m_Layer: 0
+  m_Name: medio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1777890132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1777890131}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.33, y: 0, z: -0.0486095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1797067162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3847,6 +3909,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9d07f2730df034a8e47b77874371b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1935225808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1935225809}
+  m_Layer: 0
+  m_Name: derecha
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1935225809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935225808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.69, y: 0, z: -0.0486095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2028432770 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4146636015966236572, guid: cd840550af9f69543acea9dea240d223, type: 3}
@@ -3897,10 +3990,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8b1692d35ac7842b1251f272d5ed28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cargaDuration: 4
-  recoveryDuration: 2
+  cargaDuration: 2
+  recoveryDuration: 0.5
   triggerActiveTime: 0.3
+  moveSpeed: 10
   explosionEffectPrefab: {fileID: 8193650450704279683, guid: ffa796298faccfd4bb306d4dee6640ee, type: 3}
+  movePoints:
+  - {fileID: 1143415407}
+  - {fileID: 1777890132}
+  - {fileID: 1935225809}
 --- !u!58 &2041926853
 CircleCollider2D:
   m_ObjectHideFlags: 0
