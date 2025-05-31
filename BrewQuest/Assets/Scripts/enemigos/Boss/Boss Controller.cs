@@ -25,6 +25,9 @@ public class BossController : MonoBehaviour
 
     private bool isDead;
 
+    public float timeBetweenAttacks = 2f;  // Tiempo de calma entre ataque
+    private int lastAttackIndex = -1;  // Guarda el último índice usado
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -108,10 +111,22 @@ public class BossController : MonoBehaviour
             yield break;
         }
 
-        int attackIndex = Random.Range(0, attacks.Count);
+        int attackIndex;
+
+        // Elegir ataque distinto al anterior
+        do
+        {
+            attackIndex = Random.Range(0, attacks.Count);
+        }
+        while (attackIndex == lastAttackIndex && attacks.Count > 1);
+
+        lastAttackIndex = attackIndex;
+
         yield return StartCoroutine(attacks[attackIndex].Execute());
 
         currentAttackCount++;
+
+        yield return new WaitForSeconds(timeBetweenAttacks);
 
         if (currentAttackCount >= maxAttacksBeforeRest)
         {
