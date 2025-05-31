@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6538929910604423428}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2075416204187778940}
   - component: {fileID: 1481907552826521782}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: hitbox
   m_TagString: EnemyHitBox
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 2553762664131282836}
   - component: {fileID: 6092771865360677408}
   - component: {fileID: 2015890932376132153}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: cartita
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ Transform:
   - {fileID: 6929708177887131041}
   - {fileID: 2075416204187778940}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1966532288779233878
 SpriteRenderer:
@@ -338,7 +338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6929708177887131041}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
