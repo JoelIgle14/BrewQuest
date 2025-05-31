@@ -36,7 +36,7 @@ public class Dialogos : MonoBehaviour
             {
                 dialogoIndex++;
 
-                // 👉 Activar objeto en el momento indicado
+                // Activar objeto en el momento indicado
                 if (dialogoIndex == indiceEnElQueSeActiva && objetoParaActivarDuranteDialogo != null)
                 {
                     objetoParaActivarDuranteDialogo.SetActive(true);
