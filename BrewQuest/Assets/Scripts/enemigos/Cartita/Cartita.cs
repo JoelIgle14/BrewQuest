@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Cartita : MonoBehaviour
 {
@@ -8,22 +9,34 @@ public class Cartita : MonoBehaviour
     public float attackCooldown = 2f;
     public float hoverHeight = 4f;
 
-    public Transform[] patrolPoints; // Puntos entre los que vuela en modo patrulla
+    public Transform[] patrolPoints;
 
     private int currentPatrolIndex = 0;
     private GameObject player;
     private Vector3 initialPosition;
-    //private bool returningToPatrol = false;
     private float cooldownTimer = 0f;
+    public bool isBeingHit = false;
+
+    private Animator animator;
+    private Rigidbody2D rb;
+
+    private bool knockbackApplied = false;
 
     private enum EstadoVolador
     {
         Patrullando,
         Persiguiendo,
-        Volviendo
+        Volviendo,
+        Golpeado
     }
 
     private EstadoVolador estado = EstadoVolador.Patrullando;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void Start()
     {
@@ -33,27 +46,50 @@ public class Cartita : MonoBehaviour
 
     private void Update()
     {
-        cooldownTimer -= Time.deltaTime;
+        if (estado != EstadoVolador.Golpeado)
+        {
+            cooldownTimer -= Time.deltaTime;
+            knockbackApplied = false;
+        }
+
+        if (isBeingHit)
+        {
+            estado = EstadoVolador.Golpeado;
+        }
 
         switch (estado)
         {
             case EstadoVolador.Patrullando:
                 Patrullar();
+                animator.SetTrigger("casual");
                 break;
 
             case EstadoVolador.Persiguiendo:
                 Perseguir();
+                animator.SetTrigger("rage");
                 break;
 
             case EstadoVolador.Volviendo:
                 VolverAPatrullar();
+                animator.SetTrigger("casual");
+                break;
+
+            case EstadoVolador.Golpeado:
+                animator.SetTrigger("hit");
+
+                if (!knockbackApplied)
+                {
+                    Vector2 direccion = (transform.position - player.transform.position).normalized;
+                    AplicarRetroceso(direccion, 10f); // fuerza ajustable
+                    knockbackApplied = true;
+                    isBeingHit = false;
+                }
                 break;
         }
     }
 
     void Patrullar()
     {
-        // Movimiento entre puntos
         if (patrolPoints.Length > 0)
         {
             Transform targetPoint = patrolPoints[currentPatrolIndex];
@@ -65,7 +101,6 @@ public class Cartita : MonoBehaviour
             }
         }
 
-        // Detección del jugador
         float distToPlayer = Vector2.Distance(transform.position, player.transform.position);
         if (distToPlayer <= detectionDistance && cooldownTimer <= 0f)
         {
@@ -75,7 +110,6 @@ public class Cartita : MonoBehaviour
 
     void Perseguir()
     {
-        // Baja a la altura del jugador y se lanza hacia él
         Vector3 targetPos = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
         transform.position = Vector3.MoveTowards(transform.position, targetPos, attackSpeed * Time.deltaTime);
 
@@ -95,5 +129,18 @@ public class Cartita : MonoBehaviour
         {
             estado = EstadoVolador.Patrullando;
         }
+    }
+
+    public void AplicarRetroceso(Vector2 direccion, float fuerza)
+    {
+        rb.velocity = Vector2.zero;
+        rb.AddForce(direccion.normalized * fuerza, ForceMode2D.Impulse);
+        StartCoroutine(StunCoroutine());
+    }
+
+    IEnumerator StunCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        estado = EstadoVolador.Volviendo;
     }
 }
