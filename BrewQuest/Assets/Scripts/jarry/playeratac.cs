@@ -18,10 +18,12 @@ public class playeratac : MonoBehaviour
     private bool lookingup;
     private Animator animator;
 
+    private AudioController controller;
     void Start()
     {
         animator = GetComponent<Animator>();
         habilidades = GetComponent<NewBehaviourScript>();
+        controller = FindObjectOfType<AudioController>();
     }
 
     void Update()
@@ -39,6 +41,7 @@ public class playeratac : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                controller.SeleccionAudio(3, 0.5f);
                 timeToNextAttack = Time.time + attacCooldown;
                 animator.SetTrigger("ataque");
                 StartCoroutine(DelayedAttack()); //daño tras un delay muy pequeño
