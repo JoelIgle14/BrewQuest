@@ -121,7 +121,7 @@ Transform:
   m_Children:
   - {fileID: 4369727330751792224}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1230246849265011017
 SpriteRenderer:
@@ -164,7 +164,7 @@ SpriteRenderer:
   m_SortingLayerID: -1475840295
   m_SortingLayer: 15
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 38d6895019f6d0d4fbbabbade7ad441e, type: 3}
+  m_Sprite: {fileID: -729181209, guid: 7156da4de0a4b54479d22c37705497dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -172,7 +172,7 @@ SpriteRenderer:
   m_Size: {x: 2.6666667, y: 2.6666667}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &3550327906894617840
@@ -457,3 +457,5 @@ MonoBehaviour:
   - "Solo con tocarla obtendr\xE1s una habilidad \xFAnica"
   - La roja es la del DASH
   - Lo podras utilizar con la E
+  objetoParaActivarDuranteDialogo: {fileID: 0}
+  indiceEnElQueSeActiva: 5
