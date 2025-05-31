@@ -6,6 +6,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     // Start is called before the first frame update
     private PlayerMovement move;
+    private Dialogos dialogue;
 
     //Destas de si puede usar tal habilidad
     public bool canJump = true;
@@ -18,6 +19,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Awake()
     {
         move = GetComponent<PlayerMovement>();
+        dialogue = GetComponent<Dialogos>();
     }
 
     void Start()
@@ -35,6 +37,15 @@ public class NewBehaviourScript : MonoBehaviour
             // Si puede disparar, activar el power up
             if (canShoot)
                 GetComponent<Disparo>().ActivarPowerUp();
+
+            if (GameManager.Instance.hasShoot)
+            {
+                dialogue.objetoParaActivarDuranteDialogo.SetActive(true);
+            }
+            else
+            {
+                dialogue.objetoParaActivarDuranteDialogo.SetActive(false);
+            }
         }
     }
 

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(gameObject); // Evitar multiples instancias del GameManager
-            Debug.Log("Cuidado! M�s de un GameManager en escena.");
+            Debug.Log("Cuidado! Más de un GameManager en escena.");
             return;
         }
 

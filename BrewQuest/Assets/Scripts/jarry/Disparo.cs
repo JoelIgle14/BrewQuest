@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Disparo : MonoBehaviour
 {
@@ -11,7 +11,9 @@ public class Disparo : MonoBehaviour
     private NewBehaviourScript habilidades;
     private float tiempoUltimoDisparo = 0f;
 
-    private bool powerUpActivo = false;
+    private bool powerUpActivo = false; // ← ahora es privado
+    public bool PowerUpActivo => powerUpActivo; // ← propiedad pública de solo lectura
+
     public int tirosDisponibles = 0;
 
     void Awake()
@@ -22,7 +24,7 @@ public class Disparo : MonoBehaviour
     void Update()
     {
         // Solo puede disparar si tiene el power-up y le quedan tiros
-        if (powerUpActivo && habilidades != null && habilidades.canShoot && Input.GetKeyDown(KeyCode.W))
+        if (PowerUpActivo && habilidades != null && habilidades.canShoot && Input.GetKeyDown(KeyCode.W))
         {
             if (Time.time > tiempoUltimoDisparo + delayEntreDisparos && tirosDisponibles > 0)
             {
@@ -39,16 +41,17 @@ public class Disparo : MonoBehaviour
 
         GameObject bala = Instantiate(balaPrefab, puntoDisparo.position, Quaternion.identity);
 
-        // Paso 3: asignar al jugador como due�o de la bala
+        // Asignar al jugador como dueño de la bala
         Bala scriptBala = bala.GetComponent<Bala>();
         if (scriptBala != null)
         {
-            scriptBala.due�o = gameObject;
+            scriptBala.dueño = gameObject;
         }
 
         Rigidbody2D rb = bala.GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(direccion * fuerzaDisparo, 0f), ForceMode2D.Impulse);
 
+        // Voltea la bala si dispara hacia la izquierda
         if (direccion < 0)
         {
             Vector3 escala = bala.transform.localScale;
@@ -56,7 +59,6 @@ public class Disparo : MonoBehaviour
             bala.transform.localScale = escala;
         }
     }
-
 
     // Llama esto cuando recojas el power-up por primera vez
     public void ActivarPowerUp()

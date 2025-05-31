@@ -21,9 +21,17 @@ public class Enemyvida : MonoBehaviour
             golpeado = true;
             health -= amount;
 
+            if (esAtaqueCuerpoACuerpo)
+            {
+                Disparo disparo = Player.GetComponent<Disparo>();
+                if (disparo != null)
+                {
+                    disparo.RecargarTiro();
+                }
+            }
+
             if (health <= 0)
             {
-                // Sumar puntos antes de destruir
                 if (ScoreManager.Instance != null)
                 {
                     ScoreManager.Instance.AddPoints(puntos);
@@ -34,16 +42,6 @@ public class Enemyvida : MonoBehaviour
             }
 
             animator.SetTrigger("hit");
-
-            if (esAtaqueCuerpoACuerpo)
-            {
-                Disparo disparo = Player.GetComponent<Disparo>();
-                if (disparo != null)
-                {
-                    disparo.RecargarTiro();
-                }
-            }
-
             StartCoroutine(ResetGolpeado());
         }
     }

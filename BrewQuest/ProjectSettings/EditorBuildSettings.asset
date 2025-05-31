@@ -26,12 +26,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel2.unity
     guid: 29078012cf4d37f439bdfa6b885ac61c
-  - enabled: 0
-    path: Assets/Scenes/MapaTesting.unity
-    guid: e42670a39322f2548b588ffd010f578c
+  - enabled: 1
+    path: Assets/Scenes/Bar4.unity
+    guid: 36c88ead6654c8e46b380a556733475c
   - enabled: 0
     path: Assets/Scenes/persAtaque.unity
     guid: 9bb8ba3ed99e2c34fbbe2925b8fdbf1c
+  - enabled: 0
+    path: Assets/Scenes/MapaTesting.unity
+    guid: e42670a39322f2548b588ffd010f578c
   - enabled: 0
     path: Assets/Scenes/SimpleLevel.unity
     guid: 142d79badfb6e244fa53a4aa9c879244

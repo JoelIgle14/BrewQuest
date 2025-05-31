@@ -59,6 +59,6 @@ public class berniBullet : MonoBehaviour
             anim.SetTrigger("explosion");
         }
 
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject);
     }
 }
