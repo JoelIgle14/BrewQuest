@@ -681,9 +681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fdabfdf17701e24da849975fe499411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audios:
-  - {fileID: 8300000, guid: b5ba5589c49d9b94cb73150e931b511d, type: 3}
-  - {fileID: 8300000, guid: 78a4aa98411ca764880831825ea0c36b, type: 3}
 --- !u!82 &101858056
 AudioSource:
   m_ObjectHideFlags: 0
@@ -169557,6 +169554,14 @@ PrefabInstance:
     - target: {fileID: 1230246849265011017, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_Size.y
       value: 2.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230246849265011017, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -729181209, guid: 7156da4de0a4b54479d22c37705497dd, type: 3}
+    - target: {fileID: 1230246849265011017, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1397125138569094663, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: dialogoTexto
