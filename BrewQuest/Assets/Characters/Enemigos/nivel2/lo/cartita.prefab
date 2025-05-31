@@ -123,7 +123,6 @@ GameObject:
   - component: {fileID: 2553762664131282836}
   - component: {fileID: 6092771865360677408}
   - component: {fileID: 2015890932376132153}
-  - component: {fileID: 229900320548711711}
   m_Layer: 0
   m_Name: cartita
   m_TagString: enemy
@@ -221,6 +220,7 @@ MonoBehaviour:
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
+  isBeingHit: 0
 --- !u!114 &2051020811842859277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,18 +329,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &229900320548711711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7661224706964156998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc01bbb8fafdd374a946055ae8f19cd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9144186241168617445
 GameObject:
   m_ObjectHideFlags: 0
