@@ -28,5 +28,12 @@ public class Bala : MonoBehaviour
             enemi.TakeDamage(damage, dueño, false); //  Aquí pasas el jugador
             Destroy(gameObject);
         }
+
+        dadosvida enem = other.GetComponent<dadosvida>();
+        if (enem != null)
+        {
+            enem.TakeDamage(damage, dueño, false); //  Aquí pasas el jugador
+            Destroy(gameObject);
+        }
     }
 }

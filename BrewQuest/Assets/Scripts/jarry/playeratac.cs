@@ -89,6 +89,14 @@ public class playeratac : MonoBehaviour
                     boss2Vida.TakeDamage(attackDamage, gameObject, true);
                     Debug.Log("Boss golpeado");
                 }
+
+                // Si no hay Enemyvida, buscamos Boss2Vida
+                dadosvida dadosvid = enemy.GetComponentInParent<dadosvida>();
+                if (dadosvid != null)
+                {
+                    dadosvid.TakeDamage(attackDamage, gameObject, true);
+                    Debug.Log("Boss golpeado");
+                }
             }
         }
     }

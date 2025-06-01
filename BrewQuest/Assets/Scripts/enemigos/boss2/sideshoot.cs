@@ -4,49 +4,54 @@ using UnityEngine;
 
 public class sideshoot : MonoBehaviour, Iboss2atac
 {
-    
-    public GameObject pokercoin;
-
     public GameObject lobullet;
+    public List<Transform> spawnPoints;
 
-    public List<Transform> spawnPoints; 
-
-   
-    public float delayBeforeFire = 0.5f; 
-    public int cantidadEspadas = 7; 
+    public float delayBeforeFire = 0.5f;
+    public int cantidadEspadas = 3; // Prefabs por tanda
 
     public IEnumerator Execute()
     {
-        Random.InitState(System.Environment.TickCount);
+        // Esperamos antes de empezar a disparar
         yield return new WaitForSeconds(delayBeforeFire);
 
-        if (pokercoin == null)
+        // Lanzamos 3 tandas con una pausa visible entre ellas
+        for (int i = 0; i < 3; i++)
         {
-            Debug.LogWarning("No se ha asignado el prefab de espada.");
-            yield break;
+            LanzarTanda();
+            yield return new WaitForSeconds(1.85f); // Tiempo entre tandas
         }
 
-        if (spawnPoints.Count < cantidadEspadas)
+        yield return new WaitForSeconds(1f); // Tiempo tras terminar
+    }
+
+    private void LanzarTanda()
+    {
+        // Asegurarnos de no pedir más balas de las que hay puntos
+        int maxBalas = Mathf.Min(cantidadEspadas, spawnPoints.Count);
+
+        // Mezclar los índices
+        List<int> indices = new List<int>();
+        for (int i = 0; i < spawnPoints.Count; i++) indices.Add(i);
+        Shuffle(indices);
+
+        // Instanciar las balas en los primeros 'maxBalas' puntos
+        for (int i = 0; i < maxBalas; i++)
         {
-            Debug.LogWarning("No hay suficientes puntos de spawn para lanzar la cantidad solicitada de espadas.");
-            yield break;
-        }
-
-        // Seleccionar puntos únicos al azar
-        List<Transform> puntosSeleccionados = new List<Transform>();
-        List<int> indicesDisponibles = new List<int>();
-        for (int i = 0; i < spawnPoints.Count; i++) indicesDisponibles.Add(i);
-
-        for (int i = 0; i < cantidadEspadas; i++)
-        {
-            int randIndex = Random.Range(0, indicesDisponibles.Count);
-            int spawnIndex = indicesDisponibles[randIndex];
-            indicesDisponibles.RemoveAt(randIndex);
-
-            Transform spawn = spawnPoints[spawnIndex];
+            Transform spawn = spawnPoints[indices[i]];
             Instantiate(lobullet, spawn.position, Quaternion.identity);
         }
+    }
 
-        yield return new WaitForSeconds(1f); 
+    // Fisher–Yates Shuffle
+    private void Shuffle(List<int> list)
+    {
+        for (int i = list.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            int tmp = list[i];
+            list[i] = list[j];
+            list[j] = tmp;
+        }
     }
 }
