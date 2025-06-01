@@ -61,11 +61,12 @@ public class dash : MonoBehaviour
 
     private IEnumerator DoDash()
     {
-        // Evitar que el dash se ejecute si el salto ya está en proceso
+        // Evitar que el dash se ejecute si el salto ya estï¿½ en proceso
         if (manager.puedeDashear && !isDashing)
         {
             isDashing = true;
             dashBarAnimator.SetTrigger("StartCooldown");
+            GetComponent<Animator>().SetTrigger("doDash");
 
             float originalGravity = body.gravityScale;
             body.gravityScale = 0f;
