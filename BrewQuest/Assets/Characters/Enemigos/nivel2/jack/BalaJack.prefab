@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4198487045284714548}
   m_Layer: 9
   m_Name: BalaJack
-  m_TagString: BalaEnemigo
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: 5
-  tiempoDeVida: 5
+  tiempoDeVida: 2
 --- !u!95 &-9027846296145649824
 Animator:
   serializedVersion: 5

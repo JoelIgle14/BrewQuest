@@ -18,21 +18,6 @@ public class BalaEnemigo2 : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.PerderVida();
-            }
-        }
-
-        // Destruye la bala si choca con algo que no sea enemigo o bala enemiga
-        //if (!collision.gameObject.CompareTag("enemy") &&
-        //    !collision.gameObject.CompareTag("BalaEnemigo"))
-        //{
-        //    Destroy(gameObject);
-        //}
-
         if ((collision.gameObject.CompareTag("Player")) || (collision.gameObject.CompareTag("Floor")))
         {
             Destroy(gameObject);
