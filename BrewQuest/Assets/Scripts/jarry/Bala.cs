@@ -14,5 +14,19 @@ public class Bala : MonoBehaviour
             enemigo.TakeDamage(damage, dueño,false); //  Aquí pasas el jugador
             Destroy(gameObject);
         }
+
+        BossVida enemig = other.GetComponent<BossVida>();
+        if (enemig != null)
+        {
+            enemig.TakeDamage(damage, dueño, false); //  Aquí pasas el jugador
+            Destroy(gameObject);
+        }
+
+        Boss2vida enemi = other.GetComponent<Boss2vida>();
+        if (enemi != null)
+        {
+            enemi.TakeDamage(damage, dueño, false); //  Aquí pasas el jugador
+            Destroy(gameObject);
+        }
     }
 }

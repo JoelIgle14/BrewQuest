@@ -8,7 +8,6 @@ public class Boss2manager : MonoBehaviour
     public int maxAttacksBeforeRest = 4;
     public int currentAttackCount = 0;
     private bool isResting = false;
-    public bool canTakeDamage = false;
 
     public float restDuration = 7f;
 
@@ -122,7 +121,7 @@ public class Boss2manager : MonoBehaviour
     IEnumerator RestPhase()
     {
         Debug.Log("Boss está recargando... ¡es tu momento!");
-        canTakeDamage = true;
+        
 
         rb2d.bodyType = RigidbodyType2D.Dynamic;
         rb2d.gravityScale = 1f;
@@ -135,7 +134,6 @@ public class Boss2manager : MonoBehaviour
         transform.position = originalPosition;
         transform.rotation = originalRotation;
 
-        canTakeDamage = false;
         currentAttackCount = 0;
         isResting = false;
     }
