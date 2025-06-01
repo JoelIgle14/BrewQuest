@@ -132,6 +132,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && remainingJumps > 0 && canMove && !dash.isDashing)
         {
+            
             manager.ProcesarInputBufferParaSalto();
             remainingJumps = 0;
         }
