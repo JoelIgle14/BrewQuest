@@ -16,6 +16,9 @@ public class BossController : MonoBehaviour
     public List<MonoBehaviour> attackScriptsRaw; // Scripts que implementan IBossAttack
     private List<IBossAttack> attacks = new List<IBossAttack>();
 
+    [Header("Intro del jefe")]
+    public bool introTerminada = false; // Se pone a true desde la transiciÃ³n
+
     [Header("Testing")]
     public bool manualControl = false; // Si es true, solo ataques manuales con teclado
 
@@ -34,7 +37,7 @@ public class BossController : MonoBehaviour
         }
         else
         {
-            rb2d.bodyType = RigidbodyType2D.Static; // Inicialmente está estático
+            rb2d.bodyType = RigidbodyType2D.Static; // Inicialmente estï¿½ estï¿½tico
         }
 
         originalPosition = transform.position;
@@ -55,13 +58,14 @@ public class BossController : MonoBehaviour
 
         if (attacks.Count == 0)
         {
-            Debug.LogError("No hay ataques válidos referenciados en BossController.");
+            Debug.LogError("No hay ataques vï¿½lidos referenciados en BossController.");
         }
 
         if (!manualControl)
         {
-            StartCoroutine(BossLoop());
+            StartCoroutine(EsperarIntroYComenzar());
         }
+
     }
 
     void Update()
@@ -121,7 +125,7 @@ public class BossController : MonoBehaviour
 
     IEnumerator RestPhase()
     {
-        Debug.Log("Boss está recargando... ¡es tu momento!");
+        Debug.Log("Boss estï¿½ recargando... ï¿½es tu momento!");
         canTakeDamage = true;
 
         rb2d.bodyType = RigidbodyType2D.Dynamic;
@@ -139,4 +143,15 @@ public class BossController : MonoBehaviour
         currentAttackCount = 0;
         isResting = false;
     }
+
+    IEnumerator EsperarIntroYComenzar()
+    {
+        while (!introTerminada)
+        {
+            yield return null;
+        }
+
+        StartCoroutine(BossLoop());
+    }
+
 }
