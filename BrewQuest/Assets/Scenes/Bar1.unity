@@ -259,8 +259,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Por \xFAltimo,  pulsa \u2191 para entrar, SUERTE"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 943f5ed63a2b5e84483aa12e3d2d11dc, type: 2}
+  m_sharedMaterial: {fileID: 4672773009084040482, guid: 943f5ed63a2b5e84483aa12e3d2d11dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.2921915, y: -0.17531538, z: 39.46568, w: -2.395966}
+  m_margin: {x: 0.2921915, y: 19.22465, z: 39.46568, w: -2.395966}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -880,6 +880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 478028776}
   - component: {fileID: 478028775}
+  - component: {fileID: 478028777}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -998,6 +999,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &478028777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478028774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fdabfdf17701e24da849975fe499411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audios: []
 --- !u!1 &487366317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,8 +1286,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 943f5ed63a2b5e84483aa12e3d2d11dc, type: 2}
+  m_sharedMaterial: {fileID: 4672773009084040482, guid: 943f5ed63a2b5e84483aa12e3d2d11dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2483,8 +2497,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pulsa Q  para Atacar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 943f5ed63a2b5e84483aa12e3d2d11dc, type: 2}
+  m_sharedMaterial: {fileID: 4672773009084040482, guid: 943f5ed63a2b5e84483aa12e3d2d11dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3040,8 +3054,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pulsa Espacio para saltar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 943f5ed63a2b5e84483aa12e3d2d11dc, type: 2}
+  m_sharedMaterial: {fileID: 4672773009084040482, guid: 943f5ed63a2b5e84483aa12e3d2d11dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3327,8 +3341,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Pulsa <- / -> para moverte '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 943f5ed63a2b5e84483aa12e3d2d11dc, type: 2}
+  m_sharedMaterial: {fileID: 4672773009084040482, guid: 943f5ed63a2b5e84483aa12e3d2d11dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
