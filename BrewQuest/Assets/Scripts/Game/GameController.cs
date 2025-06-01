@@ -15,13 +15,15 @@ public class GameController : MonoBehaviour
     {
         if(collision.CompareTag("Obstacle"))
         {
-            Die();
+            ResetPos();
         }
     }
 
-    void Die()
+    void ResetPos()
     {
+        Debug.Log("Die() llamado desde GameController");
         Respawn();
+
     }
 
     void Respawn()

@@ -99,6 +99,8 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        Debug.Log("Die() llamado desde PlayerController");
+        
         controller.SeleccionAudio(0, 0.5f);
         GameManager.Instance.PerderVida();
         Invoke("Respawn", respawnDelay);
