@@ -168670,7 +168670,7 @@ GameObject:
   - component: {fileID: 1027153064}
   m_Layer: 5
   m_Name: PanelScore
-  m_TagString: Untagged
+  m_TagString: ScoreText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169012,11 +169012,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 138.7
+      value: 540.4
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.2
+      value: 4.8
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -170384,7 +170384,7 @@ GameObject:
   - component: {fileID: 1185089197}
   m_Layer: 5
   m_Name: Score
-  m_TagString: Untagged
+  m_TagString: ScoreText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
