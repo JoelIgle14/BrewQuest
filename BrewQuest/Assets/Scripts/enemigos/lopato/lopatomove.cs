@@ -13,16 +13,16 @@ public class lopatomove : MonoBehaviour
 
     // Movimiento especial
     public float fuerzaSalto;
-    public float distanciaRodadaObjetivo;
     public float tiempoEsperaDespuesRodar = 1f; // Tiempo de recuperación después de rodar
+    public float duracionRodada = 1f; // Tiempo que dura la rodada
 
     // Referencias
     private GameObject target;
     private Vector3 initialScale;
-    private Vector2 puntoInicioRodada;
     private Vector2 direccionRodada;
     private bool haSaltado = false;
     private float tiempoRecuperacion = 0f;
+    private float tiempoRodando = 0f; // <-- Añadido para controlar duración de la rodada
 
     public BoxCollider2D patasCollider;
     private Animator anim;
@@ -128,10 +128,10 @@ public class lopatomove : MonoBehaviour
             patasCollider.enabled = false;
             anim.SetTrigger("rodar");
 
-            puntoInicioRodada = transform.position;
             direccionRodada = (target.transform.position - transform.position).normalized;
 
             haSaltado = true;
+            tiempoRodando = 0f; // <-- Reinicia el temporizador
             estado = EstadoEnemigo.Rodando;
         }
     }
@@ -139,9 +139,9 @@ public class lopatomove : MonoBehaviour
     void Rodar()
     {
         transform.position += (Vector3)direccionRodada * speedrun * Time.deltaTime;
+        tiempoRodando += Time.deltaTime;
 
-        float distanciaRodada = Vector2.Distance(transform.position, puntoInicioRodada);
-        if (distanciaRodada >= distanciaRodadaObjetivo)
+        if (tiempoRodando >= duracionRodada)
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(0, fuerzaSalto);
             estado = EstadoEnemigo.Volviendo;

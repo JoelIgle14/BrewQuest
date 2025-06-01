@@ -1767,6 +1767,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8189334148745057018, guid: 79c7109894016334db1f7fb3eb928259, type: 3}
+      propertyPath: duracionRodada
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8643559989685151683, guid: 79c7109894016334db1f7fb3eb928259, type: 3}
       propertyPath: m_Name
       value: lopatoidle_0
@@ -3300,6 +3304,10 @@ PrefabInstance:
       propertyPath: patasCollider
       value: 
       objectReference: {fileID: 747646947}
+    - target: {fileID: 8189334148745057018, guid: 79c7109894016334db1f7fb3eb928259, type: 3}
+      propertyPath: duracionRodada
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8189334148745057018, guid: 79c7109894016334db1f7fb3eb928259, type: 3}
       propertyPath: distanciaRodadaObjetivo
       value: 10
