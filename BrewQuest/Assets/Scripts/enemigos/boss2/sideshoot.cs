@@ -17,7 +17,7 @@ public class sideshoot : MonoBehaviour, Iboss2atac
 
     public IEnumerator Execute()
     {
-        
+        Random.InitState(System.Environment.TickCount);
         yield return new WaitForSeconds(delayBeforeFire);
 
         if (pokercoin == null)
