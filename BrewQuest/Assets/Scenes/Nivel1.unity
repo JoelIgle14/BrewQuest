@@ -685,7 +685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audios:
   - {fileID: 8300000, guid: b5ba5589c49d9b94cb73150e931b511d, type: 3}
-  - {fileID: 8300000, guid: 78a4aa98411ca764880831825ea0c36b, type: 3}
+  - {fileID: 8300000, guid: 8b1252e3071d6ec479732e136e5d8c86, type: 3}
   - {fileID: 8300000, guid: 950156b110024ee4e8d673384b5a7f25, type: 3}
   - {fileID: 8300000, guid: c29aa8e8471a6ca43893ecdd974fe980, type: 3}
 --- !u!82 &101858056
@@ -168598,7 +168598,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1022647052
 MonoBehaviour:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -168610,7 +168610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &1022647053
 MonoBehaviour:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -168622,7 +168622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &1022647054
 MonoBehaviour:
-  m_ObjectHideFlags: 3
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
