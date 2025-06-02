@@ -127,12 +127,12 @@ public class BossController : MonoBehaviour
         lastAttackIndex = attackIndex;
         var attack = attacks[attackIndex];
 
-        // Mover suavemente si el ataque requiere una posición específica
-        Vector3? targetPos = attack.GetDesiredPosition();
-        if (targetPos.HasValue)
-        {
-            yield return StartCoroutine(MoveToPosition(targetPos.Value));
-        }
+        //// Mover suavemente si el ataque requiere una posición específica
+        //Vector3? targetPos = attack.GetDesiredPosition();
+        //if (targetPos.HasValue)
+        //{
+        //    yield return StartCoroutine(MoveToPosition(targetPos.Value));
+        //}
 
         yield return StartCoroutine(attack.Execute());
 
