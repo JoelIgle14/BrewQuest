@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossController : MonoBehaviour
+public class BossController : MonoBehaviour, IBossIntroReceiver
 {
     [Header("Control de combate")]
     public int maxAttacksBeforeRest = 4;
@@ -183,7 +183,10 @@ public class BossController : MonoBehaviour
         StartCoroutine(BossLoop());
     }
 
-
+    public void NotificarIntroTerminada()
+    {
+        introTerminada = true;
+    }
 
 
 }
