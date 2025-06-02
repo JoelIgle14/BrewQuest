@@ -9,15 +9,17 @@ public class EntarBar : MonoBehaviour
     {
         if (jugadorEnZona && Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Scene escenaActual = SceneManager.GetActiveScene();
+            string escenaActual = SceneManager.GetActiveScene().name;
 
-            if (escenaActual.name == "Nivel1") // <-- Nom exacte de la escena de nivell 1
+            if (escenaActual == "PuntuacionFinal")
             {
-                SceneManager.LoadScene("PuntuacionFinal");
+                // 👉 Si estem a la escena de puntuació, passem als crèdits
+                SceneManager.LoadScene("CreditosFinales");
             }
             else
             {
-                int nextSceneIndex = escenaActual.buildIndex + 1;
+                // 👉 Si no, seguim amb el comportament normal (canviar de nivell)
+                int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
                 if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
                 {
                     SceneManager.LoadScene(nextSceneIndex);
