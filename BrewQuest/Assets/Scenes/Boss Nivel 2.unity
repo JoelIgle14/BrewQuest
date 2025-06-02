@@ -2989,6 +2989,7 @@ MonoBehaviour:
   panelNegro: {fileID: 1608238357}
   textoComic: {fileID: 57507292}
   cameraShake: {fileID: 1521819185}
+  bossScript: {fileID: 1723302513}
 --- !u!4 &1579327083
 Transform:
   m_ObjectHideFlags: 0
@@ -3129,8 +3130,8 @@ GameObject:
   - component: {fileID: 1723302515}
   - component: {fileID: 1723302516}
   - component: {fileID: 1723302514}
-  - component: {fileID: 1723302517}
   - component: {fileID: 1723302513}
+  - component: {fileID: 1723302517}
   - component: {fileID: 1723302518}
   m_Layer: 8
   m_Name: boss2
@@ -3228,6 +3229,7 @@ MonoBehaviour:
   - {fileID: 264383103}
   - {fileID: 1146855405}
   - {fileID: 513782715}
+  introTerminada: 0
   manualControl: 0
 --- !u!95 &1723302514
 Animator:

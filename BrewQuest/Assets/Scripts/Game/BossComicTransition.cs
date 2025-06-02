@@ -16,6 +16,9 @@ public class BossComicTransition : MonoBehaviour
     private float zoomInicial;
     private Vector3 posicionInicialCamara;
 
+    public MonoBehaviour bossScript; // debe implementar IBossIntroReceiver
+
+    private IBossIntroReceiver bossReceiver;
     void Start()
     {
         zoomInicial = camara.orthographicSize;
@@ -25,6 +28,13 @@ public class BossComicTransition : MonoBehaviour
         textoComic.alpha = 0;
         textoComic.transform.localScale = Vector3.zero;
         panelNegro.color = new Color(0, 0, 0, 0);
+
+        bossReceiver = bossScript as IBossIntroReceiver;
+        if (bossReceiver == null)
+        {
+            Debug.LogError("El script asignado no implementa IBossIntroReceiver");
+        }
+
     }
 
     public IEnumerator TransicionBossCompleta()
@@ -113,13 +123,8 @@ public class BossComicTransition : MonoBehaviour
         textoComic.alpha = 0;
         textoComic.transform.localScale = Vector3.zero;
         panelNegro.color = new Color(0, 0, 0, 0);
-
-        // Activar IA del boss
-        BossController boss = FindObjectOfType<BossController>();
-        if (boss != null)
-        {
-            boss.introTerminada = true;
-        }
+        
+        bossReceiver?.NotificarIntroTerminada();
 
 
     }
