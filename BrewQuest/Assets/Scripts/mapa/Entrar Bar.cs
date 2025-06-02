@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,14 +9,23 @@ public class EntarBar : MonoBehaviour
     {
         if (jugadorEnZona && Input.GetKeyDown(KeyCode.UpArrow))
         {
-            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            Scene escenaActual = SceneManager.GetActiveScene();
+
+            if (escenaActual.name == "Nivel1") // <-- Nom exacte de la escena de nivell 1
             {
-                SceneManager.LoadScene(nextSceneIndex);
+                SceneManager.LoadScene("PuntuacionFinal");
             }
             else
             {
-                Debug.Log("¡Último nivel alcanzado!");
+                int nextSceneIndex = escenaActual.buildIndex + 1;
+                if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+                {
+                    SceneManager.LoadScene(nextSceneIndex);
+                }
+                else
+                {
+                    Debug.Log("Ãšltimo nivel alcanzado!");
+                }
             }
         }
     }
