@@ -1442,7 +1442,7 @@ MonoBehaviour:
   hasDash: 1
   hasDoubleJump: 1
   hasShoot: 0
-  hud: {fileID: 0}
+  hud: {fileID: 66822044}
   habManager: {fileID: 0}
 --- !u!4 &219333442
 Transform:
