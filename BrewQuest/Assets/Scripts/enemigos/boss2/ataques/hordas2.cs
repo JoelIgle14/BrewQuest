@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class hordas2 : MonoBehaviour, IBossAttack
+public class hordas2 : MonoBehaviour, Iboss2atac
 {
     [Header("Hordas posibles")]
     public List<GameObject> hordaPrefabs;

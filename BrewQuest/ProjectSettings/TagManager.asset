@@ -20,6 +20,7 @@ TagManager:
   - Activar Dialogos
   - BalaEnemigo
   - PlataformaGravedad
+  - wall
   layers:
   - Default
   - TransparentFX

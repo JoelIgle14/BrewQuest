@@ -11,8 +11,8 @@ public class Disparo : MonoBehaviour
     private NewBehaviourScript habilidades;
     private float tiempoUltimoDisparo = 0f;
 
-    private bool powerUpActivo = false; // ← ahora es privado
-    public bool PowerUpActivo => powerUpActivo; // ← propiedad pública de solo lectura
+    private bool powerUpActivo = false; // ahora es privado
+    public bool PowerUpActivo => powerUpActivo; // propiedad pública de solo lectura
 
     public int tirosDisponibles = 0;
 
