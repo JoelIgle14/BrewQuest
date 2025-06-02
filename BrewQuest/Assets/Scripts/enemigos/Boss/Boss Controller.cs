@@ -28,6 +28,10 @@ public class BossController : MonoBehaviour
     public float timeBetweenAttacks = 2f;  // Tiempo de calma entre ataque
     private int lastAttackIndex = -1;  // Guarda el �ltimo �ndice usado
 
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Color hitFlashColor = Color.white;
+    [SerializeField] private float flashDuration = 0.1f;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -171,5 +175,18 @@ public class BossController : MonoBehaviour
         canTakeDamage = false;
         currentAttackCount = 0;
         isResting = false;
+    }
+
+    public void FlashOnHit()
+    {
+        StartCoroutine(FlashCoroutine());
+    }
+
+    private IEnumerator FlashCoroutine()
+    {
+        Color originalColor = spriteRenderer.color;
+        spriteRenderer.color = hitFlashColor;
+        yield return new WaitForSeconds(flashDuration);
+        spriteRenderer.color = originalColor;
     }
 }

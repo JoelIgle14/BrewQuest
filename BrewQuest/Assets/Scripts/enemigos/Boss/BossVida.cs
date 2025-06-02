@@ -18,6 +18,7 @@ public class BossVida : MonoBehaviour
     {
         if (!golpeado && bc != null && bc.canTakeDamage)
         {
+            bc.FlashOnHit();
             golpeado = true;
             health -= amount;
             //a
