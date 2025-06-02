@@ -16,6 +16,9 @@ public class NewBehaviourScript : MonoBehaviour
     public bool canDoubleJump = false;
     public bool canShoot = false;
 
+    //para desactivar el sonido en caso de no poder movernos
+    private MonoBehaviour audioscript;
+
     void Awake()
     {
         move = GetComponent<PlayerMovement>();
@@ -58,6 +61,32 @@ public class NewBehaviourScript : MonoBehaviour
         else if (collision.gameObject.CompareTag("Manguera"))
         {
             canShoot = true;
+        }
+    }
+
+
+    
+    private void Update()
+    {
+        if (canMove == false)
+        {
+            if (audioscript == null)
+            {
+                GameObject audiobj = GameObject.Find("AudioManager");
+                if (audiobj != null)
+                {
+                    // Cambia AudioController por el nombre real del script a desactivar
+                    audioscript = audiobj.GetComponent<AudioController>();
+                }   
+            }
+
+            if (audioscript != null)
+            {
+                AudioController audioController = (AudioController)audioscript;
+                audioController.PararSonidoLoop();
+            }
+
+
         }
     }
 
