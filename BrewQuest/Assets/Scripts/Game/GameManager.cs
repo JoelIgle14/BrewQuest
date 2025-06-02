@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 
     private int Vidas = 3;
 
-    //recordatorio habilidades
+    // Recordatorio habilidades
     public bool canJump = true;
     public bool canAttack = true;
     public bool canMove = true;
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); // Evitar multiples instancias del GameManager
+            Destroy(gameObject); // Evitar múltiples instancias del GameManager
             Debug.Log("Cuidado! Más de un GameManager en escena.");
             return;
         }
@@ -39,19 +39,26 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        StartCoroutine(EsperarYReconectarReferencias());
+    }
+
+    private IEnumerator EsperarYReconectarReferencias()
+    {
+        yield return null; // Esperar 1 frame a que todos los Start() se hayan llamado
+
         if (hud == null)
             hud = FindObjectOfType<HUD>();
 
         if (habManager == null)
             habManager = FindObjectOfType<NewBehaviourScript>();
 
+        // Si las vidas eran 0, restablecer visualmente
         if (Vidas == 0)
         {
-            hud.ActivarVida(Vidas);
+            Vidas = 3;
+            hud.SincronizarTodosLosCorazones(); // Mostrar las 3 vidas correctamente
             Debug.Log("Tienes 3 vidas");
         }
-
-        Vidas = 3;
     }
 
     public void PerderVida()
