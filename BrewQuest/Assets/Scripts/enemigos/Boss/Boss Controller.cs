@@ -16,8 +16,6 @@ public class BossController : MonoBehaviour
     public List<MonoBehaviour> attackScriptsRaw; // Scripts que implementan IBossAttack
     private List<IBossAttack> attacks = new List<IBossAttack>();
 
-    [SerializeField] private SpriteRenderer spriteRenderer;
-
     [SerializeField] private GameObject vulnerableMessage;
 
     [Header("Intro del jefe")]
@@ -126,7 +124,6 @@ public class BossController : MonoBehaviour
             isResting = true;
         }
     }
-
     IEnumerator RestPhase()
     {
         Debug.Log("Boss está recargando... ¡es tu momento!");
@@ -153,6 +150,7 @@ public class BossController : MonoBehaviour
         currentAttackCount = 0;
         isResting = false;
     }
+
 
 
     IEnumerator EsperarIntroYComenzar()
