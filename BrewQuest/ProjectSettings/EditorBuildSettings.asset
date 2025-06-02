@@ -53,4 +53,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MapaTesting.unity
     guid: e42670a39322f2548b588ffd010f578c
+  - enabled: 1
+    path: Assets/Scenes/PuntuacionFinal.unity
+    guid: dfb5249ab59b51b48a3cd4d18545d10d
   m_configObjects: {}
