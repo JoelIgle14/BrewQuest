@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance;
     public int currentScore = 0;
     public TMP_Text scoreText;
+    private int checkpointScore = 0;
 
     void Awake()
     {
@@ -21,6 +22,17 @@ public class ScoreManager : MonoBehaviour
         }
         SceneManager.sceneLoaded += OnSceneLoaded;
 
+    }
+
+    public void SaveCheckpointScore()
+    {
+        checkpointScore = currentScore;
+    }
+
+    public void ResetScore(bool hasCheckpoint)
+    {
+        currentScore = hasCheckpoint ? checkpointScore : 0;
+        UpdateHUD();
     }
 
 
@@ -44,7 +56,7 @@ void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     
     if (scoreText == null)
     {
-        scoreText = GameObject.FindWithTag("ScoreText")?.GetComponent<TMP_Text>();
+scoreText = GameObject.Find("Score")?.GetComponent<TMP_Text>();
         Debug.Log("Assignat scoreText? " + (scoreText != null));
     }
 

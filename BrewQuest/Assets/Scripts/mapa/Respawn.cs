@@ -64,14 +64,16 @@ public class PlayerController : MonoBehaviour
             // Sumamos puntos si el checkpoint no ha sido activado antes
             Checkpoint checkpoint = collision.GetComponent<Checkpoint>();
             if (checkpoint != null && !checkpoint.yaActivado)
-            {
-                checkpoint.yaActivado = true;
+{
+    checkpoint.yaActivado = true;
 
-                if (ScoreManager.Instance != null)
-                {
-                    ScoreManager.Instance.AddPoints(checkpoint.puntosPorCheckpoint);
-                }
-            }
+    if (ScoreManager.Instance != null)
+    {
+        ScoreManager.Instance.AddPoints(checkpoint.puntosPorCheckpoint);
+        ScoreManager.Instance.SaveCheckpointScore(); // <--- aquÃ­!
+    }
+}
+
 
             // Siempre actualizamos el respawn, se hayan dado puntos o no
             UpdateRespawnPoint(collision.transform);
@@ -85,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
         GameManager.Instance.PerderVida();
 
-        // Aplica knockback a través del PlayerMovement
+        // Aplica knockback a travï¿½s del PlayerMovement
         PlayerMovement movement = GetComponent<PlayerMovement>();
         if (movement != null)
         {
@@ -97,14 +99,19 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(ParpadeoTemporal(parpadeoTiempo));
     }
 
-    public void Die()
-    {
-        Debug.Log("Die() llamado desde PlayerController");
-        
-        controller.SeleccionAudio(0, 0.5f);
-        GameManager.Instance.PerderVida();
-        Invoke("Respawn", respawnDelay);
-    }
+public void Die()
+{
+    Debug.Log("Die() llamado desde PlayerController");
+    
+    controller.SeleccionAudio(0, 0.5f);
+    GameManager.Instance.PerderVida();
+
+    bool tieneCheckpoint = respawnPoint != null;
+    ScoreManager.Instance?.ResetScore(tieneCheckpoint);
+
+    Invoke("Respawn", respawnDelay);
+}
+
 
     void Respawn()
     {
