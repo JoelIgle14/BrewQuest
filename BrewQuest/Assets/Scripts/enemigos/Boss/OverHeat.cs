@@ -11,13 +11,13 @@ public class CargaPresionAttack : MonoBehaviour, IBossAttack
     public GameObject explosionEffectPrefab;
     public Transform[] movePoints; // 3 puntos (izquierda, centro, derecha)
 
-    private Transform bossTransform;  // referencia raíz para mover todo el boss
+    private Transform bossTransform;  // referencia raï¿½z para mover todo el boss
     private CircleCollider2D et;
     private Vector3 originalPosition;
 
     private void Awake()
     {
-        // Mover el objeto raíz para afectar todo el boss
+        // Mover el objeto raï¿½z para afectar todo el boss
         bossTransform = transform.root;
         et = GetComponent<CircleCollider2D>();
     }
@@ -30,21 +30,21 @@ public class CargaPresionAttack : MonoBehaviour, IBossAttack
 
         Transform target = movePoints[Random.Range(0, movePoints.Length)];
 
-        // Moverse al punto elegido (mueve toda la raíz del boss)
+        // Moverse al punto elegido (mueve toda la raï¿½z del boss)
         yield return StartCoroutine(MoveToPosition(target.position));
 
-        Debug.Log("Cargando presión...");
+        Debug.Log("Cargando presiï¿½n...");
         yield return StartCoroutine(VibrateDuringCharge(cargaDuration));
 
-        Debug.Log("¡EXPLOSIÓN de vapor!");
+        Debug.Log("ï¿½EXPLOSIï¿½N de vapor!");
         Explode();
 
         yield return new WaitForSeconds(recoveryDuration);
 
-        // Volver a la posición original
+        // Volver a la posiciï¿½n original
         yield return StartCoroutine(MoveToPosition(originalPosition));
 
-        Debug.Log("Ataque de carga presión completado.");
+        Debug.Log("Ataque de carga presiï¿½n completado.");
     }
 
     private IEnumerator MoveToPosition(Vector3 targetPos)
@@ -72,7 +72,7 @@ public class CargaPresionAttack : MonoBehaviour, IBossAttack
             yield return null;
         }
 
-        bossTransform.position = originalPos; // Restaurar posición
+        bossTransform.position = originalPos; // Restaurar posiciï¿½n
     }
 
     private void Explode()
@@ -99,4 +99,10 @@ public class CargaPresionAttack : MonoBehaviour, IBossAttack
             GameManager.Instance.PerderVida();
         }
     }
+
+        public Vector3? GetDesiredPosition()
+{
+    return null; // Este ataque no necesita moverse antes de ejecutarse
+}
+
 }

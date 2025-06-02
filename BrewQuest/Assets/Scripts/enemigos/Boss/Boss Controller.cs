@@ -26,7 +26,7 @@ public class BossController : MonoBehaviour
     private bool isDead;
 
     public float timeBetweenAttacks = 2f;  // Tiempo de calma entre ataque
-    private int lastAttackIndex = -1;  // Guarda el último índice usado
+    private int lastAttackIndex = -1;  // Guarda el ï¿½ltimo ï¿½ndice usado
 
     void Start()
     {
@@ -37,7 +37,7 @@ public class BossController : MonoBehaviour
         }
         else
         {
-            rb2d.bodyType = RigidbodyType2D.Static; // Inicialmente está estático
+            rb2d.bodyType = RigidbodyType2D.Static; // Inicialmente estï¿½ estï¿½tico
         }
 
         originalPosition = transform.position;
@@ -58,7 +58,7 @@ public class BossController : MonoBehaviour
 
         if (attacks.Count == 0)
         {
-            Debug.LogError("No hay ataques válidos referenciados en BossController.");
+            Debug.LogError("No hay ataques vï¿½lidos referenciados en BossController.");
         }
 
         if (!manualControl)
@@ -112,8 +112,6 @@ public class BossController : MonoBehaviour
         }
 
         int attackIndex;
-
-        // Elegir ataque distinto al anterior
         do
         {
             attackIndex = Random.Range(0, attacks.Count);
@@ -121,11 +119,18 @@ public class BossController : MonoBehaviour
         while (attackIndex == lastAttackIndex && attacks.Count > 1);
 
         lastAttackIndex = attackIndex;
+        var attack = attacks[attackIndex];
 
-        yield return StartCoroutine(attacks[attackIndex].Execute());
+        // Mover suavemente si el ataque requiere una posiciÃ³n especÃ­fica
+        Vector3? targetPos = attack.GetDesiredPosition();
+        if (targetPos.HasValue)
+        {
+            yield return StartCoroutine(MoveToPosition(targetPos.Value));
+        }
+
+        yield return StartCoroutine(attack.Execute());
 
         currentAttackCount++;
-
         yield return new WaitForSeconds(timeBetweenAttacks);
 
         if (currentAttackCount >= maxAttacksBeforeRest)
@@ -134,9 +139,22 @@ public class BossController : MonoBehaviour
         }
     }
 
+    IEnumerator MoveToPosition(Vector3 targetPosition)
+    {
+    float speed = 5f;
+    float distanceThreshold = 0.05f;
+
+    while (Vector3.Distance(transform.position, targetPosition) > distanceThreshold)
+    {
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        yield return null;
+    }
+    }
+
+
     IEnumerator RestPhase()
     {
-        Debug.Log("Boss está recargando... ¡es tu momento!");
+        Debug.Log("Boss estï¿½ recargando... ï¿½es tu momento!");
         canTakeDamage = true;
 
         rb2d.bodyType = RigidbodyType2D.Dynamic;

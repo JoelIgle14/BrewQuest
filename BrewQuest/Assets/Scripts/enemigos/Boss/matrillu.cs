@@ -105,4 +105,11 @@ public class matrillu : MonoBehaviour, IBossAttack
 
         bossTransform.position = new Vector3(bossTransform.position.x, targetY, bossTransform.position.z);
     }
+
+    public Vector3? GetDesiredPosition()
+    {
+        return null; // Este ataque no necesita moverse antes de ejecutarse
+    }
+
+
 }

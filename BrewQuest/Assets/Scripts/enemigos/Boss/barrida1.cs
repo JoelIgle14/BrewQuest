@@ -7,21 +7,21 @@ public class barrida1 : MonoBehaviour, IBossAttack
     public Transform spawnPointLeft;
     public Transform spawnPointRight;
 
-    [Header("Parámetros de la barrida")]
+    [Header("Parï¿½metros de la barrida")]
     public float chargeTime = 1f;
     public float dashSpeed = 10f;
     public float recoveryTime = 1f;
 
-    [Header("Altura fija para barrida (auto-posición de puntos)")]
+    [Header("Altura fija para barrida (auto-posiciï¿½n de puntos)")]
     public float sweepY = -2.5f;
 
-    [Header("Parámetros del hueco")]
+    [Header("Parï¿½metros del hueco")]
     public float gapWidth = 2f;
 
     [Header("Velocidad progresiva de barrida")]
     public float sweepStartSpeed = 2f;   // velocidad inicial (alerta)
-    public float sweepMaxSpeed = 12f;    // velocidad final (aceleración)
-    public float sweepAccelerationTime = 0.5f; // tiempo para alcanzar velocidad máxima
+    public float sweepMaxSpeed = 12f;    // velocidad final (aceleraciï¿½n)
+    public float sweepAccelerationTime = 0.5f; // tiempo para alcanzar velocidad mï¿½xima
 
 
     [Tooltip("Centro del hueco cuando va hacia la derecha")]
@@ -43,18 +43,18 @@ public class barrida1 : MonoBehaviour, IBossAttack
     {
         originalPosition = bossTransform.position;
 
-        // Elegir aleatoriamente la dirección de la barrida
+        // Elegir aleatoriamente la direcciï¿½n de la barrida
         // TEST TEMPORAL para verificar que funcione
-        goingRight = Random.Range(0, 2) == 0; // 50% igual, pero más explícito
+        goingRight = Random.Range(0, 2) == 0; // 50% igual, pero mï¿½s explï¿½cito
                                               // goingRight = false; // <-- Fuerza barrida desde la derecha (para probar izquierda)
 
-        // Cambiar la escala para que mire en la dirección del movimiento
+        // Cambiar la escala para que mire en la direcciï¿½n del movimiento
         Vector3 scale = bossTransform.localScale;
-        scale.x = Mathf.Abs(scale.x) * (goingRight ? -1 : 1);
+        scale.x = Mathf.Abs(scale.x) * (goingRight ? 1 : -1);
         bossTransform.localScale = scale;
 
 
-        // Calcular extremos de la cámara
+        // Calcular extremos de la cï¿½mara
         float zDistance = Mathf.Abs(Camera.main.transform.position.z - bossTransform.position.z);
         Vector3 leftWorld = Camera.main.ViewportToWorldPoint(new Vector3(0f, 0.5f, zDistance));
         Vector3 rightWorld = Camera.main.ViewportToWorldPoint(new Vector3(1f, 0.5f, zDistance));
@@ -80,8 +80,18 @@ public class barrida1 : MonoBehaviour, IBossAttack
         Vector3 descendTarget = new Vector3(startX, sweepY, 0);
         Vector3 finalSweepPoint = new Vector3(endX, sweepY, 0);
 
-        // Posicionar fuera de cámara
-        bossTransform.position = flyInStart;
+        // TransiciÃ³n suave hacia flyInStart (evita salto brusco)
+        while (Vector3.Distance(bossTransform.position, flyInStart) > 0.1f)
+        {
+            bossTransform.position = Vector3.MoveTowards(
+                bossTransform.position,
+                flyInStart,
+                dashSpeed * Time.deltaTime
+            );
+            yield return null;
+        }
+
+  
 
         // Entrar volando
         while (Vector3.Distance(bossTransform.position, flyInTarget) > 0.1f)
@@ -107,7 +117,7 @@ public class barrida1 : MonoBehaviour, IBossAttack
             yield return null;
         }
 
-        // Calcular el hueco según la dirección
+        // Calcular el hueco segï¿½n la direcciï¿½n
         // Calcular el hueco (coordenadas siempre consistentes)
         float center = goingRight ? gapPositionRight : gapPositionLeft;
         Vector3 gapLeft = new Vector3(center - (gapWidth / 2f), sweepY, 0);
@@ -120,7 +130,7 @@ public class barrida1 : MonoBehaviour, IBossAttack
 
         yield return new WaitForSeconds(recoveryTime);
 
-        // Volver a posición original
+        // Volver a posiciï¿½n original
         bossTransform.position = originalPosition;
 
         Debug.Log("Ataque de barrida completado.");
@@ -193,4 +203,10 @@ public class barrida1 : MonoBehaviour, IBossAttack
         Vector3 gapStartLeft = new Vector3(gapPositionLeft - (gapWidth / 2f), sweepY, 0);
         Gizmos.DrawWireCube(gapStartLeft + new Vector3(gapWidth / 2f, 0, 0), new Vector3(gapWidth, 0.5f, 0.5f));
     }
+
+    public Vector3? GetDesiredPosition()
+{
+    return null; // Este ataque no necesita moverse antes de ejecutarse
+}
+
 }
