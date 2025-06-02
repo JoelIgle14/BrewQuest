@@ -1646,7 +1646,7 @@ GameObject:
   - component: {fileID: 260257471}
   m_Layer: 5
   m_Name: PanelScore
-  m_TagString: Untagged
+  m_TagString: ScoreText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91234,7 +91234,7 @@ GameObject:
   - component: {fileID: 1801059073}
   m_Layer: 5
   m_Name: Score
-  m_TagString: Untagged
+  m_TagString: ScoreText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

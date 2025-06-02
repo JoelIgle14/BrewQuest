@@ -16,6 +16,11 @@ public class BossController : MonoBehaviour
     public List<MonoBehaviour> attackScriptsRaw; // Scripts que implementan IBossAttack
     private List<IBossAttack> attacks = new List<IBossAttack>();
 
+    [SerializeField] private GameObject vulnerableMessage;
+
+    [Header("Intro del jefe")]
+    public bool introTerminada = false; // Se pone a true desde la transición
+
     [Header("Testing")]
     public bool manualControl = false; // Si es true, solo ataques manuales con teclado
 
@@ -63,8 +68,9 @@ public class BossController : MonoBehaviour
 
         if (!manualControl)
         {
-            StartCoroutine(BossLoop());
+            StartCoroutine(EsperarIntroYComenzar());
         }
+
     }
 
     void Update()
@@ -138,29 +144,21 @@ public class BossController : MonoBehaviour
             isResting = true;
         }
     }
-
-    IEnumerator MoveToPosition(Vector3 targetPosition)
-    {
-    float speed = 5f;
-    float distanceThreshold = 0.05f;
-
-    while (Vector3.Distance(transform.position, targetPosition) > distanceThreshold)
-    {
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        yield return null;
-    }
-    }
-
-
     IEnumerator RestPhase()
     {
-        Debug.Log("Boss est� recargando... �es tu momento!");
+        Debug.Log("Boss está recargando... ¡es tu momento!");
         canTakeDamage = true;
 
         rb2d.bodyType = RigidbodyType2D.Dynamic;
-        rb2d.gravityScale = 1f;  
+        rb2d.gravityScale = 1f;
+
+        if (vulnerableMessage != null)
+            vulnerableMessage.SetActive(true);
 
         yield return new WaitForSeconds(restDuration);
+
+        if (vulnerableMessage != null)
+            vulnerableMessage.SetActive(false);
 
         rb2d.bodyType = RigidbodyType2D.Static;
         rb2d.gravityScale = 0f;
@@ -172,4 +170,20 @@ public class BossController : MonoBehaviour
         currentAttackCount = 0;
         isResting = false;
     }
+
+
+
+    IEnumerator EsperarIntroYComenzar()
+    {
+        while (!introTerminada)
+        {
+            yield return null;
+        }
+
+        StartCoroutine(BossLoop());
+    }
+
+
+
+
 }
