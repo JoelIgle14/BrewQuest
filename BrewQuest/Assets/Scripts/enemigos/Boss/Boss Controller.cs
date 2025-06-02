@@ -16,6 +16,10 @@ public class BossController : MonoBehaviour
     public List<MonoBehaviour> attackScriptsRaw; // Scripts que implementan IBossAttack
     private List<IBossAttack> attacks = new List<IBossAttack>();
 
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    [SerializeField] private GameObject vulnerableMessage;
+
     [Header("Intro del jefe")]
     public bool introTerminada = false; // Se pone a true desde la transición
 
@@ -125,13 +129,19 @@ public class BossController : MonoBehaviour
 
     IEnumerator RestPhase()
     {
-        Debug.Log("Boss est� recargando... �es tu momento!");
+        Debug.Log("Boss está recargando... ¡es tu momento!");
         canTakeDamage = true;
 
         rb2d.bodyType = RigidbodyType2D.Dynamic;
-        rb2d.gravityScale = 1f;  
+        rb2d.gravityScale = 1f;
+
+        if (vulnerableMessage != null)
+            vulnerableMessage.SetActive(true);
 
         yield return new WaitForSeconds(restDuration);
+
+        if (vulnerableMessage != null)
+            vulnerableMessage.SetActive(false);
 
         rb2d.bodyType = RigidbodyType2D.Static;
         rb2d.gravityScale = 0f;
@@ -144,6 +154,7 @@ public class BossController : MonoBehaviour
         isResting = false;
     }
 
+
     IEnumerator EsperarIntroYComenzar()
     {
         while (!introTerminada)
@@ -153,5 +164,8 @@ public class BossController : MonoBehaviour
 
         StartCoroutine(BossLoop());
     }
+
+
+
 
 }
