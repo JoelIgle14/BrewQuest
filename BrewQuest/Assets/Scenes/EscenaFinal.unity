@@ -302,7 +302,7 @@ SpriteRenderer:
   m_Size: {x: 15.36, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &130176644
@@ -813,6 +813,10 @@ MonoBehaviour:
   textoFinal: 0
   distanciaDetrasJarry: 1
   velocidadMovimiento: 10
+  enProceso: 0
+  jarry: {fileID: 0}
+  animator: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!1 &489222277
 GameObject:
   m_ObjectHideFlags: 0

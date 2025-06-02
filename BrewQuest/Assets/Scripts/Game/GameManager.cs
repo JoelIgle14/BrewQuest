@@ -85,4 +85,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
+
+    public void CargarEscena(int indice)
+    {
+        SceneManager.LoadScene(indice);
+    }
 }
