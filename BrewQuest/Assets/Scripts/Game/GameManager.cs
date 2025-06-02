@@ -55,10 +55,12 @@ public class GameManager : MonoBehaviour
         // Inicializar vidas y HUD si no es cero
         if (Vidas == 0)
         {
-            Vidas = 3;
+            
             hud.ActivarVida(Vidas);
             Debug.Log("Tienes 3 vidas");
         }
+
+        Vidas = 3;
     }
 
     public void PerderVida()
