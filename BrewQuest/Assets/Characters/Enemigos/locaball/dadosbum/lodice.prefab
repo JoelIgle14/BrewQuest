@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5399018885959480537}
   - component: {fileID: 6182466085637460900}
   - component: {fileID: 5488035035976389318}
-  - component: {fileID: 2554183349868183358}
+  - component: {fileID: 5031275415225641939}
   m_Layer: 9
   m_Name: lodice
   m_TagString: enemy
@@ -200,7 +200,7 @@ MonoBehaviour:
   golpeado: 0
   puntos: 0
   estaMuriendo: 0
---- !u!114 &2554183349868183358
+--- !u!114 &5031275415225641939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

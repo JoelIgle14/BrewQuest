@@ -6,6 +6,7 @@ public class sideshoot : MonoBehaviour, Iboss2atac
 {
     public GameObject lobullet;
     public List<Transform> spawnPoints;
+    public float DelayTandas;
 
     public float delayBeforeFire = 0.5f;
     public int cantidadEspadas = 3; // Prefabs por tanda
@@ -19,7 +20,7 @@ public class sideshoot : MonoBehaviour, Iboss2atac
         for (int i = 0; i < 3; i++)
         {
             LanzarTanda();
-            yield return new WaitForSeconds(1.85f); // Tiempo entre tandas
+            yield return new WaitForSeconds(DelayTandas); // Tiempo entre tandas
         }
 
         yield return new WaitForSeconds(1f); // Tiempo tras terminar

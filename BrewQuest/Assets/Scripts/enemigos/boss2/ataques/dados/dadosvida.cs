@@ -102,6 +102,13 @@ public class dadosvida : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && !estaMuriendo)
         {
             animator.SetTrigger("hit");
+            StartCoroutine(DieWplayer());
         }
+    }
+
+    private IEnumerator DieWplayer()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
     }
 }
