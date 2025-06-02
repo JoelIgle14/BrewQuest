@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/EscenaFinal.unity
     guid: adf30066e5eca4f49ad8615befbb8082
   - enabled: 1
-    path: "Assets/Scenes/Cr\xE9ditosFinales.unity"
+    path: Assets/Scenes/CreditosFinales.unity
     guid: fab8506926318634fb694494ad75c8b4
   - enabled: 0
     path: Assets/Scenes/persAtaque.unity
