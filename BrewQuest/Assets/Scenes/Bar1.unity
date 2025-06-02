@@ -257,7 +257,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Por \xFAltimo,  pulsa \u2191 para entrar, SUERTE"
+  m_text: "Por \xFAltimo,  pulsa UP para entrar, SUERTE"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 943f5ed63a2b5e84483aa12e3d2d11dc, type: 2}
   m_sharedMaterial: {fileID: 4672773009084040482, guid: 943f5ed63a2b5e84483aa12e3d2d11dc, type: 2}
@@ -2155,6 +2155,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9036987573618746757, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1196796382}
+    - targetCorrespondingSourceObject: {fileID: 9036987573618746757, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1196796409}
   m_SourcePrefab: {fileID: 100100000, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
 --- !u!1 &1115638126
 GameObject:
@@ -2443,6 +2446,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429c6e6b7bcbb4546b3132a5fff548f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1196796409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196796381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251f2355027809844bbeed07a74ce6c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogoTexto: {fileID: 54641578}
+  panelDialogo: {fileID: 0}
+  dialogosIniciales: []
+  objetoParaActivarDuranteDialogo: {fileID: 4399491290510776054, guid: 1150f76dc6610fb44894c53238ead7f4, type: 3}
+  indiceEnElQueSeActiva: 5
 --- !u!1 &1231694289
 GameObject:
   m_ObjectHideFlags: 0
