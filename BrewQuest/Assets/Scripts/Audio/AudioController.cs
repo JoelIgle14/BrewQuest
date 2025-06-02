@@ -23,6 +23,8 @@ public class AudioController : MonoBehaviour
             loopSource = gameObject.AddComponent<AudioSource>();
             sfxSource = gameObject.AddComponent<AudioSource>();
         }
+
+        Debug.Log("AudioSources asignados: loopSource = " + loopSource + ", sfxSource = " + sfxSource);
     }
 
     // Sonido en bucle (ej: pasos)
@@ -30,19 +32,34 @@ public class AudioController : MonoBehaviour
     {
         if (indice >= 0 && indice < audios.Length)
         {
+            if (audios[indice] == null)
+            {
+                Debug.LogWarning("Audio clip en índice " + indice + " está vacío.");
+                return;
+            }
+
+            Debug.Log("Intentando reproducir loop clip: " + audios[indice].name);
+
             if (loopSource.clip != audios[indice])
             {
                 loopSource.clip = audios[indice];
                 loopSource.loop = true;
                 loopSource.volume = volumen;
                 loopSource.Play();
+                Debug.Log("Clip en loop iniciado.");
             }
             else if (!loopSource.isPlaying)
             {
                 loopSource.Play();
+                Debug.Log("Clip reiniciado.");
             }
         }
+        else
+        {
+            Debug.LogWarning("Índice fuera de rango: " + indice);
+        }
     }
+    
 
     public void PararSonidoLoop()
     {
@@ -59,6 +76,9 @@ public class AudioController : MonoBehaviour
             sfxSource.PlayOneShot(audios[indice], volumen);
         }
     }
+
+
+
 
     public bool EstaReproduciendoLoop(int indice)
     {

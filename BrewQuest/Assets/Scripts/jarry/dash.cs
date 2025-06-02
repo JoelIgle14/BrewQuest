@@ -19,6 +19,8 @@ public class dash : MonoBehaviour
     private NewBehaviourScript hab;
     public Animator dashBarAnimator;
     private MovementManager manager;
+    private AudioController controller;
+
 
     void Awake()
     {
@@ -26,6 +28,7 @@ public class dash : MonoBehaviour
         move = GetComponent<PlayerMovement>();
         hab = GetComponent<NewBehaviourScript>();
         manager = GetComponent<MovementManager>(); // Referencia al manager
+        controller = FindObjectOfType<AudioController>();
     }
     void Update()
     {
@@ -50,6 +53,7 @@ public class dash : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && dashCooldownCounter <= 0 && !isDashing && move.canMove)
         {
+            controller.SeleccionAudio(5, 0.5f);
             StartCoroutine(DoDash());
         }
 

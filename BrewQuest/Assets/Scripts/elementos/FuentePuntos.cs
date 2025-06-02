@@ -13,7 +13,7 @@ public class Checkpoint : MonoBehaviour
     {
 
         controller = FindObjectOfType<AudioController>(); 
-        controller.SeleccionAudio(0, 1f);
+ 
     }
 }
 

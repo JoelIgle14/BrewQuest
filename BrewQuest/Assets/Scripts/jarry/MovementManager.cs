@@ -27,6 +27,7 @@ public class MovementManager : MonoBehaviour
     [SerializeField] private float coyoteTime = 0.15f;
     private float coyoteTimeCounter;
     private bool coyoteBloqueado = false;
+    private AudioController controller;
 
     void Awake()
     {
@@ -35,6 +36,7 @@ public class MovementManager : MonoBehaviour
         pm = GetComponent<PlayerMovement>();
         dish = GetComponent<dash>();
         hab = GetComponent<NewBehaviourScript>();
+        controller = FindObjectOfType<AudioController>();
     }
 
     void Update()
@@ -42,6 +44,7 @@ public class MovementManager : MonoBehaviour
         // Input salto
         if (Input.GetKeyDown(KeyCode.Space) && inputBuffer.Count == 0)
         {
+            controller.SeleccionAudio(4, 1f);
             inputBuffer.Enqueue(KeyCode.Space);
             bufferTimer = bufferTiempo;
         }
