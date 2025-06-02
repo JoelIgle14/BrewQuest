@@ -55,4 +55,10 @@ public class Fog : MonoBehaviour, IBossAttack
             (list[i], list[rnd]) = (list[rnd], list[i]);
         }
     }
+
+    public Vector3? GetDesiredPosition()
+{
+    return null; // Este ataque no necesita moverse antes de ejecutarse
+}
+
 }

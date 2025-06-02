@@ -7,13 +7,13 @@ public class hords : MonoBehaviour, IBossAttack
     [Header("Hordas posibles")]
     public List<GameObject> hordaPrefabs;
 
-    [Header("Configuración de invocación")]
+    [Header("Configuraciï¿½n de invocaciï¿½n")]
     public Transform spawnPoint;
     public float delayBeforeSummon = 0.5f;
 
     public IEnumerator Execute()
     {
-        Debug.Log("El jefe está invocando una horda...");
+        Debug.Log("El jefe estï¿½ invocando una horda...");
         yield return new WaitForSeconds(delayBeforeSummon);
 
         if (hordaPrefabs.Count == 0)
@@ -25,6 +25,12 @@ public class hords : MonoBehaviour, IBossAttack
         int index = Random.Range(0, hordaPrefabs.Count);
         Instantiate(hordaPrefabs[index], spawnPoint.position, Quaternion.identity);
 
-        yield return new WaitForSeconds(1f); // pequeña pausa post invocación
+        yield return new WaitForSeconds(1f); // pequeï¿½a pausa post invocaciï¿½n
     }
+
+        public Vector3? GetDesiredPosition()
+{
+    return null; // Este ataque no necesita moverse antes de ejecutarse
+}
+
 }

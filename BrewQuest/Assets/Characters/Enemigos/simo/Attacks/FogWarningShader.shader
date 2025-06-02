@@ -5,6 +5,7 @@ Shader "Custom/FogWarningShader"
         _MainTex ("Texture", 2D) = "white" {}
         _Color ("Color Tint", Color) = (0.5, 0.8, 1, 0.5)
         _BlinkSpeed ("Blink Speed", Float) = 2.0
+        _BlinkEnabled ("Blink Enabled", Float) = 1.0
     }
     SubShader
     {
@@ -37,6 +38,7 @@ Shader "Custom/FogWarningShader"
             sampler2D _MainTex;
             float4 _Color;
             float _BlinkSpeed;
+            float _BlinkEnabled;
 
             v2f vert(appdata v)
             {
@@ -48,10 +50,9 @@ Shader "Custom/FogWarningShader"
 
             fixed4 frag(v2f i) : SV_Target
             {
-                // _Time is built-in, no need to declare
-                float alpha = abs(sin(_Time.y * _BlinkSpeed));
+                float blink = _BlinkEnabled > 0.5 ? abs(sin(_Time.y * _BlinkSpeed)) : 1.0;
                 fixed4 col = tex2D(_MainTex, i.uv) * _Color;
-                col.a *= alpha;
+                col.a *= blink;
                 return col;
             }
             ENDCG
