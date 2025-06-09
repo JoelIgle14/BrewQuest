@@ -1369,7 +1369,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fb460e8806fd0e34bb6c8b72cd9fd0d8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.079
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4266,6 +4266,7 @@ GameObject:
   - component: {fileID: 1690282438}
   - component: {fileID: 1690282439}
   - component: {fileID: 1690282440}
+  - component: {fileID: 1690282441}
   m_Layer: 0
   m_Name: SimoBoss
   m_TagString: enemy
@@ -4293,7 +4294,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1cf5f86c619d44d49b9ddaa79a19f4fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4488,7 +4489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebdab41d1ab58e94ebf70f4f293d2cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 18
+  health: 12
   golpeado: 0
   puntos: 1000
   player: {fileID: 1869602834}
@@ -4505,6 +4506,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookDirection: 1
+--- !u!114 &1690282441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690282430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3b95f2e46019cd4e9634b8fe7cc32e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1690282431}
 --- !u!1 &1702020629
 GameObject:
   m_ObjectHideFlags: 0
