@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
             return false;
 
         Vidas += 1;
-        hud.ActivarVida(Vidas);
+        hud.ActivarVida(Vidas - 1);
         return true;
     }
 
