@@ -8,9 +8,11 @@ public class BossVida : MonoBehaviour
     public int puntos = 1000; 
     private BossController bc;
     public GameObject player;
+    private EfectoHit eh;
 
     void Awake()
     {
+        eh = GetComponent<EfectoHit>();
         bc = GetComponent<BossController>();
     }
 
@@ -21,6 +23,7 @@ public class BossVida : MonoBehaviour
             golpeado = true;
             health -= amount;
             //a
+            eh.GetComponent<EfectoHit>().FlashWhite(0.5f);
 
             if (health <= 0)
             {
