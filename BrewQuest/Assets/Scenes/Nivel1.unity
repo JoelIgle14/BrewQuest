@@ -1936,23 +1936,6 @@ MonoBehaviour:
   offset: {x: 1, y: 2, z: -10}
   smoothSpeed: 5
   verticalDeadZone: 2.5
---- !u!114 &301622540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 301622534}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eeefc952fcd64d4fbcc7cb18633be22, type: 3}
-  m_Name: DELETEME
-  m_EditorClassIdentifier: 
-  target: {fileID: 633327714}
-  offset: {x: 3, y: 1, z: -10}
-  smoothSpeed: 5
-  verticalDelay: 0.3
-  borde: {fileID: 1175673542}
 --- !u!1 &311190309
 GameObject:
   m_ObjectHideFlags: 0
@@ -168646,11 +168629,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 460.33
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.04
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.z
