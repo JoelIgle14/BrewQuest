@@ -4,11 +4,14 @@
 public class SoftFollowCamera : MonoBehaviour
 {
     public Transform target;
-    public Vector3 offset = new Vector3(0, 0, -10);
+
+    [Header("Camera Offset")]
+    public Vector3 offset = new Vector3(0, 0, -10); // Editable en X, Y, Z desde el Inspector
+
     public float smoothSpeed = 5f;
 
     [Header("Dead Zone Vertical")]
-    public float verticalDeadZone = 2.5f; // Cuánto puede alejarse en Y antes de mover la cámara
+    public float verticalDeadZone = 2.5f;
 
     private void LateUpdate()
     {
@@ -17,19 +20,19 @@ public class SoftFollowCamera : MonoBehaviour
         Vector3 camPos = transform.position;
         Vector3 targetPos = target.position + offset;
 
-        // Mantener la cámara dentro de la zona muerta en Y
-        float deltaY = target.position.y - camPos.y;
+        // --- Movimiento en Y con zona muerta ---
+        float deltaY = target.position.y + offset.y - camPos.y;
         if (Mathf.Abs(deltaY) > verticalDeadZone)
         {
             float direction = Mathf.Sign(deltaY);
-            camPos.y = Mathf.Lerp(camPos.y, target.position.y - (verticalDeadZone * direction), Time.deltaTime * smoothSpeed);
+            camPos.y = Mathf.Lerp(camPos.y, target.position.y + offset.y - (verticalDeadZone * direction), Time.deltaTime * smoothSpeed);
         }
 
-        // Movimiento en X suave siempre
+        // --- Movimiento en X suave siempre ---
         camPos.x = Mathf.Lerp(camPos.x, targetPos.x, Time.deltaTime * smoothSpeed);
 
-        // Mantener la Z fija
-        camPos.z = offset.z;
+        // --- Mantener la Z como en el offset ---
+        camPos.z = targetPos.z;
 
         transform.position = camPos;
     }
