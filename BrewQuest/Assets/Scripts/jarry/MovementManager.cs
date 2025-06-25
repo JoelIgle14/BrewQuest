@@ -44,7 +44,7 @@ public class MovementManager : MonoBehaviour
         // Input salto
         if (Input.GetKeyDown(KeyCode.Space) && inputBuffer.Count == 0)
         {
-            controller.SeleccionAudio(4, 1f);
+            controller.SeleccionAudio(4, 0.3f);
             inputBuffer.Enqueue(KeyCode.Space);
             bufferTimer = bufferTiempo;
         }
