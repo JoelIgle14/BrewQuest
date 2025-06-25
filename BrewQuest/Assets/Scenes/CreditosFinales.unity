@@ -349,8 +349,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.089, y: 0.0049438}
-  m_SizeDelta: {x: 1118.2, y: 610.01}
+  m_AnchoredPosition: {x: 67.84, y: 9.6}
+  m_SizeDelta: {x: 2016.85, y: 1445.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1458360803
 MonoBehaviour:
@@ -528,8 +528,8 @@ MonoBehaviour:
     assets used in this project were generated using artificial intelligence for
     educational purposes\n\nSome assets used in this project were under creative
     commos and free use license\n\nSome assets used in this project were created
-    on piskelapp.com\n\nThis project respects any used material's license\n\n\n\nSpecial
-    agreements to Oscar for carrying\n\n\n\ntENTItas\n\n\nBREW QUEST"
+    on piskelapp.com\n\nThis project respects any used material's license\n\n\n\n\ntENTItas\n\n\nBREW
+    QUEST"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
