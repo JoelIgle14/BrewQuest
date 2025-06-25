@@ -2519,6 +2519,10 @@ PrefabInstance:
       propertyPath: jugador
       value: 
       objectReference: {fileID: 1861378964}
+    - target: {fileID: 7536173134987131368, guid: 61c55743f89d1e04186cb71571409604, type: 3}
+      propertyPath: puntos
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

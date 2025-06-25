@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 6
   golpeado: 0
-  puntos: 10
+  puntos: 50
 --- !u!114 &8189334148745057018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,8 +276,8 @@ MonoBehaviour:
   tiempocambio: 3
   esDerecha: 0
   fuerzaSalto: 3
-  distanciaRodadaObjetivo: 10
   tiempoEsperaDespuesRodar: 1
+  duracionRodada: 1
   patasCollider: {fileID: 2334293857193316440}
   isBeingHit: 0
 --- !u!114 &81123720907839349
