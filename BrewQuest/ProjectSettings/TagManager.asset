@@ -101,9 +101,9 @@ TagManager:
   - name: 'PlataformaMovil '
     uniqueID: 3300119295
     locked: 0
-  - name: Jarry
-    uniqueID: 2819127001
-    locked: 0
   - name: HUD
     uniqueID: 3380734391
+    locked: 0
+  - name: Jarry
+    uniqueID: 2819127001
     locked: 0
