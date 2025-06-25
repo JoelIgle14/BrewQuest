@@ -37,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 8990592640124109844}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &688554618428971785
 SpriteRenderer:
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bernishot: {fileID: 3265497542278280590, guid: 4a6af4f2ee0636b42af2df13505f696a, type: 3}
-  rangeDistance: 3
+  rangeDistance: 15
   fireCooldown: 5
   shootOffsetX: 0.5
 --- !u!114 &7573965017934927035

@@ -1537,7 +1537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3946491404188878117, guid: 408060f960a74854c8c1327d04e2452b, type: 3}
       propertyPath: rangeDistance
-      value: 3
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1888,7 +1888,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 6.2
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1950,7 +1950,7 @@ MonoBehaviour:
   m_Name: DELETEME
   m_EditorClassIdentifier: 
   target: {fileID: 633327714}
-  offset: {x: 3, y: 2, z: -10}
+  offset: {x: 3, y: 1, z: -10}
   smoothSpeed: 5
   verticalDelay: 0.3
   borde: {fileID: 1175673542}
@@ -168635,11 +168635,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.2
+      value: 460.33
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 5.04
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.z
