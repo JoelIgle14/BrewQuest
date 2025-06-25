@@ -6,18 +6,19 @@ public class BerniShot : MonoBehaviour
 {
     public GameObject bernishot;
     private GameObject target;
-    private bernidirection berniDir; // ← referencia al script de dirección
+    private bernidirection berniDir;
 
-    public float rangeDistance;
+    public float rangeDistance = 5f;   //  distancia máxima para disparar
+
     public float fireCooldown = 1f;
     private float fireTimer = 0f;
 
-    public float shootOffsetX = 0.5f; // separación lateral del disparo
+    public float shootOffsetX = 0.5f;
 
     void Start()
     {
         target = GameObject.Find("Jarry");
-        berniDir = GetComponent<bernidirection>(); // ← asumimos que está en el mismo GameObject
+        berniDir = GetComponent<bernidirection>();
     }
 
     void Update()
@@ -26,7 +27,8 @@ public class BerniShot : MonoBehaviour
 
         float distanceToPlayer = Vector2.Distance(transform.position, target.transform.position);
 
-        if (distanceToPlayer > rangeDistance && fireTimer <= 0f)
+        // Dispara solo si Jarry está dentro del rango (cerca o igual)
+        if (distanceToPlayer <= rangeDistance && fireTimer <= 0f)
         {
             Shoot();
             fireTimer = fireCooldown;
@@ -36,8 +38,6 @@ public class BerniShot : MonoBehaviour
     private void Shoot()
     {
         Vector3 direction = (target.transform.position - transform.position).normalized;
-
-        // Usa la dirección almacenada por el script de giro
         int dir = berniDir.lookDirection;
         Vector3 spawnPos = transform.position + new Vector3(shootOffsetX * dir, 0f, 0f);
 
@@ -45,3 +45,5 @@ public class BerniShot : MonoBehaviour
         bullet.GetComponent<berniBullet>().setDirection(direction);
     }
 }
+
+

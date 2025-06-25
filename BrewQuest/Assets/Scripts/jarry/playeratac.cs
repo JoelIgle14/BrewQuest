@@ -60,43 +60,49 @@ public class playeratac : MonoBehaviour
         Debug.Log("Evento de animación DealDamage() llamado");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(positionAttack, attackRange);
+        HashSet<Transform> damagedEnemies = new HashSet<Transform>();
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (enemy.CompareTag("EnemyHitBox"))
+            if (!enemy.CompareTag("EnemyHitBox")) continue;
+
+            Transform root = enemy.transform.root;
+            if (damagedEnemies.Contains(root)) continue;
+            damagedEnemies.Add(root);
+
+            // Enemyvida
+            Enemyvida enemyvid = enemy.GetComponentInParent<Enemyvida>();
+            if (enemyvid != null)
             {
-                // Primero buscamos Enemyvida (enemigos normales)
-                Enemyvida enemyvid = enemy.GetComponentInParent<Enemyvida>();
-                if (enemyvid != null)
-                {
-                    enemyvid.TakeDamage(attackDamage, gameObject, true);
-                    Debug.Log("Enemigo normal golpeado");
-                    continue;
-                }
+                enemyvid.TakeDamage(attackDamage, gameObject, true);
+                Debug.Log("Enemigo normal golpeado");
+                continue;
+            }
 
-                // Si no hay Enemyvida, buscamos BossVida
-                BossVida bossVid = enemy.GetComponentInParent<BossVida>();
-                if (bossVid != null)
-                {
-                    bossVid.TakeDamage(attackDamage, gameObject, true);
-                    Debug.Log("Boss golpeado");
-                }
+            // BossVida
+            BossVida bossVid = enemy.GetComponentInParent<BossVida>();
+            if (bossVid != null)
+            {
+                bossVid.TakeDamage(attackDamage, gameObject, true);
+                Debug.Log("Boss golpeado");
+                continue;
+            }
 
-                // Si no hay Enemyvida, buscamos Boss2Vida
-                Boss2vida boss2Vida = enemy.GetComponentInParent<Boss2vida>();
-                if (boss2Vida != null)
-                {
-                    boss2Vida.TakeDamage(attackDamage, gameObject, true);
-                    Debug.Log("Boss golpeado");
-                }
+            // Boss2vida
+            Boss2vida boss2Vida = enemy.GetComponentInParent<Boss2vida>();
+            if (boss2Vida != null)
+            {
+                boss2Vida.TakeDamage(attackDamage, gameObject, true);
+                Debug.Log("Boss2 golpeado");
+                continue;
+            }
 
-                // Si no hay Enemyvida, buscamos Boss2Vida
-                dadosvida dadosvid = enemy.GetComponentInParent<dadosvida>();
-                if (dadosvid != null)
-                {
-                    dadosvid.TakeDamage(attackDamage, gameObject, true);
-                    Debug.Log("Boss golpeado");
-                }
+            // dadosvida
+            dadosvida dadosvid = enemy.GetComponentInParent<dadosvida>();
+            if (dadosvid != null)
+            {
+                dadosvid.TakeDamage(attackDamage, gameObject, true);
+                Debug.Log("dados golpeado");
             }
         }
     }
