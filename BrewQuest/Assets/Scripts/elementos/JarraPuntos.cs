@@ -8,7 +8,7 @@ public class CervezaPickup : MonoBehaviour
     
     private AudioController controller;
 
-    private void Setup()
+    private void Start()
     {
         controller = FindObjectOfType<AudioController>();
     }
@@ -17,7 +17,7 @@ public class CervezaPickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            controller.SeleccionAudio(6, 0.2f);
+            controller.SeleccionAudio(9, 0.4f);
 
             if (ScoreManager.Instance != null)
             {
