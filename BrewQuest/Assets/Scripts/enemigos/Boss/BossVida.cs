@@ -30,7 +30,8 @@ public class BossVida : MonoBehaviour
             golpeado = true;
             health -= amount;
 
-            eh.GetComponent<EfectoHit>().FlashWhite(0.5f);
+            animator.SetTrigger("hurt");
+            //eh.GetComponent<EfectoHit>().FlashWhite(0.5f);
 
             if (health <= 0)
             {
