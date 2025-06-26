@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 61fe4779d1e0ec846a48256ed128a569
+guid: 6b7798617a1378c45abc934930720fca
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -106,37 +106,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JarryRunLast (2)_0
+      name: JarryRunLast_0
       rect:
         serializedVersion: 2
         x: 0
@@ -150,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05df5587ac1d9e648bfea7b6cb81bf06
-      internalID: -1346911202
+      spriteID: 684513b85472faf43a86231cf00da03b
+      internalID: 375483187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarryRunLast (2)_1
+      name: JarryRunLast_1
       rect:
         serializedVersion: 2
         x: 64
@@ -171,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0666476eef63a842bc9e76e5ff6399b
-      internalID: -1854762259
+      spriteID: 0a8eb9fa331f2554abb0a92ae10950f6
+      internalID: -1917646089
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarryRunLast (2)_2
+      name: JarryRunLast_2
       rect:
         serializedVersion: 2
         x: 128
@@ -192,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6151a86e060010d41afe2de4b7c2994a
-      internalID: -1136277024
+      spriteID: d3b903bee42324d418361761fd86c709
+      internalID: 1443342653
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarryRunLast (2)_3
+      name: JarryRunLast_3
       rect:
         serializedVersion: 2
         x: 0
@@ -213,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8eb8dc462080ab24481f2cdd47cb7e24
-      internalID: 2143155578
+      spriteID: 2ca887d79d405b44f8de00c2bf485698
+      internalID: -753432077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarryRunLast (2)_4
+      name: JarryRunLast_4
       rect:
         serializedVersion: 2
         x: 64
@@ -234,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4706c0d9b947c6a4cac85a0741b6bf88
-      internalID: 1969193287
+      spriteID: 9d42b03f25774914bb1d8755f0a2e507
+      internalID: 1886894495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarryRunLast (2)_5
+      name: JarryRunLast_5
       rect:
         serializedVersion: 2
         x: 128
@@ -255,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9617b84340954f34bb5b02ec165ec9ae
-      internalID: 2105940239
+      spriteID: 341fd18104368ba499a4dda14e9db39f
+      internalID: -78030050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarryRunLast (2)_6
+      name: JarryRunLast_6
       rect:
         serializedVersion: 2
         x: 0
@@ -276,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b61d36ef6ccce4f40a0d7ef8b1f76802
-      internalID: -131019734
+      spriteID: 1de6d491828b1fa4186cf76f2f4ec63e
+      internalID: -2004224510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JarryRunLast (2)_7
+      name: JarryRunLast_7
       rect:
         serializedVersion: 2
         x: 64
@@ -297,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8343a28df860214db170cacc7545a34
-      internalID: -1418019805
+      spriteID: fccf682d4a9de4345b08fd149d9c63e3
+      internalID: -83505361
       vertices: []
       indices: 
       edges: []
@@ -314,14 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      JarryRunLast (2)_0: -1346911202
-      JarryRunLast (2)_1: -1854762259
-      JarryRunLast (2)_2: -1136277024
-      JarryRunLast (2)_3: 2143155578
-      JarryRunLast (2)_4: 1969193287
-      JarryRunLast (2)_5: 2105940239
-      JarryRunLast (2)_6: -131019734
-      JarryRunLast (2)_7: -1418019805
+      JarryRunLast_0: 375483187
+      JarryRunLast_1: -1917646089
+      JarryRunLast_2: 1443342653
+      JarryRunLast_3: -753432077
+      JarryRunLast_4: 1886894495
+      JarryRunLast_5: -78030050
+      JarryRunLast_6: -2004224510
+      JarryRunLast_7: -83505361
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

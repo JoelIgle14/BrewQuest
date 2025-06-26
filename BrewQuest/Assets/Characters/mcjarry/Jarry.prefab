@@ -388,7 +388,7 @@ MonoBehaviour:
   habilidades: {fileID: 0}
   attackRange: 0.7
   attackDamage: 1
-  attacCooldown: 0.7
+  attacCooldown: 0.55
   attackDelay: 0
   positionAttack: {x: -0.9, y: 0.6, z: 0}
 --- !u!114 &586419111123493091

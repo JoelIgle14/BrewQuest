@@ -4,7 +4,6 @@ using UnityEngine;
 public class BossVida : MonoBehaviour
 {
     public float health;
-    public bool golpeado;
     public int puntos = 1000;
 
     private BossController bc;
@@ -24,10 +23,9 @@ public class BossVida : MonoBehaviour
 
     public void TakeDamage(float amount, GameObject Player, bool esAtaqueCuerpoACuerpo)
     {
-        if (!golpeado && bc != null && bc.canTakeDamage && !muriendo)
+        if (bc != null && bc.canTakeDamage && !muriendo)
         {
             controller.SeleccionAudio(6, 0.2f);
-            golpeado = true;
             health -= amount;
 
             eh.GetComponent<EfectoHit>().FlashWhite(0.5f);
@@ -58,8 +56,6 @@ public class BossVida : MonoBehaviour
                     disparo.RecargarTiro();
                 }
             }
-
-            StartCoroutine(ResetGolpeado());
         }
     }
 
@@ -111,11 +107,5 @@ public class BossVida : MonoBehaviour
         {
             Debug.LogWarning("No puerta jeje");
         }
-    }
-
-    private IEnumerator ResetGolpeado()
-    {
-        yield return new WaitForSeconds(1f);
-        golpeado = false;
     }
 }
