@@ -7,4 +7,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Bar1"); // Reemplaza con el nombre de la escena del juego
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Saliendo del juego..."); // Esto aparecerá en el editor
+        Application.Quit(); // Esto cerrará la aplicación cuando esté compilada
+    }
 }
