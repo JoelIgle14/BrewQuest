@@ -28,10 +28,10 @@ public class BossController : MonoBehaviour, IBossIntroReceiver
     private Vector3 originalPosition;
     private Quaternion originalRotation;
 
-    private bool isDead;
+    public bool isDead;
 
     public float timeBetweenAttacks = 2f;  // Tiempo de calma entre ataque
-    private int lastAttackIndex = -1;  // Guarda el �ltimo �ndice usado
+    private int lastAttackIndex = -1;  // Guarda el último índice usado
 
     void Start()
     {
@@ -42,7 +42,7 @@ public class BossController : MonoBehaviour, IBossIntroReceiver
         }
         else
         {
-            rb2d.bodyType = RigidbodyType2D.Static; // Inicialmente est� est�tico
+            rb2d.bodyType = RigidbodyType2D.Static; // Inicialmente está estático
         }
 
         originalPosition = transform.position;
@@ -63,14 +63,13 @@ public class BossController : MonoBehaviour, IBossIntroReceiver
 
         if (attacks.Count == 0)
         {
-            Debug.LogError("No hay ataques v�lidos referenciados en BossController.");
+            Debug.LogError("No hay ataques válidos referenciados en BossController.");
         }
 
         if (!manualControl)
         {
             StartCoroutine(EsperarIntroYComenzar());
         }
-
     }
 
     void Update()
@@ -127,13 +126,6 @@ public class BossController : MonoBehaviour, IBossIntroReceiver
         lastAttackIndex = attackIndex;
         var attack = attacks[attackIndex];
 
-        //// Mover suavemente si el ataque requiere una posición específica
-        //Vector3? targetPos = attack.GetDesiredPosition();
-        //if (targetPos.HasValue)
-        //{
-        //    yield return StartCoroutine(MoveToPosition(targetPos.Value));
-        //}
-
         yield return StartCoroutine(attack.Execute());
 
         currentAttackCount++;
@@ -144,8 +136,11 @@ public class BossController : MonoBehaviour, IBossIntroReceiver
             isResting = true;
         }
     }
+
     IEnumerator RestPhase()
     {
+        if (isDead) yield break;
+
         Debug.Log("Boss está recargando... ¡es tu momento!");
         canTakeDamage = true;
 
@@ -171,8 +166,6 @@ public class BossController : MonoBehaviour, IBossIntroReceiver
         isResting = false;
     }
 
-
-
     IEnumerator EsperarIntroYComenzar()
     {
         while (!introTerminada)
@@ -188,5 +181,17 @@ public class BossController : MonoBehaviour, IBossIntroReceiver
         introTerminada = true;
     }
 
+    // Llamar cuando el boss muere para limpiar correctamente
+    public void OnBossDeath()
+    {
+        isDead = true;
 
+        // Desactivar el texto si estaba activo
+        if (vulnerableMessage != null)
+            vulnerableMessage.SetActive(false);
+
+        StopAllCoroutines();
+
+        Debug.Log("El boss ha muerto.");
+    }
 }

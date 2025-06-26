@@ -4469,7 +4469,8 @@ MonoBehaviour:
   - {fileID: 16062344}
   vulnerableMessage: {fileID: 186664438}
   introTerminada: 0
-  manualControl: 1
+  manualControl: 0
+  isDead: 0
   timeBetweenAttacks: 2
 --- !u!114 &1690282438
 MonoBehaviour:
