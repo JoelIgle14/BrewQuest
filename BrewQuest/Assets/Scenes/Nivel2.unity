@@ -92043,6 +92043,10 @@ PrefabInstance:
       propertyPath: rayCastDistance
       value: 0.12
       objectReference: {fileID: 0}
+    - target: {fileID: 895120491354690903, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: attacCooldown
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 1230246849265011017, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_Size.x
       value: 15
@@ -92122,6 +92126,14 @@ PrefabInstance:
     - target: {fileID: 4356593024268820291, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468621817715651367, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4468621817715651367, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 27.502237
       objectReference: {fileID: 0}
     - target: {fileID: 5788834043212525204, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_Enabled
