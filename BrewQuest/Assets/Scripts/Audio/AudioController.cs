@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudioController : MonoBehaviour
 {
     [SerializeField] private AudioClip[] audios;
+    [SerializeField] private AudioSource audioSourceInspector; // Asignas manualmente
 
     private AudioSource loopSource;    // Para sonidos que hacen loop (ej: caminar)
     private AudioSource sfxSource;     // Para sonidos puntuales (ej: morir, saltar)
@@ -34,7 +35,7 @@ public class AudioController : MonoBehaviour
         {
             if (audios[indice] == null)
             {
-                Debug.LogWarning("Audio clip en índice " + indice + " está vacío.");
+                Debug.LogWarning("Audio clip en ï¿½ndice " + indice + " estï¿½ vacï¿½o.");
                 return;
             }
 
@@ -56,7 +57,7 @@ public class AudioController : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Índice fuera de rango: " + indice);
+            Debug.LogWarning("ï¿½ndice fuera de rango: " + indice);
         }
     }
     
@@ -84,4 +85,21 @@ public class AudioController : MonoBehaviour
     {
         return loopSource.isPlaying && loopSource.clip == audios[indice];
     }
+
+public void CambiarVolumen(float nuevoVolumen)
+{
+    audioSourceInspector.volume = nuevoVolumen;
+    PlayerPrefs.SetFloat("volumen", nuevoVolumen);
+    Debug.Log("Volumen cambiado a: " + nuevoVolumen);
+}
+
+
+
+    private void Start()
+    {
+        float vol = PlayerPrefs.GetFloat("volumen", 0.5f); // Por defecto 0.5
+        loopSource.volume = vol;
+        sfxSource.volume = vol;
+    }
+
 }
