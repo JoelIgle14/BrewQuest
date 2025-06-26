@@ -4496,7 +4496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebdab41d1ab58e94ebf70f4f293d2cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 12
+  health: 1
   golpeado: 0
   puntos: 1000
   player: {fileID: 1869602834}

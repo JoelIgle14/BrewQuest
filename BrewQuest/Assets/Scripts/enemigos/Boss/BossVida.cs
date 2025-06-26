@@ -35,6 +35,7 @@ public class BossVida : MonoBehaviour
             if (health <= 0)
             {
                 muriendo = true;
+
                 if (ScoreManager.Instance != null)
                 {
                     ScoreManager.Instance.AddPoints(puntos);
@@ -45,9 +46,8 @@ public class BossVida : MonoBehaviour
                     bc.OnBossDeath(); // Avisamos al BossController para desactivar texto y detener corrutinas
                 }
 
-                ActivateDoor();
-
-                Destroy(gameObject);
+                StartCoroutine(MuerteBoss());
+                return;
             }
 
             if (esAtaqueCuerpoACuerpo)
@@ -67,10 +67,10 @@ public class BossVida : MonoBehaviour
     {
         // Ir al centro de la pantalla
         Vector3 centroPantalla = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
-        centroPantalla.z = transform.position.z; // mantener z original
+        centroPantalla.z = transform.position.z;
         transform.position = centroPantalla;
 
-        // Vibración/temblor (shake)
+        // Vibración/temblor
         float shakeDuration = 1f;
         float shakeAmount = 0.2f;
         Vector3 originalPos = transform.position;
@@ -90,13 +90,13 @@ public class BossVida : MonoBehaviour
         // Activar animación de explosión
         if (animator != null)
         {
-            animator.SetTrigger("die");
+            animator.SetTrigger("die"); // Asegúrate de que la animación esté bien nombrada
         }
 
-        yield return new WaitForSeconds(1f); // esperar a que termine la animación (ajusta según tu animación)
+        yield return new WaitForSeconds(1f); // espera a que termine la animación
 
-        Destroy(gameObject);
         ActivateDoor();
+        Destroy(gameObject);
     }
 
     private void ActivateDoor()
