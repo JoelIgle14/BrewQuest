@@ -5,7 +5,8 @@ public class BossVida : MonoBehaviour
 {
     public float health;
     public bool golpeado;
-    public int puntos = 1000; 
+    public int puntos = 1000;
+
     private BossController bc;
     public GameObject player;
     private EfectoHit eh;
@@ -22,7 +23,7 @@ public class BossVida : MonoBehaviour
         {
             golpeado = true;
             health -= amount;
-            //a
+
             eh.GetComponent<EfectoHit>().FlashWhite(0.5f);
 
             if (health <= 0)
@@ -33,11 +34,15 @@ public class BossVida : MonoBehaviour
                     ScoreManager.Instance.AddPoints(puntos);
                 }
 
-                Destroy(gameObject);
-                ActivateDoor();
-            }
+                if (bc != null)
+                {
+                    bc.OnBossDeath(); // Avisamos al BossController para desactivar texto y detener corrutinas
+                }
 
-            //animator.SetTrigger("hit");
+                ActivateDoor();
+
+                Destroy(gameObject);
+            }
 
             if (esAtaqueCuerpoACuerpo)
             {
@@ -57,7 +62,6 @@ public class BossVida : MonoBehaviour
         GameObject puerta = GameObject.Find("Puerta2");
         if (puerta != null)
         {
-            //puerta.SetActive(true);
             puerta.GetComponent<SpriteRenderer>().enabled = true;
             puerta.GetComponent<Collider2D>().enabled = true;
         }
@@ -66,7 +70,6 @@ public class BossVida : MonoBehaviour
             Debug.LogWarning("No puerta jeje");
         }
     }
-
 
     private IEnumerator ResetGolpeado()
     {
