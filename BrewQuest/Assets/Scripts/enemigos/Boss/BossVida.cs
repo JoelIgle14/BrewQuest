@@ -28,7 +28,8 @@ public class BossVida : MonoBehaviour
             controller.SeleccionAudio(6, 0.2f);
             health -= amount;
 
-            eh.GetComponent<EfectoHit>().FlashWhite(0.5f);
+            animator.SetTrigger("hurt");
+            //eh.GetComponent<EfectoHit>().FlashWhite(0.5f);
 
             if (health <= 0)
             {
