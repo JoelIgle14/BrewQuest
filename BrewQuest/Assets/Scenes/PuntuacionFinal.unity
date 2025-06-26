@@ -771,6 +771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 772700765}
   - component: {fileID: 772700767}
+  - component: {fileID: 772700768}
   - component: {fileID: 772700766}
   m_Layer: 5
   m_Name: Text (TMP)
@@ -896,6 +897,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772700764}
   m_CullTransparentMesh: 1
+--- !u!114 &772700768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772700764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110cc8f976c705b47b815dd2023471c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &843750791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,6 +1263,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 593f1f94b6738924bbfe9129e7e2a226, type: 3}
   - {fileID: 8300000, guid: 79a3ca6f2b881da4a9b8ee8574757915, type: 3}
   - {fileID: 8300000, guid: 8da99a59c5048c746936897d1687e85f, type: 3}
+  audioSourceInspector: {fileID: 0}
 --- !u!82 &1404806883
 AudioSource:
   m_ObjectHideFlags: 0
