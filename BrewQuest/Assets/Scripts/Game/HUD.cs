@@ -9,8 +9,7 @@ public class HUD : MonoBehaviour
 
     private Animator[] animators;
 
-    private int vidasActivas = 3; // o la cantidad con la que empieces
-
+    private int vidasActivas; // Ya no inicializamos aquí
 
     void Start()
     {
@@ -20,6 +19,10 @@ public class HUD : MonoBehaviour
         {
             animators[i] = vidas[i].GetComponent<Animator>();
         }
+
+        // Obtener la cantidad actual de vidas desde el GameManager
+        vidasActivas = GameManager.Instance.GetVidas();
+        SincronizarTodosLosCorazones();
     }
 
     public void DesactivarVida(int i)
@@ -37,11 +40,10 @@ public class HUD : MonoBehaviour
         {
             vidas[i].SetActive(true);
             animators[i].Play("GainHeart");
-            vidasActivas = Mathf.Min(vidas.Length, vidasActivas + 1); // no pasarse de 3
+            vidasActivas = Mathf.Min(vidas.Length, vidasActivas + 1);
             StartCoroutine(ActivarYSincronizar(i));
         }
     }
-
 
     private IEnumerator ActivarYSincronizar(int i)
     {
@@ -53,52 +55,43 @@ public class HUD : MonoBehaviour
         SincronizarTodosLosCorazones(); // sincroniza todos después de ganar vida
     }
 
-
     private IEnumerator SincronizarIdleDespuesDeAnimacion(Animator animator, string animActual, string animIdle)
     {
-        // Esperar 1 frame para asegurar que GainHeart realmente haya comenzado
         yield return null;
 
-        // Obtener la duración real de la animación actual
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         float duracion = stateInfo.length;
 
-        // Esperar la duración real
         yield return new WaitForSeconds(duracion);
 
-        // Forzar IdleHeart sincronizado
         animator.Play(animIdle, 0, 0f);
     }
 
     public void SincronizarTodosLosCorazones()
     {
+        // Ahora siempre leemos las vidas actuales del GameManager
+        vidasActivas = GameManager.Instance.GetVidas();
+
         for (int i = 0; i < vidas.Length; i++)
         {
             if (i < vidasActivas)
             {
-                // Corazón activo
                 vidas[i].SetActive(true);
                 animators[i].Play("IdleHeart", 0, 0f);
             }
             else
             {
-                // Corazón vacío
-                vidas[i].SetActive(true); // Asegurarse que está visible
+                vidas[i].SetActive(true);
                 animators[i].Play("EmptyHeart", 0, 0f);
             }
         }
     }
 
-
-
-
-
-
     public void VaciarVida(int i)
     {
         if (i >= 0 && i < vidas.Length)
         {
-            animators[i].Play("EmptyHeart");  // Si quieres dejar la vida vacía directamente
+            animators[i].Play("EmptyHeart");
         }
     }
 }

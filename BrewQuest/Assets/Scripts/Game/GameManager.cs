@@ -59,6 +59,11 @@ public class GameManager : MonoBehaviour
             hud.SincronizarTodosLosCorazones(); // Mostrar las 3 vidas correctamente
             Debug.Log("Tienes 3 vidas");
         }
+        else
+        {
+            // Sincronizar visualmente las vidas actuales al cambiar de escena
+            hud.SincronizarTodosLosCorazones();
+        }
     }
 
     public void PerderVida()
@@ -86,6 +91,11 @@ public class GameManager : MonoBehaviour
         Vidas += 1;
         hud.ActivarVida(Vidas - 1);
         return true;
+    }
+
+    public int GetVidas()
+    {
+        return Vidas;
     }
 
     private void OnDestroy()
