@@ -1525,19 +1525,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3629223171754388084, guid: 408060f960a74854c8c1327d04e2452b, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[71].x
-      value: -0.10449007
+      value: -0.100594774
       objectReference: {fileID: 0}
     - target: {fileID: 3629223171754388084, guid: 408060f960a74854c8c1327d04e2452b, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[71].y
-      value: -0.23707122
+      value: -0.2362566
       objectReference: {fileID: 0}
     - target: {fileID: 3629223171754388084, guid: 408060f960a74854c8c1327d04e2452b, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[72].x
-      value: 0.10149018
+      value: 0.10105593
       objectReference: {fileID: 0}
     - target: {fileID: 3629223171754388084, guid: 408060f960a74854c8c1327d04e2452b, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[72].y
-      value: -0.2385381
+      value: -0.23609427
       objectReference: {fileID: 0}
     - target: {fileID: 3946491404188878117, guid: 408060f960a74854c8c1327d04e2452b, type: 3}
       propertyPath: rangeDistance
