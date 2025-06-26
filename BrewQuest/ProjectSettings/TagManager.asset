@@ -22,6 +22,7 @@ TagManager:
   - PlataformaGravedad
   - ScoreText
   - wall
+  - Sonido Fuente
   layers:
   - Default
   - TransparentFX
