@@ -9,17 +9,22 @@ public class Boss2vida : MonoBehaviour
     private Boss2manager bc;
     public GameObject player;
     private Animator anim;
+    private AudioController controller;
+
+    //controller.SeleccionAudio(6, 0.2f);
 
     void Awake()
     {
         bc = GetComponent<Boss2manager>();
         anim = GetComponent<Animator>();
+        controller = FindObjectOfType<AudioController>();
     }
 
     public void TakeDamage(float amount, GameObject Player, bool esAtaqueCuerpoACuerpo)
     {
         if (!golpeado && bc != null)
         {
+            controller.SeleccionAudio(6, 0.2f);
             anim.SetTrigger("hit");
             golpeado = true;
             health -= amount;

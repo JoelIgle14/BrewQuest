@@ -8,6 +8,11 @@ public class CargaPresionAttack : MonoBehaviour, IBossAttack
     public float triggerActiveTime = 0.3f;
     public float moveSpeed = 5f;
 
+    private AudioController controller;
+    //controller = FindObjectOfType<AudioController>();
+    //controller.SeleccionAudio(6, 0.2f);
+
+
     public GameObject explosionEffectPrefab;
     public Transform[] movePoints; // 3 puntos (izquierda, centro, derecha)
 
@@ -20,6 +25,7 @@ public class CargaPresionAttack : MonoBehaviour, IBossAttack
         // Mover el objeto ra�z para afectar todo el boss
         bossTransform = transform.root;
         et = GetComponent<CircleCollider2D>();
+        controller = FindObjectOfType<AudioController>();
     }
 
     public IEnumerator Execute()
@@ -58,6 +64,7 @@ public class CargaPresionAttack : MonoBehaviour, IBossAttack
 
     private IEnumerator VibrateDuringCharge(float duration)
     {
+        controller.SeleccionAudio(11, 0.2f);
         float elapsed = 0f;
         Vector3 originalPos = bossTransform.position;
 

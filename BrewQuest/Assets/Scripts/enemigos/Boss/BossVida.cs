@@ -9,17 +9,23 @@ public class BossVida : MonoBehaviour
     private BossController bc;
     public GameObject player;
     private EfectoHit eh;
+    private AudioController controller;
+    
+    
+
 
     void Awake()
     {
         eh = GetComponent<EfectoHit>();
         bc = GetComponent<BossController>();
+        controller = FindObjectOfType<AudioController>();
     }
 
     public void TakeDamage(float amount, GameObject Player, bool esAtaqueCuerpoACuerpo)
     {
         if (!golpeado && bc != null && bc.canTakeDamage)
         {
+            controller.SeleccionAudio(6, 0.2f);
             golpeado = true;
             health -= amount;
             //a

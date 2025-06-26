@@ -1013,6 +1013,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 593f1f94b6738924bbfe9129e7e2a226, type: 3}
   - {fileID: 8300000, guid: 79a3ca6f2b881da4a9b8ee8574757915, type: 3}
   - {fileID: 8300000, guid: 8da99a59c5048c746936897d1687e85f, type: 3}
+  - {fileID: 8300000, guid: 8d0b1afb8b458d54983037e602aee10f, type: 3}
 --- !u!82 &568002471
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1025,7 +1026,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fb460e8806fd0e34bb6c8b72cd9fd0d8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.204
+  m_Volume: 0.066
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4468,7 +4469,7 @@ MonoBehaviour:
   - {fileID: 16062344}
   vulnerableMessage: {fileID: 186664438}
   introTerminada: 0
-  manualControl: 0
+  manualControl: 1
   timeBetweenAttacks: 2
 --- !u!114 &1690282438
 MonoBehaviour:

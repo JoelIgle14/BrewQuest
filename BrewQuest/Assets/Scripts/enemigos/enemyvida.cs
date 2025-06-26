@@ -5,9 +5,10 @@ public class Enemyvida : MonoBehaviour
 {
     public float health;
     public bool golpeado;
-    public int puntos = 10; // ← Añade puntos por este enemigo
+    public int puntos = 10; // Añade puntos por este enemigo
 
     Animator animator;
+    
     private AudioController controller;
 
     void Awake()
