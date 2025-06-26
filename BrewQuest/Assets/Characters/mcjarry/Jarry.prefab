@@ -231,7 +231,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9036987573618746757}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -266,7 +266,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9036987573618746757}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -303,8 +303,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.61060965, y: -1.1063247}
-      - {x: 0.60409576, y: -1.1124643}
+    - - {x: -0.62553394, y: -1.0445546}
+      - {x: -0.62478924, y: -1.0493851}
+      - {x: -0.62415123, y: -1.052601}
+      - {x: -0.6227288, y: -1.0543032}
+      - {x: -0.6211183, y: -1.0559188}
+      - {x: -0.6176331, y: -1.0572224}
+      - {x: -0.6121805, y: -1.0583658}
+      - {x: 0.58426136, y: -1.0659666}
+      - {x: 0.5871345, y: -1.0648183}
+      - {x: 0.58982027, y: -1.0635684}
+      - {x: 0.59107435, y: -1.0613723}
+      - {x: 0.591596, y: -1.0593379}
+      - {x: 0.59210336, y: -1.0532506}
       - {x: 0.5358056, y: -0.5021146}
       - {x: 0.5354828, y: 0.41363692}
       - {x: 0.3911099, y: 0.85154307}
