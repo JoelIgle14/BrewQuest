@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 1230246849265011017}
   - component: {fileID: 3550327906894617840}
   - component: {fileID: 4910036029012203672}
+  - component: {fileID: 2989354103987403902}
   - component: {fileID: 4468621817715651367}
   - component: {fileID: 8729202147526316273}
   - component: {fileID: 3793710626635336236}
@@ -223,6 +224,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &2989354103987403902
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9036987573618746757}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.05421436, y: -0.019132376}
+  m_Size: {x: 1.5330908, y: 2.133215}
+  m_Direction: 0
 --- !u!60 &4468621817715651367
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -230,7 +266,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9036987573618746757}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -267,12 +303,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.358002, y: -1.0860187}
-      - {x: 0.6086985, y: -1.0962887}
-      - {x: 0.6193013, y: -1.0907075}
-      - {x: 0.62991816, y: -1.0801271}
-      - {x: 0.6267806, y: -0.95821023}
-      - {x: 0.5285321, y: -0.8614649}
+    - - {x: -0.61060965, y: -1.1063247}
+      - {x: 0.60409576, y: -1.1124643}
       - {x: 0.5358056, y: -0.5021146}
       - {x: 0.5354828, y: 0.41363692}
       - {x: 0.3911099, y: 0.85154307}
@@ -281,12 +313,8 @@ PolygonCollider2D:
       - {x: -0.3616362, y: 1.0483624}
       - {x: -0.5075754, y: 0.7677162}
       - {x: -0.53900445, y: -0.722868}
-      - {x: -0.6260176, y: -0.95729196}
-      - {x: -0.6249559, y: -1.0758637}
-      - {x: -0.6184796, y: -1.0866095}
-      - {x: -0.6056347, y: -1.0958178}
-      - {x: -0.43414924, y: -1.0951753}
-      - {x: -0.064813904, y: -1.0841135}
+      - {x: -0.54227996, y: -0.8834058}
+      - {x: -0.54496694, y: -0.9014818}
   m_UseDelaunayMesh: 0
 --- !u!114 &8729202147526316273
 MonoBehaviour:
