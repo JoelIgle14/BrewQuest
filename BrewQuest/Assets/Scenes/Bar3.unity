@@ -2404,6 +2404,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 593f1f94b6738924bbfe9129e7e2a226, type: 3}
   - {fileID: 8300000, guid: 79a3ca6f2b881da4a9b8ee8574757915, type: 3}
   - {fileID: 8300000, guid: 8da99a59c5048c746936897d1687e85f, type: 3}
+  audioSourceInspector: {fileID: 0}
 --- !u!82 &1245452587
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2541,7 +2542,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1335138434}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.46, y: -0.4, z: 0}
+  m_LocalPosition: {x: -0.04, y: -0.4, z: 0}
   m_LocalScale: {x: 23.67869, y: 1.1748245, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
