@@ -53,7 +53,7 @@ public class dash : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && dashCooldownCounter <= 0 && !isDashing && move.canMove)
         {
-            controller.SeleccionAudio(5, 0.5f);
+            controller.SeleccionAudio(5, 0.2f);
             StartCoroutine(DoDash());
         }
 

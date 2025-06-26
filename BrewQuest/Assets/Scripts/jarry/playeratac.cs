@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,9 +16,11 @@ public class playeratac : MonoBehaviour
     public Vector3 positionAttack;
 
     private bool lookingup;
+    private bool isAttacking = false; // bandera para evitar ataques mÃºltiples
     private Animator animator;
 
     private AudioController controller;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -37,27 +39,31 @@ public class playeratac : MonoBehaviour
         LookingUp();
         CalculateAttackPosition();
 
-        if (Time.time >= timeToNextAttack)
+        if (Time.time >= timeToNextAttack && !isAttacking)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                isAttacking = true; //  activamos la bandera
                 controller.SeleccionAudio(3, 0.2f);
                 timeToNextAttack = Time.time + attacCooldown;
                 animator.SetTrigger("ataque");
-                StartCoroutine(DelayedAttack()); //daño tras un delay muy pequeño
+                StartCoroutine(DelayedAttack());
             }
         }
     }
 
     private IEnumerator DelayedAttack()
     {
-        yield return new WaitForSeconds(attackDelay); // <-- Espera antes de aplicar el daño
+        Debug.Log("â†’ DelayedAttack iniciado");
+        yield return new WaitForSeconds(attackDelay);
+        Debug.Log("â†’ DealDamage ejecutado");
         DealDamage();
+        isAttacking = false; //  liberamos la bandera despuÃ©s del ataque
     }
 
     private void DealDamage()
     {
-        Debug.Log("Evento de animación DealDamage() llamado");
+        Debug.Log(" DealDamage() llamado");
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(positionAttack, attackRange);
         HashSet<Transform> damagedEnemies = new HashSet<Transform>();
@@ -106,7 +112,6 @@ public class playeratac : MonoBehaviour
             }
         }
     }
-
 
     private void LookingUp()
     {
