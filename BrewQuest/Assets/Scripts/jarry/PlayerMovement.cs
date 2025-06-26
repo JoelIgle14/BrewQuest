@@ -53,9 +53,9 @@ public class PlayerMovement : MonoBehaviour
         bool movingRight = Input.GetKey(KeyCode.RightArrow);
         bool isMoving = movingLeft ^ movingRight; // solo uno a la vez
 
-        if (isMoving && canMove && hab.canMove && !dash.isDashing && isGrounded)
+        if (isMoving && canMove && hab.canMove && !dash.isDashing && isGrounded && Mathf.Abs(body.velocity.x) >= 0.5f) 
         {
-            controller.ReproducirLoop(2, 0.5f); // Sonido de pasos
+            controller.ReproducirLoop(2, 0.2f); // Sonido de pasos
         }
         else
         {
@@ -146,7 +146,9 @@ public class PlayerMovement : MonoBehaviour
             if (pc != null)
             {
                 pc.TakeDamage(collision.transform);
+                controller.SeleccionAudio(8, 0.2f);
             }
+            
         }
     }
 
@@ -158,6 +160,7 @@ public class PlayerMovement : MonoBehaviour
             if (pc != null)
             {
                 pc.TakeDamage(collision.transform);
+                controller.SeleccionAudio(8, 0.2f);
             }
         }
     }

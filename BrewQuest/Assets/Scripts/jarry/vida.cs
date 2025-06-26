@@ -5,11 +5,18 @@ using UnityEngine;
 public class vida : MonoBehaviour
 {
     public int puntosPorVidaExtra = 10; // Puedes cambiarlo desde el Inspector
+    private AudioController controller;
+
+    void Start()
+    {
+        controller = FindObjectOfType<AudioController>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            controller.SeleccionAudio(10, 0.4f);
             bool vidaRecuperada = GameManager.Instance.RecuperarVida();
 
             if (vidaRecuperada)

@@ -8,16 +8,19 @@ public class Enemyvida : MonoBehaviour
     public int puntos = 10; // ← Añade puntos por este enemigo
 
     Animator animator;
+    private AudioController controller;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
+        controller = FindObjectOfType<AudioController>();
     }
 
     public void TakeDamage(float amount, GameObject Player, bool esAtaqueCuerpoACuerpo)
     {
         if (!golpeado)
         {
+            controller.SeleccionAudio(6, 0.2f);
             golpeado = true;
             health -= amount;
 

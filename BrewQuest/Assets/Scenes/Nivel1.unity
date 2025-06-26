@@ -1160,8 +1160,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 228992051118946406, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: MaxDistance
-      value: 22.529211
+      value: 17.935577
       objectReference: {fileID: 0}
+    - target: {fileID: 228992051118946406, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 78a4aa98411ca764880831825ea0c36b, type: 3}
     - target: {fileID: 3787725845484311463, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -165615,6 +165619,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -1063137501
       objectReference: {fileID: 0}
+    - target: {fileID: 5838149296900722947, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6134159503175750147, guid: 8abaeac067193fc4f86cb39d176a5c67, type: 3}
       propertyPath: m_Name
       value: Fuente (3)
@@ -168654,11 +168662,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.17
+      value: 220.6
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.48
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8378337897690043598, guid: e075de9c0982b964fbc522ad851b48cd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -173279,11 +173287,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audios:
   - {fileID: 8300000, guid: b5ba5589c49d9b94cb73150e931b511d, type: 3}
-  - {fileID: 8300000, guid: 8b1252e3071d6ec479732e136e5d8c86, type: 3}
+  - {fileID: 8300000, guid: f722d00e4d1c7df4588e9dc3560261cb, type: 3}
   - {fileID: 8300000, guid: 950156b110024ee4e8d673384b5a7f25, type: 3}
-  - {fileID: 8300000, guid: c29aa8e8471a6ca43893ecdd974fe980, type: 3}
+  - {fileID: 8300000, guid: ccba53bf3d59a93429285cafec169382, type: 3}
   - {fileID: 8300000, guid: 950156b110024ee4e8d673384b5a7f25, type: 3}
   - {fileID: 8300000, guid: 817a7dbf913ec94449355cde11eb9179, type: 3}
+  - {fileID: 8300000, guid: 10f5d2822bb7c91409fb065dca66404e, type: 3}
+  - {fileID: 8300000, guid: 75f1aa83582294f429559a03ee340d8f, type: 3}
+  - {fileID: 8300000, guid: 593f1f94b6738924bbfe9129e7e2a226, type: 3}
+  - {fileID: 8300000, guid: 79a3ca6f2b881da4a9b8ee8574757915, type: 3}
+  - {fileID: 8300000, guid: 8da99a59c5048c746936897d1687e85f, type: 3}
 --- !u!82 &1351407126
 AudioSource:
   m_ObjectHideFlags: 0

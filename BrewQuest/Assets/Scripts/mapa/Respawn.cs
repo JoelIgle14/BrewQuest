@@ -1,5 +1,3 @@
-
-
 using UnityEngine;
 using System.Linq;
 using System.Collections;
@@ -64,17 +62,15 @@ public class PlayerController : MonoBehaviour
             // Sumamos puntos si el checkpoint no ha sido activado antes
             Checkpoint checkpoint = collision.GetComponent<Checkpoint>();
             if (checkpoint != null && !checkpoint.yaActivado)
-{
-    checkpoint.yaActivado = true;
+            {
+                checkpoint.yaActivado = true;
 
-    if (ScoreManager.Instance != null)
-    {
-        ScoreManager.Instance.AddPoints(checkpoint.puntosPorCheckpoint);
-        ScoreManager.Instance.SaveCheckpointScore(); // <--- aquí!
-    }
-}
-
-
+                    if (ScoreManager.Instance != null)
+                    {
+                        ScoreManager.Instance.AddPoints(checkpoint.puntosPorCheckpoint);
+                        ScoreManager.Instance.SaveCheckpointScore(); // <--- aquí!
+                    }
+            }
             // Siempre actualizamos el respawn, se hayan dado puntos o no
             UpdateRespawnPoint(collision.transform);
         }

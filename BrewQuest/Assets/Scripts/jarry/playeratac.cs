@@ -41,7 +41,7 @@ public class playeratac : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                controller.SeleccionAudio(3, 0.5f);
+                controller.SeleccionAudio(3, 0.2f);
                 timeToNextAttack = Time.time + attacCooldown;
                 animator.SetTrigger("ataque");
                 StartCoroutine(DelayedAttack()); //daño tras un delay muy pequeño
