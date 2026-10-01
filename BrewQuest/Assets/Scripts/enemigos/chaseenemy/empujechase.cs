@@ -39,7 +39,7 @@ public class empujechase : MonoBehaviour
         Vector2 golpeVector = new Vector2(baseDirection.x * golpeForceX, baseDirection.y * golpeForceY); //esta es la del empuje
 
         //reseteo y aplicacion de fuerza
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         rb.AddForce(golpeVector, ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(golpeDuration);

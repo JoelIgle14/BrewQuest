@@ -23,7 +23,7 @@ public class berniBullet : MonoBehaviour
         Vector2 launchDirection = new Vector2(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
         if (directionLeft) launchDirection.x *= -1;
 
-        rb.velocity = launchDirection * launchForce;
+        rb.linearVelocity = launchDirection * launchForce;
 
         // Flip visual si va hacia la izquierda
         if (directionLeft)
@@ -52,7 +52,7 @@ public class berniBullet : MonoBehaviour
         if (isExploding) return;
 
         isExploding = true;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
 
         if (anim != null)
         {

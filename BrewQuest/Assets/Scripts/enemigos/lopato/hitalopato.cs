@@ -53,7 +53,7 @@ public class hitalopato : MonoBehaviour
         Vector2 baseDirection = new Vector2(direction, 1f).normalized;
         Vector2 golpeVector = new Vector2(baseDirection.x * golpeForceX, baseDirection.y * golpeForceY);
 
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         rb.AddForce(golpeVector, ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(flashTime);

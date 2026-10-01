@@ -75,7 +75,7 @@ public class ActivarAliado : MonoBehaviour
             Rigidbody2D rb = jugador.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.velocity = Vector2.zero;  // Detener el movimiento inmediatamente
+                rb.linearVelocity = Vector2.zero;  // Detener el movimiento inmediatamente
             }
         }
     }

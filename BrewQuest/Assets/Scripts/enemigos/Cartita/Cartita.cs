@@ -133,7 +133,7 @@ public class Cartita : MonoBehaviour
 
     public void AplicarRetroceso(Vector2 direccion, float fuerza)
     {
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         rb.AddForce(direccion.normalized * fuerza, ForceMode2D.Impulse);
         StartCoroutine(StunCoroutine());
     }

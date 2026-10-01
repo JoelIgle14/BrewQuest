@@ -61,7 +61,7 @@ public class FallingPlatform : MonoBehaviour, IReiniciable
         isShaking = false;
         transform.position = originalPosition;
         transform.rotation = originalRotation;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
         rb.isKinematic = true;
     }

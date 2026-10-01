@@ -18,15 +18,15 @@ public class BalaEnemigo2 : MonoBehaviour
         {
             float direccionX = player.transform.position.x - transform.position.x;
 
-            // Solo tomamos dirección horizontal
+            // Solo tomamos direcciï¿½n horizontal
             Vector2 direccion = (direccionX > 0) ? Vector2.right : Vector2.left;
 
-            rb.velocity = direccion * velocidad;
+            rb.linearVelocity = direccion * velocidad;
         }
         else
         {
             // Si no hay jugador, dispara a la izquierda por defecto
-            rb.velocity = Vector2.left * velocidad;
+            rb.linearVelocity = Vector2.left * velocidad;
         }
     }
 

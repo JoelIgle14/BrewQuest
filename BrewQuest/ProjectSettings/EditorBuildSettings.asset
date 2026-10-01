@@ -57,3 +57,4 @@ EditorBuildSettings:
     path: Assets/Scenes/MapaTesting.unity
     guid: e42670a39322f2548b588ffd010f578c
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

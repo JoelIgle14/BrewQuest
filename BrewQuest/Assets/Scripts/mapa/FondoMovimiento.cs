@@ -13,7 +13,7 @@ public class FondoMovimiento : MonoBehaviour
     private void Awake()
     {
         material = GetComponent<Renderer>().material; // Usamos Renderer en lugar de SpriteRenderer
-        jugadorRB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>(); // Asegúrate de que "Jarry" es el tag correcto
+        jugadorRB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>(); // Asegï¿½rate de que "Jarry" es el tag correcto
     }
 
     private void Update()
@@ -21,12 +21,12 @@ public class FondoMovimiento : MonoBehaviour
         if (jugadorRB != null) // Evitar errores si no encuentra el jugador
         {
             // Obtenemos la velocidad en el eje X del jugador
-            float velocidadJugador = jugadorRB.velocity.x;
+            float velocidadJugador = jugadorRB.linearVelocity.x;
 
-            // Solo mover el fondo si el jugador tiene velocidad en X (es decir, se está moviendo)
-            if (Mathf.Abs(velocidadJugador) > 0.1f) // Si la velocidad es mayor a un pequeño umbral
+            // Solo mover el fondo si el jugador tiene velocidad en X (es decir, se estï¿½ moviendo)
+            if (Mathf.Abs(velocidadJugador) > 0.1f) // Si la velocidad es mayor a un pequeï¿½o umbral
             {
-                // Calcula el desplazamiento basado en la dirección del movimiento del jugador
+                // Calcula el desplazamiento basado en la direcciï¿½n del movimiento del jugador
                 offset = velocidadMovimiento * Mathf.Sign(velocidadJugador) * Time.deltaTime;
 
                 // Aplica el desplazamiento al fondo

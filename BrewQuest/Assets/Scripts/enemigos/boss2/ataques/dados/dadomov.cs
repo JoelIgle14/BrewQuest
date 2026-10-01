@@ -18,7 +18,7 @@ public class dadomov : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = direction * speed;
+        rb.linearVelocity = direction * speed;
     }
 
     private Vector2 GetRandomDiagonal()
@@ -55,6 +55,6 @@ public class dadomov : MonoBehaviour
 
         direction = direction.normalized;
 
-        Debug.Log("Rebote! Nueva dirección: " + direction);
+        Debug.Log("Rebote! Nueva direcciï¿½n: " + direction);
     }
 }

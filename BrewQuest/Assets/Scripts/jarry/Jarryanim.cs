@@ -7,7 +7,7 @@ public class jarryanim : MonoBehaviour
     private Animator anim;
     private Rigidbody2D body;
 
-    // Número de vidas (puedes enlazarlo desde otro script si lo manejas en otro lado)
+    // Nï¿½mero de vidas (puedes enlazarlo desde otro script si lo manejas en otro lado)
     public int vidas = 3;
 
     void Awake()
@@ -18,7 +18,7 @@ public class jarryanim : MonoBehaviour
 
     void Start()
     {
-        anim.SetInteger("Vidas", vidas);  // Inicializa el parámetro en el Animator
+        anim.SetInteger("Vidas", vidas);  // Inicializa el parï¿½metro en el Animator
     }
 
     void Update()
@@ -31,22 +31,22 @@ public class jarryanim : MonoBehaviour
         if (anim != null)
         {
             // Control de movimiento
-            float speed = Mathf.Abs(body.velocity.x);
+            float speed = Mathf.Abs(body.linearVelocity.x);
             anim.SetFloat("Speed", speed);
 
-            // Actualiza también el parámetro "Vidas" en caso de que haya cambiado
+            // Actualiza tambiï¿½n el parï¿½metro "Vidas" en caso de que haya cambiado
             anim.SetInteger("Vidas", vidas);
         }
     }
 
-    // Este método se puede llamar desde otro script cuando pierdas una vida
+    // Este mï¿½todo se puede llamar desde otro script cuando pierdas una vida
     public void PerderVida()
     {
         if (vidas > 0)
         {
             vidas--;
             anim.SetInteger("Vidas", vidas);
-            anim.SetTrigger("Dañado");  // Este trigger activa la animación de daño si la configuras
+            anim.SetTrigger("Daï¿½ado");  // Este trigger activa la animaciï¿½n de daï¿½o si la configuras
         }
     }
 }

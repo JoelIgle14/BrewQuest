@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         bool movingRight = Input.GetKey(KeyCode.RightArrow);
         bool isMoving = movingLeft ^ movingRight; // solo uno a la vez
 
-        if (isMoving && canMove && hab.canMove && !dash.isDashing && isGrounded && Mathf.Abs(body.velocity.x) >= 0.5f) 
+        if (isMoving && canMove && hab.canMove && !dash.isDashing && isGrounded && Mathf.Abs(body.linearVelocity.x) >= 0.5f) 
         {
             controller.ReproducirLoop(2, 0.2f); // Sonido de pasos
         }
@@ -85,10 +85,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Rigidbody2D platformRb = currentPlatform.GetComponent<Rigidbody2D>();
             if (platformRb != null)
-                moveSpeed += platformRb.velocity.x;
+                moveSpeed += platformRb.linearVelocity.x;
         }
 
-        body.velocity = new Vector2(moveSpeed, body.velocity.y);
+        body.linearVelocity = new Vector2(moveSpeed, body.linearVelocity.y);
     }
 
     private void HandleFlip()
@@ -170,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
         if (isKnockedBack) return;
 
         isKnockedBack = true;
-        body.velocity = Vector2.zero;
+        body.linearVelocity = Vector2.zero;
         body.AddForce(force, ForceMode2D.Impulse);
         StartCoroutine(DisableMovementForTime(duration));
     }

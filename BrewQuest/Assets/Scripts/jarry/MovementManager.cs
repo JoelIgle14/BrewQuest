@@ -52,9 +52,9 @@ public class MovementManager : MonoBehaviour
         // Salto variable (cut jump)
         if (saltoEnProgreso && Input.GetKeyUp(KeyCode.Space))
         {
-            if (rb.velocity.y > 0f)
+            if (rb.linearVelocity.y > 0f)
             {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * multiplicadorCutJump);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * multiplicadorCutJump);
             }
             saltoEnProgreso = false;
         }
@@ -96,13 +96,13 @@ public class MovementManager : MonoBehaviour
 
         if (saltoSolicitado)
         {
-            rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaSalto);
             saltoSolicitado = false;
             saltoEnProgreso = true;
         }
         else if (dashSolicitado)
         {
-            rb.velocity = new Vector2(transform.localScale.x * fuerzaDash, 0f);
+            rb.linearVelocity = new Vector2(transform.localScale.x * fuerzaDash, 0f);
             dashSolicitado = false;
         }
     }

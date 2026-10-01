@@ -18,7 +18,7 @@ public class DisparoWinston : MonoBehaviour
     void FixedUpdate()
     {
         if (directionSet)
-            rb.velocity = direction * Speed;
+            rb.linearVelocity = direction * Speed;
     }
 
     public void SetDirection(Vector2 dir)
@@ -26,7 +26,7 @@ public class DisparoWinston : MonoBehaviour
         direction = new Vector2(Mathf.Sign(dir.x), 0f);
         directionSet = true;
 
-        // Voltea el sprite dependiendo de la dirección
+        // Voltea el sprite dependiendo de la direcciï¿½n
         Vector3 newScale = transform.localScale;
         newScale.x = Mathf.Abs(newScale.x) * Mathf.Sign(dir.x);
         transform.localScale = newScale;
@@ -47,7 +47,7 @@ public class DisparoWinston : MonoBehaviour
         if (isExploding) return;
 
         isExploding = true;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
 
         Destroy(gameObject);
     }

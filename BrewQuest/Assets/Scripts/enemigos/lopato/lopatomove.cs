@@ -13,7 +13,7 @@ public class lopatomove : MonoBehaviour
 
     // Movimiento especial
     public float fuerzaSalto;
-    public float tiempoEsperaDespuesRodar = 1f; // Tiempo de recuperación después de rodar
+    public float tiempoEsperaDespuesRodar = 1f; // Tiempo de recuperaciï¿½n despuï¿½s de rodar
     public float duracionRodada = 1f; // Tiempo que dura la rodada
 
     // Referencias
@@ -22,7 +22,7 @@ public class lopatomove : MonoBehaviour
     private Vector2 direccionRodada;
     private bool haSaltado = false;
     private float tiempoRecuperacion = 0f;
-    private float tiempoRodando = 0f; // <-- Añadido para controlar duración de la rodada
+    private float tiempoRodando = 0f; // <-- Aï¿½adido para controlar duraciï¿½n de la rodada
 
     public BoxCollider2D patasCollider;
     private Animator anim;
@@ -93,7 +93,7 @@ public class lopatomove : MonoBehaviour
         {
             estado = EstadoEnemigo.PreparadoRodar;
             haSaltado = false;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, fuerzaSalto);
+            GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, fuerzaSalto);
         }
         else
         {
@@ -123,7 +123,7 @@ public class lopatomove : MonoBehaviour
 
     void PrepararRodada()
     {
-        if (!haSaltado && GetComponent<Rigidbody2D>().velocity.y <= 0)
+        if (!haSaltado && GetComponent<Rigidbody2D>().linearVelocity.y <= 0)
         {
             patasCollider.enabled = false;
             anim.SetTrigger("rodar");
@@ -143,7 +143,7 @@ public class lopatomove : MonoBehaviour
 
         if (tiempoRodando >= duracionRodada)
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, fuerzaSalto);
+            GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, fuerzaSalto);
             estado = EstadoEnemigo.Volviendo;
             tiempoRecuperacion = tiempoEsperaDespuesRodar;
         }
@@ -153,7 +153,7 @@ public class lopatomove : MonoBehaviour
     {
         if (tiempoRecuperacion <= 0f)
         {
-            if (GetComponent<Rigidbody2D>().velocity.y <= 0 && !patasCollider.enabled)
+            if (GetComponent<Rigidbody2D>().linearVelocity.y <= 0 && !patasCollider.enabled)
             {
                 patasCollider.enabled = true;
                 anim.SetTrigger("idlear");
