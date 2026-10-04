@@ -29,6 +29,8 @@ public class MovementManager : MonoBehaviour
     private bool coyoteBloqueado = false;
     private AudioController controller;
 
+    private int saltosAereosRestantes;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -84,9 +86,20 @@ public class MovementManager : MonoBehaviour
         }
 
         // Procesar salto si se puede
+        if (pm.isGrounded) saltosAereosRestantes = 1;
+
         if (coyoteTimeCounter > 0f && inputBuffer.Count > 0 && !dish.isDashing)
         {
             ProcesarInputBufferParaSalto();
+        }
+        else if (!pm.isGrounded && inputBuffer.Count > 0 && inputBuffer.Peek() == KeyCode.Space
+                 && hab != null && hab.canDoubleJump && saltosAereosRestantes > 0
+                 && !dish.isDashing && pm.canMove)
+        {
+            SolicitarSalto(pm.jumpForce);
+            inputBuffer.Dequeue();
+            saltosAereosRestantes--;
+            Debug.Log("[Salto] Doble salto ejecutado");
         }
     }
 

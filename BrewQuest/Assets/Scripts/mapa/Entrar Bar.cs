@@ -13,12 +13,10 @@ public class EntarBar : MonoBehaviour
 
             if (escenaActual == "PuntuacionFinal")
             {
-                // 👉 Si estem a la escena de puntuació, passem als crèdits
                 SceneManager.LoadScene("CreditosFinales");
             }
             else
             {
-                // 👉 Si no, seguim amb el comportament normal (canviar de nivell)
                 int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
                 if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
                 {
@@ -37,6 +35,12 @@ public class EntarBar : MonoBehaviour
         if (collision.CompareTag("Puerta"))
         {
             jugadorEnZona = true;
+        }
+
+        //Lo cheat
+        if (collision.CompareTag("CheatDoor"))
+        {
+            SceneManager.LoadScene("Bar3");
         }
     }
 

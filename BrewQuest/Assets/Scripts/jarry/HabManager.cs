@@ -50,6 +50,8 @@ public class NewBehaviourScript : MonoBehaviour
                 dialogue.objetoParaActivarDuranteDialogo.SetActive(false);
             }
         }
+
+        Debug.Log($"[Hab] {gameObject.scene.name} -> dash:{canDash} doubleJump:{canDoubleJump} shoot:{canShoot} | GM existe: {GameManager.Instance != null}");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -57,10 +59,12 @@ public class NewBehaviourScript : MonoBehaviour
         if (collision.gameObject.CompareTag("cuadrao"))
         {
             canDoubleJump = true;
+            GameManager.Instance.hasDoubleJump = true;
         }
         else if (collision.gameObject.CompareTag("Manguera"))
         {
             canShoot = true;
+            GameManager.Instance.hasShoot = true;
         }
     }
 

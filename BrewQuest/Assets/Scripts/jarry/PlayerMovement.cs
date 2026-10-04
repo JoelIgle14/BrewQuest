@@ -43,11 +43,6 @@ public class PlayerMovement : MonoBehaviour
         HandleFlip();
         HandleGroundCheck();
 
-        if (hab.canDoubleJump && !isGrounded)
-        {
-            HandleDoubleJump();
-        }
-
         // Movimiento
         bool movingLeft = Input.GetKey(KeyCode.LeftArrow);
         bool movingRight = Input.GetKey(KeyCode.RightArrow);
